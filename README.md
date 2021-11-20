@@ -3,7 +3,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 
 ## Highlights
 - insane amount of bug fixes to pretty much every mod
-- fixing up `/vehicles` (D00Med Vehicles)
+- fixing all bugs and offsets in `/vehicles` _(D00Med Vehicles)_
 - addition of biofuel chainsaws _(based on technic chainsaw)_
 - addition of powerbank mk4 _(zero-point energy)_
 - addition of super biofuel and super propane
