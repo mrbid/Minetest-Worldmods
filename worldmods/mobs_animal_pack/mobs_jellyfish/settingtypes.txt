@@ -1,0 +1,30 @@
+
+# Enable or disable the natural spawning of the jellyfish mob
+mobs_jellyfish.jellyfish.spawn.enabled (Enable jellyfish spawning) bool true
+
+# List of nodenames that the jellyfish mob can spawn on top of
+mobs_jellyfish.jellyfish.spawn.on (Nodes the jellyfish will spawn on) string default:water_source
+
+# List of nodenames that the jellyfish mob can spawn beside
+mobs_jellyfish.jellyfish.spawn.near (Nodes the jellyfish will spawn near) string default:water_flowing, default:water_source
+
+# Interval in seconds that specifies when the jellyfish mob will try to spawn
+mobs_jellyfish.jellyfish.spawn.interval (Time between jellyfish spawning) int 30 1
+
+# Inverted chance for an jellyfish to spawn on a given node
+mobs_jellyfish.jellyfish.spawn.chance (Rarity of jellyfish spawning) int 300000 1
+
+# The minimum light level the jellyfish mob can spawn at
+mobs_jellyfish.jellyfish.spawn.min_light (Min. light level for jellyfish spawning) int 1 0
+
+# The maximum light level the jellyfish mob can spawn at
+mobs_jellyfish.jellyfish.spawn.max_light (Max. light level for jellyfish spawning) int 14 0
+
+# The minimum height the jellyfish mob can spawn at
+mobs_jellyfish.jellyfish.spawn.min_height (Min. world height for jellyfish spawning) int -50 -31000 31000
+
+# The maximum height the jellyfish mob can spawn at
+mobs_jellyfish.jellyfish.spawn.max_height (Max. world height for jellyfish spawning) int -1 -31000 31000
+
+# Number of jellyfish mobs to spawn at one time inside map area
+mobs_jellyfish.jellyfish.spawn.active_object_count (Number of jellyfish in the same place) int 1 1

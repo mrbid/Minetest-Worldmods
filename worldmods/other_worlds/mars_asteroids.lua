@@ -1,0 +1,80 @@
+-- Approximate realm limits
+local YMIN = otherworlds.settings.mars_asteroids.YMIN or 9000
+local YMAX = otherworlds.settings.mars_asteroids.YMAX or 10000
+
+
+-- Register on_generated function for this layer
+minetest.register_on_generated(
+		otherworlds.asteroids.create_on_generated(YMIN, YMAX, {
+
+	c_air = minetest.get_content_id("air"),
+	c_obsidian = minetest.get_content_id("space_travel:mars_stone_with_tin"),
+	c_stone = minetest.get_content_id("space_travel:mars_stone"),
+	c_cobble = minetest.get_content_id("space_travel:mars_cobble"),
+	c_gravel = minetest.get_content_id("asteroid:redgravel"),
+	c_dust = minetest.get_content_id("space_travel:mars_sand"),
+	c_ironore = minetest.get_content_id("space_travel:mars_stone_with_iron"),
+	c_copperore = minetest.get_content_id("space_travel:mars_stone_with_copper"),
+	c_goldore = minetest.get_content_id("space_travel:mars_stone_with_gold"),
+	c_diamondore = minetest.get_content_id("space_travel:mars_stone_with_diamond"),
+	c_meseore = minetest.get_content_id("space_travel:mars_stone_with_mese"),
+	c_waterice = minetest.get_content_id("space_travel:mars_stone_with_martian_ice_crystal"),
+	c_atmos = minetest.get_content_id("asteroid:atmos"),
+	c_snowblock = minetest.get_content_id("space_travel:mars_sandstone"),
+}))
+
+
+-- Deco code for grass and crystal
+
+-- how often surface decoration appears on top of asteroid cobble
+local TOPDECO = 500
+
+local grass = {
+	"mars:grass_1", "mars:grass_2", "mars:grass_3",
+	"mars:grass_4", "mars:grass_5"
+}
+
+local flower = {
+	"mars:moss", "mars:redweed", "mars:redgrass"
+}
+
+local crystal = {
+	"crystals:ghost_crystal_1", "crystals:ghost_crystal_2",
+	"crystals:red_crystal_1", "crystals:red_crystal_2",
+	"crystals:rose_quartz_1", "crystals:rose_quartz_2"
+}
+
+local random = math.random
+
+
+-- Add surface decoration
+minetest.register_on_generated(function(minp, maxp)
+
+	if minp.y < YMIN or maxp.y > YMAX then
+		return
+	end
+
+	local bpos, ran
+	local coal = minetest.find_nodes_in_area_under_air(minp, maxp,
+			{"asteroid:redgravel"})
+
+	for n = 1, #coal do
+
+		bpos = {x = coal[n].x, y = coal[n].y + 1, z = coal[n].z}
+
+		ran = random(TOPDECO)
+
+		if ran < 100 then -- grass
+
+			minetest.swap_node(bpos, {name = grass[random(#grass)]})
+
+		elseif ran >= 180 and ran <= 200 then -- other plants
+
+			minetest.swap_node(bpos, {name = flower[random(#flower)]})
+
+		elseif ran == TOPDECO then -- crystals
+
+			minetest.swap_node(bpos, {name = crystal[random(#crystal)]})
+		end
+	end
+end)

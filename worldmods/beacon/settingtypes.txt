@@ -1,0 +1,11 @@
+beacon_area_shielding (Protected areas block effects) bool false
+beacon_beam_break_nodes (Beacon beam breaks nodes) bool false
+beacon_beam_climbable (Climbable beacon beam) bool true
+beacon_beam_length (Maximum beam length) int 200
+beacon_default_effect (Default beacon effect) string none
+beacon_effect_range_0 (Level 0 beacon effect range) int 10
+beacon_effect_range_1 (Level 1 beacon effect range) int 20
+beacon_effect_range_2 (Level 2 beacon effect range) int 30
+beacon_effect_range_3 (Level 3 beacon effect range) int 40
+beacon_effect_range_4 (Level 4 beacon effect range) int 50
+beacon_upgrade_item (Beacon upgrade item) string default:diamondblock

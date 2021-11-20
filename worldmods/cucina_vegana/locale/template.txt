@@ -1,0 +1,192 @@
+# textdomain: cucina_vegana
+
+
+### asparagus_default.lua ###
+### asparagus_redo.lua ###
+### chives_default.lua ###
+### chives_redo.lua ###
+### flax_default.lua ###
+### flax_redo.lua ###
+### kohlrabi_default.lua ###
+### kohlrabi_redo.lua ###
+### lettuce_default.lua ###
+### lettuce_redo.lua ###
+### parsley_default.lua ###
+### parsley_redo.lua ###
+### peanut_default.lua ###
+### peanut_redo.lua ###
+### rice_default.lua ###
+### rice_redo.lua ###
+### rosemary_default.lua ###
+### rosemary_redo.lua ###
+### soy_default.lua ###
+### soy_redo.lua ###
+### sunflower_default.lua ###
+### sunflower_redo.lua ###
+
+Seed=
+
+### asparagus_default.lua ###
+### asparagus_redo.lua ###
+### items.lua ###
+
+Asparagus=
+
+### asparagus_default.lua ###
+### chives_default.lua ###
+### flax_default.lua ###
+### kohlrabi_default.lua ###
+### lettuce_default.lua ###
+### parsley_default.lua ###
+### peanut_default.lua ###
+### rice_default.lua ###
+### rosemary_default.lua ###
+### soy_default.lua ###
+### sunflower_default.lua ###
+
+Wild=
+
+### asparagus_redo.lua ###
+### chives_redo.lua ###
+### flax_redo.lua ###
+### kohlrabi_redo.lua ###
+### lettuce_redo.lua ###
+### parsley_redo.lua ###
+### peanut_redo.lua ###
+### rice_redo.lua ###
+### rosemary_redo.lua ###
+### soy_redo.lua ###
+### sunflower_redo.lua ###
+
+Wild =
+
+### chives_default.lua ###
+### chives_redo.lua ###
+### items.lua ###
+
+Chives=
+
+### flax_default.lua ###
+### flax_redo.lua ###
+### items.lua ###
+
+Flax=
+
+### items.lua ###
+
+Blueberry pot=
+Blueberry pot (cooked)=
+Blueberry purree=
+Ciabatta dough=
+Dandelion Honey=
+Dandelion Suds=
+Dandelion Suds (cooking)=
+Flax (raw)=
+Imitation Butter=
+Imitation Cheese=
+Imitation Fish=
+Imitation Meat=
+Imitation poultry=
+Molasses=
+Pizzadough=
+Rice Flour=
+Rice Starch=
+Roasted Kohlrabi=
+Roasted Sunflower Seeds=
+Rosemary Twig=
+Soy Bean=
+Soy Milk=
+Sunflower Seeds=
+Sunflower Seeds Bread=
+Sunflower Seeds Dough=
+Sunflower Seeds Flour=
+Tofu=
+Tofu (raw)=
+Vegan Sushi=
+
+### items.lua ###
+### kohlrabi_default.lua ###
+### kohlrabi_redo.lua ###
+
+Kohlrabi=
+
+### items.lua ###
+### lettuce_default.lua ###
+### lettuce_redo.lua ###
+
+Lettuce=
+
+### items.lua ###
+### parsley_default.lua ###
+### parsley_redo.lua ###
+
+Parsley=
+
+### items.lua ###
+### peanut_default.lua ###
+### peanut_redo.lua ###
+
+Peanut=
+
+### items.lua ###
+### rice_default.lua ###
+### rice_redo.lua ###
+
+Rice=
+
+### items.lua ###
+### sunflower_default.lua ###
+### sunflower_redo.lua ###
+
+Sunflower=
+
+### nodes.lua ###
+
+Asparagus Hollandaise=
+Asparagus Hollandaise (raw)=
+Asparagus Soup=
+Asparagus Soup (raw)=
+Asparagus on Rice=
+Asparagus on Rice (raw)=
+Blueberry Jam=
+Bottle of Flaxseed Oil=
+Bottle of Peanut Oil=
+Bottle of Sunflower Seeds Oil=
+Bowl of Rice=
+Bowl of Rice (raw)=
+Ciabatta Bread=
+Edamame=
+Edamame (raw)=
+Fish on Parsley and Rosemary=
+Fish on Parsley and Rosemary (raw)=
+Fryer=
+Fryer (raw)=
+Glass Bowl=
+Glass Salad Bowl=
+Kohlrabi Soup=
+Kohlrabi Soup (raw)=
+Mushroomlight Glass=
+Peanut Butter=
+Pizza Funghi=
+Pizza Funghi (raw)=
+Pizza Vegana=
+Pizza Vegana (raw)=
+Plate=
+Salad Bowl Hollandaise=
+Salad Oil=
+Sauce Hollandaise=
+Sea Salad Bowl=
+Soy Soup=
+Soy Soup (raw)=
+Tofu on Chives and Rosemary=
+Tofu on Chives and Rosemary (raw)=
+
+### rosemary_default.lua ###
+### rosemary_redo.lua ###
+
+Rosemary=
+
+### soy_default.lua ###
+### soy_redo.lua ###
+
+Soy=

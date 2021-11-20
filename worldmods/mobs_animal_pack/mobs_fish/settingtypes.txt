@@ -1,0 +1,63 @@
+
+# Enable or disable the natural spawning of the clownfish mob
+mobs_fish.clownfish.spawn.enabled (Enable clownfish spawning) bool true
+
+# List of nodenames that the clownfish mob can spawn on top of
+mobs_fish.clownfish.spawn.on (Nodes the clownfish will spawn on) string default:water_source, default:water_flowing, default:river_water_source, default:river_water_flowing
+
+# List of nodenames that the clownfish mob can spawn beside
+mobs_fish.clownfish.spawn.near (Nodes the clownfish will spawn near) string default:sand, default:dirt, group:seaplants, group:seacoral
+
+# Interval in seconds that specifies when the clownfish mob will try to spawn
+mobs_fish.clownfish.spawn.interval (Time between clownfish spawning) int 30 1
+
+# Inverted chance for an clownfish to spawn on a given node
+mobs_fish.clownfish.spawn.chance (Rarity of clownfish spawning) int 100000 1
+
+# The minimum light level the clownfish mob can spawn at
+mobs_fish.clownfish.spawn.min_light (Min. light level for clownfish spawning) int 5 0
+
+# The maximum light level the clownfish mob can spawn at
+mobs_fish.clownfish.spawn.max_light (Max. light level for clownfish spawning) int 20 0
+
+# The minimum height the clownfish mob can spawn at
+mobs_fish.clownfish.spawn.min_height (Min. world height for clownfish spawning) int -50 -31000 31000
+
+# The maximum height the clownfish mob can spawn at
+mobs_fish.clownfish.spawn.max_height (Max. world height for clownfish spawning) int -1 -31000 31000
+
+# Number of clownfish mobs to spawn at one time inside map area
+mobs_fish.clownfish.spawn.active_object_count (Number of clownfish in the same place) int 1 1
+
+
+
+
+# Enable or disable the natural spawning of the tropical mob
+mobs_fish.tropical.spawn.enabled (Enable tropical fish spawning) bool true
+
+# List of nodenames that the tropical mob can spawn on top of
+mobs_fish.tropical.spawn.on (Nodes the tropical fish will spawn on) string default:water_source, default:water_flowing, default:river_water_source, default:river_water_flowing
+
+# List of nodenames that the tropical mob can spawn beside
+mobs_fish.tropical.spawn.near (Nodes the tropical fish will spawn near) string default:sand, default:dirt, group:seaplants, group:seacoral
+
+# Interval in seconds that specifies when the tropical mob will try to spawn
+mobs_fish.tropical.spawn.interval (Time between tropical fish spawning) int 30 1
+
+# Inverted chance for an tropical fish to spawn on a given node
+mobs_fish.tropical.spawn.chance (Rarity of tropical fish spawning) int 100000 1
+
+# The minimum light level the tropical mob can spawn at
+mobs_fish.tropical.spawn.min_light (Min. light level for tropical fish spawning) int 5 0
+
+# The maximum light level the tropical mob can spawn at
+mobs_fish.tropical.spawn.max_light (Max. light level for tropical fish spawning) int 20 0
+
+# The minimum height the tropical mob can spawn at
+mobs_fish.tropical.spawn.min_height (Min. world height for tropical fish spawning) int -50 -31000 31000
+
+# The maximum height the tropical mob can spawn at
+mobs_fish.tropical.spawn.max_height (Max. world height for tropical fish spawning) int -1 -31000 31000
+
+# Number of tropical mobs to spawn at one time inside map area
+mobs_fish.tropical.spawn.active_object_count (Number of tropical fish in the same place) int 1 1

@@ -1,0 +1,5 @@
+#   The policy to use for blueberry blocks. Aliases are registered every time you play so that you will never end up with unknown nodes.
+#   defaultonly: All blueberry blocks will drop default blueberries. This is the default policy.
+#   farmingonly: All blueberry blocks will drop farming blueberries.
+#   both: Two types of blueberry blocks will exist.
+foodblocks_blueberry_policy (Blueberry policy) enum defaultonly defaultonly,farmingonly,both

@@ -1,0 +1,30 @@
+# textdomain: foodblocks
+@1 Block=@1block
+# default
+Apple=Apfel
+# farming_redo
+Blackberry=Brombeer
+Blueberry=Blaubeer
+Beetroot=Rote Beete
+Cabbage=Kohl
+Carrot=Möhre
+Chili=Chili
+Corn=Mais
+Cucumber=Gurken
+Garlic=Knoblauch
+Green Capsicum=Grüner Paprika
+Lettuce=Kopfsalat
+Onion=Zwiebel
+Potato=Kartoffel
+Pineapple=Ananas
+Raspberry=Himbeer
+Red Capsicum=Rote Paprika
+Tomato=Tomaten
+Yellouw Capsicum=Gelber Paprika
+# farming_undo
+Artichoke=Artischocken
+# ethereal
+Banana=Bananen
+Lemon=Zitronen
+Orange=Orange
+Strawberry=Erdbeer

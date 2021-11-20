@@ -1,0 +1,187 @@
+Changelog
+
+------------------------
+
+
+Tue 07 May 2013
+
+ver 0.1
+
+Blacklight based on VanessaE's homedecor glowlights.
+
+as a beginning, just changed names and painted textures purple.
+
+------------------------
+
+Wed 08 May 2013
+
+ver 0.2
+
+added Disco floor
+
+------------------------
+
+Wed 08 May 2013
+
+ver 0.3
+
+changed Blacklight to fluorescent tubes
+
+added Blacklight bulb
+
+added Rainbow fluorescent tubes
+
+added Disco ball
+
+------------------------
+
+Wed 08 May 2013
+
+ver 0.4
+
+changed Blacklight to fluorescent tubes
+
+added Blacklight bulb
+
+added Rainbow fluorescent tubes
+
+------------------------
+
+Wed 08 May 2013
+
+ver 0.5
+
+added LED lights
+
+------------------------
+
+Wed 08 May 2013
+
+ver 0.6
+
+added Rope lights
+
+------------------------
+
+Thur 09 May 2013
+
+ver 0.7
+
+tried to modify Rope lights to bend like mesecon wires
+
+------------------------
+
+Thur 09 May 2013
+
+ver 0.8
+
+changed Rope lights back
+
+------------------------
+
+Thur 09 May 2013
+
+ver 0.9
+
+added beer
+
+------------------------
+
+Thur 09 May 2013
+
+ver 1.0
+
+added glasses:
+
+stein, pilsner, pint, highball, lowball, snifter, shotglass
+
+------------------------
+
+Thur 09 May 2013
+
+ver 1.1
+
+added glasses:
+
+martini, wine_glass, champaigne_glass, saki_cups, punch_bowl
+
+------------------------
+
+Thur 09 May 2013
+
+ver 1.2
+
+added bar tools: can_opener, cutting_board, knife
+
+------------------------
+
+Fri 10 May 2013
+
+ver 1.3
+
+added drinks: red_wine, white_wine, champaigne
+
+------------------------
+
+Fri 10 May 2013
+
+ver 1.4
+
+added drinks: gin, whiskey, saki, vermouth
+
+------------------------
+
+Fri 10 May 2013
+
+ver 1.5
+
+added drinks: Irish cream, brandy, vodka, tequila
+
+------------------------
+
+Fri 10 May 2013
+
+ver 1.6
+
+added drinks: rum, absinthe
+
+------------------------
+
+Fri 31 May 2013
+
+ver 1.7
+
+added beer tap
+
+------------------------
+
+Sat 01 Jun 2013
+
+ver 1.8
+
+added bar stools and towels
+
+------------------------
+
+Sat 01 Jun 2013
+
+ver 1.9
+
+added citrus juicer
+
+------------------------
+
+Wed 7 Feb 2018
+
+ver 2.0
+
+Revisited & tidied up code,
+added closing-bracket notes,
+
+labeled   x1, y1, z1,   x2, y2, z2
+but remember, in Minetest, Y-axis is up.
+Z is depth, and goes into screen.
+
+better Absinthe glasses
+Tap-handles pullable, and noisy
+Can-opener creaks when you wield & use it

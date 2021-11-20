@@ -1,0 +1,228 @@
+
+# Enable or disable the natural spawning of the badger mob
+mobs_doomed.badger.spawn.enabled (Enable badger spawning) bool true
+
+# List of nodenames that the badger mob can spawn on top of
+mobs_doomed.badger.spawn.on (Nodes the badger will spawn on) string default:dirt_with_grass, default:dirt, default:dirt_with_coniferous_litter
+
+# List of nodenames that the badger mob can spawn beside
+mobs_doomed.badger.spawn.near (Nodes the badger will spawn near) string air
+
+# Interval in seconds that specifies when the badger mob will try to spawn
+mobs_doomed.badger.spawn.interval (Time between badger spawning) int 30 1
+
+# Inverted chance for an badger to spawn on a given node
+mobs_doomed.badger.spawn.chance (Rarity of badger spawning) int 300000 1
+
+# The minimum light level the badger mob can spawn at
+mobs_doomed.badger.spawn.min_light (Min. light level for badger spawning) int 0 0
+
+# The maximum light level the badger mob can spawn at
+mobs_doomed.badger.spawn.max_light (Max. light level for badger spawning) int 14 0
+
+# The minimum height the badger mob can spawn at
+mobs_doomed.badger.spawn.min_height (Min. world height for badger spawning) int 0 -31000 31000
+
+# The maximum height the badger mob can spawn at
+mobs_doomed.badger.spawn.max_height (Max. world height for badger spawning) int 5000 -31000 31000
+
+# Number of badger mobs to spawn at one time inside map area
+mobs_doomed.badger.spawn.active_object_count (Number of badgers in the same place) int 2 1
+
+
+
+
+# Enable or disable the natural spawning of the elephant mob
+mobs_doomed.elephant.spawn.enabled (Enable elephant spawning) bool true
+
+# List of nodenames that the elephant mob can spawn on top of
+mobs_doomed.elephant.spawn.on (Nodes the elephant will spawn on) string default:dirt_with_dry_grass, default:desert_sand
+
+# List of nodenames that the elephant mob can spawn beside
+mobs_doomed.elephant.spawn.near (Nodes the elephant will spawn near) string air
+
+# Interval in seconds that specifies when the elephant mob will try to spawn
+mobs_doomed.elephant.spawn.interval (Time between elephant spawning) int 30 1
+
+# Inverted chance for an elephant to spawn on a given node
+mobs_doomed.elephant.spawn.chance (Rarity of elephant spawning) int 300000 1
+
+# The minimum light level the elephant mob can spawn at
+mobs_doomed.elephant.spawn.min_light (Min. light level for elephant spawning) int 10 0
+
+# The maximum light level the elephant mob can spawn at
+mobs_doomed.elephant.spawn.max_light (Max. light level for elephant spawning) int 14 0
+
+# The minimum height the elephant mob can spawn at
+mobs_doomed.elephant.spawn.min_height (Min. world height for elephant spawning) int 0 -31000 31000
+
+# The maximum height the elephant mob can spawn at
+mobs_doomed.elephant.spawn.max_height (Max. world height for elephant spawning) int 5000 -31000 31000
+
+# Number of elephant mobs to spawn at one time inside map area
+mobs_doomed.elephant.spawn.active_object_count (Number of elephants in the same place) int 2 1
+
+
+
+
+# Enable or disable the natural spawning of the fox mob
+mobs_doomed.fox.spawn.enabled (Enable fox spawning) bool true
+
+# List of nodenames that the fox mob can spawn on top of
+mobs_doomed.fox.spawn.on (Nodes the fox will spawn on) string default:dirt_with_grass, default:dirt, default:dirt_with_coniferous_litter, default:dirt_with_snow
+
+# List of nodenames that the fox mob can spawn beside
+mobs_doomed.fox.spawn.near (Nodes the fox will spawn near) string air
+
+# Interval in seconds that specifies when the fox mob will try to spawn
+mobs_doomed.fox.spawn.interval (Time between fox spawning) int 30 1
+
+# Inverted chance for an fox to spawn on a given node
+mobs_doomed.fox.spawn.chance (Rarity of fox spawning) int 300000 1
+
+# The minimum light level the fox mob can spawn at
+mobs_doomed.fox.spawn.min_light (Min. light level for fox spawning) int 0 0
+
+# The maximum light level the fox mob can spawn at
+mobs_doomed.fox.spawn.max_light (Max. light level for fox spawning) int 14 0
+
+# The minimum height the fox mob can spawn at
+mobs_doomed.fox.spawn.min_height (Min. world height for fox spawning) int 0 -31000 31000
+
+# The maximum height the fox mob can spawn at
+mobs_doomed.fox.spawn.max_height (Max. world height for fox spawning) int 5000 -31000 31000
+
+# Number of fox mobs to spawn at one time inside map area
+mobs_doomed.fox.spawn.active_object_count (Number of foxes in the same place) int 2 1
+
+
+
+
+# Enable or disable the natural spawning of the hedgehog mob
+mobs_doomed.hedgehog.spawn.enabled (Enable hedgehog spawning) bool true
+
+# List of nodenames that the hedgehog mob can spawn on top of
+mobs_doomed.hedgehog.spawn.on (Nodes the hedgehog will spawn on) string default:dirt_with_grass, default:dirt_with_coniferous_litter
+
+# List of nodenames that the hedgehog mob can spawn beside
+mobs_doomed.hedgehog.spawn.near (Nodes the hedgehog will spawn near) string air
+
+# Interval in seconds that specifies when the hedgehog mob will try to spawn
+mobs_doomed.hedgehog.spawn.interval (Time between hedgehog spawning) int 30 1
+
+# Inverted chance for an hedgehog to spawn on a given node
+mobs_doomed.hedgehog.spawn.chance (Rarity of hedgehog spawning) int 300000 1
+
+# The minimum light level the hedgehog mob can spawn at
+mobs_doomed.hedgehog.spawn.min_light (Min. light level for hedgehog spawning) int 0 0
+
+# The maximum light level the hedgehog mob can spawn at
+mobs_doomed.hedgehog.spawn.max_light (Max. light level for hedgehog spawning) int 14 0
+
+# The minimum height the hedgehog mob can spawn at
+mobs_doomed.hedgehog.spawn.min_height (Min. world height for hedgehog spawning) int 0 -31000 31000
+
+# The maximum height the hedgehog mob can spawn at
+mobs_doomed.hedgehog.spawn.max_height (Max. world height for hedgehog spawning) int 5000 -31000 31000
+
+# Number of hedgehog mobs to spawn at one time inside map area
+mobs_doomed.hedgehog.spawn.active_object_count (Number of hedgehogs in the same place) int 2 1
+
+
+
+
+# Enable or disable the natural spawning of the owl mob
+mobs_doomed.owl.spawn.enabled (Enable owl spawning) bool true
+
+# List of nodenames that the owl mob can spawn on top of
+mobs_doomed.owl.spawn.on (Nodes the owl will spawn on) string group:leaves
+
+# List of nodenames that the owl mob can spawn beside
+mobs_doomed.owl.spawn.near (Nodes the owl will spawn near) string air
+
+# Interval in seconds that specifies when the owl mob will try to spawn
+mobs_doomed.owl.spawn.interval (Time between owl spawning) int 30 1
+
+# Inverted chance for an owl to spawn on a given node
+mobs_doomed.owl.spawn.chance (Rarity of owl spawning) int 300000 1
+
+# The minimum light level the owl mob can spawn at
+mobs_doomed.owl.spawn.min_light (Min. light level for owl spawning) int 0 0
+
+# The maximum light level the owl mob can spawn at
+mobs_doomed.owl.spawn.max_light (Max. light level for owl spawning) int 14 0
+
+# The minimum height the owl mob can spawn at
+mobs_doomed.owl.spawn.min_height (Min. world height for owl spawning) int 0 -31000 31000
+
+# The maximum height the owl mob can spawn at
+mobs_doomed.owl.spawn.max_height (Max. world height for owl spawning) int 5000 -31000 31000
+
+# Number of owl mobs to spawn at one time inside map area
+mobs_doomed.owl.spawn.active_object_count (Number of owls in the same place) int 2 1
+
+
+
+
+# Enable or disable the natural spawning of the tortoise mob
+mobs_doomed.tortoise.spawn.enabled (Enable tortoise spawning) bool true
+
+# List of nodenames that the tortoise mob can spawn on top of
+mobs_doomed.tortoise.spawn.on (Nodes the tortoise will spawn on) string default:clay, group:sand
+
+# List of nodenames that the tortoise mob can spawn beside
+mobs_doomed.tortoise.spawn.near (Nodes the tortoise will spawn near) string air
+
+# Interval in seconds that specifies when the tortoise mob will try to spawn
+mobs_doomed.tortoise.spawn.interval (Time between tortoise spawning) int 30 1
+
+# Inverted chance for an tortoise to spawn on a given node
+mobs_doomed.tortoise.spawn.chance (Rarity of tortoise spawning) int 300000 1
+
+# The minimum light level the tortoise mob can spawn at
+mobs_doomed.tortoise.spawn.min_light (Min. light level for tortoise spawning) int 10 0
+
+# The maximum light level the tortoise mob can spawn at
+mobs_doomed.tortoise.spawn.max_light (Max. light level for tortoise spawning) int 14 0
+
+# The minimum height the tortoise mob can spawn at
+mobs_doomed.tortoise.spawn.min_height (Min. world height for tortoise spawning) int 0 -31000 31000
+
+# The maximum height the tortoise mob can spawn at
+mobs_doomed.tortoise.spawn.max_height (Max. world height for tortoise spawning) int 5000 -31000 31000
+
+# Number of tortoise mobs to spawn at one time inside map area
+mobs_doomed.tortoise.spawn.active_object_count (Number of tortoises in the same place) int 2 1
+
+
+
+
+# Enable or disable the natural spawning of the whale mob
+mobs_doomed.whale.spawn.enabled (Enable whale spawning) bool true
+
+# List of nodenames that the whale mob can spawn on top of
+mobs_doomed.whale.spawn.on (Nodes the whale will spawn on) string default:water_source
+
+# List of nodenames that the whale mob can spawn beside
+mobs_doomed.whale.spawn.near (Nodes the whale will spawn near) string default:water_source
+
+# Interval in seconds that specifies when the whale mob will try to spawn
+mobs_doomed.whale.spawn.interval (Time between whale spawning) int 30 1
+
+# Inverted chance for an whale to spawn on a given node
+mobs_doomed.whale.spawn.chance (Rarity of whale spawning) int 3000000 1
+
+# The minimum light level the whale mob can spawn at
+mobs_doomed.whale.spawn.min_light (Min. light level for whale spawning) int 0 0
+
+# The maximum light level the whale mob can spawn at
+mobs_doomed.whale.spawn.max_light (Max. light level for whale spawning) int 14 0
+
+# The minimum height the whale mob can spawn at
+mobs_doomed.whale.spawn.min_height (Min. world height for whale spawning) int -40 -31000 31000
+
+# The maximum height the whale mob can spawn at
+mobs_doomed.whale.spawn.max_height (Max. world height for whale spawning) int 0 -31000 31000
+
+# Number of whale mobs to spawn at one time inside map area
+mobs_doomed.whale.spawn.active_object_count (Number of whales in the same place) int 1 1

@@ -1,0 +1,1 @@
+Simple mod that adds some visual detail to bakedclay nodes.

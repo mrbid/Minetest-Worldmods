@@ -1,0 +1,30 @@
+
+# Enable or disable the natural spawning of the bat mob
+mobs_bat.bat.spawn.enabled (Enable bat spawning) bool true
+
+# List of nodenames that the bat mob can spawn on top of
+mobs_bat.bat.spawn.on (Nodes the bat will spawn on) string air
+
+# List of nodenames that the bat mob can spawn beside
+mobs_bat.bat.spawn.near (Nodes the bat will spawn near) string default:stone
+
+# Interval in seconds that specifies when the bat mob will try to spawn
+mobs_bat.bat.spawn.interval (Time between bat spawning) int 30 1
+
+# Inverted chance for an bat to spawn on a given node
+mobs_bat.bat.spawn.chance (Rarity of bat spawning) int 300000 1
+
+# The minimum light level the bat mob can spawn at
+mobs_bat.bat.spawn.min_light (Min. light level for bat spawning) int 0 0
+
+# The maximum light level the bat mob can spawn at
+mobs_bat.bat.spawn.max_light (Max. light level for bat spawning) int 6 0
+
+# The minimum height the bat mob can spawn at
+mobs_bat.bat.spawn.min_height (Min. world height for bat spawning) int -25000 -31000 31000
+
+# The maximum height the bat mob can spawn at
+mobs_bat.bat.spawn.max_height (Max. world height for bat spawning) int 5000 -31000 31000
+
+# Number of bat mobs to spawn at one time inside map area
+mobs_bat.bat.spawn.active_object_count (Number of bats in the same place) int 2 1

@@ -1,0 +1,94 @@
+
+# Enable or disable the natural spawning of the gull mob
+mobs_birds.gull.spawn.enabled (Enable gull spawning) bool true
+
+# List of nodenames that the gull mob can spawn on top of
+mobs_birds.gull.spawn.on (Nodes the gull will spawn on) string air
+
+# List of nodenames that the gull mob can spawn beside
+mobs_birds.gull.spawn.near (Nodes the gull will spawn near) string default:water_source,default:water_flowing
+
+# Interval in seconds that specifies when the gull mob will try to spawn
+mobs_birds.gull.spawn.interval (Time between gull spawning) int 30 1
+
+# Inverted chance for an gull to spawn on a given node
+mobs_birds.gull.spawn.chance (Rarity of gull spawning) int 240000 1
+
+# The minimum light level the gull mob can spawn at
+mobs_birds.gull.spawn.min_light (Min. light level for gull spawning) int 5 0
+
+# The maximum light level the gull mob can spawn at
+mobs_birds.gull.spawn.max_light (Max. light level for gull spawning) int 20 0
+
+# The minimum height the gull mob can spawn at
+mobs_birds.gull.spawn.min_height (Min. world height for gull spawning) int 0 -31000 31000
+
+# The maximum height the gull mob can spawn at
+mobs_birds.gull.spawn.max_height (Max. world height for gull spawning) int 5000 -31000 31000
+
+# Number of gull mobs to spawn at one time inside map area
+mobs_birds.gull.spawn.active_object_count (Number of gulls in the same place) int 1 1
+
+
+
+# Enable or disable the natural spawning of the bird_lg mob
+mobs_birds.bird_lg.spawn.enabled (Enable large bird spawning) bool true
+
+# List of nodenames that the bird_lg mob can spawn on top of
+mobs_birds.bird_lg.spawn.on (Nodes the large bird will spawn on) string air
+
+# List of nodenames that the bird_lg mob can spawn beside
+mobs_birds.bird_lg.spawn.near (Nodes the large bird will spawn near) string default:leaves,default:pine_needles,default:jungleleaves,default:cactus
+
+# Interval in seconds that specifies when the bird_lg mob will try to spawn
+mobs_birds.bird_lg.spawn.interval (Time between large bird spawning) int 30 1
+
+# Inverted chance for an large bird to spawn on a given node
+mobs_birds.bird_lg.spawn.chance (Rarity of large bird spawning) int 360000 1
+
+# The minimum light level the bird_lg mob can spawn at
+mobs_birds.bird_lg.spawn.min_light (Min. light level for large bird spawning) int 5 0
+
+# The maximum light level the bird_lg mob can spawn at
+mobs_birds.bird_lg.spawn.max_light (Max. light level for large bird spawning) int 20 0
+
+# The minimum height the bird_lg mob can spawn at
+mobs_birds.bird_lg.spawn.min_height (Min. world height for large bird spawning) int 0 -31000 31000
+
+# The maximum height the bird_lg mob can spawn at
+mobs_birds.bird_lg.spawn.max_height (Max. world height for large bird spawning) int 5000 -31000 31000
+
+# Number of bird_lg mobs to spawn at one time inside map area
+mobs_birds.bird_lg.spawn.active_object_count (Number of large birds in the same place) int 1 1
+
+
+
+# Enable or disable the natural spawning of the bird_sm mob
+mobs_birds.bird_sm.spawn.enabled (Enable small bird spawning) bool true
+
+# List of nodenames that the bird_sm mob can spawn on top of
+mobs_birds.bird_sm.spawn.on (Nodes the small bird will spawn on) string air
+
+# List of nodenames that the bird_sm mob can spawn beside
+mobs_birds.bird_sm.spawn.near (Nodes the small bird will spawn near) string default:leaves,default:pine_needles,default:jungleleaves,default:cactus
+
+# Interval in seconds that specifies when the bird_sm mob will try to spawn
+mobs_birds.bird_sm.spawn.interval (Time between small bird spawning) int 30 1
+
+# Inverted chance for an small bird to spawn on a given node
+mobs_birds.bird_sm.spawn.chance (Rarity of small bird spawning) int 360000 1
+
+# The minimum light level the bird_sm mob can spawn at
+mobs_birds.bird_sm.spawn.min_light (Min. light level for small bird spawning) int 5 0
+
+# The maximum light level the bird_sm mob can spawn at
+mobs_birds.bird_sm.spawn.max_light (Max. light level for small bird spawning) int 20 0
+
+# The minimum height the bird_sm mob can spawn at
+mobs_birds.bird_sm.spawn.min_height (Min. world height for small bird spawning) int 0 -31000 31000
+
+# The maximum height the bird_sm mob can spawn at
+mobs_birds.bird_sm.spawn.max_height (Max. world height for small bird spawning) int 5000 -31000 31000
+
+# Number of bird_sm mobs to spawn at one time inside map area
+mobs_birds.bird_sm.spawn.active_object_count (Number of small birds in the same place) int 1 1

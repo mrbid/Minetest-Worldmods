@@ -1,0 +1,2 @@
+ADD: Colored glass blocks.
+NOT ADD: Full-blown palette-colored glass blocks

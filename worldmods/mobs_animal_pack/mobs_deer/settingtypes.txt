@@ -1,0 +1,30 @@
+
+# Enable or disable the natural spawning of the deer mob
+mobs_deer.deer.spawn.enabled (Enable deer spawning) bool true
+
+# List of nodenames that the deer mob can spawn on top of
+mobs_deer.deer.spawn.on (Nodes the deer will spawn on) string default:dirt_with_grass, default:dirt_with_coniferous_litter, ethereal:green_dirt_top
+
+# List of nodenames that the deer mob can spawn beside
+mobs_deer.deer.spawn.near (Nodes the deer will spawn near) string air
+
+# Interval in seconds that specifies when the deer mob will try to spawn
+mobs_deer.deer.spawn.interval (Time between deer spawning) int 30 1
+
+# Inverted chance for an deer to spawn on a given node
+mobs_deer.deer.spawn.chance (Rarity of deer spawning) int 300000 1
+
+# The minimum light level the deer mob can spawn at
+mobs_deer.deer.spawn.min_light (Min. light level for deer spawning) int 10 0
+
+# The maximum light level the deer mob can spawn at
+mobs_deer.deer.spawn.max_light (Max. light level for deer spawning) int 15 0
+
+# The minimum height the deer mob can spawn at
+mobs_deer.deer.spawn.min_height (Min. world height for deer spawning) int 1 -31000 31000
+
+# The maximum height the deer mob can spawn at
+mobs_deer.deer.spawn.max_height (Max. world height for deer spawning) int 5000 -31000 31000
+
+# Number of deer mobs to spawn at one time inside map area
+mobs_deer.deer.spawn.active_object_count (Number of deers in the same place) int 1 1

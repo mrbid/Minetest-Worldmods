@@ -1,0 +1,11 @@
+Textures:
+CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+Attribution: askotos and VanessaE
+
+Code:
+License: LGPL v2.1 (https://www.gnu.org/licenses/lgpl-2.1.html)
+By askotos (aka aristotle, a builder on the Red Cat Creative Server)
+
+History:
+The concept and the original images come from VanessaE's
+dreambuilder_mp_extras mod deployed as part of the Dreambuilder modpack.

@@ -1,0 +1,30 @@
+
+# Enable or disable the natural spawning of the rat mob
+mobs_better_rat.rat.spawn.enabled (Enable rat spawning) bool true
+
+# List of nodenames that the rat mob can spawn on top of
+mobs_better_rat.rat.spawn.on (Nodes the rat will spawn on) string default:stone
+
+# List of nodenames that the rat mob can spawn beside
+mobs_better_rat.rat.spawn.near (Nodes the rat will spawn near) string air
+
+# Interval in seconds that specifies when the rat mob will try to spawn
+mobs_better_rat.rat.spawn.interval (Time between rat spawning) int 30 1
+
+# Inverted chance for an rat to spawn on a given node
+mobs_better_rat.rat.spawn.chance (Rarity of rat spawning) int 300000 1
+
+# The minimum light level the rat mob can spawn at
+mobs_better_rat.rat.spawn.min_light (Min. light level for rat spawning) int 0 0
+
+# The maximum light level the rat mob can spawn at
+mobs_better_rat.rat.spawn.max_light (Max. light level for rat spawning) int 14 0
+
+# The minimum height the rat mob can spawn at
+mobs_better_rat.rat.spawn.min_height (Min. world height for rat spawning) int -25000 -31000 31000
+
+# The maximum height the rat mob can spawn at
+mobs_better_rat.rat.spawn.max_height (Max. world height for rat spawning) int 5000 -31000 31000
+
+# Number of rat mobs to spawn at one time inside map area
+mobs_better_rat.rat.spawn.active_object_count (Number of rats in the same place) int 2 1

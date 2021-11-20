@@ -1,0 +1,11 @@
+
+bakedclay_block.png
+bakedclay_block_slab.png
+bakedclay_brick.png
+
+
+Author of textures: Napiophelios
+License of textures: CC BY-SA 3.0
+
+Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+http://creativecommons.org/licenses/by-sa/3.0/

@@ -1,0 +1,30 @@
+
+# Enable or disable the natural spawning of the walrus mob
+mobs_walrus.walrus.spawn.enabled (Enable walrus spawning) bool true
+
+# List of nodenames that the walrus mob can spawn on top of
+mobs_walrus.walrus.spawn.on (Nodes the walrus will spawn on) string default:dirt_with_snow, default:snowblock, default:ice
+
+# List of nodenames that the walrus mob can spawn beside
+mobs_walrus.walrus.spawn.near (Nodes the walrus will spawn near) string air
+
+# Interval in seconds that specifies when the walrus mob will try to spawn
+mobs_walrus.walrus.spawn.interval (Time between walrus spawning) int 30 1
+
+# Inverted chance for an walrus to spawn on a given node
+mobs_walrus.walrus.spawn.chance (Rarity of walrus spawning) int 300000 1
+
+# The minimum light level the walrus mob can spawn at
+mobs_walrus.walrus.spawn.min_light (Min. light level for walrus spawning) int 0 0
+
+# The maximum light level the walrus mob can spawn at
+mobs_walrus.walrus.spawn.max_light (Max. light level for walrus spawning) int 20 0
+
+# The minimum height the walrus mob can spawn at
+mobs_walrus.walrus.spawn.min_height (Min. world height for walrus spawning) int -31000 -31000 31000
+
+# The maximum height the walrus mob can spawn at
+mobs_walrus.walrus.spawn.max_height (Max. world height for walrus spawning) int 5000 -31000 31000
+
+# Number of walrus mobs to spawn at one time inside map area
+mobs_walrus.walrus.spawn.active_object_count (Number of walruses in the same place) int 1 1

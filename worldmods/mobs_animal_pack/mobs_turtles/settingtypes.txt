@@ -1,0 +1,63 @@
+
+# Enable or disable the natural spawning of the turtle mob
+mobs_turtles.turtle.spawn.enabled (Enable turtle spawning) bool true
+
+# List of nodenames that the turtle mob can spawn on top of
+mobs_turtles.turtle.spawn.on (Nodes the turtle will spawn on) string default:dirt_with_grass, default:jungle_grass, default:sand, default:desert_sand
+
+# List of nodenames that the turtle mob can spawn beside
+mobs_turtles.turtle.spawn.near (Nodes the turtle will spawn near) string default:dirt_with_grass, default:jungle_grass, default:sand, default:desert_sand, default:papyrus, default:cactus, dryplants:juncus, dryplants:reedmace
+
+# Interval in seconds that specifies when the turtle mob will try to spawn
+mobs_turtles.turtle.spawn.interval (Time between turtle spawning) int 30 1
+
+# Inverted chance for an turtle to spawn on a given node
+mobs_turtles.turtle.spawn.chance (Rarity of turtle spawning) int 300000 1
+
+# The minimum light level the turtle mob can spawn at
+mobs_turtles.turtle.spawn.min_light (Min. light level for turtle spawning) int 5 0
+
+# The maximum light level the turtle mob can spawn at
+mobs_turtles.turtle.spawn.max_light (Max. light level for turtle spawning) int 20 0
+
+# The minimum height the turtle mob can spawn at
+mobs_turtles.turtle.spawn.min_height (Min. world height for turtle spawning) int 1 -31000 31000
+
+# The maximum height the turtle mob can spawn at
+mobs_turtles.turtle.spawn.max_height (Max. world height for turtle spawning) int 5000 -31000 31000
+
+# Number of turtle mobs to spawn at one time inside map area
+mobs_turtles.turtle.spawn.active_object_count (Number of turtles in the same place) int 1 1
+
+
+
+
+# Enable or disable the natural spawning of the seaturtle mob
+mobs_turtles.seaturtle.spawn.enabled (Enable seaturtle spawning) bool true
+
+# List of nodenames that the seaturtle mob can spawn on top of
+mobs_turtles.seaturtle.spawn.on (Nodes the seaturtle will spawn on) string default:water_flowing, default:water_source
+
+# List of nodenames that the seaturtle mob can spawn beside
+mobs_turtles.seaturtle.spawn.near (Nodes the seaturtle will spawn near) string default:water_flowing, default:water_source, group:seaplants, seawrecks:woodship, seawrecks:uboot
+
+# Interval in seconds that specifies when the seaturtle mob will try to spawn
+mobs_turtles.seaturtle.spawn.interval (Time between seaturtle spawning) int 30 1
+
+# Inverted chance for an seaturtle to spawn on a given node
+mobs_turtles.seaturtle.spawn.chance (Rarity of seaturtle spawning) int 300000 1
+
+# The minimum light level the seaturtle mob can spawn at
+mobs_turtles.seaturtle.spawn.min_light (Min. light level for seaturtle spawning) int 5 0
+
+# The maximum light level the seaturtle mob can spawn at
+mobs_turtles.seaturtle.spawn.max_light (Max. light level for seaturtle spawning) int 20 0
+
+# The minimum height the seaturtle mob can spawn at
+mobs_turtles.seaturtle.spawn.min_height (Min. world height for seaturtle spawning) int -50 -31000 31000
+
+# The maximum height the seaturtle mob can spawn at
+mobs_turtles.seaturtle.spawn.max_height (Max. world height for seaturtle spawning) int 0 -31000 31000
+
+# Number of seaturtle mobs to spawn at one time inside map area
+mobs_turtles.seaturtle.spawn.active_object_count (Number of seaturtles in the same place) int 1 1
