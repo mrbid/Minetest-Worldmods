@@ -10,4 +10,4 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - fixes to all bugs in [technic_tweak](https://forum.minetest.net/viewtopic.php?t=14510)
 - additions to technic_chests _(such as titanium vacuuming chest and amethyst mining chest)_
 - merging of [space_travel](https://forum.minetest.net/viewtopic.php?t=23455) with [other_worlds](https://forum.minetest.net/viewtopic.php?t=16015) to create a more diverse set of asteroid layers, the vanilla space_travel mod produced too much lag to run online as-is.
-- modification of all technic_armor to remove specular highlights
+- modification of all technic_armor skins to remove specular highlights
