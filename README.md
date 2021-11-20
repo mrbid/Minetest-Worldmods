@@ -14,5 +14,5 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - some new admin commands in `/exploration` such as a jailing system for disruptive players.
 
 ## Notes
-To load all these mods at the same time you will need to modify your minetest server:
+To load all these mods at the same time you will need to modify your minetest server:<br>
 `<Test_User> src/mapnode.h:45, change "#define MAX_REGISTERED_CONTENT *" to "#define MAX_REGISTERED_CONTENT 0xf800U"`
