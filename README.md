@@ -14,6 +14,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - some new admin commands in `/exploration` such as a jailing system for disruptive players.
 - removal of technic polyfuse and machine protection _(allowing machines to be shared, upgrades are protected however)_
 - replaced technic cnc with [Improved Technic CNC](https://content.minetest.net/packages/Emojiminetest/technic_cnc_improve/) and made some improvements upon its supported nodelist.
+- significant amount of rework on commodity markets to ensure listed items display a concise, pretty, and still informative item string.
 
 ## Notes
 To load all these mods at the same time you will need to modify your minetest server:<br>
