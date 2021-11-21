@@ -19,7 +19,7 @@ minetest.register_node("edit:delete",{
 	groups = {snappy = 2, oddly_breakable_by_hand = 3, not_in_creative_inventory=1},
 	tiles = {"edit_delete.png"},
 	on_place = function(itemstack, placer, pointed_thing)
-		if placer ~= nil and placer:get_player_name() ~= nil and editmod_clipboard[placer:get_player_name()].deleteBlock1Pos then
+		if pointed_thing ~= nil and itemstack ~= nil and placer ~= nil and placer:get_player_name() ~= nil and editmod_clipboard[placer:get_player_name()].deleteBlock1Pos then
 			local p1 = editmod_clipboard[placer:get_player_name()].deleteBlock1Pos
 			local p2 = pointed_thing.above
 
@@ -174,7 +174,7 @@ minetest.register_node("edit:fill",{
 	inventory_image = "edit_fill.png",
 	groups = {snappy = 2, oddly_breakable_by_hand = 3, not_in_creative_inventory=1},
 	on_place = function(itemstack, placer, pointed_thing)
-		if placer ~= nil and placer:get_player_name() ~= nil and editmod_clipboard[placer:get_player_name()].fillBlock1Pos then
+		if pointed_thing ~= nil and itemstack ~= nil and placer ~= nil and placer:get_player_name() ~= nil and editmod_clipboard[placer:get_player_name()].fillBlock1Pos then
 			minetest.set_node(pointed_thing.above, {name = "edit:fill"})
 			editmod_clipboard[placer:get_player_name()].fillBlock2Pos = pointed_thing.above
 
