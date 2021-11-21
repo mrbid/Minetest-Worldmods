@@ -22,4 +22,5 @@ To load all these mods at the same time you will need to modify your minetest se
 
 Server is compiled with -Ofast rather than -O3. This is adjusted in the makefile.
 
-### Most of these mods have been modified from their original state to create a harmony between them all, hence, updating mods in this pack may break things, create crafting collisions, etc. Beware.
+## Warning
+Most of these mods have been modified from their original state to create a harmony between them all, hence, updating mods in this pack may break things, create crafting collisions, etc. Beware.
