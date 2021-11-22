@@ -10,6 +10,24 @@ local jailradius = 10;
 
 local freepos = {x=-900, y=24, z=-1189};
 
+
+-- https://forum.minetest.net/viewtopic.php?t=18808
+local LAVA_PLACE_DEPTH = -50
+function allow_place_lava( pos, player )
+        if pos.y > LAVA_PLACE_DEPTH and not minetest.check_player_privs( player, "lava" ) then
+                minetest.chat_send_player( player:get_player_name( ), "You are not allowed to place lava above " .. LAVA_PLACE_DEPTH .. "!" )
+                minetest.log( "action", player:get_player_name( ) .. " tried to place default:lava_source above " .. LAVA_PLACE_DEPTH )
+                return false
+        end
+        return true
+end
+minetest.override_item( "bucket:bucket_lava", {
+        allow_place = allow_place_lava
+} )
+minetest.override_item( "default:lava_source", {
+        allow_place = allow_place_lava
+} )
+
 -- https://forum.minetest.net/viewtopic.php?t=16862
 minetest.register_chatcommand("whatisthis", {
 	func=function(name)
@@ -324,7 +342,5 @@ minetest.register_on_chat_message(function(name, message)
 	file:write(text.."\n")
 	file:close()
 end)
-
-
 
 
