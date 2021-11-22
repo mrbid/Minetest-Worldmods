@@ -10,6 +10,11 @@ local jailradius = 10;
 
 local freepos = {x=-900, y=24, z=-1189};
 
+-- spawn command
+spawn_command = {}
+spawn_command.pos = {-900,24,-1189}
+
+
 
 -- https://forum.minetest.net/viewtopic.php?t=18808
 local LAVA_PLACE_DEPTH = -50
@@ -51,10 +56,6 @@ minetest.register_chatcommand("grief_check", {
         )
     end
 })
-
--- spawn command
-spawn_command = {}
-spawn_command.pos = {-900,24,-1189}
 
 function writeLog(text)
 	if string.len(text) > 256 then
