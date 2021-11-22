@@ -18,6 +18,7 @@ spawn_command.pos = {-900,24,-1189}
 
 -- https://forum.minetest.net/viewtopic.php?t=18808
 local LAVA_PLACE_DEPTH = -50
+minetest.register_privilege("lava", "Allows placing lava")
 function allow_place_lava( pos, player )
         if pos.y > LAVA_PLACE_DEPTH and not minetest.check_player_privs( player, "lava" ) then
                 minetest.chat_send_player( player:get_player_name( ), "You are not allowed to place lava above " .. LAVA_PLACE_DEPTH .. "!" )
