@@ -10,6 +10,13 @@ local jailradius = 10;
 
 local freepos = {x=-900, y=24, z=-1189};
 
+-- https://forum.minetest.net/viewtopic.php?t=16862
+minetest.register_chatcommand("whatisthis", {
+	func=function(name)
+	return true,"You are holding:"..
+	minetest.get_player_by_name(name):get_wielded_item():get_name()
+	end,
+})
 
 -- bls rollback check
 minetest.register_privilege("rollback_check", "Allows use of /rollback_check")
