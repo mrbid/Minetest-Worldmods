@@ -11,7 +11,7 @@ local jailradius = 10;
 local freepos = {x=-900, y=24, z=-1189};
 
 
--- bls rollbeck check
+-- bls rollback check
 minetest.register_privilege("rollback_check", "Allows use of /rollback_check")
 minetest.override_chatcommand("rollback_check", {
     privs = {rollback_check=true}
