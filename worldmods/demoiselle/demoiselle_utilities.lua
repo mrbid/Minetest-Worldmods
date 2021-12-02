@@ -316,11 +316,9 @@ end
 function demoiselle.flightstep(self)
     local velocity = self.object:get_velocity()
     --hack to avoid glitches
-    self.object:set_velocity(velocity)
     local curr_pos = self.object:get_pos()
-    self.object:set_pos(curr_pos)
 
-    demoiselle.last_time_command = demoiselle.last_time_command + self.dtime
+    self._last_time_command = self._last_time_command + self.dtime
     local player = nil
     if self.driver_name then player = minetest.get_player_by_name(self.driver_name) end
 
@@ -329,8 +327,8 @@ function demoiselle.flightstep(self)
         ----------------------------------
         -- shows the hud for the player
         ----------------------------------
-        if ctrl.up == true and ctrl.down == true and demoiselle.last_time_command >= 1 then
-            demoiselle.last_time_command = 0
+        if ctrl.up == true and ctrl.down == true and self._last_time_command >= 1 then
+            self._last_time_command = 0
             if self._show_hud == true then
                 self._show_hud = false
             else
@@ -413,7 +411,7 @@ function demoiselle.flightstep(self)
     end
     
     -- new yaw
-	if math.abs(self._rudder_angle)>5 then
+	if math.abs(self._rudder_angle)>1 then
         local turn_rate = math.rad(14)
         local yaw_turn = self.dtime * math.rad(self._rudder_angle) * turn_rate *
                 demoiselle.sign(longit_speed) * math.abs(longit_speed/2)
@@ -472,7 +470,7 @@ function demoiselle.flightstep(self)
     if accel == nil then accel = {x=0,y=0,z=0} end
 
     --lift calculation
-    accel.y = accel_y --accel.y + mobkit.gravity --accel_y
+    accel.y = accel_y --accel.y
 
     --lets apply some bob in water
 	if self.isinliquid then
@@ -487,11 +485,14 @@ function demoiselle.flightstep(self)
 
     local new_accel = accel
     if longit_speed > 1.5 then
+        
         new_accel = demoiselle.getLiftAccel(self, velocity, new_accel, longit_speed, roll, curr_pos)
     end
     -- end lift
 
     if stop ~= true then
+        self.object:set_pos(curr_pos)
+        self.object:set_velocity(velocity)
         self._last_accell = new_accel
         self.object:set_acceleration(new_accel)
     elseif stop == true then
