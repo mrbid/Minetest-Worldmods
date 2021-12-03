@@ -1,6 +1,8 @@
 Improved formatting of item names.
 - James William Fletcher (https://github.com/mrbid/Minetest-Worldmods)
 
+---
+
 This mod implements marketplaces where players can post buy and sell offers for various items, allowing for organic market forces to determine the relative values of the resources in a world.
 
 The basic market interface is the same across all markets and market types, but this mod allows for a variety of different ways that markets can be configured to support different playstyles. Markets can have restrictions on what they will allow to be bought and sold, different types of "currency", and can share a common inventory across multiple locations or can be localized to just one spot at the discretion of the server owner.
