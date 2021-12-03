@@ -11,6 +11,11 @@ Each layer contains:
 
 Default layers are Space and Red Sky, but anyone familiar with editing mods should be able to easily adjust these or create different/ additional layers.
 
+Modifications
+--------
+
+This has been modified to use space_travel nodes to create an expanded range of asteroids.
+- James William Fletcher (https://github.com/mrbid/Minetest-Worldmods)
 
 Settings
 --------
