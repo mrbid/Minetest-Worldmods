@@ -22,3 +22,5 @@ sdzen (Elise Staudter) modified by VanessaE (CC BY-SA 3.0):
 RealBadAngel: (WTFPL)
   * Everything else.
 
+James William Fletcher (https://github.com/mrbid/Minetest-Worldmods)
+  * Marble, Titanium, Amethyst, and Diamond chests.
