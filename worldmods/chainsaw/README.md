@@ -1,3 +1,5 @@
+https://notabug.org/TenPlus2/standalone_chainsaw_redo
+
 Chainsaw from technic mod but takes damage rather than charge, requires basic_materials, biofuel and moreores to craft.
 
 Modified to add two types of chainsaw:
