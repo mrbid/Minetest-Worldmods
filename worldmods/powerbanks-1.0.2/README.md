@@ -1,5 +1,10 @@
 # Powerbanks [powerbanks]
 
+Added Powerbank MK4 (Zero-Point Energy) place on floor and dig it to fully charge.
+- James William Fletcher (https://github.com/mrbid/Minetest-Worldmods)
+
+---
+
 [![Build](https://github.com/OgelGames/powerbanks/workflows/Build/badge.svg)](https://github.com/OgelGames/powerbanks/actions)
 [![License](https://img.shields.io/badge/License-MIT%20and%20CC%20BY--SA%204.0-green.svg)](LICENSE.md)
 [![Feedback](https://img.shields.io/badge/Feedback-Minetest%20Forum-lightgrey.svg)](https://forum.minetest.net/viewtopic.php?t=23791)
