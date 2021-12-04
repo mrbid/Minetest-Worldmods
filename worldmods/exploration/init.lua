@@ -206,8 +206,7 @@ minetest.register_chatcommand("jail",
 	func = function (name, param)
 		if name ~= nil and name ~= "" and param ~= nil and param ~= "" then
 			local player = minetest.get_player_by_name(param);
-			local executioner = minetest.get_player_by_name(name)
-			if player ~= nil and executioner ~= nil then
+			if player ~= nil then
 				player:set_pos(jailpos);
 
 				local privs = minetest.get_player_privs(param);
@@ -216,12 +215,12 @@ minetest.register_chatcommand("jail",
 
 				local hp = sethome.get(param);
 				if hp ~= nil then
-					minetest.chat_send_player(executioner, param .. " home1 is at " .. hp.x .. "," .. hp.y .. "," .. hp.z);
+					minetest.chat_send_player(name, param .. " home1 is at " .. hp.x .. "," .. hp.y .. "," .. hp.z);
 				end
 
 				local hp2 = unified_inventory.home_pos[param];
 				if hp2 ~= nil then
-					minetest.chat_send_player(executioner, param .. " home2 is at " .. hp2.x .. "," .. hp2.y .. "," .. hp2.z);
+					minetest.chat_send_player(name, param .. " home2 is at " .. hp2.x .. "," .. hp2.y .. "," .. hp2.z);
 				end
 
 				minetest.chat_send_all(param .. " has been jailed.");
@@ -239,8 +238,7 @@ minetest.register_chatcommand("prison",
 	func = function (name, param)
 		if name ~= nil and name ~= "" and param ~= nil and param ~= "" then
 			local player = minetest.get_player_by_name(param);
-			local executioner = minetest.get_player_by_name(name)
-			if player ~= nil and executioner ~= nil then
+			if player ~= nil then
 				player:set_pos(jailpos);
 
 				local privs = minetest.get_player_privs(param);
@@ -250,12 +248,12 @@ minetest.register_chatcommand("prison",
 
 				local hp = sethome.get(param);
 				if hp ~= nil then
-					minetest.chat_send_player(executioner, param .. " home1 is at " .. hp.x .. "," .. hp.y .. "," .. hp.z);
+					minetest.chat_send_player(name, param .. " home1 is at " .. hp.x .. "," .. hp.y .. "," .. hp.z);
 				end
 
 				local hp2 = unified_inventory.home_pos[param];
 				if hp2 ~= nil then
-					minetest.chat_send_player(executioner, param .. " home2 is at " .. hp2.x .. "," .. hp2.y .. "," .. hp2.z);
+					minetest.chat_send_player(name, param .. " home2 is at " .. hp2.x .. "," .. hp2.y .. "," .. hp2.z);
 				end
 
 				minetest.chat_send_all(param .. " has been imprisoned.");
@@ -317,20 +315,17 @@ minetest.register_chatcommand("tellhomepriv",
 	description = "Tells only you the players home positions",
 	func = function (name, param)
 		if name ~= nil and name ~= "" and param ~= nil and param ~= "" then
-			local executioner = minetest.get_player_by_name(name)
-			if executioner ~= nil then
 
-				local hp = sethome.get(param);
-				if hp ~= nil then
-					minetest.chat_send_player(executioner, param .. " first home is at " .. hp.x .. "," .. hp.y .. "," .. hp.z);
-				end
-
-				local hp2 = unified_inventory.home_pos[param];
-				if hp2 ~= nil then
-					minetest.chat_send_player(executioner, param .. " second home is at " .. hp2.x .. "," .. hp2.y .. "," .. hp2.z);
-				end
-
+			local hp = sethome.get(param);
+			if hp ~= nil then
+				minetest.chat_send_player(name, param .. " first home is at " .. hp.x .. "," .. hp.y .. "," .. hp.z);
 			end
+
+			local hp2 = unified_inventory.home_pos[param];
+			if hp2 ~= nil then
+				minetest.chat_send_player(name, param .. " second home is at " .. hp2.x .. "," .. hp2.y .. "," .. hp2.z);
+			end
+
 		end
 	end
 })
