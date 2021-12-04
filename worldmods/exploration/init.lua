@@ -10,7 +10,7 @@ local jailradius = 200;
 
 spawn_command = {}
 spawn_command.pos = {-900,24,-1189}
-local freepos = spawn_command.pos;
+local freepos = {x=spawn_command.pos[0], y=spawn_command.pos[1], z=spawn_command.pos[2]};
 
 
 
