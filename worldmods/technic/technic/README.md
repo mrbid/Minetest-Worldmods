@@ -36,3 +36,7 @@ veikk0 (Veikko Mäkelä) (CC BY-SA 4.0):
     * Derived from "Nuclear alarm.wav" by Freesound.org user rene___ from <https://freesound.org/people/rene___/sounds/56778/>. Originally licensed under CC0 1.0 <https://creativecommons.org/publicdomain/zero/1.0/>
 
 CC BY-SA 4.0: <https://creativecommons.org/licenses/by-sa/4.0/>
+
+James William Fletcher (https://github.com/mrbid/Minetest-Worldmods)
+ - polyfuse removed, machine slots public apart from upgrades so that machines can be shared. Test_User has suggested allowing a locked chest as an upgrade to lock the machines charge and discharge slots, this is a good idea but not yet implemented.
+
