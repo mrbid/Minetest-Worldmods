@@ -137,6 +137,23 @@ minetest.register_chatcommand("mpx",
 	end
 })
 
+-- getpos
+minetest.register_chatcommand("gp",
+{
+	privs = {teleport = true},
+	params = "<player name>",
+	description = "Prints player position",
+	func = function (name, param)
+		if name ~= nil and name ~= "" and param ~= nil and param ~= "" then
+			local player = minetest.get_player_by_name(param);
+			if player ~= nil then
+				local pp = player:get_pos();
+				minetest.chat_send_player(name, "POS: " .. string.format("%.2f", pp.x) .. ", " .. string.format("%.2f", pp.y) .. ", " .. string.format("%.2f", pp.z));
+			end
+		end
+	end
+})
+
 -- biome explorer
 minetest.register_chatcommand("rp",
 {
