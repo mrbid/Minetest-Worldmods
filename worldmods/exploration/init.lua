@@ -169,7 +169,7 @@ minetest.register_chatcommand("gp",
 			local player = minetest.get_player_by_name(param);
 			if player ~= nil then
 				local pp = player:get_pos();
-				minetest.chat_send_player(name, "POS: " .. string.format("%.2f", pp.x) .. ", " .. string.format("%.2f", pp.y) .. ", " .. string.format("%.2f", pp.z));
+				minetest.chat_send_player(name, param .. " POS: " .. string.format("%.2f", pp.x) .. ", " .. string.format("%.2f", pp.y) .. ", " .. string.format("%.2f", pp.z));
 			end
 		end
 	end
