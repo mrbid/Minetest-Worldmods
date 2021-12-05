@@ -122,18 +122,39 @@ minetest.register_chatcommand("mp",
 {
 	description = "Prints your position in chat",
 	func = function (name, param)
-		local player = minetest.get_player_by_name(name);
-		local pp = player:get_pos();
-		minetest.chat_send_player(name, "POS: " .. string.format("%.2f", pp.x) .. ", " .. string.format("%.2f", pp.y) .. ", " .. string.format("%.2f", pp.z));
+		if name ~= nil and name ~= "" then
+			local player = minetest.get_player_by_name(name);
+			if player ~= nil then
+				local pp = player:get_pos();
+				minetest.chat_send_player(name, "POS: " .. string.format("%.2f", pp.x) .. ", " .. string.format("%.2f", pp.y) .. ", " .. string.format("%.2f", pp.z));
+			end
+		end
 	end
 })
 minetest.register_chatcommand("mpx",
 {
 	description = "Prints your position in chat",
 	func = function (name, param)
-		local player = minetest.get_player_by_name(name);
-		local pp = player:get_pos();
-		minetest.chat_send_player(name, "POS: " .. math.floor(pp.x) .. ", " .. math.floor(pp.y) .. ", " .. math.floor(pp.z));
+		if name ~= nil and name ~= "" then
+			local player = minetest.get_player_by_name(name);
+			if player ~= nil then
+				local pp = player:get_pos();
+				minetest.chat_send_player(name, "POS: " .. math.floor(pp.x) .. ", " .. math.floor(pp.y) .. ", " .. math.floor(pp.z));
+			end
+		end
+	end
+})
+minetest.register_chatcommand("pmp",
+{
+	description = "Prints your position in public chat",
+	func = function (name, param)
+		if name ~= nil and name ~= "" then
+			local player = minetest.get_player_by_name(name);
+			if player ~= nil then
+				local pp = player:get_pos();
+				minetest.chat_send_all(name .. " POS: " .. string.format("%.2f", pp.x) .. ", " .. string.format("%.2f", pp.y) .. ", " .. string.format("%.2f", pp.z));
+			end
+		end
 	end
 })
 
