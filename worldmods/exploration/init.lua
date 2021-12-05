@@ -34,6 +34,7 @@ minetest.override_item( "default:lava_source", {
 
 -- https://forum.minetest.net/viewtopic.php?t=16862
 minetest.register_chatcommand("whatisthis", {
+	description = "Prints the item string of the object you are currently holding.",
 	func=function(name)
 	return true,"You are holding:"..
 	minetest.get_player_by_name(name):get_wielded_item():get_name()
