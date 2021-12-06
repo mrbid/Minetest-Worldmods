@@ -22,7 +22,7 @@ To load all these mods at the same time you will need to modify your minetest se
 
 Server is compiled with -Ofast rather than -O3. This is adjusted in the makefile.
 
-We are now running Buckaroo's mapserver: https://forum.minetest.net/viewtopic.php?f=14&t=21999<br>
+~~We are now running Buckaroo's mapserver: https://forum.minetest.net/viewtopic.php?f=14&t=21999<br>~~
 Zeno's IRC mod: https://github.com/Zeno-/minetest-irc
 
 ## Warning
