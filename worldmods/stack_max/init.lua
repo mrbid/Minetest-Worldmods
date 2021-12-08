@@ -24,7 +24,8 @@ local supported_mods = {
 	'space_travel',
 	'other_worlds',
 	'caverealms',
-	'rainbow_ore'
+	'rainbow_ore',
+	'terumet'
 }
 
 
