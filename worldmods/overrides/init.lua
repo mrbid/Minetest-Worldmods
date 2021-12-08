@@ -16,6 +16,26 @@ minetest.override_item("default:gravel", {
         groups={crumbly = 2, falling_node = 0}
 })
 
+minetest.override_item("default:lava_source", {
+	groups = {igniter = 1},
+	liquidtype = "none",
+	liquid_alternative_flowing = "none",
+	liquid_alternative_source = "none"
+	pointable = true,
+})
+
+minetest.override_item("default:lava_flowing", {
+	liquidtype = "none",
+	liquid_alternative_flowing = "none",
+	liquid_alternative_source = "none",
+	groups = {igniter = 1},
+	pointable = true,
+})
+
+minetest.override_item("default:stone", {
+	light_source = 6
+})
+
 
 --[[
 minetest.override_item("default:snow", {
