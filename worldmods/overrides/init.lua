@@ -17,17 +17,17 @@ minetest.override_item("default:gravel", {
 })
 
 minetest.override_item("default:lava_source", {
-	groups = {igniter = 1},
 	liquidtype = "none",
 	liquid_alternative_flowing = "none",
 	liquid_alternative_source = "none",
+	-- groups = {igniter = 1},
 })
 
 minetest.override_item("default:lava_flowing", {
 	liquidtype = "none",
 	liquid_alternative_flowing = "none",
 	liquid_alternative_source = "none",
-	groups = {igniter = 1},
+	-- groups = {igniter = 1},
 })
 
 minetest.override_item("default:stone", {
