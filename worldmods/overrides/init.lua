@@ -21,7 +21,6 @@ minetest.override_item("default:lava_source", {
 	liquidtype = "none",
 	liquid_alternative_flowing = "none",
 	liquid_alternative_source = "none",
-	pointable = true,
 })
 
 minetest.override_item("default:lava_flowing", {
@@ -29,7 +28,6 @@ minetest.override_item("default:lava_flowing", {
 	liquid_alternative_flowing = "none",
 	liquid_alternative_source = "none",
 	groups = {igniter = 1},
-	pointable = true,
 })
 
 minetest.override_item("default:stone", {
