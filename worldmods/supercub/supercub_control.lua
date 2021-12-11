@@ -157,8 +157,11 @@ end
 function supercub.set_pitch(self, dir, dtime)
     local pitch_factor = 6
 	if dir == -1 then
+        --minetest.chat_send_all("cabrando")
+        if self._elevator_angle > 0 then pitch_factor = pitch_factor * 2 end
 		self._elevator_angle = math.max(self._elevator_angle-pitch_factor*dtime,-supercub.elevator_limit)
 	elseif dir == 1 then
+        --minetest.chat_send_all("picando")
         if self._angle_of_attack < 0 then pitch_factor = 1 end --lets reduce the command power to avoid accidents
 		self._elevator_angle = math.min(self._elevator_angle+pitch_factor*dtime,supercub.elevator_limit)
 	end
@@ -190,7 +193,7 @@ function supercub.elevator_auto_correction(self, longit_speed, dtime)
     local factor = 1
     --if self._elevator_angle > -1.5 then factor = -1 end --here is the "compensator" adjusto to keep it stable
     if self._elevator_angle > 0 then factor = -1 end
-    local correction = (supercub.elevator_limit*(longit_speed/10000)) * factor * (dtime/supercub.ideal_step)
+    local correction = (supercub.elevator_limit*(longit_speed/5000)) * factor * (dtime/supercub.ideal_step)
     local before_correction = self._elevator_angle
     local new_elevator_angle = self._elevator_angle + correction
     if math.sign(before_correction) ~= math.sign(new_elevator_angle) then

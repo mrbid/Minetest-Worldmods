@@ -249,12 +249,14 @@ end
 function supercub.check_node_below(obj)
     local pos_below = obj:get_pos()
     if pos_below then
-        pos_below.y = pos_below.y - 2.5
+        pos_below.y = pos_below.y - 1.3
         local node_below = minetest.get_node(pos_below).name
+        --minetest.chat_send_all(dump(node_below))
         local nodedef = minetest.registered_nodes[node_below]
         local touching_ground = not nodedef or -- unknown nodes are solid
 		        nodedef.walkable or false
         local liquid_below = not touching_ground and nodedef.liquidtype ~= "none"
+        --minetest.chat_send_all(dump(touching_ground))
         return touching_ground, liquid_below
     end
     return nil, nil
@@ -266,7 +268,7 @@ function supercub.setText(self)
        "%.2f", self.hp_max
     )
     if properties then
-        properties.infotext = "Nice hydroplane of " .. self.owner .. ". Current hp: " .. formatted
+        properties.infotext = "Nice supercub of " .. self.owner .. ". Current hp: " .. formatted
         self.object:set_properties(properties)
     end
 end
@@ -303,6 +305,20 @@ function supercub.testImpact(self, velocity, position)
             (nodel and nodel.drawtype ~= 'airlike') then
 			collision = true
 		end
+    end
+
+    if impact > 1.2  and self._longit_speed > 2 then
+        local noded = mobkit.nodeatpos(mobkit.pos_shift(p,{y=-2.8}))
+	    if (noded and noded.drawtype ~= 'airlike') then
+            minetest.sound_play("supercub_touch", {
+                --to_player = self.driver_name,
+                object = self.object,
+                max_hear_distance = 15,
+                gain = 1.0,
+                fade = 0.0,
+                pitch = 1.0,
+            }, true)
+	    end
     end
 
     if collision then
@@ -629,7 +645,7 @@ function supercub.flightstep(self)
     if accel == nil then accel = {x=0,y=0,z=0} end
 
     --lift calculation
-    --accel.y = accel_y --accel.y + mobkit.gravity --accel_y
+    accel.y = accel_y
 
     --lets apply some bob in water
 	if self.isinliquid then
@@ -650,6 +666,9 @@ function supercub.flightstep(self)
 
     if stop ~= true then --maybe == nil
         self._last_accell = new_accel
+	    self.object:set_pos(curr_pos)
+        self.object:set_velocity(velocity)
+        mobkit.set_acceleration(self.object, new_accel)
     else
         if stop == true then
             self.object:set_acceleration({x=0,y=0,z=0})
@@ -691,7 +710,7 @@ function supercub.flightstep(self)
     end
 
     --is an stall, force a recover
-    if self._angle_of_attack > 3 and climb_rate < -2.8 then
+    if self._angle_of_attack > 3 and climb_rate < -3.5 then
         self._elevator_angle = 0
         self._angle_of_attack = -1
         newpitch = math.rad(self._angle_of_attack)
@@ -701,7 +720,7 @@ function supercub.flightstep(self)
     local climb_angle = supercub.get_gauge_angle(climb_rate)
     self.climb_gauge:set_attach(self.object,'',SUPERCUB_GAUGE_CLIMBER_POSITION,{x=0,y=0,z=climb_angle})
 
-    local indicated_speed = longit_speed
+    local indicated_speed = longit_speed * 0.9
     if indicated_speed < 0 then indicated_speed = 0 end
     local speed_angle = supercub.get_gauge_angle(indicated_speed, -45)
     self.speed_gauge:set_attach(self.object,'',SUPERCUB_GAUGE_SPEED_POSITION,{x=0,y=0,z=speed_angle})
