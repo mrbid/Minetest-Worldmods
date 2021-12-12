@@ -530,14 +530,14 @@ local function make_personal_log_formspec(player)
 		.."button[4.5,0.75;2,0.5;move_down;"..S("Move Down").."]"
 		.."button[7,0;2,0.5;delete;"..S("Delete") .."]"
 
-	if category_index == LOCATION_CATEGORY and minetest.check_player_privs(player_name, "teleport") then
+	if category_index == LOCATION_CATEGORY then
 		formspec[#formspec+1] = "button[7,0.75;2,0.5;teleport;"..S("Teleport") .."]"
 	end
 
-	if default_modpath or mcl_books_modpath or ccompass_modpath or compassgps_modpath then
-		formspec[#formspec+1] = "button[0,0.75;2.0,0.5;copy_to;"..S("Export").."]"
-			.."button[2,0.75;2.0,0.5;copy_from;"..S("Import").."]"
-	end
+	-- if default_modpath or mcl_books_modpath or ccompass_modpath or compassgps_modpath then
+	-- 	formspec[#formspec+1] = "button[0,0.75;2.0,0.5;copy_to;"..S("Export").."]"
+	-- 		.."button[2,0.75;2.0,0.5;copy_from;"..S("Import").."]"
+	-- end
 
 	formspec[#formspec+1] = "container_end[]"
 
@@ -632,8 +632,7 @@ local function on_player_receive_fields(player, fields, update_callback)
 	
 	if fields.teleport
 		and category == LOCATION_CATEGORY
-		and valid_entry_selected
-		and minetest.check_player_privs(player_name, "teleport") then
+		and valid_entry_selected then
 		local pos_string = modstore:get_string(player_name .. "_category_" .. category .. "_entry_" .. entry_selected .. "_topic")
 		local pos = minetest.string_to_pos(pos_string)
 		if pos then
