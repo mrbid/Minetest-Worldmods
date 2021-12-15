@@ -437,6 +437,7 @@ minetest.register_chatcommand("free",
 				local privs = minetest.get_player_privs(param);
 				privs.shout = true;
 				privs.home = true;
+				privs.tp = true;
 				minetest.set_player_privs(param, privs);
 
 				minetest.chat_send_all(param .. " has been freed from jail.");
