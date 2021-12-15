@@ -250,6 +250,7 @@ minetest.register_chatcommand("jail",
 
 				local privs = minetest.get_player_privs(param);
 				privs.home = nil;
+				privs.tp = nil;
 				minetest.set_player_privs(param, privs);
 
 				local hp = sethome.get(param);
@@ -261,6 +262,8 @@ minetest.register_chatcommand("jail",
 				if hp2 ~= nil then
 					minetest.chat_send_player(name, param .. " home2 is at " .. hp2.x .. "," .. hp2.y .. "," .. hp2.z);
 				end
+
+				player:set_nametag_attributes({text = minetest.colorize("red", "[Jailed]") .. " " .. player:get_player_name()})
 
 				minetest.chat_send_all(param .. " has been jailed.");
 				writeLog("[JAILD] " .. name .. " sent " .. param .. " to jail.");
@@ -283,6 +286,7 @@ minetest.register_chatcommand("prison",
 				local privs = minetest.get_player_privs(param);
 				privs.shout = nil;
 				privs.home = nil;
+				privs.tp = nil;
 				minetest.set_player_privs(param, privs);
 
 				local hp = sethome.get(param);
@@ -294,6 +298,8 @@ minetest.register_chatcommand("prison",
 				if hp2 ~= nil then
 					minetest.chat_send_player(name, param .. " home2 is at " .. hp2.x .. "," .. hp2.y .. "," .. hp2.z);
 				end
+
+				player:set_nametag_attributes({text = minetest.colorize("red", "[Prisoner]") .. " " .. player:get_player_name()})
 
 				minetest.chat_send_all(param .. " has been imprisoned.");
 				writeLog("[PRISN] " .. name .. " sent " .. param .. " to prison.");
