@@ -440,6 +440,8 @@ minetest.register_chatcommand("free",
 				privs.tp = true;
 				minetest.set_player_privs(param, privs);
 
+				player:set_nametag_attributes({text = player:get_player_name()})
+
 				minetest.chat_send_all(param .. " has been freed from jail.");
 				writeLog("[FREED] " .. name .. " free'd " .. param .. " from jail.");
 			end
