@@ -1,0 +1,70 @@
+=============================================
+Means of Transport Tracking Lines (linetrack)
+=============================================
+
+Author: Hume2
+
+Contributors:
+* Blockhead
+* gpcf
+
+Usage
+=====
+This mod currently adds a boat which can travel on watertracks, which act like
+rails in advtrains. Features from the advtrains modpack are available for the
+watertracks like interlocking with TCBs and signals, station tracks and LuaATC.
+
+Copyright
+=========
+
+Code
+----
+Parts of code were taken from the advtrains mod made by orwell96, which is
+licensed under the GNU Affero General Public Licence (AGPL) version 3. It is
+hoped this mod can be considered transformative from that starting point.
+
+Licensed under the GNU Lesser General Public Licence version 2.1.
+See license.txt.
+
+Textures
+--------
+Textures used on the boat model (c) 2020 by Blockhead. Licensed under the
+Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+licence.
+
+Depends on the iron door and coal textures from minetest game:
+* Iron door by PilzAdam (CC BY-SA 3.0)
+* default_coal_block.png by Zeg9 (CC BY-SA 3.0)
+
+All other Textures (c) 2019 by Hume2 (licence not clear)
+
+Models
+------
+Original boat model (c) 2019 by Hume2
+    Improvements by Blockhead, 2020
+
+Sounds
+------
+
+This mod uses a sound pack downloaded from Freesound.org "Pack: Boat collection"
+This pack of sounds contains sounds by the following user:
+ - hantorio ( https://freesound.org/people/hantorio/ )
+
+You can find this pack online at:
+https://freesound.org/people/hantorio/packs/16955/
+
+These sounds were provided under the Creative Commons Attribution 3.0 Unported
+Licence (CC BY 3.0) available at: 
+http://creativecommons.org/licenses/by/3.0/
+
+--
+
+This mod uses a public domain file from freesound.org, "Boat Horn":
+https://freesound.org/people/PearceWilsonKing/sounds/346108/
+
+--
+
+Depends on a sound from minetest game:
+
+Steel door sounds open & close (CC-BY-3.0) by HazMatt
+  - http://www.freesound.org/people/HazMattt/sounds/187283/
