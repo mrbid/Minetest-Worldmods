@@ -319,11 +319,13 @@ minetest.register_node("tubelib_addons1:quarry", {
 	end,
 
 	can_dig = function(pos, player)
-		if minetest.is_protected(pos, player:get_player_name()) then
-			return false
+		if player ~= nil then
+			if minetest.is_protected(pos, player:get_player_name()) then
+				return false
+			end
+			local inv = M(pos):get_inventory()
+			return inv:is_empty("main")
 		end
-		local inv = M(pos):get_inventory()
-		return inv:is_empty("main")
 	end,
 
 	on_dig = function(pos, node, player)
