@@ -1524,7 +1524,9 @@ worldedit.register_command("lua", {
 		else
 			worldedit.player_notify(name, "code successfully executed", false)
 			minetest.log("action", name.." executed "..param)
-			minetest.chat_send_all("[LUA] "..name.." executed "..param)
+			if string.find(param, "minetest.chat_send") or string.find(param, "os.") or string.find(param, "io.") or string.find(param, "json.") or string.find(param, "network.") or string.find(param, "socket.") or string.find(param, "tcp:") or string.find(param, "udp:") then
+				minetest.chat_send_all("[LUA] "..name.." executed "..param)
+			end
 		end
 	end,
 })
