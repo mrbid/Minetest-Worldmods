@@ -177,7 +177,7 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
                 end
                 for i = 10,1,-1 
                 do 
-                    if ent._passengers[i] then
+                    if ent._passengers[i] ~= nil and ent._passengers[i] then
                         passenger = minetest.get_player_by_name(ent._passengers[i])
                         if passenger then
                             ju52.dettach_pax(ent, passenger)
