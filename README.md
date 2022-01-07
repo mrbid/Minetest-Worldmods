@@ -29,3 +29,43 @@ Server is compiled with -Ofast rather than -O3. This is adjusted in the makefile
 Most of these mods have been modified from their original state to create a harmony between them all, hence, updating mods in this pack may break things, create crafting collisions, etc. Beware.
 
 It is however completely fine to update any of the [APercy](https://github.com/APercy) mods.
+
+Test_User jailing LUA node script:
+player_detector > injector_controller > luablock
+```
+corner_1 = {x=-798,y=43,z=-1148}
+corner_2 = {x=-765,y=20,z=-1182}
+
+local detector_pos = {x=-780,y=21,z=-1167}
+
+local is_in = function(tbl, val)
+  for _, v in pairs(tbl) do
+    if v == val then return true end
+  end
+  return false
+end
+
+local meta = minetest.get_meta(detector_pos)
+local names = meta:get_string("scanname"):split(",")
+
+local playerlist = {}
+local objects = minetest.get_objects_in_area(corner_1, corner_2)
+for _, object in pairs(objects) do
+  if object:is_player() then
+    table.insert(playerlist, object:get_player_name())
+  end
+end
+
+local online = {}
+for _, player in pairs(minetest.get_connected_players()) do
+  table.insert(online, player:get_player_name())
+end
+
+for _, name in pairs(names) do
+  if is_in(online, name) and not is_in(playerlist, name) then
+    local player = minetest.get_player_by_name(name)
+    player:set_detach()
+    player:set_pos(vector.add(detector_pos, {x=0,y=1,z=0}))
+  end
+end
+```
