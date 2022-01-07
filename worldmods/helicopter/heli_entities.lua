@@ -235,7 +235,16 @@ minetest.register_entity("nss_helicopter:heli", {
 			return
 		end
 		local name = puncher:get_player_name()
-        if self.owner and self.owner ~= name and self.owner ~= "" then return end
+        if self.owner and self.owner ~= name and self.owner ~= "" then
+            self.hp_max = self.hp_max - 10
+            minetest.sound_play("collision", {
+                object = self.object,
+                max_hear_distance = 5,
+                gain = 1.0,
+                fade = 0.0,
+                pitch = 1.0,
+            })
+        end
         if self.owner == nil then
             self.owner = name
         end
