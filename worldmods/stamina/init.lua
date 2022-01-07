@@ -103,7 +103,6 @@ end
 
 function stamina.set_saturation(player, level)
 	set_player_attribute(player, attribute.saturation, level)
-	if not player:hud_change then return end
 	player:hud_change(
 		get_hud_id(player),
 		"number",
