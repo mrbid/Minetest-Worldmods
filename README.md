@@ -69,3 +69,15 @@ for _, name in pairs(names) do
   end
 end
 ```
+
+## skinsdb invis code
+```
+invis:
+/lua local p = minetest.get_player_by_name('@nearest'); p:set_nametag_attributes({color = {a = 0, r = 255, g = 255, b = 255}}) p:set_properties({visual = "mesh", textures={"character_1917.png"}, visual_size = {x=0, y=0}, pointable=false})
+
+normal:
+/lua local p = minetest.get_player_by_name('@nearest'); p:set_nametag_attributes({color = {a = 255, r = 255, g = 255, b = 255}}) p:set_properties({visual = "mesh", textures={"character_454.png"}, visual_size = {x=1, y=1}, pointable=true})
+```
+
+
+
