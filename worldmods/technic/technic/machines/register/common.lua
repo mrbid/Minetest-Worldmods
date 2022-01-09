@@ -154,10 +154,11 @@ end
 local function inv_change(pos, player, count, from_list, to_list, stack)
 	local playername = player:get_player_name()
 	local meta = minetest.get_meta(pos);
+	local public = (meta:get_int("public") == 1)
 	local to_upgrade = to_list == "upgrade1" or to_list == "upgrade2"
 	local from_upgrade = from_list == "upgrade1" or from_list == "upgrade2"
 
-	if (to_upgrade or from_upgrade) and minetest.is_protected(pos, playername) then
+	if (not public or to_upgrade or from_upgrade) and minetest.is_protected(pos, playername) then
 		minetest.chat_send_player(playername, S("Inventory move disallowed due to protection"))
 		return 0
 	end
