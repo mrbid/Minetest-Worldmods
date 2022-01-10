@@ -145,10 +145,6 @@ end
 
 -- [function] Update player nametag
 function ranks.update_nametag(name)
-	if minetest.settings:get("ranks.prefix_nametag") == "false" then
-		return
-	end
-
 	if type(name) ~= "string" then
 		name = name:get_player_name()
 	else
@@ -223,27 +219,6 @@ function ranks.remove_rank(name)
 	end
 end
 
--- [function] Send prefixed message (if enabled)
-function ranks.chat_send(name, message)
-	if minetest.settings:get("ranks.prefix_chat") ~= "false" then
-		local rank = ranks.get_rank(name)
-		if rank ~= nil then
-			local def = ranks.get_def(rank)
-			if def.prefix then
-				local colour = get_colour(def.colour)
-				local prefix = minetest.colorize(colour, def.prefix)
-				if chat3_exists then
-					chat3.send(name, message, prefix.." ", "ranks")
-				else
-					minetest.chat_send_all(prefix.." <"..name.."> "..message)
-					minetest.log("action", "CHAT: ".."<"..name.."> "..message)
-				end
-				return true
-			end
-		end
-	end
-end
-
 ---
 --- Registrations
 ---
@@ -290,11 +265,6 @@ minetest.register_on_joinplayer(function(player)
 			ranks.set_rank(name, ranks.default)
 		end
 	end
-end)
-
--- Prefix messages if enabled
-minetest.register_on_chat_message(function(name, message)
-	return ranks.chat_send(name, message)
 end)
 
 -- [chatcommand] /rank
