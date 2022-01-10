@@ -24,9 +24,7 @@ ranks.register("builder",{
 		tp = true,
 		tp_tpc = true,
 		creative = true,
-		kick = true,
 		settime = true,
-		areas = true,
 		areas_high_limit = true,
 	},
 })
@@ -36,7 +34,6 @@ ranks.register("vip",{
 	grant_missing = true,
 	privs = {
 		interact = true,
-		areas = true,
 		home = true,
 		shout = true,
 		fast = true,
