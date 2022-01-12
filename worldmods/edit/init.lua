@@ -1,5 +1,5 @@
 --[[
-	Edit Mod v0.2 (Safer)
+	Edit Mod v0.3 (Safer)
 ]]
 local max_edit_range = 24
 
