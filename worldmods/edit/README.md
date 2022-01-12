@@ -1,5 +1,5 @@
 # Edit Mod v0.3 (Safer)
-Added node protection and some nil/player checks. Removed copy & paste blocks.<br>
+Added node protection and some nil/player checks. Removed copy & paste blocks. Limited range to 24 nodes.<br>
 https://github.com/mrbid/Minetest-Worldmods/tree/main/worldmods/edit
 
 ### [original download](https://github.com/minetest-mods/edit/archive/master.zip)
