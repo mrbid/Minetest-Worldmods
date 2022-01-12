@@ -71,6 +71,7 @@ end
 ```
 
 ## skinsdb invis code
+_this will reset your skin back to normal on hotbar item change, causing an avatar update to display the new visual tool selected._
 ```
 invis:
 /lua local p = minetest.get_player_by_name('@nearest'); p:set_nametag_attributes({color = {a = 0, r = 255, g = 255, b = 255}}) p:set_properties({visual = "mesh", textures={"character_1917.png"}, visual_size = {x=0, y=0}, pointable=false})
