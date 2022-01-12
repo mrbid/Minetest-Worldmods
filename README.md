@@ -15,6 +15,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - removal of technic polyfuse and machine protection _(allowing machines to be shared, upgrades are protected however)_
 - replaced technic cnc with [Improved Technic CNC](https://content.minetest.net/packages/Emojiminetest/technic_cnc_improve/) and made some improvements upon its supported nodelist.
 - significant rework on commodity markets listed items string formatting to ensure a concise, pretty, and still informative item string.
+- modifications to [edit mod](https://github.com/mrbid/Minetest-Worldmods/tree/main/worldmods/edit) to make it safer for use by builders.
 
 ## Notes
 To load all these mods at the same time you will need to modify your minetest server:<br>
