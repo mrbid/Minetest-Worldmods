@@ -219,7 +219,7 @@ local hb = {}
 hb.adjust = adjust_hotbar
 
 hb.mode = { key = "hotbar_mode" }
-hb.slots = { key = "hotbar_slots", min = 0, max = 23 }
+hb.slots = { key = "hotbar_slots", min = 0, max = 32 }
 hb.image = { selected = "hotbar_selected_slot.png", bg = {} }
 
 hb.mode.current = get_mode(MOD_STORAGE, hb.mode.key, DEFAULT.mode)
@@ -419,7 +419,7 @@ minetest.register_chatcommand("hotbar", {
                 " the current mode and slots number." ..
                 " To set" ..
                 " the slots number any integer in the range" ..
-                " [0, 23] is valid. If set to 0, the hotbar" ..
+                " [0, 32] is valid. If set to 0, the hotbar" ..
                 " gets hidden, any other number will unhide" ..
                 " it." ..
                 " Supported modes are " ..
