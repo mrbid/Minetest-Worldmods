@@ -1,7 +1,7 @@
 -- Original code comes from walkin_light mod by Echo
 -- http://minetest.net/forum/viewtopic.php?id=2621
 
-local flashlight_max_charge = 30000
+local flashlight_max_charge = 333000
 
 local S = technic.getter
 
