@@ -174,7 +174,7 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 						for x = p1.x, p2.x, sign(p2.x - p1.x) do
 							for y = p1.y, p2.y, sign(p2.y - p1.y) do
 								for z = p1.z, p2.z, sign(p2.z - p1.z) do
-									if not minetest.is_protected({x=x, y=y, z=z}, placer:get_player_name()) then
+									if not minetest.is_protected({x=x, y=y, z=z}, player:get_player_name()) then
 										minetest.set_node({x = x, y = y, z = z}, {name = key, param2 = param2})
 									end
 								end
