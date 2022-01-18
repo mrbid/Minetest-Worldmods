@@ -1,4 +1,5 @@
 local isui = minetest.get_modpath("unified_inventory")
+local ispl = minetest.get_modpath("personal_log")
 
 --[[
 local jailpos = {x=-704.5, y=19.5, z=-812};
@@ -95,6 +96,10 @@ minetest.register_on_dieplayer(function(player)
 	pos.x = math.floor(pos.x+0.5)
 	pos.y = math.floor(pos.y+0.5)
 	pos.z = math.floor(pos.z+0.5)
+
+	if ispl then
+		personal_log.add_location_entry = function(player_name, "Your Bones", pos)
+	end
 
 	minetest.chat_send_player(player_name, "You Died at: " .. pos.x .. ", " .. pos.y .. ", " .. pos.z);
 	writeLog("[BONES] " .. player_name .. " died at " .. string.format("%.2f", pp.x) .. ", " .. string.format("%.2f", pp.y) .. ", " .. string.format("%.2f", pp.z));
