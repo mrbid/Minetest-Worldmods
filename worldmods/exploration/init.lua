@@ -98,7 +98,7 @@ minetest.register_on_dieplayer(function(player)
 	pos.z = math.floor(pos.z+0.5)
 
 	if ispl then
-		personal_log.add_location_entry = function(player_name, "Your Bones", pos)
+		personal_log.add_location_entry(player_name, "Your Bones", pos)
 	end
 
 	minetest.chat_send_player(player_name, "You Died at: " .. pos.x .. ", " .. pos.y .. ", " .. pos.z);
