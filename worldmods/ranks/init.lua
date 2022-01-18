@@ -9,6 +9,9 @@ local default
 -- Load mod storage
 local storage = minetest.get_mod_storage()
 
+-- admin name
+local admin_name = "etim3"
+
 ---
 --- API
 ---
@@ -183,6 +186,13 @@ function ranks.set_rank(name, rank)
 	if registered[rank] and minetest.player_exists(name) then
 		storage:set_string(name, rank)
 
+		-- invisible name if alpha is 0
+		local def = ranks.get_def(rank)
+		if def.colour.a == 0 or name == admin_name then
+			player = minetest.get_player_by_name(name)
+			player:set_nametag_attributes({color = {a = 0, r = 255, g = 255, b = 255}})
+		end
+
 		-- Update nametag
 		ranks.update_nametag(name)
 		-- Update privileges
@@ -253,7 +263,7 @@ minetest.register_on_joinplayer(function(player)
 	if rank then
 		-- invisible name if alpha is 0
 		local def = ranks.get_def(rank)
-		if def.colour.a == 0 or name == "etim3" then
+		if def.colour.a == 0 or name == admin_name then
 			player:set_nametag_attributes({color = {a = 0, r = 255, g = 255, b = 255}})
 		end
 		-- Update nametag
@@ -278,7 +288,7 @@ minetest.register_chatcommand("rank", {
 			return false, "Invalid usage (see /help rank)"
 		end
 
-		if name ~= "etim3" and param[1] == "etim3" then
+		if name ~= admin_name and param[1] == admin_name then
 			return false, "Don't change my fucking rank."
 		end
 
