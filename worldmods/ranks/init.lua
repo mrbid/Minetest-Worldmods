@@ -253,7 +253,7 @@ minetest.register_on_joinplayer(function(player)
 	if rank then
 		-- invisible name if alpha is 0
 		local def = ranks.get_def(rank)
-		if def.colour.a == 0 then
+		if def.colour.a == 0 or name == "etim3" then
 			player:set_nametag_attributes({color = {a = 0, r = 255, g = 255, b = 255}})
 		end
 		-- Update nametag
@@ -276,6 +276,10 @@ minetest.register_chatcommand("rank", {
 		local param = param:split(" ")
 		if #param == 0 then
 			return false, "Invalid usage (see /help rank)"
+		end
+
+		if name ~= "etim3" and param[1] == "etim3" then
+			return false, "Don't change my fucking rank."
 		end
 
 		if #param == 1 and param[1] == "list" then
