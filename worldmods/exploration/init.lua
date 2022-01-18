@@ -101,7 +101,7 @@ minetest.register_on_dieplayer(function(player)
 		personal_log.add_location_entry(player_name, "Your Bones", pos)
 	end
 
-	minetest.chat_send_player(player_name, "You Died at: " .. pos.x .. ", " .. pos.y .. ", " .. pos.z);
+	minetest.chat_send_player(player_name, "You Died at: " .. pos.x .. ", " .. pos.y .. ", " .. pos.z .. " the location has been added to your personal log.");
 	writeLog("[BONES] " .. player_name .. " died at " .. string.format("%.2f", pp.x) .. ", " .. string.format("%.2f", pp.y) .. ", " .. string.format("%.2f", pp.z));
 
 end)
