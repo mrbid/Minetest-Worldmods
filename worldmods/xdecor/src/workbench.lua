@@ -265,7 +265,7 @@ for i = 1, #nodes do
 	if item_name and d[3] then
 		local groups = {}
 		local tiles
-		groups.not_in_creative_inventory = 1
+		groups.not_in_creative_inventory = 0
 
 		for k, v in pairs(def.groups) do
 			if k ~= "wood" and k ~= "stone" and k ~= "level" then
