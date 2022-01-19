@@ -4,6 +4,33 @@
 local S=technic.getter
 local ethereal = ethereal or {}
 
+-- CAVEREALMS
+-------
+technic.cnc.register_all("caverealms:glow_emerald",
+                {cracky=3},
+                {"caverealms_glow_emerald.png"},
+                S("Glow Emerald"))
+
+technic.cnc.register_all("caverealms:glow_ruby",
+                {cracky=3},
+                {"caverealms_glow_ruby.png"},
+                S("Glow Ruby"))
+
+technic.cnc.register_all("caverealms:glow_crystal",
+                {cracky=3},
+                {"caverealms_glow_crystal.png"},
+                S("Glow Crystal"))
+
+technic.cnc.register_all("caverealms:glow_mese",
+                {cracky=3},
+                {"caverealms_glow_mese.png"},
+                S("Glow Mese"))
+
+technic.cnc.register_all("caverealms:glow_amethyst",
+                {cracky=3},
+                {"caverealms_glow_amethyst.png"},
+                S("Glow Amethyst"))
+
 -- DIRT
 -------
 technic.cnc.register_all("default:dirt",
@@ -80,6 +107,24 @@ technic.cnc.register_all("default:desert_stone_block",
                 {crumbly=2, cracky=3, stone=1},
                 {"default_desert_stone_block.png"},
                 S("Desert Stone Block"))
+
+-- CONCRETE AND CEMENT
+----------------------
+
+technic.cnc.register_all("basic_materials:concrete_block",
+				{cracky=2, level=2},
+				{"basic_materials_concrete_block.png"},
+				S("Concrete"))
+
+technic.cnc.register_all("basic_materials:cement_block",
+				{cracky=2, level=2},
+				{"basic_materials_cement_block.png"},
+				S("Cement"))
+
+technic.cnc.register_all("basic_materials:brass_block",
+				{cracky=1, level=2},
+				{"basic_materials_brass_block.png"},
+				S("Brass block"))
 
 -- COBBLE
 ---------
