@@ -31,6 +31,27 @@ technic.cnc.register_all("caverealms:glow_amethyst",
                 {"caverealms_glow_amethyst.png"},
                 S("Glow Amethyst"))
 
+technic.cnc.register_all("caverealms:glow_ruby",
+                {cracky=1, light_source=7, level=2},
+                {"caverealms_glow_obsidian.png"},
+                S("Glowing Obsidian"))
+
+technic.cnc.register_all("caverealms:glow_crystal",
+                {cracky=1, light_source=9, hot=1, level=2},
+                {"caverealms_glow_obsidian2.png"},
+                S("Hot Glowing Obsidian"))
+
+technic.cnc.register_all("caverealms:glow_mese",
+                {cracky=1, light_source=7, level=2},
+                {"caverealms_glow_obsidian_brick.png"},
+                S("Glow Obsidian Brick"))
+
+technic.cnc.register_all("caverealms:glow_amethyst",
+                {cracky=1, light_source=9, hot=1, level=2},
+                {"caverealms_glow_obsidian_brick_2.png"},
+                S("Glow Obsidian Brick"))
+
+
 -- DIRT
 -------
 technic.cnc.register_all("default:dirt",
