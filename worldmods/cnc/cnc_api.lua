@@ -516,6 +516,11 @@ function technic.cnc.register_program(recipeitem, suffix, model, groups, images,
 	end
 
 	if cbox and not sbox then sbox = cbox end
+	
+	local uta = false
+	if groups.utalpha == 1 then
+		uta = true
+	end
 
 	minetest.register_node(":"..recipeitem.."_"..suffix, {
 		description   = description,
@@ -530,6 +535,7 @@ function technic.cnc.register_program(recipeitem, suffix, model, groups, images,
 		selection_box = sbox,
 		collision_box = cbox,
 		light_source  = groups.light_source,
+		use_texture_alpha = uta
 	})
 end
 
