@@ -6,47 +6,47 @@ local ethereal = ethereal or {}
 
 -- CAVEREALMS
 -------
-technic.cnc.register_all("caverealms:glow_emerald",
-                {cracky=3, light_source=13},
-                {"caverealms_glow_emerald.png"},
-                S("Glow Emerald"))
+-- technic.cnc.register_all("caverealms:glow_emerald",
+--                 {cracky=3, light_source=13},
+--                 {"caverealms_glow_emerald.png"},
+--                 S("Glow Emerald"))
 
-technic.cnc.register_all("caverealms:glow_ruby",
-                {cracky=3, light_source=13},
-                {"caverealms_glow_ruby.png"},
-                S("Glow Ruby"))
+-- technic.cnc.register_all("caverealms:glow_ruby",
+--                 {cracky=3, light_source=13},
+--                 {"caverealms_glow_ruby.png"},
+--                 S("Glow Ruby"))
 
-technic.cnc.register_all("caverealms:glow_crystal",
-                {cracky=3, light_source=13},
-                {"caverealms_glow_crystal.png"},
-                S("Glow Crystal"))
+-- technic.cnc.register_all("caverealms:glow_crystal",
+--                 {cracky=3, light_source=13},
+--                 {"caverealms_glow_crystal.png"},
+--                 S("Glow Crystal"))
 
-technic.cnc.register_all("caverealms:glow_mese",
-                {cracky=3, light_source=13},
-                {"caverealms_glow_mese.png"},
-                S("Glow Mese"))
+-- technic.cnc.register_all("caverealms:glow_mese",
+--                 {cracky=3, light_source=13},
+--                 {"caverealms_glow_mese.png"},
+--                 S("Glow Mese"))
 
-technic.cnc.register_all("caverealms:glow_amethyst",
-                {cracky=3, light_source=13},
-                {"caverealms_glow_amethyst.png"},
-                S("Glow Amethyst"))
+-- technic.cnc.register_all("caverealms:glow_amethyst",
+--                 {cracky=3, light_source=13},
+--                 {"caverealms_glow_amethyst.png"},
+--                 S("Glow Amethyst"))
 
-technic.cnc.register_all("caverealms:glow_ruby",
+technic.cnc.register_all("caverealms:glow_obsidian",
                 {cracky=1, light_source=7, level=2},
                 {"caverealms_glow_obsidian.png"},
                 S("Glowing Obsidian"))
 
-technic.cnc.register_all("caverealms:glow_crystal",
+technic.cnc.register_all("caverealms:glow_obsidian_2",
                 {cracky=1, light_source=9, hot=1, level=2},
                 {"caverealms_glow_obsidian2.png"},
                 S("Hot Glowing Obsidian"))
 
-technic.cnc.register_all("caverealms:glow_mese",
+technic.cnc.register_all("caverealms:glow_obsidian_brick",
                 {cracky=1, light_source=7, level=2},
                 {"caverealms_glow_obsidian_brick.png"},
                 S("Glow Obsidian Brick"))
 
-technic.cnc.register_all("caverealms:glow_amethyst",
+technic.cnc.register_all("caverealms:glow_obsidian_brick_2",
                 {cracky=1, light_source=9, hot=1, level=2},
                 {"caverealms_glow_obsidian_brick_2.png"},
                 S("Glow Obsidian Brick"))
