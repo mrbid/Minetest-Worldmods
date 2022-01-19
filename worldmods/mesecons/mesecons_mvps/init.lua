@@ -1,6 +1,6 @@
 --register stoppers for movestones/pistons
 
-mesecon.mvps_stoppers = {}
+mesecon.mvps_stoppers = {'terumet:'}
 mesecon.on_mvps_move = {}
 mesecon.mvps_unmov = {}
 
