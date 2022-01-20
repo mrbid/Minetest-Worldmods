@@ -868,46 +868,46 @@ minetest.register_node("technic:template_connector", {
 	end
 })
 
-minetest.register_craftitem("technic:template_replacer", {
-	description = S("Template (replacing)"),
-	inventory_image = "technic_template_replacer.png",  -- ** NOTE: texture does not exist **
-	on_place = function(itemstack, placer, pointed_thing)
-		local p = pointed_thing.under
-		if minetest.is_protected and minetest.is_protected(p, placer:get_player_name()) then
-			return nil
-		end
-		local node = minetest.get_node(p)
-		if node.name == "technic:template" then return end
-		local saved_node = save_node(p)
-		itemstack:take_item()
-		if saved_node ~= nil then
-			local meta = minetest.get_meta(p)
-			meta:set_string("saved_node", minetest.serialize(saved_node))
-		end
-		return itemstack
-	end
-})
+-- minetest.register_craftitem("technic:template_replacer", {
+-- 	description = S("Template (replacing)"),
+-- 	inventory_image = "technic_template_replacer.png",  -- ** NOTE: texture does not exist **
+-- 	on_place = function(itemstack, placer, pointed_thing)
+-- 		local p = pointed_thing.under
+-- 		if minetest.is_protected and minetest.is_protected(p, placer:get_player_name()) then
+-- 			return nil
+-- 		end
+-- 		local node = minetest.get_node(p)
+-- 		if node.name == "technic:template" then return end
+-- 		local saved_node = save_node(p)
+-- 		itemstack:take_item()
+-- 		if saved_node ~= nil then
+-- 			local meta = minetest.get_meta(p)
+-- 			meta:set_string("saved_node", minetest.serialize(saved_node))
+-- 		end
+-- 		return itemstack
+-- 	end
+-- })
 
-minetest.register_tool("technic:template_tool", {
-	description = S("Template Tool"),
-	inventory_image = "technic_template_tool.png",  -- ** NOTE: texture does not exist **
-	on_use = function(itemstack, puncher, pointed_thing)
-		local pos = pointed_thing.under
-		if pos == nil or minetest.is_protected and minetest.is_protected(pos, puncher:get_player_name()) then
-			return nil
-		end
-		local node = minetest.get_node(pos)
-		if node.name ~= "technic:template" and node.name ~= "technic:template_connector" then return end
-		local meta = minetest.get_meta(pos)
-		local c2 = meta:get_string("connected")
-		if c2 ~= "" then
-			expand_template(pos)
-		else
-			compress_templates(pos)
-		end
+-- minetest.register_tool("technic:template_tool", {
+-- 	description = S("Template Tool"),
+-- 	inventory_image = "technic_template_tool.png",  -- ** NOTE: texture does not exist **
+-- 	on_use = function(itemstack, puncher, pointed_thing)
+-- 		local pos = pointed_thing.under
+-- 		if pos == nil or minetest.is_protected and minetest.is_protected(pos, puncher:get_player_name()) then
+-- 			return nil
+-- 		end
+-- 		local node = minetest.get_node(pos)
+-- 		if node.name ~= "technic:template" and node.name ~= "technic:template_connector" then return end
+-- 		local meta = minetest.get_meta(pos)
+-- 		local c2 = meta:get_string("connected")
+-- 		if c2 ~= "" then
+-- 			expand_template(pos)
+-- 		else
+-- 			compress_templates(pos)
+-- 		end
 
-	end
-})
+-- 	end
+-- })
 
 
 
