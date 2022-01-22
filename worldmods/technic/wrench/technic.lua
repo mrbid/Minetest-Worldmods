@@ -4,6 +4,18 @@ local INT, STRING, FLOAT  =
 	wrench.META_TYPE_STRING,
 	wrench.META_TYPE_FLOAT
 
+
+wrench:register_node("infinite_chest:chest", {
+	lists = {"infinite_chest_list"},
+})
+wrench:register_node("infinite_chest:chest_locked", {
+	lists = {"infinite_chest_list"},
+	metas = {infotext = STRING,
+		owner = STRING},
+	owned = true,
+})
+
+
 wrench:register_node("technic:iron_chest", {
 	lists = {"main"},
 })
@@ -52,6 +64,18 @@ wrench:register_node("technic:mithril_chest", {
 		formspec = STRING},
 })
 wrench:register_node("technic:mithril_locked_chest", {
+	lists = {"main"},
+	metas = {infotext = STRING,
+		owner = STRING,
+		formspec = STRING},
+	owned = true,
+})
+wrench:register_node("technic:marble_chest", {
+	lists = {"main"},
+	metas = {infotext = STRING,
+		formspec = STRING},
+})
+wrench:register_node("technic:marble_locked_chest", {
 	lists = {"main"},
 	metas = {infotext = STRING,
 		owner = STRING,
