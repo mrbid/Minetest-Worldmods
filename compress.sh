@@ -1,3 +1,3 @@
-for file in worldmods/* worldmods/**/* ; do
+for file in worldmods/*.png worldmods/**/*.png ; do
   trimage -f "$file"
 done;
