@@ -7,27 +7,27 @@ local ethereal = ethereal or {}
 -- CAVEREALMS
 -------
 technic.cnc.register_all("caverealms:glow_emerald",
-                {cracky=3, light_source=13},
+                {cracky=3, light_source=13, utalpha=1},
                 {"caverealms_glow_emerald.png"},
                 S("Glow Emerald"))
 
 technic.cnc.register_all("caverealms:glow_ruby",
-                {cracky=3, light_source=13},
+                {cracky=3, light_source=13, utalpha=1},
                 {"caverealms_glow_ruby.png"},
                 S("Glow Ruby"))
 
 technic.cnc.register_all("caverealms:glow_crystal",
-                {cracky=3, light_source=13},
+                {cracky=3, light_source=13, utalpha=1},
                 {"caverealms_glow_crystal.png"},
                 S("Glow Crystal"))
 
 technic.cnc.register_all("caverealms:glow_mese",
-                {cracky=3, light_source=13},
+                {cracky=3, light_source=13, utalpha=1},
                 {"caverealms_glow_mese.png"},
                 S("Glow Mese"))
 
 technic.cnc.register_all("caverealms:glow_amethyst",
-                {cracky=3, light_source=13},
+                {cracky=3, light_source=13, utalpha=1},
                 {"caverealms_glow_amethyst.png"},
                 S("Glow Amethyst"))
 
