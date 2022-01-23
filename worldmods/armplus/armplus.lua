@@ -55,27 +55,87 @@ minetest.register_craft({
 	},
 })
 
------ Pumpkin Helmet
+----- Pumpkin Helmet(s)
 minetest.register_tool("armplus:pumpkinhelmet", {
 	description = "Pumpkin Helmet",
 	inventory_image = "armplus_pumpkinhelmet_inv.png",
-	groups = {armor_head=10, armor_heal=30, armor_use=0, physics_speed=6},
+	groups = {armor_head=10, armor_heal=30, armor_use=0, physics_speed=6, radiation=1000, armor_water=250},
 	wear = 0,
 })
-
--- minetest.register_craft({
--- 	output = "armplus:pumpkinhelmet",
--- 	recipe = {
--- 		{"farming:pumpkin_face"},
--- 		{"3d_armor:helmet_wood"},
--- 	},
--- })
-
---Another recipe
 minetest.register_craft({
 	output = "armplus:pumpkinhelmet",
 	recipe = {
-		{"group:tree","group:tree","group:tree"},
+		{"group:tree","dye:orange","group:tree"},
+		{"group:tree","3d_armor:helmet_wood","group:tree"},
+	},
+})
+
+minetest.register_tool("armplus:pumpkinhelmet1", {
+	description = "Pumpkin Helmet",
+	inventory_image = "armplus_pumpkinhelmet1_inv.png",
+	groups = {armor_head=10, armor_heal=30, armor_use=0, physics_speed=5, radiation=1000, armor_water=250},
+	wear = 0,
+})
+minetest.register_craft({
+	output = "armplus:pumpkinhelmet1",
+	recipe = {
+		{"group:tree","dye:purple","group:tree"},
+		{"group:tree","3d_armor:helmet_wood","group:tree"},
+	},
+})
+
+minetest.register_tool("armplus:pumpkinhelmet2", {
+	description = "Pumpkin Helmet",
+	inventory_image = "armplus_pumpkinhelmet2_inv.png",
+	groups = {armor_head=10, armor_heal=30, armor_use=0, physics_speed=4, radiation=1000, armor_water=250},
+	wear = 0,
+})
+minetest.register_craft({
+	output = "armplus:pumpkinhelmet2",
+	recipe = {
+		{"group:tree","dye:red","group:tree"},
+		{"group:tree","3d_armor:helmet_wood","group:tree"},
+	},
+})
+
+minetest.register_tool("armplus:pumpkinhelmet3", {
+	description = "Pumpkin Helmet",
+	inventory_image = "armplus_pumpkinhelmet3_inv.png",
+	groups = {armor_head=10, armor_heal=30, armor_use=0, physics_speed=3, radiation=1000, armor_water=250},
+	wear = 0,
+})
+minetest.register_craft({
+	output = "armplus:pumpkinhelmet3",
+	recipe = {
+		{"group:tree","dye:yellow","group:tree"},
+		{"group:tree","3d_armor:helmet_wood","group:tree"},
+	},
+})
+
+minetest.register_tool("armplus:pumpkinhelmet4", {
+	description = "Pumpkin Helmet",
+	inventory_image = "armplus_pumpkinhelmet4_inv.png",
+	groups = {armor_head=10, armor_heal=30, armor_use=0, physics_speed=2, radiation=1000, armor_water=250},
+	wear = 0,
+})
+minetest.register_craft({
+	output = "armplus:pumpkinhelmet4",
+	recipe = {
+		{"group:tree","dye:turquoise","group:tree"},
+		{"group:tree","3d_armor:helmet_wood","group:tree"},
+	},
+})
+
+minetest.register_tool("armplus:pumpkinhelmet5", {
+	description = "Pumpkin Helmet",
+	inventory_image = "armplus_pumpkinhelmet5_inv.png",
+	groups = {armor_head=10, armor_heal=30, armor_use=0, physics_speed=1, radiation=1000, armor_water=250},
+	wear = 0,
+})
+minetest.register_craft({
+	output = "armplus:pumpkinhelmet5",
+	recipe = {
+		{"group:tree","dye:cyan","group:tree"},
 		{"group:tree","3d_armor:helmet_wood","group:tree"},
 	},
 })
