@@ -223,3 +223,74 @@ register_crafts(
 	"technic:amethyst_protected_chest"
 )
 
+-- Bones
+register_chests("Bones", {
+	width = 8,
+	height = 4,
+	sort = false,
+	infotext = true,
+	autosort = false,
+	quickmove = false,
+	digilines = false,
+})
+register_crafts(
+	"Bones",
+	"bones:bones",
+	"default:chest",
+	"default:chest_locked",
+	"protector:chest"
+)
+
+-- Bones Gold
+register_chests("BonesGold", {
+	width = 8,
+	height = 4,
+	sort = false,
+	infotext = true,
+	autosort = false,
+	quickmove = false,
+	digilines = false,
+})
+register_crafts(
+	"BonesGold",
+	"bones:bones",
+	"technic:gold_chest",
+	"technic:gold_locked_chest",
+	"technic:gold_protected_chest"
+)
+
+-- Bones Diamond
+register_chests("BonesDiamond", {
+	width = 8,
+	height = 4,
+	sort = false,
+	infotext = true,
+	autosort = false,
+	quickmove = false,
+	digilines = false,
+})
+register_crafts(
+	"BonesDiamond",
+	"bones:bones",
+	"technic:diamond_chest",
+	"technic:diamond_locked_chest",
+	"technic:diamond_protected_chest"
+)
+
+-- Bones Poop
+register_chests("BonesPoop", {
+	width = 8,
+	height = 4,
+	sort = false,
+	infotext = true,
+	autosort = false,
+	quickmove = false,
+	digilines = false,
+})
+register_crafts(
+	"BonesPoop",
+	"bones:bones",
+	"technic:copper_chest",
+	"technic:copper_locked_chest",
+	"technic:copper_protected_chest"
+)

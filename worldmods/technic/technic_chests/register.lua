@@ -278,23 +278,57 @@ local node_groups_no_inv = {
 }
 
 local function get_tiles(name, data, color)
-	local tiles = {
-		"technic_"..name.."_chest_top.png"..tube_entry,
-		"technic_"..name.."_chest_top.png"..tube_entry,
-		"technic_"..name.."_chest_side.png"..tube_entry,
-		"technic_"..name.."_chest_side.png"..tube_entry,
-		"technic_"..name.."_chest_side.png"..tube_entry,
-		"technic_"..name.."_chest_front.png"
-	}
-	if data.color and color then
-		tiles[6] = tiles[6].."^technic_chest_overlay_"..technic.chests.colors[color][1]..".png"
+	if name == "bones" or name == "bonesgold" or name == "bonesdiamond" or name == "bonespoop" then
+		local tiles = {
+			"technic_"..name.."_chest_top.png",
+			"technic_"..name.."_chest_top.png",
+			"technic_"..name.."_chest_side.png",
+			"technic_"..name.."_chest_side.png",
+			"technic_"..name.."_chest_side.png",
+			"technic_"..name.."_chest_front.png"
+		}
+		return tiles
+	elseif name == "diamond" then
+		local tiles = {
+			"technic_"..name.."_chest_top.png",
+			"technic_"..name.."_chest_top.png",
+			"technic_"..name.."_chest_side.png",
+			"technic_"..name.."_chest_side.png",
+			"technic_"..name.."_chest_side.png",
+			"technic_"..name.."_chest_front.png"
+		}
+
+		if data.color and color then
+			tiles[6] = tiles[6].."^technic_chest_overlay_"..technic.chests.colors[color][1]..".png"
+		end
+		if data.locked then
+			tiles[6] = tiles[6].."^technic_"..name.."_chest_lock_overlay.png"
+		elseif data.protected then
+			tiles[6] = tiles[6]..protector_overlay
+		end
+
+		return tiles
+	else
+		local tiles = {
+			"technic_"..name.."_chest_top.png"..tube_entry,
+			"technic_"..name.."_chest_top.png"..tube_entry,
+			"technic_"..name.."_chest_side.png"..tube_entry,
+			"technic_"..name.."_chest_side.png"..tube_entry,
+			"technic_"..name.."_chest_side.png"..tube_entry,
+			"technic_"..name.."_chest_front.png"
+		}
+
+		if data.color and color then
+			tiles[6] = tiles[6].."^technic_chest_overlay_"..technic.chests.colors[color][1]..".png"
+		end
+		if data.locked then
+			tiles[6] = tiles[6].."^technic_"..name.."_chest_lock_overlay.png"
+		elseif data.protected then
+			tiles[6] = tiles[6]..protector_overlay
+		end
+
+		return tiles
 	end
-	if data.locked then
-		tiles[6] = tiles[6].."^technic_"..name.."_chest_lock_overlay.png"
-	elseif data.protected then
-		tiles[6] = tiles[6]..protector_overlay
-	end
-	return tiles
 end
 
 function technic.chests.register_chest(name, data)

@@ -4,18 +4,6 @@ local INT, STRING, FLOAT  =
 	wrench.META_TYPE_STRING,
 	wrench.META_TYPE_FLOAT
 
-
-wrench:register_node("infinite_chest:chest", {
-	lists = {"infinite_chest_list"},
-})
-wrench:register_node("infinite_chest:chest_locked", {
-	lists = {"infinite_chest_list"},
-	metas = {infotext = STRING,
-		owner = STRING},
-	owned = true,
-})
-
-
 wrench:register_node("technic:iron_chest", {
 	lists = {"main"},
 })
@@ -70,18 +58,6 @@ wrench:register_node("technic:mithril_locked_chest", {
 		formspec = STRING},
 	owned = true,
 })
-wrench:register_node("technic:marble_chest", {
-	lists = {"main"},
-	metas = {infotext = STRING,
-		formspec = STRING},
-})
-wrench:register_node("technic:marble_locked_chest", {
-	lists = {"main"},
-	metas = {infotext = STRING,
-		owner = STRING,
-		formspec = STRING},
-	owned = true,
-})
 wrench:register_node("technic:titanium_chest", {
 	lists = {"main"},
 	metas = {infotext = STRING,
@@ -118,6 +94,59 @@ wrench:register_node("technic:diamond_locked_chest", {
 		formspec = STRING},
 	owned = true,
 })
+
+wrench:register_node("technic:bones_chest", {
+	lists = {"main"},
+	metas = {infotext = STRING,
+		formspec = STRING},
+})
+wrench:register_node("technic:bones_locked_chest", {
+	lists = {"main"},
+	metas = {infotext = STRING,
+		owner = STRING,
+		formspec = STRING},
+	owned = true,
+})
+
+wrench:register_node("technic:bonesgold_chest", {
+	lists = {"main"},
+	metas = {infotext = STRING,
+		formspec = STRING},
+})
+wrench:register_node("technic:bonesgold_locked_chest", {
+	lists = {"main"},
+	metas = {infotext = STRING,
+		owner = STRING,
+		formspec = STRING},
+	owned = true,
+})
+
+wrench:register_node("technic:bonesdiamond_chest", {
+	lists = {"main"},
+	metas = {infotext = STRING,
+		formspec = STRING},
+})
+wrench:register_node("technic:bonesdiamond_locked_chest", {
+	lists = {"main"},
+	metas = {infotext = STRING,
+		owner = STRING,
+		formspec = STRING},
+	owned = true,
+})
+
+wrench:register_node("technic:bonespoop_chest", {
+	lists = {"main"},
+	metas = {infotext = STRING,
+		formspec = STRING},
+})
+wrench:register_node("technic:bonespoop_locked_chest", {
+	lists = {"main"},
+	metas = {infotext = STRING,
+		owner = STRING,
+		formspec = STRING},
+	owned = true,
+})
+
 wrench:register_node("bones:bones", {
 	lists = {"main"},
 	metas = {infotext = STRING,
