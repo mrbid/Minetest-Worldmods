@@ -294,3 +294,21 @@ register_crafts(
 	"technic:copper_locked_chest",
 	"technic:copper_protected_chest"
 )
+
+-- Bones Pink
+register_chests("BonesPink", {
+	width = 8,
+	height = 4,
+	sort = false,
+	infotext = true,
+	autosort = false,
+	quickmove = false,
+	digilines = false,
+})
+register_crafts(
+	"BonesPink",
+	"bones:bones",
+	"technic:amethyst_chest",
+	"technic:amethyst_locked_chest",
+	"technic:amethyst_protected_chest"
+)

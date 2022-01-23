@@ -147,6 +147,19 @@ wrench:register_node("technic:bonespoop_locked_chest", {
 	owned = true,
 })
 
+wrench:register_node("technic:bonespink_chest", {
+	lists = {"main"},
+	metas = {infotext = STRING,
+		formspec = STRING},
+})
+wrench:register_node("technic:bonespink_locked_chest", {
+	lists = {"main"},
+	metas = {infotext = STRING,
+		owner = STRING,
+		formspec = STRING},
+	owned = true,
+})
+
 wrench:register_node("bones:bones", {
 	lists = {"main"},
 	metas = {infotext = STRING,

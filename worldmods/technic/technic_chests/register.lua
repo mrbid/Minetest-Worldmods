@@ -278,7 +278,7 @@ local node_groups_no_inv = {
 }
 
 local function get_tiles(name, data, color)
-	if name == "bones" or name == "bonesgold" or name == "bonesdiamond" or name == "bonespoop" then
+	if name == "bones" or name == "bonesgold" or name == "bonesdiamond" or name == "bonespoop" or name == "bonespink" then
 		local tiles = {
 			"technic_"..name.."_chest_top.png",
 			"technic_"..name.."_chest_top.png",
