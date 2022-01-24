@@ -1391,9 +1391,9 @@ minetest.register_craft({
 minetest.register_craft({
         output = 'gems:stone_rod 4',
         recipe = {
-            {'', '', ''},
+            {'', 'default:cobble', ''},
 		    {'', 'default:cobble', ''},
-		    {'', '', ''},
+		    {'', 'default:cobble', ''},
                 
         }
 })

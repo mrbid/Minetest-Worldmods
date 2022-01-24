@@ -25,7 +25,10 @@ local supported_mods = {
 	'other_worlds',
 	'caverealms',
 	'rainbow_ore',
-	'terumet'
+	'terumet',
+    'technic_tweak',
+    'packed_things',
+    'quartz',
 }
 
 
