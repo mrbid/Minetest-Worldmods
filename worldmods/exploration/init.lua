@@ -33,9 +33,6 @@ spawn_command.pos = {-900,24,-1189}
 --         allow_place = allow_place_lava
 -- } )
 
--- no banning
-minetest.unregister_chatcommand("ban");
-
 -- https://forum.minetest.net/viewtopic.php?t=16862
 minetest.register_chatcommand("whatisthis", {
 	description = "Prints the item string of the object you are currently holding.",
