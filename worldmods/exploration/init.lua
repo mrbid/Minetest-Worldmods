@@ -43,7 +43,9 @@ minetest.register_chatcommand("whatisthis", {
 })
 
 -- no banning
-minetest.unregister_chatcommand("ban")
+minetest.register_on_mods_loaded(function()
+	minetest.unregister_chatcommand("ban")
+end)
 
 -- bls rollback check
 minetest.register_privilege("rollback_check", "Allows use of /rollback_check")
