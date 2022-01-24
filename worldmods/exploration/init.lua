@@ -42,6 +42,9 @@ minetest.register_chatcommand("whatisthis", {
 	end,
 })
 
+-- no banning
+minetest.unregister_chatcommand("ban")
+
 -- bls rollback check
 minetest.register_privilege("rollback_check", "Allows use of /rollback_check")
 minetest.override_chatcommand("rollback_check", {
