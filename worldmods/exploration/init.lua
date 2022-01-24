@@ -33,17 +33,8 @@ spawn_command.pos = {-900,24,-1189}
 --         allow_place = allow_place_lava
 -- } )
 
--- eliminate banning
-if minetest.registered_chatcommands["ban"] then
-	minetest.override_chatcommand("ban", {
-	   description = "No banning.",
-	   params = "",
-	   privs = {},
-	   func = function()
-		  return false, "Banning disabled."
-	   end
-	})
- end
+-- no banning
+minetest.unregister_chatcommand("ban");
 
 -- https://forum.minetest.net/viewtopic.php?t=16862
 minetest.register_chatcommand("whatisthis", {
