@@ -89,6 +89,15 @@ stairs.register_stair_and_slab("quartzstair", "quartz:pillar",
 -- Crafting
 --
 
+-- Quartz Crystal
+minetest.register_craft({
+	output = '"quartz:quartz_crystal" 4',
+	recipe = {
+		{'gems:raw_ruby', 'gems:raw_emerald', 'gems:raw_amethyst'},
+		{'gems:raw_sapphire', '', ''}
+	}
+})
+
 -- Quartz Crystal Piece
 minetest.register_craft({
 	output = '"quartz:quartz_crystal_piece" 3',
@@ -104,6 +113,13 @@ minetest.register_craft({
 		{'quartz:quartz_crystal', 'quartz:quartz_crystal', ''},
 		{'quartz:quartz_crystal', 'quartz:quartz_crystal', ''},
 		{'', '', ''}
+	}
+})
+
+minetest.register_craft({
+	output = 'quartz:block',
+	recipe = {
+		{'technic:marble', 'dye:white'},
 	}
 })
 
