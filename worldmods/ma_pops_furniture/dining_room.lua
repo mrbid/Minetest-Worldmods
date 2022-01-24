@@ -71,8 +71,8 @@ minetest.register_node('ma_pops_furniture:table_'..material, {
 		}
 	},
 
-	after_dig_node = function(pos) ma_pops_furniture.check_table(pos, material, false, true) end,
-	after_place_node = function(pos) ma_pops_furniture.check_table(pos, material, true, true) end,
+	--after_dig_node = function(pos) ma_pops_furniture.check_table(pos, material, false, true) end,
+	--after_place_node = function(pos) ma_pops_furniture.check_table(pos, material, true, true) end,
 	--on_punch = function(pos) ma_pops_furniture.check_table(pos, material, true, true) end
 })
 end
@@ -145,8 +145,8 @@ minetest.register_node('ma_pops_furniture:table_c_'..material, {
 		}
 	},
 
-	after_dig_node = function(pos) ma_pops_furniture.check_table(pos, material, false, true) end,
-	after_place_node = function(pos) ma_pops_furniture.check_table(pos, material, true, true) end,
+	--after_dig_node = function(pos) ma_pops_furniture.check_table(pos, material, false, true) end,
+	--after_place_node = function(pos) ma_pops_furniture.check_table(pos, material, true, true) end,
 	--on_punch = function(pos) ma_pops_furniture.check_table(pos, material, true, true) end
 })
 end
@@ -182,8 +182,8 @@ minetest.register_node('ma_pops_furniture:table_center_'..material, {
 		}
 	},
 
-	after_dig_node = function(pos) ma_pops_furniture.check_table(pos, material, false, true) end,
-	after_place_node = function(pos) ma_pops_furniture.check_table(pos, material, true, true) end,
+	--after_dig_node = function(pos) ma_pops_furniture.check_table(pos, material, false, true) end,
+	--after_place_node = function(pos) ma_pops_furniture.check_table(pos, material, true, true) end,
 	--on_punch = function(pos) ma_pops_furniture.check_table(pos, material, true, true) end
 })
 end
