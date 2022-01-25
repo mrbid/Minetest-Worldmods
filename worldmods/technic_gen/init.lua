@@ -103,9 +103,12 @@ function register_gen(data)
 			if not room_for_output then
 				technic.swap_node(pos, machine_node)
 				meta:set_string("infotext", S("%s Finished"):format(machine_desc_tier))
-				--meta:set_int("src_time", 0)
 				--minetest.add_item({x=pos.x, y=pos.y+1, z=pos.z}, strout)
-				technic.tube_inject_item(pos, pos, vector.new(0, 1, 0), strout)
+				if ltier == 'lv' then
+					meta:set_int("src_time", 0)
+				else
+					technic.tube_inject_item(pos, pos, vector.new(0, 1, 0), strout)
+				end
 				return
 			end
 
