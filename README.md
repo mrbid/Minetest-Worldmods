@@ -81,5 +81,10 @@ normal:
 /lua local p = minetest.get_player_by_name('@nearest'); p:set_nametag_attributes({color = {a = 255, r = 255, g = 255, b = 255}}) p:set_properties({visual = "mesh", textures={"character_454.png"}, visual_size = {x=1, y=1}, pointable=true})
 ```
 
-
+## Bug in ma_pops_furniture
+A bug discovered when calling the check_table() function causes a crash when certain tables of a non-expected naming convention are used, specifically that I am aware of, the wood and cobble tables. The solution I have opted for to comment out all calls to this function as I deem the optimization of legs when placing tables next to one another superfluous .. however this may change in the future as user "Test_User" put in some considerable time to find the exact problem as listed above and provide a solution to said problem as listed below:
+```
+functions.lua on line 114, should be able to replace if check_this then with if check_this and material ~= "_wood" then
+or, if the wood one did have other forms, at the start if material == "_wood" then material = "wood" end
+```
 
