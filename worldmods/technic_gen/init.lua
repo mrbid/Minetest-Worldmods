@@ -37,9 +37,9 @@ function register_gen(data)
 		"listring[current_player;main]"
 	if data.upgrade then
 		formspec = formspec..
-			"list[context;upgrade1;1,3;1,1;]"..
-			"list[context;upgrade2;2,3;1,1;]"..
-			"label[1,4;"..S("Upgrade Slots").."]"..
+			"list[context;upgrade1;1,4;1,1;]"..
+			"list[context;upgrade2;2,4;1,1;]"..
+			"label[1,3.5;"..S("Upgrade Slots").."]"..
 			"listring[context;upgrade1]"..
 			"listring[current_player;main]"..
 			"listring[context;upgrade2]"..
@@ -130,7 +130,7 @@ function register_gen(data)
 		tube = {
 			connect_sides = {top = 1},
 		},
-		connect_sides = data.connect_sides or connect_default,
+		--connect_sides = data.connect_sides or connect_default,
 		legacy_facedir_simple = true,
 		sounds = default.node_sound_wood_defaults(),
 		on_construct = function(pos)
@@ -167,7 +167,10 @@ function register_gen(data)
 		paramtype2 = "facedir",
 		drop = data.modname..":"..ltier.."_"..machine_name,
 		groups = active_groups,
-		connect_sides = data.connect_sides or connect_default,
+		tube = {
+			connect_sides = {top = 1},
+		},
+		--connect_sides = data.connect_sides or connect_default,
 		legacy_facedir_simple = true,
 		sounds = default.node_sound_wood_defaults(),
 		can_dig = technic.machine_can_dig,
@@ -184,7 +187,7 @@ function register_gen(data)
 end
 
 minetest.register_craft({
-	output = 'technic_gen:mv_stone',
+	output = 'technic_gen:lv_stone',
 	recipe = {
 		{'default:stone', 'bucket:bucket_water', 'default:stone'},
 		{'default:stone', 'default:pick_stone', 'default:stone'},
@@ -195,9 +198,9 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'technic_gen:mv_iron',
 	recipe = {
-		{'default:steelblock', 'technic_gen:mv_stone', 'default:steelblock'},
-		{'technic_gen:mv_stone', 'default:pick_steel', 'technic_gen:mv_stone'},
-		{'default:steelblock', 'technic_gen:mv_stone', 'default:steelblock'},
+		{'default:steelblock', 'technic_gen:lv_stone', 'default:steelblock'},
+		{'technic_gen:lv_stone', 'default:pick_steel', 'technic_gen:lv_stone'},
+		{'default:steelblock', 'technic_gen:lv_stone', 'default:steelblock'},
 	}
 })
 
@@ -207,6 +210,24 @@ minetest.register_craft({
 		{'default:diamondblock', 'technic_gen:mv_iron', 'default:diamondblock'},
 		{'technic_gen:mv_iron', 'default:pick_diamond', 'technic_gen:mv_iron'},
 		{'default:diamondblock', 'technic_gen:mv_iron', 'default:diamondblock'},
+	}
+})
+
+minetest.register_craft({
+	output = 'technic_gen:hv_mithril',
+	recipe = {
+		{'moreores:mithril_block', 'technic_gen:mv_diamond', 'moreores:mithril_block'},
+		{'technic_gen:mv_diamond', 'moreores:pick_mithril', 'technic_gen:mv_diamond'},
+		{'moreores:mithril_block', 'technic_gen:mv_diamond', 'moreores:mithril_block'},
+	}
+})
+
+minetest.register_craft({
+	output = 'technic_gen:hv_osmium',
+	recipe = {
+		{'xtraores:block_osmium', 'technic_gen:hv_mithril', 'xtraores:block_osmium'},
+		{'technic_gen:hv_mithril', 'xtraores:pickaxe_osmium', 'technic_gen:hv_mithril'},
+		{'xtraores:block_osmium', 'technic_gen:hv_mithril', 'xtraores:block_osmium'},
 	}
 })
 
