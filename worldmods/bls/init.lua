@@ -796,6 +796,9 @@ if minetest.get_modpath("sakuragi") then
     gr({input="sakuragi:stree", output="sakuragi:sleaves 8"})
 end
 
+
+if not minetest.get_modpath("gravelsieve") or not gravelsieve.api then return end
+
 local gs_api = gravelsieve.api
 
 local gravel_junk_outputs = {
