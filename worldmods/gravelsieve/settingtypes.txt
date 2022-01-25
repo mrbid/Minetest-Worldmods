@@ -1,4 +1,0 @@
-gravelsieve.step_delay (Delay between sieving steps) float 1.0
-gravelsieve.ore_rarity (Multiplier to make ores more or less common than they appear in the world) float 0.387
-gravelsieve.ore_max_elevation (The maximum world height ores will be searched for) int 0
-gravelsieve.ore_min_elevation (The minimum world height ores will be searched for) int -30912
