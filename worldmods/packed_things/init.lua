@@ -7,10 +7,10 @@ local conf_table = packed_things_config:to_table()
 
 local defaults = {
 	enable_cobble = "true",
-	enable_desert_cobble = "false",
+	enable_desert_cobble = "true",
 	enable_desert_sand = "true",
 	enable_dirt = "true",
-	enable_gravel = "false",
+	enable_gravel = "true",
 	enable_ice = "true",
 	enable_sand = "true",
 	enable_snow = "true",
