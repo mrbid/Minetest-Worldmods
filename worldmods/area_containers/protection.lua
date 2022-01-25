@@ -37,6 +37,9 @@ local MAX_APPLICABLE_Y = INSIDE_Y_LEVEL + 16 + 15
 -- Checks whether the position is protected only according to area_containers.
 -- See the overview for this file.
 local function is_area_containers_protected(pos)
+	if pos == nil then
+		return false
+	end
 	-- Check that the position is within the protected level:
 	local y = pos.y
 	if y >= MIN_APPLICABLE_Y and y <= MAX_APPLICABLE_Y then
