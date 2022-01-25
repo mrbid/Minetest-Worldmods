@@ -84,13 +84,6 @@ function register_gen(data)
 			technic.handle_machine_pipeworks(pos, tube_upgrade)
 		end
 
-		-- local powered = eu_input >= machine_demand[EU_upgrade+1]
-		-- if not powered then
-		-- 	technic.swap_node(pos, machine_node)
-		-- 	meta:set_string("infotext", S("%s Unpowered"):format(machine_desc_tier))
-		-- 	return
-		-- end
-
 		local powered = eu_input >= machine_demand[EU_upgrade+1]
 		if powered then
 			meta:set_int("src_time", meta:get_int("src_time") + 1)
