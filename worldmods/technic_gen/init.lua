@@ -1,5 +1,6 @@
 -- cobble generator designed by ScarletDarknesz
 -- January 2022
+-- https://github.com/mrbid/Minetest-Worldmods/tree/main/worldmods/technic_gen
 
 local S = technic.getter
 
