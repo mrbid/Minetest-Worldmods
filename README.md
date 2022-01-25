@@ -87,4 +87,5 @@ A bug discovered when calling the check_table() function causes a crash when cer
 functions.lua on line 114, should be able to replace if check_this then with if check_this and material ~= "_wood" then
 or, if the wood one did have other forms, at the start if material == "_wood" then material = "wood" end
 ```
+Issue filed: https://github.com/Gerold55/ma_pops_furniture/issues/11
 
