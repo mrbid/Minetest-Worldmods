@@ -20,6 +20,7 @@ function register_gen(data)
 	local tier = data.tier
 	local ltier = string.lower(tier)
 	local outamount = data.amount
+	local slots = data.slots
 
 	data.modname = minetest.get_current_modname()
 
@@ -33,7 +34,7 @@ function register_gen(data)
 
 	local formspec =
 		"size[8,9;]"..
-		"list[context;dst;5,1;2,2;]"..
+		"list[context;dst;0,1;8,8;]"..
 		"list[current_player;main;0,5;8,4;]"..
 		"label[0,0;"..machine_desc:format(tier).."]"..
 		"listring[context;dst]"..
@@ -177,7 +178,7 @@ function register_gen(data)
 			meta:set_int("tube_time",  0)
 			meta:set_string("formspec", formspec..form_buttons)
 			local inv = meta:get_inventory()
-			inv:set_size("dst", 4)
+			inv:set_size("dst", slots)
 			inv:set_size("upgrade1", 1)
 			inv:set_size("upgrade2", 1)
 		end,
@@ -287,6 +288,6 @@ minetest.register_craft({
 	}
 })
 
-register_gen({name= "stone", tier = "MV", demand = {1000, 900, 800}, speed = 5.0, amount = 1, upgrade = 1, tube = 1})
-register_gen({name= "iron", tier = "MV", demand = {2000, 1900, 1800}, speed = 1.0, amount = 1, upgrade = 1, tube = 1})
-register_gen({name= "diamond", tier = "MV", demand = {7500, 7000, 6500}, speed = 1.0, amount = 10, upgrade = 1, tube = 1})
+register_gen({name= "stone", tier = "MV", demand = {1000, 900, 800}, speed = 5.0, amount = 1, slots = 1, upgrade = 1, tube = 1})
+register_gen({name= "iron", tier = "MV", demand = {2000, 1900, 1800}, speed = 1.0, amount = 1, slots = 4, upgrade = 1, tube = 1})
+register_gen({name= "diamond", tier = "MV", demand = {7500, 7000, 6500}, speed = 1.0, amount = 10, slots = 16, upgrade = 1, tube = 1})
