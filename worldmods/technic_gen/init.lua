@@ -231,7 +231,7 @@ minetest.register_craft({
 	}
 })
 
-register_gen({name= "stone", tier = "LV", demand = {1000, 900, 800}, speed = 5.0, amount = 1, slots = 1, upgrade = 0})
+register_gen({name= "stone", tier = "LV", demand = {1000, 900, 800}, speed = 5.0, amount = 1, slots = 1})
 
 register_gen({name= "iron", tier = "MV", demand = {2000, 1850, 1700}, speed = 1.0, amount = 1, slots = 4, upgrade = 1})
 register_gen({name= "diamond", tier = "MV", demand = {7500, 7000, 6500}, speed = 1.0, amount = 10, slots = 16, upgrade = 1})
