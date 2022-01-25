@@ -15,8 +15,8 @@ function firstToUpper(str)
 end
 
 function register_gen(data)
-	local machine_name = data.name
-	local machine_desc = S("%s " .. firstToUpper(data.name) .. " Cobble Generator")
+	local machine_name = string.lower(data.name)
+	local machine_desc = S("%s " .. firstToUpper(machine_name) .. " Cobble Generator")
 	local tier = data.tier
 	local ltier = string.lower(tier)
 	local outamount = data.amount
@@ -84,18 +84,18 @@ function register_gen(data)
 			technic.handle_machine_pipeworks(pos, tube_upgrade)
 		end
 
+		meta:set_int(tier.."_EU_demand", machine_demand[EU_upgrade+1])
+		meta:set_int("src_time", meta:get_int("src_time") + 1)
+
 		local powered = eu_input >= machine_demand[EU_upgrade+1]
 		if powered then
-			meta:set_int("src_time", meta:get_int("src_time") + 1)
+			technic.swap_node(pos, machine_node.."_active")
+			meta:set_string("infotext", S("%s Active"):format(machine_desc_tier))
 		else
 			technic.swap_node(pos, machine_node)
 			meta:set_string("infotext", S("%s Unpowered"):format(machine_desc_tier))
-			return
+			meta:set_int("src_time", 0)
 		end
-		
-		meta:set_int(tier.."_EU_demand", machine_demand[EU_upgrade+1])
-		technic.swap_node(pos, machine_node.."_active")
-		meta:set_string("infotext", S("%s Active"):format(machine_desc_tier))
 
 		if meta:get_int("src_time") >= data.speed then
 			meta:set_int("src_time", 0)
