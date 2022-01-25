@@ -149,6 +149,9 @@ function register_gen(data)
 			inv:set_size("upgrade1", 1)
 			inv:set_size("upgrade2", 1)
 		end,
+		after_place_node = function(pos, placer, itemstack)
+			pipeworks.scan_for_tube_objects(pos)
+		end,
 		can_dig = technic.machine_can_dig,
 		allow_metadata_inventory_put = technic.machine_inventory_put,
 		allow_metadata_inventory_take = technic.machine_inventory_take,
