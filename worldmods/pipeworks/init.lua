@@ -145,6 +145,7 @@ if pipeworks.enable_autocrafter then
 	dofile(pipeworks.modpath.."/autocrafter.lua")
 	dofile(pipeworks.modpath.."/autocrafter1.lua")
 	dofile(pipeworks.modpath.."/autocrafter2.lua")
+	dofile(pipeworks.modpath.."/autocrafter3.lua")
 end
 if pipeworks.enable_lua_tube and
 		(minetest.get_modpath("mesecons") or minetest.get_modpath("digilines")) then
