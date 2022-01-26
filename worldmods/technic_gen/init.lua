@@ -22,7 +22,7 @@ function register_gen(data)
 
 	data.modname = minetest.get_current_modname()
 
-	local groups = {cracky = 2, tubedevice = 1, technic_machine = 1, ["technic_"..ltier] = 1}
+	local groups = {cracky = 2, technic_machine = 1, ["technic_"..ltier] = 1}
 	local active_groups = {not_in_creative_inventory = 1}
 	for k, v in pairs(groups) do active_groups[k] = v end
 
@@ -101,12 +101,12 @@ function register_gen(data)
 				inv:add_item("dst_tmp", o)
 			end
 			if not room_for_output then
-				--minetest.add_item({x=pos.x, y=pos.y+1, z=pos.z}, strout)
 				if ltier == 'lv' then
 					technic.swap_node(pos, machine_node)
 					meta:set_string("infotext", S("%s Finished"):format(machine_desc_tier))
 					meta:set_int("src_time", 0)
 				else
+					--minetest.add_item({x=pos.x, y=pos.y+1, z=pos.z}, strout)
 					technic.tube_inject_item(pos, pos, vector.new(0, 1, 0), strout)
 				end
 				return
