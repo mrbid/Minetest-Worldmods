@@ -237,10 +237,10 @@ minetest.register_craft({
 	}
 })
 
-register_gen({name= "stone", tier = "LV", demand = {1000, 900, 800}, speed = 5.0, amount = 1, slots = 1})
+register_gen({name = "stone", tier = "LV", demand = {1000, 900, 800}, speed = 5.0, amount = 1, slots = 1})
 
-register_gen({name= "iron", tier = "MV", demand = {2000, 1850, 1700}, speed = 1.0, amount = 1, slots = 4, upgrade = 1})
-register_gen({name= "diamond", tier = "MV", demand = {7500, 7000, 6500}, speed = 1.0, amount = 10, slots = 8, upgrade = 1})
+register_gen({name = "iron", tier = "MV", demand = {2000, 1850, 1700}, speed = 1.0, amount = 1, slots = 4, upgrade = 1})
+register_gen({name = "diamond", tier = "MV", demand = {7500, 7000, 6500}, speed = 1.0, amount = 10, slots = 8, upgrade = 1})
 
-register_gen({name= "mithril", tier = "HV", demand = {25000, 24000, 23000}, can_insert = "dst", speed = 1.0, amount = 50, slots = 16, upgrade = 1})
-register_gen({name= "osmium", tier = "HV", demand = {100000, 95000, 90000}, speed = 1.0, amount = 250, slots = 16, upgrade = 1})
+register_gen({name = "mithril", tier = "HV", demand = {25000, 24000, 23000}, speed = 1.0, amount = 50, slots = 16, upgrade = 1})
+register_gen({name = "osmium", tier = "HV", demand = {100000, 95000, 90000}, speed = 1.0, amount = 250, slots = 16, upgrade = 1})
