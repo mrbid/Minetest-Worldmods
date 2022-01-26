@@ -369,7 +369,7 @@ minetest.register_node("technic_tweak:quarry", {
 	         "default_diamond_block.png^default_tool_mesepick.png",
 	         "default_diamond_block.png"),
 	paramtype2 = "facedir",
-	groups = {cracky=2, tubedevice=1, technic_machine=1, technic_hv=1},
+	groups = {cracky=2, technic_machine=1, technic_hv=1},
 	connect_sides = {"bottom", "front", "left", "right"},
 	tube = {
 		connect_sides = {top = 1},
