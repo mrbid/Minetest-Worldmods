@@ -18,6 +18,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - modifications to [edit mod](https://github.com/mrbid/Minetest-Worldmods/tree/main/worldmods/edit) to make it safer for use by builders.
 - bones chests in different fun colours, so you can trophy your kills.
 - technic_gen machines that generate cobble
+- pipeworks autocrafters now have three tiers of speed
 
 ## Notes
 To load all these mods at the same time you will need to modify your minetest server:<br>
