@@ -19,7 +19,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - bones chests in different fun colours, so you can trophy your kills.
 - technic_gen machines that generate cobble
 - pipeworks autocrafters now have three tiers of speed
-- abm that converts lead to gold when 3.5% uranium blocks are placed next to it. [1972 Lake Baikal in Siberia](http://www.chm.bris.ac.uk/webprojects2002/crabb/modern.html)
+- abm that converts lead to gold when 3.5% uranium blocks are placed next to it. ([1972 Lake Baikal in Siberia](http://www.chm.bris.ac.uk/webprojects2002/crabb/modern.html))
 
 ## Notes
 To load all these mods at the same time you will need to modify your minetest server:<br>
