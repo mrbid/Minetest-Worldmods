@@ -51,20 +51,20 @@ minetest.register_node("packed_things:packed_cobble_8x", {
 
 -- if moreblocks is installed, need to convert from cobble_compressed to my packed_cobble
 
--- if minetest.get_modpath("moreblocks") then
--- 	minetest.register_craft({
--- 		output = 'packed_things:packed_cobble 2',
--- 		recipe = {
--- 			{'moreblocks:cobble_compressed', 'moreblocks:cobble_compressed'}
--- 		}
--- 	})
--- 	minetest.register_craft({
--- 		output = 'moreblocks:cobble_compressed 2',
--- 		recipe = {
--- 			{'packed_things:packed_cobble', 'packed_things:packed_cobble'}
--- 		}
--- 	})
--- 	else
+if minetest.get_modpath("moreblocks") then
+	minetest.register_craft({
+		output = 'packed_things:packed_cobble 2',
+		recipe = {
+			{'moreblocks:cobble_compressed', 'moreblocks:cobble_compressed'}
+		}
+	})
+	minetest.register_craft({
+		output = 'moreblocks:cobble_compressed 2',
+		recipe = {
+			{'packed_things:packed_cobble', 'packed_things:packed_cobble'}
+		}
+	})
+	else
 	minetest.register_craft({
 		output = 'packed_things:packed_cobble',
 		recipe = {
@@ -73,7 +73,7 @@ minetest.register_node("packed_things:packed_cobble_8x", {
 			{'default:cobble', 'default:cobble', 'default:cobble'}
 		}
 	})
--- end
+end
 -- pack the cobble items
 
 minetest.register_craft({

@@ -14,6 +14,7 @@ local defaults = {
 	enable_ice = "true",
 	enable_sand = "true",
 	enable_snow = "true",
+	enable_gold = "true",
 }
 
 for k, v in pairs(defaults) do
@@ -49,6 +50,9 @@ if packed_things_config:get_bool("enable_sand") then
 end
 if packed_things_config:get_bool("enable_snow") then 
 	dofile(modpath.."/snow.lua")
+end
+if packed_things_config:get_bool("enable_gold") then 
+	dofile(modpath.."/gold.lua")
 end
 
 minetest.log("info", "[packed_things] Done loading main.")
