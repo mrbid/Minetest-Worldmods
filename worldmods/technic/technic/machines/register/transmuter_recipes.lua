@@ -173,6 +173,17 @@ local recipes = {
 	{"default:copper_lump", "space_travel:dark_matter_crystal", "default:iron_lump", 1},
 	{"default:iron_lump", "space_travel:dark_matter_crystal", "default:copper_lump", 1},
 
+	-- quartz to diamond & vice-versa
+	{"quartz:quartz_crystal", "space_travel:dark_matter_crystal", "default:diamond", 6},
+	{"default:diamond", "space_travel:dark_matter_crystal", "quartz:quartz_crystal", 6},
+
+	-- mese block to diamond block & vice-versa
+	{"default:mese", "space_travel:dark_matter_crystal", "default:diamondblock", 12},
+	{"default:diamondblock", "space_travel:dark_matter_crystal", "default:mese", 12},
+
+	-- 99 biofuel to 1 superfuel
+	{"biofuel:fuel_can 99", "space_travel:dark_matter_crystal_block", "biofuel:superfuel_can", 33},
+
 	-- terumetals
 	{"terumet:ingot_raw", "space_travel:dark_matter_crystal 3", "terumet:ingot_ttin", 0.5},
 	{"terumet:block_raw", "space_travel:dark_matter_crystal_block", "terumet:block_ttin", 1},
