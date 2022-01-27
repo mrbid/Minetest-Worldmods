@@ -166,6 +166,9 @@ local recipes = {
 	{"space_travel:galena_lump", "space_travel:dark_matter_crystal", "nether:nether_lump", 2},
 	{"nether:nether_lump", "space_travel:dark_matter_crystal", "space_travel:galena_lump", 2},
 
+	--- tin lump to copper lump
+	{"default:tin_lump", "space_travel:dark_matter_crystal", "default:copper_lump", 1},
+	
 	-- copper lump to iron lump & vice-versa
 	{"default:copper_lump", "space_travel:dark_matter_crystal", "default:iron_lump", 1},
 	{"default:iron_lump", "space_travel:dark_matter_crystal", "default:copper_lump", 1},
