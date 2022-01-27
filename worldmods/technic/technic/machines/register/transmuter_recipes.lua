@@ -81,9 +81,9 @@ local recipes = {
 
 	-- upgrade uranium ingots and blocks from 0.0% to 0.7% to 3.5%
 	{"technic:uranium0_ingot", "space_travel:dark_matter_crystal 3", "technic:uranium_ingot", 6},
-	{"technic:uranium_ingot", "space_travel:dark_matter_crystal_block", "technic:uranium35_ingot", 12},
+	{"technic:uranium_ingot", "space_travel:dark_matter_crystal 3", "technic:uranium35_ingot", 12},
 
-	{"technic:uranium0_block", "space_travel:dark_matter_crystal 3", "technic:uranium_block", 6},
+	{"technic:uranium0_block", "space_travel:dark_matter_crystal_block", "technic:uranium_block", 6},
 	{"technic:uranium_block", "space_travel:dark_matter_crystal_block", "technic:uranium35_block", 12},
 
 	-- iron > cast iron > carbon steel > stainless steel
