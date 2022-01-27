@@ -178,8 +178,8 @@ local recipes = {
 	{"default:diamond", "space_travel:dark_matter_crystal", "quartz:quartz_crystal", 6},
 
 	-- mese block to diamond block & vice-versa
-	{"default:mese", "space_travel:dark_matter_crystal", "default:diamondblock", 12},
-	{"default:diamondblock", "space_travel:dark_matter_crystal", "default:mese", 12},
+	{"default:mese", "space_travel:dark_matter_crystal_block", "default:diamondblock", 12},
+	{"default:diamondblock", "space_travel:dark_matter_crystal_block", "default:mese", 12},
 
 	-- 99 biofuel to 1 superfuel
 	{"biofuel:fuel_can 99", "space_travel:dark_matter_crystal_block", "biofuel:superfuel_can", 33},
