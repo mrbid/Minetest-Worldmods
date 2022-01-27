@@ -8,6 +8,11 @@ minetest.register_craftitem("hawkfood:space_carrot", {
 	inventory_image = "space_carrot.png",
 	wield_image = "space_carrot.png",
 	on_use = function(itemstack, user)
+		minetest.sound_play("portal_open", {
+			pos = user:get_pos(),
+			gain = 1.0,
+			max_hear_distance = 5,
+		})
 		user:set_hp(user:get_hp() + 5)
 		user:set_pos({x = math.random(-30000, 30000), y = math.random(5000, 16000), z = math.random(-30000, 30000)})
 		itemstack:take_item(1)
@@ -30,9 +35,20 @@ minetest.register_craftitem("hawkfood:chocolate_coin", {
 	inventory_image = "minegeld_cent_25.png",
 	wield_image = "minegeld_cent_25.png",
 	on_use = function(itemstack, user)
+		minetest.sound_play("item_drop_pickup", {
+			pos = user:get_pos(),
+			gain = 1.0,
+			max_hear_distance = 5,
+		})
 		user:set_hp(user:get_hp() + 5)
 		if math.random(1, 10) == 1 then
+			minetest.sound_play("toaster", {
+				pos = user:get_pos(),
+				gain = 1.0,
+				max_hear_distance = 5,
+			})
 			minetest.add_item({x=user:get_pos().x, y=user:get_pos().y, z=user:get_pos().z}, "currency:minegeld_cent_10")
+			minetest.chat_send_player(user:get_player_name(), "You found 10 cent.")
 		end
 		itemstack:take_item(1)
 		return itemstack
@@ -52,6 +68,11 @@ minetest.register_craftitem("hawkfood:chocolate_eclair", {
 	inventory_image = "chocolate_eclair.png",
 	wield_image = "chocolate_eclair.png",
 	on_use = function(itemstack, user)
+		minetest.sound_play("item_drop_pickup", {
+			pos = user:get_pos(),
+			gain = 1.0,
+			max_hear_distance = 5,
+		})
 		user:set_hp(user:get_hp() + 5)
 		minetest.place_node(user:get_pos(), {name="petz:poop"})
 		itemstack:take_item(1)
@@ -72,17 +93,35 @@ minetest.register_craftitem("hawkfood:mystery_cookie", {
 	inventory_image = "mystery_cookie.png",
 	wield_image = "mystery_cookie.png",
 	on_use = function(itemstack, user)
+		minetest.sound_play("item_drop_pickup", {
+			pos = user:get_pos(),
+			gain = 1.0,
+			max_hear_distance = 5,
+		})
 		user:set_hp(user:get_hp() + 5)
 
 		local size = 0.1+math.random()*3.2
-		local eye_height = 1.4700000286102*size
-		local prop = {
-			visual_size = {x = size, y = size, z = size},
-			eye_height = eye_height,
-			collisionbox = {-0.30000001192093*size, 0*size, -0.30000001192093*size, 0.30000001192093*size, 1.7000000476837*size, 0.30000001192093*size},
-			selectionbox = {-0.30000001192093*size, 0*size, -0.30000001192093*size, 0.30000001192093*size, 1.7000000476837*size, 0.30000001192093*size},
-		}
-		user:set_properties(prop)
+		minetest.chat_send_player(user:get_player_name(), "You are now " .. string.format("%.2f", size) .. "% of your normal scale.")
+		resize_mod.set_size(user, size)
+		-- local size = 0.1+math.random()*3.2
+		-- local eye_height = 1.4700000286102*size
+		-- local prop = {
+		-- 	visual_size = {x = size, y = size, z = size},
+		-- 	eye_height = eye_height,
+		-- 	collisionbox = {-0.30000001192093*size, 0*size, -0.30000001192093*size, 0.30000001192093*size, 1.7000000476837*size, 0.30000001192093*size},
+		-- 	selectionbox = {-0.30000001192093*size, 0*size, -0.30000001192093*size, 0.30000001192093*size, 1.7000000476837*size, 0.30000001192093*size},
+		-- }
+		-- user:set_properties(prop)
+
+		minetest.after(33, function()
+			resize_mod.set_size(user, 1)
+			minetest.sound_play("item_drop_pickup", {
+				pos = user:get_pos(),
+				gain = 1.0,
+				max_hear_distance = 5,
+			})
+			minetest.chat_send_player(user:get_player_name(), "You are normal sized again.")
+		end)
 
 		itemstack:take_item(1)
 		return itemstack
@@ -102,6 +141,11 @@ minetest.register_craftitem("hawkfood:sick_cookie", {
 	inventory_image = "sick_cookie.png",
 	wield_image = "sick_cookie.png",
 	on_use = function(itemstack, user)
+		minetest.sound_play("mobs_kitten", {
+			pos = user:get_pos(),
+			gain = 1.0,
+			max_hear_distance = 5,
+		})
 		user:set_hp(user:get_hp() + 5)
 		minetest.add_entity(user:get_pos(), "mobs_animal:kitten")
 		minetest.add_entity(user:get_pos(), "mobs_animal:kitten")
