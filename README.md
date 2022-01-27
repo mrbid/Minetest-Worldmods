@@ -20,7 +20,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - technic_gen machines that generate cobble
 - pipeworks autocrafters now have three tiers of speed
 - abm that converts lead to gold when 3.5% uranium blocks are placed next to it. ([1972 Lake Baikal in Siberia](http://www.chm.bris.ac.uk/webprojects2002/crabb/modern.html))
-- HV Dark Matter Transmuter, a new technic machine that uses Dark Matter Crystals and Blocks to transmute ores, ingots, and ingot blocks
+- HV Dark Matter Transmuter, a new technic machine that uses Dark Matter Crystals and Blocks to transmute ores, ingots, and ingot blocks.
 
 ## Notes
 To load all these mods at the same time you will need to modify your minetest server:<br>
