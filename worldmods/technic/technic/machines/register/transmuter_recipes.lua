@@ -192,6 +192,11 @@ local recipes = {
 	{"terumet:ingot_tcha", "space_travel:dark_matter_crystal 3", "terumet:ingot_cgls", 5},
 	{"terumet:block_tcha", "space_travel:dark_matter_crystal_block", "terumet:block_cgls", 10},
 
+-- Food
+--
+	{"default:apple", "space_travel:dark_matter_crystal", "ethereal:golden_apple", 1},
+	{"farming:carrot", "space_travel:dark_matter_crystal", "farming:carrot_gold", 1},
+	{"farming:donut", "space_travel:dark_matter_crystal", "foody:diamond_donut", 1},
 }
 
 for _, data in pairs(recipes) do
