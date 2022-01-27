@@ -94,7 +94,7 @@ minetest.register_craft({
 	output = '"quartz:quartz_crystal" 4',
 	recipe = {
 		{'gems:raw_sapphire', '', 'gems:raw_emerald'},
-		{'', '', ''}
+		{'', '', ''},
 		{'gems:raw_amethyst', '', 'gems:raw_ruby'}
 	}
 })
@@ -104,7 +104,7 @@ minetest.register_craft({
 	output = '"quartz:quartz_crystal" 4',
 	recipe = {
 		{'space_travel:solar_mese_crystal', '', 'space_travel:lava_crystal'},
-		{'', '', ''}
+		{'', '', ''},
 		{'space_travel:lunar_spinel_gem', '', 'space_travel:dark_matter_crystal'}
 	}
 })
