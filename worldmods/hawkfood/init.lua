@@ -96,3 +96,28 @@ minetest.register_craft({
 	}
 })
 
+-- Sick Cookie
+minetest.register_craftitem("hawkfood:sick_cookie", {
+	description = "Sick Cookie",
+	inventory_image = "sick_cookie.png",
+	wield_image = "sick_cookie.png",
+	on_use = function(itemstack, user)
+		user:set_hp(user:get_hp() + 5)
+		minetest.add_entity(user:get_pos(), "mobs_animal:kitten")
+		minetest.add_entity(user:get_pos(), "mobs_animal:kitten")
+		minetest.add_entity(user:get_pos(), "mobs_animal:kitten")
+		minetest.add_entity(user:get_pos(), "mobs_animal:kitten")
+		minetest.add_entity(user:get_pos(), "mobs_animal:kitten")
+		minetest.add_entity(user:get_pos(), "mobs_animal:kitten")
+		itemstack:take_item(1)
+		return itemstack
+	end,
+})
+
+minetest.register_craft({
+	output = "hawkfood:sick_cookie",
+	recipe = {
+		{"farming:cookie", "dye:green", "currency:minegeld_100"},
+	}
+})
+
