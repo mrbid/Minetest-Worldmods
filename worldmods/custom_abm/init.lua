@@ -1,3 +1,7 @@
+-- Custom ABM
+-- January 2022
+-- https://github.com/mrbid/Minetest-Worldmods
+
 minetest.register_abm({
 	label = "Transmute Lead to Gold",
 	nodenames = {"technic:lead_block"},

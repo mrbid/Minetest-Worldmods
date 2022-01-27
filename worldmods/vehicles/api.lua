@@ -193,6 +193,7 @@ function vehicles.object_drive(entity, dtime, def)
 		--variables
 		local ctrl = entity.driver:get_player_control()
 		local dir = entity.driver:get_look_dir()
+		if dir == nil then return end
 		local vec_backward = {x=-dir.x*speed/4,y=velo.y+1*-2,z=-dir.z*speed/4}
 		local yaw = entity.driver:get_look_yaw()
 		local creative_mode = creative and creative.is_enabled_for and creative.is_enabled_for(entity.driver:get_player_name())
