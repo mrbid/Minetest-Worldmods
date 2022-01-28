@@ -44,6 +44,14 @@ minetest.override_item("default:stone", {
 	light_source = 6
 })
 
+minetest.override_item("technic:uranium_block", {
+	light_source = 6
+})
+
+minetest.override_item("technic:uranium35_block", {
+	light_source = 12
+})
+
 
 --[[
 minetest.override_item("default:snow", {
@@ -68,7 +76,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "ethereal:fire_dust 4",
 	recipe = {
-                {"lavastuff:lava_in_a_bottle"},
+		{"lavastuff:lava_in_a_bottle"},
 		{"technic:silver_dust"},
 	}
 })
@@ -76,7 +84,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "ethereal:fire_dust 4",
 	recipe = {
-                {"lavastuff:orb"},
+		{"lavastuff:orb"},
 		{"farming:bottle_ethanol"},
 	}
 })
@@ -84,7 +92,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "ethereal:fire_dust 4",
 	recipe = {
-                {"bucket:bucket_lava"},
+		{"bucket:bucket_lava"},
 		{"technic:gold_dust"},
 	}
 })
