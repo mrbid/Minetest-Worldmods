@@ -256,7 +256,7 @@ minetest.register_chatcommand("strip",
 		if name ~= nil and name ~= "" and param ~= nil and param ~= "" then
 			local player = minetest.get_player_by_name(param);
 			if player ~= nil then
-				armor:remove_armor(player)
+				armor:remove_all(player)
 				minetest.chat_send_all(param .. " has been stripped of all armor.");
 				writeLog("[STRIP] " .. name .. " stripped " .. param .. " of armor.");
 			end
