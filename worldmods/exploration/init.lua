@@ -247,6 +247,23 @@ minetest.register_chatcommand("as",
 -- jailing players
 minetest.register_privilege("jail", "Required to jail players.");
 
+minetest.register_chatcommand("strip",
+{
+	privs = {jail = true},
+	params = "<player name>",
+	description = "Strips player armor",
+	func = function (name, param)
+		if name ~= nil and name ~= "" and param ~= nil and param ~= "" then
+			local player = minetest.get_player_by_name(param);
+			if player ~= nil then
+				armor:remove_armor(player)
+				minetest.chat_send_all(param .. " has been stripped of all armor.");
+				writeLog("[STRIP] " .. name .. " stripped " .. param .. " of armor.");
+			end
+		end
+	end
+})
+
 minetest.register_chatcommand("jail",
 {
 	privs = {jail = true},
