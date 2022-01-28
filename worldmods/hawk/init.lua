@@ -8,13 +8,13 @@ minetest.register_craftitem("hawk:space_carrot", {
 	inventory_image = "space_carrot.png",
 	wield_image = "space_carrot.png",
 	on_use = function(itemstack, user)
+		user:set_hp(user:get_hp() + 5)
+		user:set_pos({x = math.random(-30000, 30000), y = math.random(5000, 16000), z = math.random(-30000, 30000)})
 		minetest.sound_play("portal_open", {
 			pos = user:get_pos(),
 			gain = 1.0,
 			max_hear_distance = 5,
 		})
-		user:set_hp(user:get_hp() + 5)
-		user:set_pos({x = math.random(-30000, 30000), y = math.random(5000, 16000), z = math.random(-30000, 30000)})
 		itemstack:take_item(1)
 		return itemstack
 	end,
