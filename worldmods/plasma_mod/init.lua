@@ -31,7 +31,7 @@ minetest.register_node('plasma_mod:red_plasma_with_sound', {
 
     after_place_node = function(pos)
             local timer = minetest.get_node_timer(pos)
-            timer:start(10)
+            timer:start(0)
     end,
     on_timer = function(pos)
             local timer = minetest.get_node_timer(pos)
