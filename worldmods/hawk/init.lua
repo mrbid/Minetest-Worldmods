@@ -8,7 +8,8 @@ minetest.register_craftitem("hawk:space_carrot", {
 	inventory_image = "space_carrot.png",
 	wield_image = "space_carrot.png",
 	on_use = function(itemstack, user)
-		user:set_hp(user:get_hp() + 5)
+		user:set_hp(user:get_hp() + 1)
+		stamina.change_saturation(user, 1)
 		user:set_pos({x = math.random(-30000, 30000), y = math.random(5000, 16000), z = math.random(-30000, 30000)})
 		minetest.sound_play("portal_open", {
 			pos = user:get_pos(),
@@ -40,7 +41,8 @@ minetest.register_craftitem("hawk:chocolate_coin", {
 			gain = 1.0,
 			max_hear_distance = 5,
 		})
-		user:set_hp(user:get_hp() + 5)
+		user:set_hp(user:get_hp() + 1)
+		stamina.change_saturation(user, 1)
 		if math.random(1, 10) == 1 then
 			minetest.sound_play("toaster", {
 				pos = user:get_pos(),
@@ -73,7 +75,8 @@ minetest.register_craftitem("hawk:chocolate_eclair", {
 			gain = 1.0,
 			max_hear_distance = 5,
 		})
-		user:set_hp(user:get_hp() + 5)
+		user:set_hp(user:get_hp() + 1)
+		stamina.change_saturation(user, 1)
 		minetest.place_node(user:get_pos(), {name="petz:poop"})
 		itemstack:take_item(1)
 		return itemstack
@@ -98,7 +101,8 @@ minetest.register_craftitem("hawk:mystery_cookie", {
 			gain = 1.0,
 			max_hear_distance = 5,
 		})
-		user:set_hp(user:get_hp() + 5)
+		user:set_hp(user:get_hp() + 1)
+		stamina.change_saturation(user, 1)
 
 		local size = 0.1+math.random()*3.2
 		minetest.chat_send_player(user:get_player_name(), "You are now " .. string.format("%.2f", size) .. "% of your normal scale.")
@@ -137,7 +141,8 @@ minetest.register_craftitem("hawk:sick_cookie", {
 			gain = 1.0,
 			max_hear_distance = 5,
 		})
-		user:set_hp(user:get_hp() + 5)
+		user:set_hp(user:get_hp() + 1)
+		stamina.change_saturation(user, 1)
 		minetest.add_entity(user:get_pos(), "mobs_animal:kitten")
 		minetest.add_entity(user:get_pos(), "mobs_animal:kitten")
 		minetest.add_entity(user:get_pos(), "mobs_animal:kitten")
@@ -160,7 +165,7 @@ minetest.register_craft({
 minetest.register_tool("hawk:blood_sucker", {
 	description = "Bone breaker",
 	inventory_image = "blood_sucker.png",
-	wield_scale = {x=3,y=3,z=3},
+	--wield_scale = {x=3,y=3,z=3},
 	tool_capabilities = {
 		full_punch_interval = 1.5,
 		max_drop_level=5,
