@@ -150,6 +150,24 @@ minetest.register_craftitem("hawk:sick_cookie", {
 		user:set_hp(user:get_hp() + 1)
 		stamina.change_saturation(user, 1)
 		local np = user:get_pos();
+		minetest.add_entity(np, "mobs_animal:kitten")
+		minetest.add_entity(np, "mobs_animal:kitten")
+		minetest.add_entity(np, "mobs_animal:kitten")
+		minetest.add_entity(np, "mobs_animal:kitten")
+		minetest.add_entity(np, "mobs_animal:kitten")
+		minetest.add_entity(np, "mobs_animal:kitten")
+		itemstack:take_item(1)
+		return itemstack
+	end,
+	on_place = function(itemstack, user)
+		minetest.sound_play("mobs_kitten", {
+			pos = user:get_pos(),
+			gain = 1.0,
+			max_hear_distance = 5,
+		})
+		user:set_hp(user:get_hp() + 1)
+		stamina.change_saturation(user, 1)
+		local np = user:get_pos();
 		np.y = np.y + 3
 		minetest.add_entity(np, "mobs_animal:kitten")
 		minetest.add_entity(np, "mobs_animal:kitten")
