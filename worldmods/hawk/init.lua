@@ -149,12 +149,14 @@ minetest.register_craftitem("hawk:sick_cookie", {
 		})
 		user:set_hp(user:get_hp() + 1)
 		stamina.change_saturation(user, 1)
-		minetest.add_entity(user:get_pos(), "mobs_animal:kitten")
-		minetest.add_entity(user:get_pos(), "mobs_animal:kitten")
-		minetest.add_entity(user:get_pos(), "mobs_animal:kitten")
-		minetest.add_entity(user:get_pos(), "mobs_animal:kitten")
-		minetest.add_entity(user:get_pos(), "mobs_animal:kitten")
-		minetest.add_entity(user:get_pos(), "mobs_animal:kitten")
+		local np = user:get_pos();
+		np.y = np.y + 3
+		minetest.add_entity(np, "mobs_animal:kitten")
+		minetest.add_entity(np, "mobs_animal:kitten")
+		minetest.add_entity(np, "mobs_animal:kitten")
+		minetest.add_entity(np, "mobs_animal:kitten")
+		minetest.add_entity(np, "mobs_animal:kitten")
+		minetest.add_entity(np, "mobs_animal:kitten")
 		itemstack:take_item(1)
 		return itemstack
 	end,
