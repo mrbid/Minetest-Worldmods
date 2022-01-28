@@ -339,7 +339,7 @@ minetest.register_entity("vehicles:assaultsuit", {
 		if self.driver and clicker == self.driver then
 			vehicles.object_detach(self, clicker, {x=1, y=0, z=1})
 		elseif not self.driver then
-			vehicles.object_attach(self, clicker, {x=0, y=5, z=4}, false, {x=0, y=20, z=8})
+			vehicles.object_attach(self, clicker, {x=0, y=27, z=4}, false, {x=0, y=20, z=8})
 		end
 	end,
 	on_punch = vehicles.on_punch,
