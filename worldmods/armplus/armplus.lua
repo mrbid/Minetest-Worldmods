@@ -59,7 +59,8 @@ minetest.register_craft({
 minetest.register_tool("armplus:pumpkinhelmet", {
 	description = "Pumpkin Helmet",
 	inventory_image = "armplus_pumpkinhelmet_inv.png",
-	groups = {armor_head=10, armor_heal=30, armor_use=0, physics_speed=6, radiation=1000, armor_water=250},
+	groups = {armor_head=10, armor_heal=30, armor_use=0, physics_speed=6, armor_water=250},
+	armor_groups = {radiation=1000},
 	wear = 0,
 })
 minetest.register_craft({
@@ -73,7 +74,8 @@ minetest.register_craft({
 minetest.register_tool("armplus:pumpkinhelmet1", {
 	description = "Pumpkin Helmet 1",
 	inventory_image = "armplus_pumpkinhelmet1_inv.png",
-	groups = {armor_head=10, armor_heal=30, armor_use=0, physics_speed=5, radiation=1000, armor_water=250},
+	groups = {armor_head=10, armor_heal=30, armor_use=0, physics_speed=5, armor_water=250},
+	armor_groups = {radiation=1000},
 	wear = 0,
 })
 minetest.register_craft({
@@ -87,7 +89,8 @@ minetest.register_craft({
 minetest.register_tool("armplus:pumpkinhelmet2", {
 	description = "Pumpkin Helmet 2",
 	inventory_image = "armplus_pumpkinhelmet2_inv.png",
-	groups = {armor_head=10, armor_heal=30, armor_use=0, physics_speed=4, radiation=1000, armor_water=250},
+	groups = {armor_head=10, armor_heal=30, armor_use=0, physics_speed=4, armor_water=250},
+	armor_groups = {radiation=1000},
 	wear = 0,
 })
 minetest.register_craft({
@@ -101,7 +104,8 @@ minetest.register_craft({
 minetest.register_tool("armplus:pumpkinhelmet3", {
 	description = "Pumpkin Helmet 3",
 	inventory_image = "armplus_pumpkinhelmet3_inv.png",
-	groups = {armor_head=10, armor_heal=30, armor_use=0, physics_speed=3, radiation=1000, armor_water=250},
+	groups = {armor_head=10, armor_heal=30, armor_use=0, physics_speed=3, armor_water=250},
+	armor_groups = {radiation=1000},
 	wear = 0,
 })
 minetest.register_craft({
@@ -115,7 +119,8 @@ minetest.register_craft({
 minetest.register_tool("armplus:pumpkinhelmet4", {
 	description = "Pumpkin Helmet 4",
 	inventory_image = "armplus_pumpkinhelmet4_inv.png",
-	groups = {armor_head=10, armor_heal=30, armor_use=0, physics_speed=2, radiation=1000, armor_water=250},
+	groups = {armor_head=10, armor_heal=30, armor_use=0, physics_speed=2, armor_water=250},
+	armor_groups = {radiation=1000},
 	wear = 0,
 })
 minetest.register_craft({
@@ -129,7 +134,8 @@ minetest.register_craft({
 minetest.register_tool("armplus:pumpkinhelmet5", {
 	description = "Pumpkin Helmet 5",
 	inventory_image = "armplus_pumpkinhelmet5_inv.png",
-	groups = {armor_head=10, armor_heal=30, armor_use=0, physics_speed=1, radiation=1000, armor_water=250},
+	groups = {armor_head=10, armor_heal=30, armor_use=0, physics_speed=1, armor_water=250},
+	armor_groups = {radiation=1000},
 	wear = 0,
 })
 minetest.register_craft({
