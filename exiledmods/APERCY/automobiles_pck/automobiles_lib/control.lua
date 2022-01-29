@@ -48,7 +48,7 @@ function automobiles_lib.control(self, dtime, hull_direction, longit_speed, long
 
             --reversing
 	        if ctrl.sneak and longit_speed <= 1.0 and longit_speed > -1.0 then
-                acc = -1
+                acc = -2
 	        end
         end
 
@@ -113,7 +113,7 @@ function automobiles_lib.control(self, dtime, hull_direction, longit_speed, long
             if longit_speed > 0 then
                 local factor = 1
                 if self._steering_angle > 0 then factor = -1 end
-                local correction = (steering_limit*(longit_speed/100)) * factor
+                local correction = (steering_limit*(longit_speed/75)) * factor
                 local before_correction = self._steering_angle
                 self._steering_angle = self._steering_angle + correction
                 if math.sign(before_correction) ~= math.sign(self._steering_angle) then self._steering_angle = 0 end
