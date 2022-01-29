@@ -20,7 +20,7 @@ minetest.override_item("default:lava_source", {
 	liquidtype = "none",
 	liquid_alternative_flowing = "none",
 	liquid_alternative_source = "none",
-	groups = {igniter = 1},
+	groups = {lava = 3, igniter = 1},
 	walkable = true,
 	pointable = true,
 	diggable = false,
