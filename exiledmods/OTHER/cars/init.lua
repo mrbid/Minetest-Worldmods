@@ -8,7 +8,7 @@ minetest.register_craftitem("cars:car",{
 			cars.current_cars[name] = {}
 			cars.current_cars[name].properties = user:get_properties()
 			cars.current_cars[name].physics_override = user:get_physics_override()
-			user:set_properties({visual="mesh",visual_size={x=1,y=1},mesh="cars_car.obj",textures={"cars_car.png"}})
+			user:set_properties({visual="mesh",visual_size={x=1,y=1},mesh="cars_car.obj",textures={"cars_car.png"},collisionbox = {-1.45, 0, -0.5, 1.45, 1.2, 0.5},})
 			user:set_physics_override({speed=(minetest.setting_getbool("disable_anticheat")== true and 3 or 1),jump=0,gravity=2})
 		else
 			user:set_properties(cars.current_cars[name].properties)
