@@ -1,7 +1,17 @@
--- Buzzblocks 18th March 2020
+-- Originally named: buzzblocks 18th March 2020
 --
--- Revamped, renamed VFBUZZ 25th January 2022
--- v1.0 - 26 Jan 2022 - 19 simple nodes. 48 posters, 1 commented out. 3 posters with transparency issues, to fix in later version.
+-- Revamped, renamed: VFBUZZ 25th January 2022
+--
+-- PLEASE NOTE: Buzzington (Chris) made this mod exclusively for the VF-TECHNIC server. Exclusively. 
+-- It's not on Github and it's not public. There may be copyright issues beyond a private server.
+-- I will not support forks and versions on other servers. VF-TECHNIC have treated me well.
+--
+-- v1.0 - 26 Jan 2022 - 19 simplenodes. 48 posters, 1 commented out. 3 posters with transparency issues, to fix in later version.
+-- v1.1 - 28 Jan 2022 - 35 (37-2) simplenodes. 83 posters, 1 commented out. Red Eye poster/block needs light background, simplenode gives black - how to fix, apart from add white background and make new image.
+--
+--
+--
+--
 --
 
 
@@ -42,7 +52,7 @@ minetest.register_node("vfbuzz:"..name, {
 	light_source = light,
 	-- sound = default.node_sound_stone_defaults(), -- FIX THIS AT A LATER DATE
 })
-end--function vfbuzz.register_simplenode(name, desc, texture, light)
+end--
 
 
 
@@ -76,16 +86,33 @@ vfbuzz.register_simplenode("alien_nyan", S("alien_nyan"), "alien_nyan.png", 0)
 vfbuzz.register_simplenode("ace_aged", S("Ace block (aged)"), "ace_aged.png", 0) -- poster turned into simple nodes to see how they look
 vfbuzz.register_simplenode("ace_gold", S("Ace block (gold)"), "ace_gold_yellow.png", 10) -- looks cooler with light
 
-
-
-
-
+--
+-- posters as simplenodes! use a screwdriver to rotate!
+--
+--vfbuzz.register_simplenode("", S(""), ".png", 0) -- empty template, name-lowercase/underscores, desc-anything, image:xxx.png, light:-0 to 10
+--
+vfbuzz.register_simplenode("spiral_block", S("Spiral block"), "buzz_48.png", 0)
+vfbuzz.register_simplenode("spiral_block_light", S("Spiral block light"), "buzz_48.png", 10)
+vfbuzz.register_simplenode("trollolol_block", S("Trollolol block"), "troll_256.png", 0)
+vfbuzz.register_simplenode("trollolol_block_light", S("Trollolol block light"), "troll_256.png", 10)
+vfbuzz.register_simplenode("redeye_block", S("Red Eye block"), "eye1_256.png", 0)
+vfbuzz.register_simplenode("redeye_block_light", S("Red Eye block light"), "eye1_256.png", 10)
+vfbuzz.register_simplenode("matrix_block", S("Matrix block"), "matrix_256.png", 0)
+vfbuzz.register_simplenode("matrix_block_light", S("Matrix block light"), "matrix_256.png", 10)
+vfbuzz.register_simplenode("biohazard_block", S("Biohazard block"), "biohaz_256.png", 0)
+vfbuzz.register_simplenode("biohazard_block_light", S("Biohazard block light"), "biohaz_256.png", 10)
+vfbuzz.register_simplenode("biohazard2_block", S("Biohazard White block"), "biohaz2_256.png", 0)
+vfbuzz.register_simplenode("biohazard2_block_light", S("Biohazard White block light"), "biohaz2_256.png", 10)
+vfbuzz.register_simplenode("biohazard3_block", S("Biohazard Black block"), "biohaz3_256.png", 0)
+vfbuzz.register_simplenode("biohazard3_block_light", S("Biohazard Black block light"), "biohaz3_256.png", 10)
+vfbuzz.register_simplenode("biohazard4_block", S("Biohazard Faded Green block"), "biohaz4_256.png", 0)
+vfbuzz.register_simplenode("biohazard4_block_light", S("Biohazard Faded Green block light"), "biohaz4_256.png", 10)
 
 --
 ------------------- POSTERS SECTION ---------------------
 --
 --
--- 1xx random, 2xx music, 3xx HawkArt, 4xx VF, 5xx animal, 6xx cartoon, 7xx nature, 8xx movies, 9xx gamers/anime/manga
+-- 1xx random, 2xx music, 3xx HawkArt, 4xx VF, 5xx animal, 6xx cartoon, 7xx nature, 8xx movies/tv, 9xx gamers/anime/manga
 --
 --
 --
@@ -282,6 +309,47 @@ minetest.register_node("vfbuzz:poster205", {
 	},
 	groups = {cracky=3,dig_immediate=3},
 })
+
+minetest.register_node("vfbuzz:poster206", {
+	description = S("Piano & Notes 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"music1_256.png",},
+	inventory_image = "music1_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster207", {
+	description = S("On A Mission 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"bluesbro1_256.png",},
+	inventory_image = "bluesbro1_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
 
 -------------------------------------------------------------------
 ------------------------------------------------------------------- HawkArt posters - vfbuzz:poster3xx
@@ -737,6 +805,45 @@ minetest.register_node("vfbuzz:poster514", {
 	groups = {cracky=3,dig_immediate=3},
 })
 
+minetest.register_node("vfbuzz:poster515", {
+	description = S("Wolf 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"wolf1_256.png",},
+	inventory_image = "wolf1_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster516", {
+	description = S("Wolf2 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"wolf2_256.png",},
+	inventory_image = "wolf2_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
 
 -------------------------------------------------------------------
 -------------------------------------------------------------------  cartoon posters - vfbuzz:poster6xx
@@ -801,6 +908,47 @@ minetest.register_node("vfbuzz:poster603", {
 	},
 	groups = {cracky=3,dig_immediate=3},
 })
+
+minetest.register_node("vfbuzz:poster604", {
+	description = S("Scooby Doo 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"scooby_256.png",},
+	inventory_image = "scooby_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster605", {
+	description = S("Trippy Penguin 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"penguin_256.png",},
+	inventory_image = "penguin_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
 
 -------------------------------------------------------------------
 -------------------------------------------------------------------  nature posters - vfbuzz:poster7xx
@@ -906,8 +1054,68 @@ minetest.register_node("vfbuzz:poster705", {
 	groups = {cracky=3,dig_immediate=3},
 })
 
+minetest.register_node("vfbuzz:poster706", {
+	description = S("Aurora 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"aurora1_256.png",},
+	inventory_image = "aurora1_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster707", {
+	description = S("Volcano 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"volcano_256.png",},
+	inventory_image = "volcano_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster708", {
+	description = S("Ocean & Gull 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"ocean1_256.png",},
+	inventory_image = "ocean1_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
 -------------------------------------------------------------------
--------------------------------------------------------------------  movie posters - vfbuzz:poster8xx
+-------------------------------------------------------------------  movie/tv posters - vfbuzz:poster8xx
 -------------------------------------------------------------------
 
 minetest.register_node("vfbuzz:poster801", {
@@ -976,6 +1184,86 @@ minetest.register_node("vfbuzz:poster804", {
 	visual_scale = 3.0,
 	tiles = {"vader_256.png",},
 	inventory_image = "vader_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster805", {
+	description = S("Stargate Red 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"stargate1_256.png",},
+	inventory_image = "stargate1_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster806", {
+	description = S("Stargate F302 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"stargate2_256.png",},
+	inventory_image = "stargate2_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster807", {
+	description = S("Minion 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"minion1_256.png",},
+	inventory_image = "minion1_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster808", {
+	description = S("Venom 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"venom_256.png",},
+	inventory_image = "venom_256.png",
 	use_texture_alpha = true,
 	paramtype = "light",
 	paramtype2 = "wallmounted",
@@ -1080,6 +1368,446 @@ minetest.register_node("vfbuzz:poster904", {
 	visual_scale = 3.0,
 	tiles = {"manga1_256.png",},
 	inventory_image = "manga1_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster905", {
+	description = S("MTG Chandra The Firebrand 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"mtg4_256.png",},
+	inventory_image = "mtg4_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster906", {
+	description = S("Biohazard White 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"biohaz2_256.png",},
+	inventory_image = "biohaz2_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster907", {
+	description = S("Biohazard Black 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"biohaz3_256.png",},
+	inventory_image = "biohaz3_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster908", {
+	description = S("Biohazard Faded Green 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"biohaz4_256.png",},
+	inventory_image = "biohaz4_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster909", {
+	description = S("Duke 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"duke1_256.png",},
+	inventory_image = "duke1_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster910", {
+	description = S("Duke Blue 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"duke2_256.png",},
+	inventory_image = "duke2_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster911", {
+	description = S("Eramis 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"beyond1_256.png",},
+	inventory_image = "beyond1_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster912", {
+	description = S("Aria 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"aria1_256.png",},
+	inventory_image = "aria1_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster913", {
+	description = S("Challenger 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"challenger1_256.png",},
+	inventory_image = "challenger1_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster914", {
+	description = S("Green Smoke 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"greensmoke_256.png",},
+	inventory_image = "greensmoke_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster915", {
+	description = S("Purple Smoke 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"purplesmoke_256.png",},
+	inventory_image = "purplesmoke_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster916", {
+	description = S("Pirate Green 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"pirate_256.png",},
+	inventory_image = "pirate_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster917", {
+	description = S("Pirate Flag 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"pirateflag_256.png",},
+	inventory_image = "pirateflag_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster918", {
+	description = S("Pickaxe 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"pickaxe_256.png",},
+	inventory_image = "pickaxe_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster919", {
+	description = S("Pickaxe2 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"pickaxe2_256.png",},
+	inventory_image = "pickaxe2_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster920", {
+	description = S("Gladiator 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"gladiator1_256.png",},
+	inventory_image = "gladiator1_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster921", {
+	description = S("Spartan Logo 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"spartan1_256.png",},
+	inventory_image = "spartan1_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster922", {
+	description = S("Spartan Black 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"spartan2_256.png",},
+	inventory_image = "spartan2_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster923", {
+	description = S("Spartan Red 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"spartan3_256.png",},
+	inventory_image = "spartan3_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster924", {
+	description = S("Spartan Blue 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"spartan4_256.png",},
+	inventory_image = "spartan4_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster925", {
+	description = S("Spartan Green 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"spartan5_256.png",},
+	inventory_image = "spartan5_256.png",
+	use_texture_alpha = true,
+	paramtype = "light",
+	paramtype2 = "wallmounted",
+	sunlight_propagates = true,	
+	--light_source = 14,
+	walkable = false,
+	is_ground_content = true,
+	selection_box = {
+		type = "wallmounted",
+		fixed = {-0.5, -0.5, -0.5, 0.5, -0.4, 0.5}
+	},
+	groups = {cracky=3,dig_immediate=3},
+})
+
+minetest.register_node("vfbuzz:poster926", {
+	description = S("Evil Samurai 3x3"),
+	drawtype = "signlike",
+	visual_scale = 3.0,
+	tiles = {"samurai1_256.png",},
+	inventory_image = "samurai1_256.png",
 	use_texture_alpha = true,
 	paramtype = "light",
 	paramtype2 = "wallmounted",
