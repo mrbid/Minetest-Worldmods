@@ -181,6 +181,10 @@ local recipes = {
 	{"default:mese", "space_travel:dark_matter_crystal_block", "default:diamondblock", 12},
 	{"default:diamondblock", "space_travel:dark_matter_crystal_block", "default:mese", 12},
 
+	-- Brass Block to 9x Latex & vice-versa
+	{"basic_materials:brass_block", "space_travel:dark_matter_crystal_block", "technic:raw_latex 9", 12},
+	{"technic:raw_latex 9", "space_travel:dark_matter_crystal_block", "basic_materials:brass_block", 12},
+
 	-- 99 biofuel to 1 superfuel
 	{"biofuel:fuel_can 99", "space_travel:dark_matter_crystal_block", "biofuel:superfuel_can", 33},
 
