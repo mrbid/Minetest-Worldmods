@@ -262,7 +262,7 @@ function automobile_on_punch(entity, puncher)
 end
 function automobile_object_attach(entity, player, pos)
 	--force_detach(player)
-	player:set_attach(entity.object, "", entity.rider_pos, {x=0, y=0, z=0})
+	player:set_attach(entity.object, "", pos, {x=0, y=0, z=0})
 	player:set_eye_offset(
 		entity.rider_eye_offset,
 		{x = entity.rider_eye_offset.x, y = entity.rider_eye_offset.y+1, z = -40}
