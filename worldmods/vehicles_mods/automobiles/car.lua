@@ -10,7 +10,7 @@ minetest.register_entity("automobiles:car", {
 	gravity = 10, -- gravity per second
 	decell = 0.2, -- decelleration per second
 	traction = 1.5, -- traction per second
-	rider_eye_offset = {x=0, y=-4, z=0},
+	rider_eye_offset = {x=0, y=-2, z=0},
 	rider_pos = {x=-4, y=3, z=-2},
 	passenger_pos = {x=4, y=3, z=-2},
 
