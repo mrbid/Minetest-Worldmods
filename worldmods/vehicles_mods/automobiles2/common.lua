@@ -18,7 +18,7 @@ local function vector_to_angle(X, Y)
 	end
 end
 
-function automobile_on_activate(entity, staticdata)
+function automobile2_on_activate(entity, staticdata)
 	local props = minetest.deserialize(staticdata)
 	entity.object:setvelocity({x = 0, y = 0, z = 0}) -- stop car (this is necessary if game exits while player is driving)
 	if props then -- save owner
@@ -28,7 +28,7 @@ function automobile_on_activate(entity, staticdata)
 	end
 end
 
-function automobile_get_staticdata(entity)
+function automobile2_get_staticdata(entity)
 	return minetest.serialize({
 		color = entity.color,
 		wheel = entity.wheel,
@@ -39,7 +39,7 @@ function automobile_get_staticdata(entity)
 	})
 end
 
-function automobile_on_step(entity, dtime)
+function automobile2_on_step(entity, dtime)
 
 	if entity.driver then
 		local ctrl = entity.driver:get_player_control()
@@ -230,14 +230,14 @@ function automobile_on_step(entity, dtime)
 	end
 end
 
-function automobile_on_punch(entity, puncher)
+function automobile2_on_punch(entity, puncher)
 	if entity.owner_name == puncher:get_player_name() then
 		if entity.driver == puncher then
-			automobile_object_detach(entity, entity.driver)
+			automobile2_object_detach(entity, entity.driver)
 		end
 
 		if not minetest.setting_getbool("creative_mode") then
-			puncher:get_inventory():add_item("main", ItemStack("automobiles2:" .. entity.automobile_name .. "_spawner"))
+			puncher:get_inventory():add_item("main", ItemStack("automobiles2:" .. entity.automobile2_name .. "_spawner"))
 		end
 		if entity.sound then
 			minetest.sound_stop(entity.sound)
@@ -249,8 +249,8 @@ function automobile_on_punch(entity, puncher)
 	end
 end
 
-function automobile_object_attach(entity, player)
-	player:set_attach(entity.object, "", entity.rider_pos, {x=0, y=0, z=0})
+function automobile2_object_attach(entity, player, pos)
+	player:set_attach(entity.object, "", pos, {x=0, y=0, z=0})
 	player:set_eye_offset(
 		entity.rider_eye_offset,
 		{x = entity.rider_eye_offset.x, y = entity.rider_eye_offset.y+1, z = -40}
@@ -261,8 +261,11 @@ function automobile_object_attach(entity, player)
 	end)
 end
 
-function automobile_object_detach(entity, player)
+function automobile2_object_detach(entity, player)
 	entity.driver = nil
+	entity.passenger = nil
+	entity.passenger1 = nil
+	entity.passenger2 = nil
 	entity.object:setvelocity({x=0, y=0, z=0})
 	player:set_detach()
 	default.player_attached[player:get_player_name()] = false
@@ -271,19 +274,22 @@ function automobile_object_detach(entity, player)
 	player:set_eye_offset({x=0, y=0, z=0}, {x=0, y=0, z=0})
 end
 
-function automobile_on_rightclick(entity, clicker)
+function automobile2_on_rightclick(entity, clicker)
 	if entity.owner_name == nil then return end
-	if entity.owner_name ~= clicker:get_player_name() then
-		minetest.chat_send_player(clicker:get_player_name(), "This " .. entity.automobile_name .. " is owned by " .. entity.owner_name)
-		return
-	end
+
+	-- if entity.owner_name ~= clicker:get_player_name() then
+	-- 	minetest.chat_send_player(clicker:get_player_name(), "This " .. entity.automobile2_name .. " is owned by " .. entity.owner_name)
+	-- 	return
+	-- end
+
+	-- driver
 	if entity.driver and clicker == entity.driver then
 		entity.object:set_animation({x = 0, y = 0}, 10, 0) -- quit animating
 		minetest.sound_stop(entity.sound)
-		automobile_object_detach(entity, clicker, {x=1, y=0, z=1})
-	elseif not entity.driver then
+		automobile2_object_detach(entity, clicker, {x=1, y=0, z=1})
+	elseif not entity.driver and entity.owner_name == clicker:get_player_name() then
 		entity.driver = clicker
-		automobile_object_attach(entity, clicker)
+		automobile2_object_attach(entity, clicker, entity.rider_pos)
 		minetest.sound_play("start", {
 			object = entity.object,
 			gain = 1.0,
@@ -296,5 +302,26 @@ function automobile_on_rightclick(entity, clicker)
 			max_hear_distance = 32,
 			loop = true,
 		})
+
+	-- passenger 1
+	elseif entity.passenger and clicker == entity.passenger then
+		automobile2_object_detach(entity, clicker, {x=1, y=0, z=1})
+	elseif not entity.passenger then
+		entity.passenger = clicker
+		automobile2_object_attach(entity, clicker, entity.passenger_pos)
+
+	-- passenger 2
+	elseif entity.passenger1 and clicker == entity.passenger1 then
+		automobile2_object_detach(entity, clicker, {x=1, y=0, z=1})
+	elseif not entity.passenger1 then
+		entity.passenger1 = clicker
+		automobile2_object_attach(entity, clicker, entity.passenger_pos1)
+
+	-- passenger 3
+	elseif entity.passenger2 and clicker == entity.passenger2 then
+		automobile2_object_detach(entity, clicker, {x=1, y=0, z=1})
+	elseif not entity.passenger2 then
+		entity.passenger2 = clicker
+		automobile2_object_attach(entity, clicker, entity.passenger_pos2)
 	end
 end

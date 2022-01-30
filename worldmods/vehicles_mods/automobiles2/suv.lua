@@ -1,25 +1,29 @@
 minetest.register_entity("automobiles2:suv", {
-	automobile_name = "suv",
+	automobile2_name = "suv",
 	turn_speed = 2, -- turn speed per second
 	acceler = 30, -- acceleration per second
 	gravity = 10, -- gravity per second
 	decell = 0.2, -- decelleration per second
 	traction = 1.5, -- traction per second
-	rider_pos = {x=-5, y=4, z=0},
+
 	rider_eye_offset = {x=0, y=-4, z=0},
+	rider_pos = {x=-5, y=3, z=-0},
+	passenger_pos = {x=5, y=3, z=0},
+	passenger_pos1 = {x=-5, y=3, z=-16},
+	passenger_pos2 = {x=5, y=3, z=-16},
 
 	visual = "mesh",
 	mesh = "suv.b3d",
-	get_staticdata = automobile_get_staticdata,
-	on_activate = automobile_on_activate,
+	get_staticdata = automobile2_get_staticdata,
+	on_activate = automobile2_on_activate,
 	textures = {"automobiles2_suv.png"},
 	stepheight = 1.1,
 	hp_max = 20,
 	physical = true,
 	collisionbox = {-1, 0, -1, 1, 1.55, 1},
-	on_rightclick = automobile_on_rightclick,
-	on_punch = automobile_on_punch,
-	on_step = automobile_on_step,
+	on_rightclick = automobile2_on_rightclick,
+	on_punch = automobile2_on_punch,
+	on_step = automobile2_on_step,
 })
 
 minetest.register_craftitem("automobiles2:suv_spawner", {
