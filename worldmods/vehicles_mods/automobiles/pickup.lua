@@ -50,7 +50,6 @@ minetest.register_craftitem("automobiles:pickup_spawner", {
 		entity.front = "automobiles_pickup_front_1.png"
 		entity.automobile_type = "pickup"
 		entity.owner_name = placer:get_player_name()
-		if not minetest.setting_getbool("creative_mode") then item:take_item() end
 		return item
 	end,
 })

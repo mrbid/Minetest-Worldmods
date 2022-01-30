@@ -49,7 +49,6 @@ minetest.register_craftitem("automobiles:suv_spawner", {
 		entity.back = "automobiles_suv_back_1.png"
 		entity.front = "automobiles_suv_front_1.png"
 		entity.owner_name = placer:get_player_name()
-		if not minetest.setting_getbool("creative_mode") then item:take_item() end
 		return item
 	end,
 })
