@@ -231,21 +231,25 @@ function automobile2_on_step(entity, dtime)
 end
 
 function automobile2_on_punch(entity, puncher)
-	if entity.owner_name == puncher:get_player_name() then
+	is_admin = minetest.check_player_privs(puncher, {protection_bypass=true})
+
+	if entity.owner_name == puncher:get_player_name() or is_admin then
+
 		if entity.driver == puncher then
-			automobile2_object_detach(entity, entity.driver)
+			automobile2_object_detach_all(entity, entity.driver)
 		end
 
-		if not minetest.setting_getbool("creative_mode") then
-			puncher:get_inventory():add_item("main", ItemStack("automobiles2:" .. entity.automobile2_name .. "_spawner"))
-		end
 		if entity.sound then
 			minetest.sound_stop(entity.sound)
 		end
+
 		entity.object:remove()
+
 	else
 		-- random players can't kill cars
 		entity.object:set_hp(entity.hp_max)
+
+		--entity.object:set_hp(entity.object:get_hp()-1)
 	end
 end
 
@@ -261,11 +265,15 @@ function automobile2_object_attach(entity, player, pos)
 	end)
 end
 
-function automobile2_object_detach(entity, player)
+function automobile2_object_detach_all(entity, player)
+	automobile2_object_detach(entity, player)
 	entity.driver = nil
 	entity.passenger = nil
 	entity.passenger1 = nil
 	entity.passenger2 = nil
+end
+
+function automobile2_object_detach(entity, player)
 	entity.object:setvelocity({x=0, y=0, z=0})
 	player:set_detach()
 	default.player_attached[player:get_player_name()] = false
@@ -287,7 +295,9 @@ function automobile2_on_rightclick(entity, clicker)
 		entity.object:set_animation({x = 0, y = 0}, 10, 0) -- quit animating
 		minetest.sound_stop(entity.sound)
 		automobile2_object_detach(entity, clicker, {x=1, y=0, z=1})
-	elseif not entity.driver and entity.owner_name == clicker:get_player_name() then
+		entity.driver = nil
+	-- elseif not entity.driver and entity.owner_name == clicker:get_player_name() then
+	elseif not entity.driver then
 		entity.driver = clicker
 		automobile2_object_attach(entity, clicker, entity.rider_pos)
 		minetest.sound_play("start", {
@@ -306,6 +316,7 @@ function automobile2_on_rightclick(entity, clicker)
 	-- passenger 1
 	elseif entity.passenger and clicker == entity.passenger then
 		automobile2_object_detach(entity, clicker, {x=1, y=0, z=1})
+		entity.passenger = nil
 	elseif not entity.passenger then
 		entity.passenger = clicker
 		automobile2_object_attach(entity, clicker, entity.passenger_pos)
@@ -313,6 +324,7 @@ function automobile2_on_rightclick(entity, clicker)
 	-- passenger 2
 	elseif entity.passenger1 and clicker == entity.passenger1 then
 		automobile2_object_detach(entity, clicker, {x=1, y=0, z=1})
+		entity.passenger1 = nil
 	elseif not entity.passenger1 then
 		entity.passenger1 = clicker
 		automobile2_object_attach(entity, clicker, entity.passenger_pos1)
@@ -320,6 +332,7 @@ function automobile2_on_rightclick(entity, clicker)
 	-- passenger 3
 	elseif entity.passenger2 and clicker == entity.passenger2 then
 		automobile2_object_detach(entity, clicker, {x=1, y=0, z=1})
+		entity.passenger2 = nil
 	elseif not entity.passenger2 then
 		entity.passenger2 = clicker
 		automobile2_object_attach(entity, clicker, entity.passenger_pos2)

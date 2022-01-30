@@ -1,5 +1,5 @@
-minetest.register_entity("automobiles2:suv", {
-	automobile2_name = "suv",
+minetest.register_entity("automobiles2:suv2", {
+	automobile2_name = "suv2",
 	turn_speed = 2, -- turn speed per second
 	acceler = 30, -- acceleration per second
 	gravity = 10, -- gravity per second
@@ -16,7 +16,7 @@ minetest.register_entity("automobiles2:suv", {
 	mesh = "suv.b3d",
 	get_staticdata = automobile2_get_staticdata,
 	on_activate = automobile2_on_activate,
-	textures = {"automobiles2_suv.png"},
+	textures = {"automobiles2_suv2.png"},
 	stepheight = 1.1,
 	hp_max = 20,
 	physical = true,
@@ -26,13 +26,13 @@ minetest.register_entity("automobiles2:suv", {
 	on_step = automobile2_on_step,
 })
 
-minetest.register_craftitem("automobiles2:suv_spawner", {
-	description = "PsySUV",
-	inventory_image = "automobiles2_suv_inv.png",
+minetest.register_craftitem("automobiles2:suv2_spawner", {
+	description = "PsySUV2",
+	inventory_image = "automobiles2_suv2_inv.png",
 	on_place = function(item, placer, pointed_thing)
 		local playerpos = placer:getpos();
 		pointed_thing.above.y = pointed_thing.above.y - 0.5 -- no floating automobiles!
-		local obj = minetest.env:add_entity(pointed_thing.above, "automobiles2:suv")
+		local obj = minetest.env:add_entity(pointed_thing.above, "automobiles2:suv2")
 		local entity = obj:get_luaentity()
 		obj:setyaw(placer:get_look_yaw() - math.pi / 2)
 		entity.owner_name = placer:get_player_name()
@@ -41,10 +41,10 @@ minetest.register_craftitem("automobiles2:suv_spawner", {
 })
 
 minetest.register_craft({
-	output = "automobiles2:suv_spawner",
+	output = "automobiles2:suv2_spawner",
 	recipe = {
 		{"default:glass", "default:glass", "default:glass"},
 		{"default:steelblock", "basic_materials:motor", "default:steelblock"},
-		{"default:steelblock", "biofuel:fuel_can", "default:steelblock"}
+		{"default:steelblock", "biofuel:superfuel_can", "default:steelblock"}
 	},
 })
