@@ -237,6 +237,8 @@ function automobile2_on_punch(entity, puncher)
 			automobile2_object_detach(entity, entity.driver)
 		end
 
+		puncher:get_inventory():add_item("main", ItemStack("automobiles2:" .. entity.automobile_name .. "_spawner"))
+
 		if entity.sound then
 			minetest.sound_stop(entity.sound)
 		end
@@ -286,11 +288,6 @@ end
 
 function automobile2_on_rightclick(entity, clicker)
 	if entity.owner_name == nil then return end
-
-	-- if entity.owner_name ~= clicker:get_player_name() then
-	-- 	minetest.chat_send_player(clicker:get_player_name(), "This " .. entity.automobile2_name .. " is owned by " .. entity.owner_name)
-	-- 	return
-	-- end
 
 	-- driver
 	if entity.driver and clicker == entity.driver then

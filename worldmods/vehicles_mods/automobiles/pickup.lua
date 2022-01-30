@@ -50,6 +50,7 @@ minetest.register_craftitem("automobiles:pickup_spawner", {
 		entity.front = "automobiles_pickup_front_1.png"
 		entity.automobile_type = "pickup"
 		entity.owner_name = placer:get_player_name()
+		item:take_item()
 		return item
 	end,
 })

@@ -36,6 +36,7 @@ minetest.register_craftitem("automobiles2:suv_spawner", {
 		local entity = obj:get_luaentity()
 		obj:setyaw(placer:get_look_yaw() - math.pi / 2)
 		entity.owner_name = placer:get_player_name()
+		item:take_item()
 		return item
 	end,
 })

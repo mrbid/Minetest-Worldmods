@@ -241,6 +241,8 @@ function automobile_on_punch(entity, puncher)
 			automobile2_object_detach(entity, entity.driver)
 		end
 
+		puncher:get_inventory():add_item("main", ItemStack("automobiles:" .. entity.automobile_type .. "_spawner"))
+
 		if entity.sound then
 			minetest.sound_stop(entity.sound)
 		end
