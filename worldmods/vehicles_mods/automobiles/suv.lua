@@ -23,7 +23,7 @@ minetest.register_entity("automobiles:suv", {
 		.. "^[combine:256x256:0,43=automobiles_suv_back_1.png:0,187=automobiles_suv_front_1.png"
 	},
 	stepheight = 1.1,
-	hp_max = 20,
+	hp_max = 120,
 	physical = true,
 	collisionbox = {-1, 0, -1, 1, 1.55, 1},
 	on_rightclick = automobile_on_rightclick,

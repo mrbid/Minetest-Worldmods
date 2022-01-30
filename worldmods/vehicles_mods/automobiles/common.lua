@@ -235,9 +235,7 @@ function automobile_on_step(entity, dtime)
 	end
 end
 function automobile_on_punch(entity, puncher)
-	is_admin = minetest.check_player_privs(puncher, {protection_bypass=true})
-
-	if entity.owner_name == puncher:get_player_name() or is_admin then
+	if entity.owner_name == puncher:get_player_name() then
 
 		if entity.driver == puncher then
 			automobile2_object_detach(entity, entity.driver)
@@ -250,10 +248,14 @@ function automobile_on_punch(entity, puncher)
 		entity.object:remove()
 
 	else
-		-- random players can't kill cars
-		entity.object:set_hp(entity.hp_max)
+		is_admin = minetest.check_player_privs(puncher, {protection_bypass=true})
+		if not is_admin then
+			-- random players can't kill cars
+			entity.object:set_hp(entity.hp_max)
+		else
+			entity.object:set_hp(entity.object:get_hp()-1)
+		end
 		
-		--entity.object:set_hp(entity.object:get_hp()-1)
 	end
 end
 function automobile_object_attach(entity, player)

@@ -18,7 +18,7 @@ minetest.register_entity("automobiles2:suv", {
 	on_activate = automobile2_on_activate,
 	textures = {"automobiles2_suv.png"},
 	stepheight = 1.1,
-	hp_max = 20,
+	hp_max = 120,
 	physical = true,
 	collisionbox = {-1, 0, -1, 1, 1.55, 1},
 	on_rightclick = automobile2_on_rightclick,

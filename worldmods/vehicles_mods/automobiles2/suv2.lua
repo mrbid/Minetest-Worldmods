@@ -1,10 +1,10 @@
 minetest.register_entity("automobiles2:suv2", {
 	automobile2_name = "suv2",
-	turn_speed = 2, -- turn speed per second
-	acceler = 30, -- acceleration per second
-	gravity = 10, -- gravity per second
-	decell = 0.2, -- decelleration per second
-	traction = 1.5, -- traction per second
+	turn_speed = 3.2, -- turn speed per second
+	acceler = 50, -- acceleration per second
+	gravity = 7, -- gravity per second
+	decell = 0.3, -- decelleration per second
+	traction = 1.6, -- traction per second
 
 	rider_eye_offset = {x=0, y=-4, z=0},
 	rider_pos = {x=-5, y=3, z=-0},
@@ -18,7 +18,7 @@ minetest.register_entity("automobiles2:suv2", {
 	on_activate = automobile2_on_activate,
 	textures = {"automobiles2_suv2.png"},
 	stepheight = 1.1,
-	hp_max = 20,
+	hp_max = 120,
 	physical = true,
 	collisionbox = {-1, 0, -1, 1, 1.55, 1},
 	on_rightclick = automobile2_on_rightclick,
