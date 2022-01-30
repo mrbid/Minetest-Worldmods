@@ -235,21 +235,25 @@ function automobile_on_step(entity, dtime)
 	end
 end
 function automobile_on_punch(entity, puncher)
-	if entity.owner_name == puncher:get_player_name() then
+	is_admin = minetest.check_player_privs(puncher, {protection_bypass=true})
+
+	if entity.owner_name == puncher:get_player_name() or is_admin then
+
 		if entity.driver == puncher then
-			automobile_object_detach(entity, entity.driver)
+			automobile2_object_detach(entity, entity.driver)
 		end
 
-		if not minetest.setting_getbool("creative_mode") then
-			puncher:get_inventory():add_item("main", ItemStack("automobiles:" .. entity.automobile_type .. "_spawner"))
-		end
 		if entity.sound then
 			minetest.sound_stop(entity.sound)
 		end
+
 		entity.object:remove()
+
 	else
 		-- random players can't kill cars
 		entity.object:set_hp(entity.hp_max)
+		
+		--entity.object:set_hp(entity.object:get_hp()-1)
 	end
 end
 function automobile_object_attach(entity, player)
