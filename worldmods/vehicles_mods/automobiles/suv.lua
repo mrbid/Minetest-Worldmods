@@ -1,6 +1,6 @@
 minetest.register_entity("automobiles:suv", {
 	-- custom props
-	num_colors = 2,
+	num_colors = 6,
 	num_decals = 1,
 	num_fronts = 1,
 	num_backs = 1,
