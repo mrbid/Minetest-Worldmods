@@ -49,7 +49,7 @@ function show_automobile_config(player_name)
 	-- colors
 	formspec = formspec .. "label[0,0;color:]"
 	for i = 1, entity.num_colors do
-		formspec = formspec .. "image_button[" .. (i - 1) .. ",0.5;1,1;automobiles_" .. auto_type .. "_color_" .. i .. "_preview.png;color_automobiles_" .. auto_type .. "_color_".. i ..".png;;true;true;]"
+		formspec = formspec .. "image_button[" .. (i - 1) / 1.4 .. ",0.5;0.8,0.8;automobiles_" .. auto_type .. "_color_" .. i .. "_preview.png;color_automobiles_" .. auto_type .. "_color_".. i ..".png;;true;true;]"
 	end
 	-- decals
 	formspec = formspec .. "label[0,1.5;decal:]"
