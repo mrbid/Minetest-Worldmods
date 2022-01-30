@@ -22,6 +22,8 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - abm that converts lead to gold when 3.5% uranium blocks are placed next to it. ([1972 Lake Baikal in Siberia](http://www.chm.bris.ac.uk/webprojects2002/crabb/modern.html))
 - HV Dark Matter Transmuter, a new technic machine that uses Dark Matter Crystals and Blocks to transmute ores, ingots, and ingot blocks.
 - some new amusing/trick food items under the "hawk" mod
+- improved automobiles with passenger support and extended skins (locked, private access for driver)
+- automobiles2 with 4x passenger support, tiered of handling and public access to drive
 
 ## Notes
 To load all these mods at the same time you will need to modify your minetest server:<br>
