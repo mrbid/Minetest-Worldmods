@@ -238,7 +238,7 @@ function automobile_on_punch(entity, puncher)
 	if entity.owner_name == puncher:get_player_name() then
 
 		if entity.driver == puncher then
-			automobile2_object_detach(entity, entity.driver)
+			automobile_object_detach_all(entity, entity.driver)
 		end
 
 		puncher:get_inventory():add_item("main", ItemStack("automobiles:" .. entity.automobile_type .. "_spawner"))
@@ -260,7 +260,7 @@ function automobile_on_punch(entity, puncher)
 		
 	end
 end
-function automobile_object_attach(entity, player)
+function automobile_object_attach(entity, player, pos)
 	--force_detach(player)
 	player:set_attach(entity.object, "", entity.rider_pos, {x=0, y=0, z=0})
 	player:set_eye_offset(
@@ -272,52 +272,59 @@ function automobile_object_attach(entity, player)
 		default.player_set_animation(player, "sit" , 1)
 	end)
 end
-function automobile_object_detach(entity, player)
+
+function automobile_object_detach_all(entity, player)
+	automobile_object_detach(entity, player)
 	entity.driver = nil
+	entity.passenger = nil
+end
+
+function automobile_object_detach(entity, player)
 	entity.object:setvelocity({x=0, y=0, z=0})
 	player:set_detach()
 	default.player_attached[player:get_player_name()] = false
 	default.player_set_animation(player, "stand" , 30)
 	player:set_properties({visual_size = {x=1, y=1}})
 	player:set_eye_offset({x=0, y=0, z=0}, {x=0, y=0, z=0})
-	--[[local pos = player:getpos()
-	pos = {x = pos.x + offset.x, y = pos.y + 0.2 + offset.y, z = pos.z + offset.z}
-	minetest.after(0.2, function()
-		player:setpos(pos)
-	end)]]
 end
+
 function automobile_on_rightclick(entity, clicker)
-	if entity.owner_name ~= clicker:get_player_name() then
-		minetest.chat_send_player(clicker:get_player_name(), "This " .. entity.automobile_type .. " is owned by " .. entity.owner_name)
-		return
+
+	if entity.owner_name == clicker:get_player_name() then
+		if entity.driver and clicker == entity.driver then
+			entity.object:set_animation({x = 0, y = 0}, 10, 0) -- quit animating
+			minetest.sound_stop(entity.sound)
+			automobile_object_detach(entity, clicker, {x=1, y=0, z=1})
+			entity.driver = nil
+			return
+		elseif not entity.driver then
+			entity.driver = clicker
+			automobile_object_attach(entity, clicker, entity.rider_pos)
+			minetest.sound_play("start", {
+				object = entity.object,
+				gain = 1.0,
+				max_hear_distance = 32,
+				loop = false,
+			})
+			entity.sound = minetest.sound_play("running", {
+				object = entity.object,
+				gain = 1.0,
+				max_hear_distance = 32,
+				loop = true,
+			})
+			return
+		end
+	else
+		-- passenger 1
+		if entity.passenger and clicker == entity.passenger then
+			automobile_object_detach(entity, clicker, {x=1, y=0, z=1})
+			entity.passenger = nil
+			return
+		elseif not entity.passenger then
+			entity.passenger = clicker
+			automobile_object_attach(entity, clicker, entity.passenger_pos)
+			return
+		end
 	end
-	if entity.driver and clicker == entity.driver then
-		entity.object:set_animation({x = 0, y = 0}, 10, 0) -- quit animating
-		minetest.sound_stop(entity.sound)
-		automobile_object_detach(entity, clicker, {x=1, y=0, z=1})
-	elseif not entity.driver then
-		--entity.object:set_animation({x = 0, y = 0}, 10, 0) -- start animating
-		entity.driver = clicker
-		automobile_object_attach(entity, clicker)
-		minetest.sound_play("start", {
-			object = entity.object,
-			gain = 1.0,
-			max_hear_distance = 32,
-			loop = false,
-		})
-		entity.sound = minetest.sound_play("running", {
-			object = entity.object,
-			gain = 1.0,
-			max_hear_distance = 32,
-			loop = true,
-		})
-		--[[minetest.after(1, function()
-			if entity.driver then
-				entity.sound = minetest.sound_play(
-					"running",
-					{to_player = entity.driver:get_player_name(), gain = 4, max_hear_distance = 1, loop = true}
-				)
-			end
-		end)]]
-	end
+
 end
