@@ -12,9 +12,7 @@ minetest.register_entity("automobiles2:suv", {
 	mesh = "suv.b3d",
 	get_staticdata = automobile_get_staticdata,
 	on_activate = automobile_on_activate,
-	textures = {
-		"automobiles2_suv.png^[combine:256x256:0,0=automobiles2_suv_wheel.png"
-	},
+	textures = {"automobiles2_suv.png"},
 	stepheight = 1.1,
 	hp_max = 20,
 	physical = true,
