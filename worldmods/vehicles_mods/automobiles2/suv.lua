@@ -1,9 +1,4 @@
 minetest.register_entity("automobiles2:suv", {
-	-- custom props
-	num_colors = 6,
-	num_decals = 1,
-	num_fronts = 1,
-	num_backs = 1,
 	automobile_type = "suv",
 	turn_speed = 2, -- turn speed per second
 	acceler = 30, -- acceleration per second
