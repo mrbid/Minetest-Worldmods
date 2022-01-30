@@ -237,7 +237,7 @@ function automobile_on_punch(entity, puncher)
 		end
 
 		if not minetest.setting_getbool("creative_mode") then
-			puncher:get_inventory():add_item("main", ItemStack("automobiles2:" .. entity.automobile_type .. "_spawner"))
+			puncher:get_inventory():add_item("main", ItemStack("automobiles2:" .. entity.automobile_name .. "_spawner"))
 		end
 		if entity.sound then
 			minetest.sound_stop(entity.sound)
@@ -274,7 +274,7 @@ end
 function automobile_on_rightclick(entity, clicker)
 	if entity.owner_name == nil then return end
 	if entity.owner_name ~= clicker:get_player_name() then
-		minetest.chat_send_player(clicker:get_player_name(), "This " .. entity.automobile_type .. " is owned by " .. entity.owner_name)
+		minetest.chat_send_player(clicker:get_player_name(), "This " .. entity.automobile_name .. " is owned by " .. entity.owner_name)
 		return
 	end
 	if entity.driver and clicker == entity.driver then

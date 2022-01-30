@@ -1,5 +1,5 @@
 minetest.register_entity("automobiles2:suv", {
-	automobile_type = "suv",
+	automobile_name = "suv",
 	turn_speed = 2, -- turn speed per second
 	acceler = 30, -- acceleration per second
 	gravity = 10, -- gravity per second
