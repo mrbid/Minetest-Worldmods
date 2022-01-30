@@ -287,7 +287,7 @@ function automobile2_object_detach(entity, player)
 end
 
 function automobile2_on_rightclick(entity, clicker)
-	if entity.owner_name == nil then return end
+	-- if entity.owner_name == nil then return end
 
 	-- driver
 	if entity.driver and clicker == entity.driver then
