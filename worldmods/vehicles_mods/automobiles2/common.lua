@@ -238,7 +238,7 @@ function automobile2_on_step(entity, dtime)
 end
 
 function automobile2_on_punch(entity, puncher)
-	if puncher == nil or entity == nil then return end
+	if puncher == nil or entity == nil or not puncher:is_player() then return end
 
 	if entity.owner_name == puncher:get_player_name() then
 
