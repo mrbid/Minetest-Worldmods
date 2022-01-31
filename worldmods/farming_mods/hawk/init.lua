@@ -105,20 +105,27 @@ minetest.register_craftitem("hawk:mystery_cookie", {
 		stamina.change_saturation(user, 1)
 
 		local prop = user:get_properties()
-		if prop.visual_size.x == 1 then
-			minetest.after(33, function()
-				local prop = user:get_properties()
-				if prop.visual_size.x ~= 1 then
-					resize_mod.set_size(user, 1)
-					minetest.sound_play("item_drop_pickup", {
-						pos = user:get_pos(),
-						gain = 1.0,
-						max_hear_distance = 5,
-					})
-					minetest.chat_send_player(user:get_player_name(), "You are normal sized again.")
-				end
-			end)
+		if prop.visual_size.x ~= 1 then
+			minetest.chat_send_player(user:get_player_name(), "You are normal sized again.")
+			resize_mod.set_size(user, 1)
+			return
 		end
+
+		-- if prop.visual_size.x == 1 then
+		-- 	minetest.after(33, function()
+		-- 		local prop = user:get_properties()
+		-- 		if prop == nil then return end
+		-- 		if prop.visual_size.x ~= 1 then
+		-- 			resize_mod.set_size(user, 1)
+		-- 			minetest.sound_play("item_drop_pickup", {
+		-- 				pos = user:get_pos(),
+		-- 				gain = 1.0,
+		-- 				max_hear_distance = 5,
+		-- 			})
+		-- 			minetest.chat_send_player(user:get_player_name(), "You are normal sized again.")
+		-- 		end
+		-- 	end)
+		-- end
 
 		local size = 0.1+math.random()*3.2
 		minetest.chat_send_player(user:get_player_name(), "You are now " .. string.format("%.2f", size) .. "% of your normal scale.")
