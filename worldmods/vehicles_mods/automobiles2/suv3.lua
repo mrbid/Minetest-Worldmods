@@ -1,8 +1,10 @@
 minetest.register_entity("automobiles2:suv3", {
 	automobile2_name = "suv3",
+	isflying = true,
+	lift = 8, -- lift (anti-gravity) per second for flying
+	gravity = 4, -- gravity per second
 	turn_speed = 4.2, -- turn speed per second
 	acceler = 70, -- acceleration per second
-	gravity = 7, -- gravity per second
 	decell = 0.42, -- decelleration per second
 	traction = 1.0, -- traction per second
 
@@ -27,7 +29,7 @@ minetest.register_entity("automobiles2:suv3", {
 })
 
 minetest.register_craftitem("automobiles2:suv3_spawner", {
-	description = "PsySUV3",
+	description = "Flying PsySUV3",
 	inventory_image = "automobiles2_suv3_inv.png",
 	on_place = function(item, placer, pointed_thing)
 		local playerpos = placer:getpos();

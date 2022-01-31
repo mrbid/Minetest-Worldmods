@@ -79,7 +79,7 @@ function automobile2_on_step(entity, dtime)
 		end
 
 		-- space key (brake)
-		if ctrl.jump then
+		if entity.isflying == false and ctrl.jump then
 			entity_decell = entity_decell * 40
 		end
 
@@ -96,7 +96,11 @@ function automobile2_on_step(entity, dtime)
 		else entity.going = true end
 
 		-- gravity
-		velo.y = velo.y - entity.gravity * dtime
+		if entity.isflying == true and ctrl.jump then
+			velo.y = velo.y + entity.lift * dtime
+		else
+			velo.y = velo.y - entity.gravity * dtime
+		end
 
 		-- stearing
 		if ctrl.left then
