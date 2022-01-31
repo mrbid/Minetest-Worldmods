@@ -26,7 +26,7 @@ ethereal.desert (Desert biome, 1 = Enable / 0 = Disable) int 1
 ethereal.grove (Banana Grove biome, 1 = Enable / 0 = Disable) int 1
 ethereal.mushroom (Mushroom biome, 1 = Enable / 0 = Disable) int 1
 ethereal.sandstone (Sandstone biome, 1 = Enable / 0 = Disable) int 1
-ethereal.quicksand (Quicksand Bank biome, 1 = Enable / 0 = Disable) int 1
+ethereal.quicksand (Quicksand Bank biome, 1 = Enable / 0 = Disable) int 0
 ethereal.plains (Scorched Plains biome, 1 = Enable / 0 = Disable) int 1
 ethereal.savanna (Savanna biome, 1 = Enable / 0 = Disable) int 1
 ethereal.fiery (Feiry Lava biome, 1 = Enable / 0 = Disable) int 1
