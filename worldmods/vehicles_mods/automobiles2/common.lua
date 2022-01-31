@@ -267,7 +267,6 @@ function automobile2_on_punch(entity, puncher)
 end
 
 function automobile2_object_attach(entity, player, pos)
-	automobile2_object_detach_existing(entity, player)
 	player:set_attach(entity.object, "", pos, {x=0, y=0, z=0})
 	player:set_eye_offset(
 		entity.rider_eye_offset,
@@ -314,6 +313,7 @@ function automobile2_on_rightclick(entity, clicker)
 		return
 	-- elseif not entity.driver and entity.owner_name == clicker:get_player_name() then
 	elseif not entity.driver then
+		automobile2_object_detach_existing(entity, clicker)
 		entity.driver = clicker
 		automobile2_object_attach(entity, clicker, entity.rider_pos)
 		minetest.sound_play("start", {
@@ -337,6 +337,7 @@ function automobile2_on_rightclick(entity, clicker)
 		entity.passenger = nil
 		return
 	elseif not entity.passenger then
+		automobile2_object_detach_existing(entity, clicker)
 		entity.passenger = clicker
 		automobile2_object_attach(entity, clicker, entity.passenger_pos)
 		return
@@ -348,6 +349,7 @@ function automobile2_on_rightclick(entity, clicker)
 		entity.passenger1 = nil
 		return
 	elseif not entity.passenger1 then
+		automobile2_object_detach_existing(entity, clicker)
 		entity.passenger1 = clicker
 		automobile2_object_attach(entity, clicker, entity.passenger_pos1)
 		return
@@ -359,6 +361,7 @@ function automobile2_on_rightclick(entity, clicker)
 		entity.passenger2 = nil
 		return
 	elseif not entity.passenger2 then
+		automobile2_object_detach_existing(entity, clicker)
 		entity.passenger2 = clicker
 		automobile2_object_attach(entity, clicker, entity.passenger_pos2)
 		return
