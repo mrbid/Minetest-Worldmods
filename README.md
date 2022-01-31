@@ -23,7 +23,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - HV Dark Matter Transmuter, a new technic machine that uses Dark Matter Crystals and Blocks to transmute ores, ingots, and ingot blocks.
 - some new amusing/trick food items under the "hawk" mod
 - improved automobiles with passenger support and extended skins (locked, private access for driver)
-- automobiles2 with 4x passenger support, tiers of handling and public access to drive
+- automobiles2 with 4x passenger support, tiers of handling and public access to drive (and flying versions)
 
 ## Notes
 To load all these mods at the same time you will need to modify your minetest server:<br>
