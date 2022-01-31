@@ -48,9 +48,12 @@ function automobile_on_step(entity, dtime)
 
 	if entity.driver then
 		local ctrl = entity.driver:get_player_control()
+		if ctrl == nil then return end
 		local velo = entity.object:getvelocity()
+		if velo == nil then return end
 		local entity_decell = entity.decell
 		local entity_yaw = entity.object:getyaw()
+		if entity_yaw == nil then return end
 		local turn_speed = entity.turn_speed
 		local acceler = entity.acceler
 		local speed = math.abs(math.sqrt(velo.z * velo.z + velo.x * velo.x))
@@ -235,6 +238,8 @@ function automobile_on_step(entity, dtime)
 	end
 end
 function automobile_on_punch(entity, puncher)
+	if puncher == nil or entity == nil then return end
+
 	if entity.owner_name == puncher:get_player_name() then
 
 		if entity.driver == puncher then
@@ -261,7 +266,6 @@ function automobile_on_punch(entity, puncher)
 	end
 end
 function automobile_object_attach(entity, player, pos)
-	--force_detach(player)
 	player:set_attach(entity.object, "", pos, {x=0, y=0, z=0})
 	player:set_eye_offset(
 		entity.rider_eye_offset,
@@ -289,6 +293,7 @@ function automobile_object_detach(entity, player)
 end
 
 function automobile_on_rightclick(entity, clicker)
+	if clicker == nil or entity == nil then return end
 
 	if entity.owner_name == clicker:get_player_name() then
 		if entity.driver and clicker == entity.driver then

@@ -43,9 +43,12 @@ function automobile2_on_step(entity, dtime)
 
 	if entity.driver then
 		local ctrl = entity.driver:get_player_control()
+		if ctrl == nil then return end
 		local velo = entity.object:getvelocity()
+		if velo == nil then return end
 		local entity_decell = entity.decell
 		local entity_yaw = entity.object:getyaw()
+		if entity_yaw == nil then return end
 		local turn_speed = entity.turn_speed
 		local acceler = entity.acceler
 		local speed = math.abs(math.sqrt(velo.z * velo.z + velo.x * velo.x))
@@ -235,6 +238,8 @@ function automobile2_on_step(entity, dtime)
 end
 
 function automobile2_on_punch(entity, puncher)
+	if puncher == nil or entity == nil then return end
+
 	if entity.owner_name == puncher:get_player_name() then
 
 		if entity.driver == puncher then
@@ -262,6 +267,7 @@ function automobile2_on_punch(entity, puncher)
 end
 
 function automobile2_object_attach(entity, player, pos)
+	automobile2_object_detach_existing(entity, player)
 	player:set_attach(entity.object, "", pos, {x=0, y=0, z=0})
 	player:set_eye_offset(
 		entity.rider_eye_offset,
@@ -271,6 +277,12 @@ function automobile2_object_attach(entity, player, pos)
 	minetest.after(0.2, function() -- we must do this because of bug
 		default.player_set_animation(player, "sit" , 1)
 	end)
+end
+
+function automobile2_object_detach_existing(entity, player)
+	if entity.passenger == player then entity.passenger = nil end
+	if entity.passenger1 == player then entity.passenger1 = nil end
+	if entity.passenger2 == player then entity.passenger2 = nil end
 end
 
 function automobile2_object_detach_all(entity, player)
@@ -291,7 +303,7 @@ function automobile2_object_detach(entity, player)
 end
 
 function automobile2_on_rightclick(entity, clicker)
-	-- if entity.owner_name == nil then return end
+	if clicker == nil or entity == nil then return end
 
 	-- driver
 	if entity.driver and clicker == entity.driver then
