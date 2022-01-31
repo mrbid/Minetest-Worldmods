@@ -6,6 +6,7 @@ minetest.register_entity("automobiles2:suv3", {
 	turn_speed = 4.2, -- turn speed per second
 	acceler = 70, -- acceleration per second
 	traction = 1.0, -- traction per second
+	decell = 0.3, -- decelleration per second
 
 	rider_eye_offset = {x=0, y=-2, z=0},
 	rider_pos = {x=-5, y=3, z=-0},
