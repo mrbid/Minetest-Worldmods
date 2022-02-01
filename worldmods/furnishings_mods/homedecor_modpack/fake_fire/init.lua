@@ -142,7 +142,7 @@ minetest.register_node("fake_fire:ice_fire", {
 	drawtype = "plantlike",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {dig_immediate=3, not_in_creative_inventory=1},
+	groups = {dig_immediate=3, not_in_creative_inventory=0},
 	sunlight_propagates = true,
 	buildable_to = true,
 	walkable = false,

@@ -17,6 +17,9 @@ local nodes = {
 	{"default", "snowblock"},
 	{"default", "ice"},
 	{"default", "coral_skeleton"},
+	{"default", "dirt_with_grass"},
+	{"default", "dry_dirt_with_dry_grass"},
+	{"default", "leaves"},
 
 	{"default", "sand"},
 	{"default", "silver_sand"},
