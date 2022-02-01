@@ -171,6 +171,67 @@ for i in ipairs(oneway_list) do
 	})
 end
 
+for i in ipairs(oneway_list) do
+	local name = oneway_list[i][1]
+	local description = oneway_list[i][2]
+	local image1 = oneway_list[i][3]
+	local image2 = oneway_list[i][4]
+
+	minetest.register_node("abriglass:oneway_glass_"..name.."_edge", {
+		description = description.." One-Way Glass Edge",
+		drawtype = "nodebox",
+		paramtype = "light",
+		paramtype2 = "facedir",
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-0.5, -0.5, -0.5, 0.5, 0.5, 0.5},
+			},
+		},
+		groups = {cracky = 3},
+		tiles = {image2, -- up
+				 "abriglass_"..image1, -- down
+				 "abriglass_oneway_plain_glass.png", -- right
+				 "abriglass_oneway_plain_glass.png", -- left
+				 "abriglass_"..image1, -- back
+				 image2, -- front
+				 }, 
+		is_ground_content = false,
+		sunlight_propagates = true,
+		inventory_image = minetest.inventorycube("abriglass_"..image1)
+	})
+end
+
+for i in ipairs(oneway_list) do
+	local name = oneway_list[i][1]
+	local description = oneway_list[i][2]
+	local image1 = oneway_list[i][3]
+	local image2 = oneway_list[i][4]
+
+	minetest.register_node("abriglass:oneway_glass_"..name.."_corner", {
+		description = description.." One-Way Glass Corner",
+		drawtype = "nodebox",
+		paramtype = "light",
+		paramtype2 = "facedir",
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-0.5, -0.5, -0.5, 0.5, 0.5, 0.5},
+			},
+		},
+		groups = {cracky = 3},
+		tiles = {image2, -- up
+				 "abriglass_"..image1, -- down
+				 image2, -- right
+				 "abriglass_"..image1, -- left
+				 "abriglass_"..image1, -- back
+				 image2, -- front
+				 }, 
+		is_ground_content = false,
+		sunlight_propagates = true,
+		inventory_image = minetest.inventorycube("abriglass_"..image1)
+	})
+end
 
 -- normal nodes to match one-way glass
 minetest.register_node("abriglass:oneway_wall_dark", {
@@ -215,3 +276,4 @@ minetest.register_node("abriglass:hidden_light", {
 	drawtype = "glasslike",
 	paramtype = "light",
 })
+
