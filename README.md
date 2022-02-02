@@ -24,6 +24,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - some new amusing/trick food items under the "hawk" mod
 - improved automobiles with passenger support and extended skins (locked, private access for driver)
 - automobiles2 with 4x passenger support, tiers of handling and public access to drive (and flying versions)
+- abriglass has been updated with cornered one-way glass thanks to Test_User.
 
 ## Notes
 To load all these mods at the same time you will need to modify your minetest server:<br>
