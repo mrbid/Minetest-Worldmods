@@ -47,9 +47,9 @@ minetest.register_node('plasma_mod:red_plasma_with_sound', {
 minetest.register_craft({
     output = 'plasma_mod:red_plasma_with_sound',
     recipe = {
-        {'default:tinblock','bucket:bucket_lava','default:tinblock'},
-        {'bucket:bucket_lava','bucket:bucket_water','bucket:bucket_lava'},
-        {'default:tinblock','bucket:bucket_lava','default:tinblock'}
+        {'plasma_mod:quantum_obsidian_block','bucket:bucket_lava','plasma_mod:quantum_obsidian_block'},
+        {'bucket:bucket_lava','space_travel:dark_matter_crystal','bucket:bucket_lava'},
+        {'plasma_mod:quantum_obsidian_block','bucket:bucket_lava','plasma_mod:quantum_obsidian_block'}
     }
 })
 minetest.register_node('plasma_mod:quantum_obsidian_block', {
