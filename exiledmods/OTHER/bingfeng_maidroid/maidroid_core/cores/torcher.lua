@@ -32,6 +32,7 @@ end
 
 local function is_dark(pos)
 	local light_level = minetest.get_node_light(pos)
+	if light_level == nil then return end
 	return light_level <= 5
 end
 
