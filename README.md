@@ -29,7 +29,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - maidroid was a little too buggy and pointless so it's been re-implemented as a simple NPC.
 
 ## TODO
-- packed_things nodes need to be updated with item groups that represent the original node being packed.
+- `packed_things` nodes need to be updated with item groups that represent the original node being packed.
 
 ## Notes
 To load all these mods at the same time you will need to modify your minetest server:<br>
