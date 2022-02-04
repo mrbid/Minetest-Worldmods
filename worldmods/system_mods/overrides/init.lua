@@ -65,11 +65,28 @@ minetest.override_item("ethereal:sandy", {
 
 
 minetest.register_craft({
-	output = "ethereal:etherium_dust 4",
+	output = "ethereal:etherium_dust 16",
 	recipe = {
 		{"gems:sapphire_gem", "gems:emerald_gem", "gems:ruby_gem"},
 		{"gems:amethyst_gem", "default:mese_crystal", "default:diamond"},
 		{"technic:zinc_dust", "technic:gold_dust", "technic:silver_dust"},
+	}
+})
+
+minetest.register_craft({
+	output = "ethereal:etherium_dust 64",
+	recipe = {
+		{"gems:sapphire_gem", "gems:emerald_gem", "gems:ruby_gem"},
+		{"gems:amethyst_gem", "default:mese_crystal", "default:diamond"},
+		{"space_travel:solar_mese_crystal", "space_travel:martian_ice_crystal", "space_travel:lunar_spinel_gem"},
+	}
+})
+
+minetest.register_craft({
+	output = "ethereal:fire_dust 4",
+	recipe = {
+		{"space_travel:galena_lump"},
+		{"farming:bottle_ethanol"},
 	}
 })
 
