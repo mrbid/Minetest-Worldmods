@@ -31,7 +31,7 @@ mobs.npc_drops = {
 	"farming:muffin_blueberry",
 	"petz:blueberry_muffin",
 	"hawk:space_carrot",
-	{"hawk:chocolate_eclair", 1337},
+	"hawk:chocolate_eclair",
 	"petz:poop",
 }
 
