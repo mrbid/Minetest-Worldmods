@@ -186,7 +186,7 @@ mobs:spawn({
 })
 end
 
-mobs:register_egg("mobs_maidroid:maidroid", S("Maidroid"), "default_brick.png", 1)
+mobs:register_egg("mobs_maidroid:maidroid", S("Maidroid"), "maidroid_egg.png", 1)
 
 -- compatibility
 mobs:alias_mob("mobs:maidroid", "mobs_maidroid:maidroid")
