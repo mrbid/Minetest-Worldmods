@@ -5,13 +5,13 @@ local colorIce = "^[colorize:#44bbbb:60"
 minetest.register_node("packed_things:packed_ice", {
 	description = "Packed Ice",
 	tiles = {"ice32.png^(packed1.png"..colorIce..")"},
-	groups = {cracky=3,stone=3},
+	groups = {cracky=3},
 --	sounds = default.node_sound_stone_defaults()
 })
 minetest.register_node("packed_things:packed_ice_2x", {
 	description = "2x Packed Ice",
 	tiles = {"ice32.png^(packed2.png"..colorIce..")"},
-	groups = {cracky=3,stone=3},
+	groups = {cracky=3},
 --	sounds = default.node_sound_stone_defaults()
 })
 minetest.register_node("packed_things:packed_ice_3x", {
@@ -29,25 +29,25 @@ minetest.register_node("packed_things:packed_ice_4x", {
 minetest.register_node("packed_things:packed_ice_5x", {
 	description = "5x Packed Ice",
 	tiles = {"ice32.png^(packed5.png"..colorIce..")"},
-	groups = {cracky=2,stone=1},
+	groups = {cracky=2},
 --	sounds = default.node_sound_stone_defaults()
 })
 minetest.register_node("packed_things:packed_ice_6x", {
 	description = "6x Packed Ice",
 	tiles = {"ice32.png^(packed6.png"..colorIce..")"},
-	groups = {cracky=1,stone=1},
+	groups = {cracky=1},
 --	sounds = default.node_sound_stone_defaults()
 })
 minetest.register_node("packed_things:packed_ice_7x", {
 	description = "7x Packed Ice",
 	tiles = {"ice32.png^(packed7.png"..colorIce..")"},
-	groups = {cracky=1,stone=1},
+	groups = {cracky=1},
 --	sounds = default.node_sound_stone_defaults()
 })
 minetest.register_node("packed_things:packed_ice_8x", {
 	description = "Ultra Packed Ice",
 	tiles = {"ice32.png^(packed8.png"..colorIce..")"},
-	groups = {cracky=1,stone=1},
+	groups = {cracky=1},
 --	sounds = default.node_sound_stone_defaults()
 })
 

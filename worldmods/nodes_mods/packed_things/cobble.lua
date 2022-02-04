@@ -3,49 +3,49 @@
 minetest.register_node("packed_things:packed_cobble", {
 	description = "Packed Cobble",
 	tiles = {"cobble1.png"},
-	groups = {cracky=3,stone=3},
+	groups = {cracky=3},
 --	sounds = default.node_sound_stone_defaults()
 })
 minetest.register_node("packed_things:packed_cobble_2x", {
 	description = "2x Packed Cobble",
 	tiles = {"cobble2.png"},
-	groups = {cracky=3,stone=3},
+	groups = {cracky=3},
 --	sounds = default.node_sound_stone_defaults()
 })
 minetest.register_node("packed_things:packed_cobble_3x", {
 	description = "3x Packed Cobble",
 	tiles = {"cobble3.png"},
-	groups = {cracky=2,stone=2},
+	groups = {cracky=2},
 --	sounds = default.node_sound_stone_defaults()
 })
 minetest.register_node("packed_things:packed_cobble_4x", {
 	description = "4x Packed Cobble",
 	tiles = {"cobble4.png"},
-	groups = {cracky=2,stone=2},
+	groups = {cracky=2},
 --	sounds = default.node_sound_stone_defaults()
 })
 minetest.register_node("packed_things:packed_cobble_5x", {
 	description = "5x Packed Cobble",
 	tiles = {"cobble5.png"},
-	groups = {cracky=2,stone=1},
+	groups = {cracky=2},
 --	sounds = default.node_sound_stone_defaults()
 })
 minetest.register_node("packed_things:packed_cobble_6x", {
 	description = "6x Packed Cobble",
 	tiles = {"cobble6.png"},
-	groups = {cracky=1,stone=1},
+	groups = {cracky=1},
 --	sounds = default.node_sound_stone_defaults()
 })
 minetest.register_node("packed_things:packed_cobble_7x", {
 	description = "7x Packed Cobble",
 	tiles = {"cobble7.png"},
-	groups = {cracky=1,stone=1},
+	groups = {cracky=1},
 --	sounds = default.node_sound_stone_defaults()
 })
 minetest.register_node("packed_things:packed_cobble_8x", {
 	description = "Ultra Packed Cobble",
 	tiles = {"cobble8.png"},
-	groups = {cracky=1,stone=1},
+	groups = {cracky=1},
 --	sounds = default.node_sound_stone_defaults()
 })
 
