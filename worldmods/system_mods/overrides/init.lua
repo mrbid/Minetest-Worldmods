@@ -74,7 +74,7 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "ethereal:etherium_dust 64",
+	output = "ethereal:etherium_dust 32",
 	recipe = {
 		{"gems:sapphire_gem", "gems:emerald_gem", "gems:ruby_gem"},
 		{"gems:amethyst_gem", "default:mese_crystal", "default:diamond"},
@@ -99,7 +99,7 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "ethereal:fire_dust 4",
+	output = "ethereal:fire_dust 16",
 	recipe = {
 		{"lavastuff:orb"},
 		{"farming:bottle_ethanol"},

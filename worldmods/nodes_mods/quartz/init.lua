@@ -103,7 +103,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = '"quartz:quartz_crystal" 4',
 	recipe = {
-		{'space_travel:solar_mese_crystal', '', 'space_travel:lava_crystal'},
+		{'space_travel:solar_mese_crystal', '', 'space_travel:martian_ice_crystal'},
 		{'', '', ''},
 		{'space_travel:lunar_spinel_gem', '', 'space_travel:dark_matter_crystal'}
 	}
