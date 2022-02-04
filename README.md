@@ -26,6 +26,10 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - automobiles2 with 4x passenger support, tiers of handling and public access to drive (and flying versions)
 - abriglass has been updated with cornered one-way glass thanks to Test_User.
 - we have plasma_mod by two which has nodes with instant kill properties, a great replacement to lava for protecting your base from users glitching through walls.
+- maidroid was a little too buggy and pointless so it's been re-implemented as an NPC.
+
+## TODO
+- packed_things nodes need to be updated with item groups that represent the original node being packed.
 
 ## Notes
 To load all these mods at the same time you will need to modify your minetest server:<br>
