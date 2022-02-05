@@ -695,7 +695,7 @@ if unified_inventory_modpath then
 	unified_inventory.register_button("personal_log", {
 		type = "image",
 		image = "personal_log_open_book.png",
-		tooltip = S("Your personal log for keeping track of what happens where"),
+		tooltip = S("Personal log, keeps a list of home/teleport locations."),
 		action = function(player)
 			local name = player:get_player_name()
 			minetest.show_formspec(name,"personal_log:root", make_personal_log_formspec(player))
@@ -707,7 +707,7 @@ end
 if sfinv_buttons_modpath then
 	sfinv_buttons.register_button("personal_log", {
 		image = "personal_log_open_book.png",
-		tooltip = S("Your personal log for keeping track of what happens where"),
+		tooltip = S("Personal log, keeps a list of home/teleport locations."),
 		title = S("Log"),
 		action = function(player)
 			local name = player:get_player_name()
