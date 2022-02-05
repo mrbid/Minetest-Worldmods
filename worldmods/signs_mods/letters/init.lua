@@ -25,7 +25,7 @@ function letters.register_letters(nodename, xdef, xgroups)
 		local descu = def.description.. " " ..string.upper(letter)
 		local tilesl = texture.. "^letters_" ..letter.. "_overlay.png^[makealpha:255,126,126"
 		local tilesu = texture.. "^letters_" ..string.upper(letter).. "_overlay.png^[makealpha:255,126,126"
-		local groups = {not_in_creative_inventory=1, not_in_craft_guide=1, oddly_breakable_by_hand=1, attached_node=1}
+		local groups = {not_in_creative_inventory=0, not_in_craft_guide=1, oddly_breakable_by_hand=1, attached_node=1}
 		xgroups = xgroups or {}
 		for k, v in pairs(xgroups) do
 			groups[k] = v
@@ -78,7 +78,7 @@ function letters.register_letters(nodename, xdef, xgroups)
 	end		
 	for i = 0, 9 do
 		local tiles = texture.. "^letters_" ..i.. "_overlay.png^[makealpha:255,126,126"
-		local groups = {not_in_creative_inventory=1, not_in_craft_guide=1, oddly_breakable_by_hand=1, attached_node=1}
+		local groups = {not_in_creative_inventory=0, not_in_craft_guide=1, oddly_breakable_by_hand=1, attached_node=1}
 		minetest.register_node(":" ..modname..":"..subname.. "_number_"..i, {
 			description = def.description.." "..i,
 			drawtype = "signlike",

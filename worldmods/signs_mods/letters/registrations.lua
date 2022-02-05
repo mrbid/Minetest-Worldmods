@@ -14,7 +14,6 @@ local default_nodes = {
 	"desert_stone",
 	"desert_stone_block",
 	"desert_cobble",
-	"meselamp",
 	"glass",
 	"tree",
 	"wood",
@@ -45,6 +44,21 @@ local default_nodes = {
 
 for _, name in pairs(default_nodes) do
 	letters.register_letters("default:"..name)
+end
+
+if minetest.get_modpath("caverealms") then
+	local nodes = {
+		"glow_emerald",
+		"glow_ruby",
+		"glow_crystal",
+		"glow_mese",
+		"glow_amethyst",
+		"glow_obsidian",
+		"glow_obsidian_2",
+	}
+	for _, name in pairs(nodes) do
+		letters.register_letters("caverealms:"..name)
+	end
 end
 
 if minetest.get_modpath("wool") then
