@@ -44,7 +44,7 @@ minetest.register_node("ma_pops_furniture:jOyBoX_cart", {
         for _, obj in ipairs (minetest.get_connected_players())  do
         local item = obj:get_wielded_item():get_name()
         if item == 'ma_pops_furniture:cartridge' then
-            node.name = "ma_pops_furniture:jOyBoXrcartridge"
+            node.name = "ma_pops_furniture:cartridge"
                minetest.set_node(pos, node)
         end
         end
