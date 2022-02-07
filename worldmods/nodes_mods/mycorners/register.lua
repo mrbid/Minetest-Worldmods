@@ -302,7 +302,7 @@ mycorners.register_all(
 mycorners.register_all(
 	"default_pine_tree", 
 	"Pine Tree", 
-	"default_pinetree.png",
+	"default_pine_tree.png",
 	{choppy=2,oddly_breakable_by_hand=2,flammable=2,not_in_creative_inventory=0},
 	"default:pine_tree",
 	"normal"

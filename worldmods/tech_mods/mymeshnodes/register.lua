@@ -277,14 +277,14 @@ mymeshnodes.register_all(
 	"normal"
 	)
 
--- mymeshnodes.register_all(
--- 	"default_pinetree", 
--- 	"Pine Tree", 
--- 	"default_pinetree.png",
--- 	{choppy=2,oddly_breakable_by_hand=2,flammable=2,not_in_creative_inventory=1},
--- 	"default:pinetree",
--- 	"normal"
--- 	)
+mymeshnodes.register_all(
+	"default_pinetree", 
+	"Pine Tree", 
+	"default_pine_tree.png",
+	{choppy=2,oddly_breakable_by_hand=2,flammable=2,not_in_creative_inventory=1},
+	"default:pinetree",
+	"normal"
+	)
 
 mymeshnodes.register_all(
 	"default_sandstone_brick", 

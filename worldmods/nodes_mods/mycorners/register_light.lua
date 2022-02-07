@@ -17,7 +17,7 @@ mycorners.register_all("default_pine_wood", "Pine Wood", "default_pine_wood.png"
 	{choppy = 3,not_in_creative_inventory=0},"default:pine_wood","normal")
 
 mycorners.register_all("default_acacia_wood", "Acacia Wood", "default_acacia_wood.png",
-	{choppy = 3,not_in_creative_inventory=0},"default:pine_acacia","normal")
+	{choppy = 3,not_in_creative_inventory=0},"default:acacia_wood","normal")
 
 mycorners.register_all("default_brick", "Brick", "default_brick.png",
 	{cracky = 2,not_in_creative_inventory=0},"default:brick","normal")
