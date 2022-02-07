@@ -282,7 +282,7 @@ mymeshnodes.register_all(
 	"Pine Tree", 
 	"default_pine_tree.png",
 	{choppy=2,oddly_breakable_by_hand=2,flammable=2,not_in_creative_inventory=1},
-	"default:pinetree",
+	"default:pine_tree",
 	"normal"
 	)
 
