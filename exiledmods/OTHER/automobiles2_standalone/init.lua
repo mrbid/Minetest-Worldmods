@@ -1,0 +1,8 @@
+local mod_path = minetest.get_modpath("automobiles2")
+dofile(mod_path .. "/common.lua")
+dofile(mod_path .. "/suv.lua")
+dofile(mod_path .. "/suv2.lua")
+dofile(mod_path .. "/suv3.lua")
+dofile(mod_path .. "/suv4.lua")
+dofile(mod_path .. "/suv5.lua")
+dofile(mod_path .. "/bmw.lua")
