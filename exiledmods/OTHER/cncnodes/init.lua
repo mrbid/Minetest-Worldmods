@@ -583,7 +583,7 @@ register_all("caverealms:glow_ruby",
 register_all("caverealms:glow_crystal",
                 {cracky=3, light_source=13, utalpha=1},
                 {"caverealms_glow_crystal.png"},
-                S("Glow Crystal"))
+                S("Glow Sapphire"))
 
 register_all("caverealms:glow_mese",
                 {cracky=3, light_source=13, utalpha=1},

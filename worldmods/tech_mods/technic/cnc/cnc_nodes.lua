@@ -19,7 +19,7 @@ technic.cnc.register_all("caverealms:glow_ruby",
 technic.cnc.register_all("caverealms:glow_crystal",
                 {cracky=3, light_source=13, utalpha=1},
                 {"caverealms_glow_crystal.png"},
-                S("Glow Crystal"))
+                S("Glow Sapphire"))
 
 technic.cnc.register_all("caverealms:glow_mese",
                 {cracky=3, light_source=13, utalpha=1},
