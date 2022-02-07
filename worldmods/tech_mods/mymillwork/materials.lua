@@ -368,35 +368,35 @@ mymillwork.register("caverealms:glow_emerald",
     "caverealms_glow_emerald",
     "Glow Emerald",
     "caverealms_glow_emerald.png",
-    {cracky=3, light_source=13}
+    {cracky=3, light_source=13, utalpha=1}
 )
 
 mymillwork.register("caverealms:glow_ruby",
     "caverealms_glow_ruby",
     "Glow Ruby",
     "caverealms_glow_ruby.png",
-    {cracky=3, light_source=13}
+    {cracky=3, light_source=13, utalpha=1}
 )
 
 mymillwork.register("caverealms:glow_crystal",
     "caverealms_glow_crystal",
     "Glow Sapphire",
     "caverealms_glow_crystal.png",
-    {cracky=3, light_source=13}
+    {cracky=3, light_source=13, utalpha=1}
 )
 
 mymillwork.register("caverealms:glow_mese",
     "caverealms_glow_mese",
     "Glow Mese",
     "caverealms_glow_mese.png",
-    {cracky=3, light_source=13}
+    {cracky=3, light_source=13, utalpha=1}
 )
 
 mymillwork.register("caverealms:glow_amethyst",
     "caverealms_glow_amethyst",
     "Glow Amethyst",
     "caverealms_glow_amethyst.png",
-    {cracky=3, light_source=13}
+    {cracky=3, light_source=13, utalpha=1}
 )
 
 mymillwork.register("caverealms:glow_obsidian",

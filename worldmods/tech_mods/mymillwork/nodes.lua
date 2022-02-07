@@ -375,6 +375,11 @@ end
 
 function mymillwork.register_all(suffix, model, mdesc, sbox, cbox, node_suffix, material, desc, image, group)
 
+    local uta = false
+    if group.utalpha == 1 then
+      uta = true
+    end
+
     minetest.register_node("mymillwork:" .. suffix .. "_" .. node_suffix, {
     description = desc .. " " .. mdesc,
     drawtype = "mesh",
@@ -386,6 +391,7 @@ function mymillwork.register_all(suffix, model, mdesc, sbox, cbox, node_suffix, 
     paramtype2 = "facedir",
     groups = group,
     on_place = minetest.rotate_node,
+    use_texture_alpha = uta
     })
 
     table.insert(mymillwork.registered, {material, node_suffix})
