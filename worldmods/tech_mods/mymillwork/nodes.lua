@@ -391,6 +391,7 @@ function mymillwork.register_all(suffix, model, mdesc, sbox, cbox, node_suffix, 
     paramtype2 = "facedir",
     groups = group,
     on_place = minetest.rotate_node,
+    light_source  = group.light_source,
     use_texture_alpha = uta
     })
 
