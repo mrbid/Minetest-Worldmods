@@ -31,7 +31,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - added HV Biomass Generator, consumes bones (bones:bones, bonemeal:bone, foody:bone) and produces power. 100x the power of a HV Battery Box.
 
 ## TODO
-- `packed_things` nodes need to be updated with item groups that represent the original node being packed.
+- `packed_things` nodes need to be updated with node groups that represent the original node being packed.
 
 ## DONE
 ~~- transparency support needs to be added to `mymillwork` for the caverealms glow crystal cuts~~
