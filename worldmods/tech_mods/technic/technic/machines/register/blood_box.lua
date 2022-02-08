@@ -47,7 +47,7 @@ function technic.register_blood_box(data)
 		"image[1,1;1,2;technic_power_meter_bg.png]"..
 		"list[context;src;3,1;1,1;]"..
 		"label[0,0;HV Biomass Generator]"..
-		"label[3,0.6;"..S("Biomass (bones)").."]"..
+		"label[3,0.6;"..S("Biomass (bones,potato,lemon)").."]"..
 		"label[1,3;"..S("Power level").."]"..
 		"list[current_player;main;0,5;8,4;]"..
 		"listring[context;src]"..
@@ -155,6 +155,17 @@ function technic.register_blood_box(data)
 					ts = sc
 				end
 				current_charge = current_charge + (data.charge_step/33) * ts;
+				stack:set_count(sc-ts)
+				inventory:set_stack("src", 1, stack)
+			elseif item_name == "farming:potato" or item_name == "ethereal:lemon" then
+				local sc = stack:get_count();
+				local cct = max_charge - current_charge
+				local cctu = cct / data.charge_step
+				local ts = cctu
+				if sc < cctu then
+					ts = sc
+				end
+				current_charge = current_charge + (data.charge_step/66) * ts;
 				stack:set_count(sc-ts)
 				inventory:set_stack("src", 1, stack)
 			end
