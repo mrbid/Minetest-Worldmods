@@ -27,6 +27,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - abriglass has been updated with cornered one-way glass thanks to Test_User.
 - we have plasma_mod by two which has nodes with instant kill properties, a great replacement to lava for protecting your base from users glitching through walls.
 - maidroid was a little too buggy and pointless so it's been re-implemented as a simple NPC.
+- added HV Biomass Generator, consumes bones (bones:bones, bonemeal:bone, foody:bone) and produces power. 100x the power of a HV Battery Box.
 
 ## TODO
 - `packed_things` nodes need to be updated with item groups that represent the original node being packed.

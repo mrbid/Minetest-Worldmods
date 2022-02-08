@@ -6,6 +6,7 @@ local path = technic.modpath.."/machines/HV"
 -- Wiring stuff
 dofile(path.."/cables.lua")
 dofile(path.."/battery_box.lua")
+dofile(path.."/blood_box.lua")
 
 -- Generators
 dofile(path.."/solar_array.lua")
