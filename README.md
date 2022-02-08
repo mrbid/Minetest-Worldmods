@@ -3,6 +3,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 
 ## Highlights
 - insane amount of bug fixes to pretty much every mod
+- manually removed all specular highlights from technic_armor
 - fixing all bugs and offsets in `/vehicles` _(D00Med Vehicles)_
 - addition of biofuel chainsaws _(based on technic chainsaw)_
 - addition of powerbank mk4 _(zero-point energy)_
