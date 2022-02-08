@@ -212,6 +212,18 @@ local recipes = {
 	{"default:apple", "space_travel:dark_matter_crystal", "ethereal:golden_apple", 1},
 	{"farming:carrot", "space_travel:dark_matter_crystal", "farming:carrot_gold", 1},
 	{"farming:donut", "space_travel:dark_matter_crystal", "foody:diamond_donut", 1},
+
+-- space_travel nodes
+--
+	{"space_travel:martian_ice_crystal_block", "space_travel:dark_matter_crystal_block", "space_travel:lava_crystal", 10},
+	{"space_travel:lava_crystal_block", "space_travel:dark_matter_crystal_block", "space_travel:bucket_space_lava", 10},
+	{"space_travel:bacchus_sand 9", "space_travel:dark_matter_crystal_block", "space_travel:bucket_bacchus_water", 10},
+	{"space_travel:solar_mese_block", "space_travel:dark_matter_crystal_block", "space_travel:bucket_liquid_hydrocarbon", 10},
+	{"space_travel:minthe_stonebrick 9", "space_travel:dark_matter_crystal_block", "space_travel:bucket_sulfuric_acid", 10},
+	{"space_travel:lava_crystal", "space_travel:dark_matter_crystal 3", "space_travel:bucket_minerva_water", 10},
+	{"space_travel:lunar_spinel_gem", "space_travel:dark_matter_crystal 3", "space_travel:bucket_europa_water", 10},
+	{"space_travel:martian_ice_crystal", "space_travel:dark_matter_crystal_block", "space_travel:bucket_cryolava", 10},
+
 }
 
 for _, data in pairs(recipes) do
