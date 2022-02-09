@@ -190,7 +190,9 @@ function ranks.set_rank(name, rank)
 		local def = ranks.get_def(rank)
 		if def.colour.a == 0 or name == admin_name then
 			player = minetest.get_player_by_name(name)
-			player:set_nametag_attributes({color = {a = 0, r = 255, g = 255, b = 255}})
+			if player ~= nil then
+				player:set_nametag_attributes({color = {a = 0, r = 255, g = 255, b = 255}})
+			end
 		end
 
 		-- Update nametag
