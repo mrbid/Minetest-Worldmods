@@ -223,6 +223,7 @@ local recipes = {
 	{"space_travel:lava_crystal", "space_travel:dark_matter_crystal 3", "space_travel:bucket_minerva_water", 10},
 	{"space_travel:lunar_spinel_gem", "space_travel:dark_matter_crystal 3", "space_travel:bucket_europa_water", 10},
 	{"space_travel:martian_ice_crystal", "space_travel:dark_matter_crystal_block", "space_travel:bucket_cryolava", 10},
+	{"space_travel:bacchus_tree", "space_travel:dark_matter_crystal 3", "space_travel:bacchus_sapling", 10},
 
 }
 
