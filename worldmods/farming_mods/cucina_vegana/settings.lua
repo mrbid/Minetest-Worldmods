@@ -10,7 +10,7 @@
 local cv_setting = "cucina_vegana.plant_settings."
 
 -- Start germ at:
-cucina_vegana.plant_settings.germ_launch = minetest.settings:get(cv_setting .. "germ_launch") or 0
+cucina_vegana.plant_settings.germ_launch = minetest.settings:get(cv_setting .. "germ_launch") or 1
 
 -- Asparagus
 cucina_vegana.plant_settings.asparagus = minetest.settings:get_bool(cv_setting .. "asparagus", true)
