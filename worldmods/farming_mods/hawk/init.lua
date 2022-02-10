@@ -4,7 +4,7 @@
 
 -- Space Carrot
 minetest.register_craftitem("hawk:space_carrot", {
-	description = "Teleportation Carrot",
+	description = "Space Carrot",
 	inventory_image = "space_carrot.png",
 	wield_image = "space_carrot.png",
 	on_use = function(itemstack, user)
