@@ -102,9 +102,12 @@ function stamina.get_saturation(player)
 end
 
 function stamina.set_saturation(player, level)
+	if level == nil or player == nil or settings == nil or attribute == nil or attribute.saturation == nil then return end
+	local hudid = get_hud_id(player);
+	if hudid == nil then return end
 	set_player_attribute(player, attribute.saturation, level)
 	player:hud_change(
-		get_hud_id(player),
+		hudid,
 		"number",
 		math.min(settings.visual_max, level)
 	)
