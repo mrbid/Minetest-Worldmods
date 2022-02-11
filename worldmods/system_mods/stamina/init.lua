@@ -378,6 +378,7 @@ local function health_tick()
 		local air = player:get_breath() or 0
 		local hp = player:get_hp()
 		local saturation = stamina.get_saturation(player)
+		if player == nil or settings == nil or air == nil or hp == nil or saturation == nil or settings.heal_lvl == nil then return end
 
 		-- don't heal if dead, drowning, or poisoned
 		local should_heal = (
