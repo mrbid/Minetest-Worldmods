@@ -28,6 +28,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - we have plasma_mod by two which has nodes with instant kill properties, a great replacement to lava for protecting your base from users glitching through walls.
 - maidroid was a little too buggy and pointless so it's been re-implemented as a simple NPC.
 - added HV Biomass Generator, consumes bones (bones:bones, bonemeal:bone, foody:bone) and produces power. 100x the power of a HV Battery Box.
+- replaced the model on cars:car and then adapted it to a jets:jet for the VF-MESHNODE server as a novel method of increasing player speed.
 
 ## TODO
 - `packed_things` nodes need to be updated with node groups that represent the original node being packed.
