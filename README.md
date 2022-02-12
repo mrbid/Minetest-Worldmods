@@ -32,6 +32,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 
 ## TODO
 - `packed_things` nodes need to be updated with node groups that represent the original node being packed.
+- the basic doors with glitch protection (shift + dig) open up inverse, this needs to be fixed.
 
 ## DONE
 ~~- transparency support needs to be added to `mymillwork` for the caverealms glow crystal cuts~~
