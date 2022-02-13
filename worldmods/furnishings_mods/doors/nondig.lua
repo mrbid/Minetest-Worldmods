@@ -62,100 +62,100 @@ end);
 
 
 
-local function make_it_nondiggable_but_removable(name, dropname)
+-- local function make_it_nondiggable_but_removable(name, dropname)
 	
-	local table = minetest.registered_nodes[name]; if not table then return end
-	local table2 = {}
-	for i,v in pairs(table) do
-		table2[i] = v
-	end
-	table2.groups.level = 99; -- cant be digged, but it can be removed by owner or if not protected
-	table2.on_punch = function(pos, node, puncher, pointed_thing) -- remove node if owner repeatedly punches it 3x
-		local pname = puncher:get_player_name();
-		local meta = minetest.get_meta(pos);
-		local owner = meta:get_string("doors_owner")
-		if pname==owner or not minetest.is_protected(pos,pname) then -- can be dug by owner or if unprotected
-			local t0 = meta:get_int("punchtime");local count = meta:get_int("punchcount");
-			local t = minetest.get_gametime();
+-- 	local table = minetest.registered_nodes[name]; if not table then return end
+-- 	local table2 = {}
+-- 	for i,v in pairs(table) do
+-- 		table2[i] = v
+-- 	end
+-- 	table2.groups.level = 99; -- cant be digged, but it can be removed by owner or if not protected
+-- 	table2.on_punch = function(pos, node, puncher, pointed_thing) -- remove node if owner repeatedly punches it 3x
+-- 		local pname = puncher:get_player_name();
+-- 		local meta = minetest.get_meta(pos);
+-- 		local owner = meta:get_string("doors_owner")
+-- 		if pname==owner or not minetest.is_protected(pos,pname) then -- can be dug by owner or if unprotected
+-- 			local t0 = meta:get_int("punchtime");local count = meta:get_int("punchcount");
+-- 			local t = minetest.get_gametime();
 			
-			if t-t0<2 then count = (count +1 ) % 3 else count =  0 end
+-- 			if t-t0<2 then count = (count +1 ) % 3 else count =  0 end
 
-			if count == 1 then
-				minetest.chat_send_player(pname, "#Door:punch me one more time to remove me");
-			end
-			if count == 2 then -- remove steel door and drop it
-				minetest.set_node(pos, {name = "air"});
-				local stack = ItemStack(dropname);minetest.add_item(pos,stack)
-			end
+-- 			if count == 1 then
+-- 				minetest.chat_send_player(pname, "#Door:punch me one more time to remove me");
+-- 			end
+-- 			if count == 2 then -- remove steel door and drop it
+-- 				minetest.set_node(pos, {name = "air"});
+-- 				local stack = ItemStack(dropname);minetest.add_item(pos,stack)
+-- 			end
 			
-			meta:set_int("punchcount",count);meta:set_int("punchtime",t);
-			--minetest.chat_send_all("punch by "..name .. " count " .. count)
-		end
-	end
-	minetest.register_node(":"..name, table2)
-end 
+-- 			meta:set_int("punchcount",count);meta:set_int("punchtime",t);
+-- 			--minetest.chat_send_all("punch by "..name .. " count " .. count)
+-- 		end
+-- 	end
+-- 	minetest.register_node(":"..name, table2)
+-- end 
 
-minetest.after(0,function()
-	make_it_nondiggable_but_removable("doors:door_steel_a","doors:door_steel");
-	make_it_nondiggable_but_removable("doors:door_steel_b","doors:door_steel");
+-- minetest.after(0,function()
+-- 	make_it_nondiggable_but_removable("doors:door_steel_a","doors:door_steel");
+-- 	make_it_nondiggable_but_removable("doors:door_steel_b","doors:door_steel");
 
-	make_it_nondiggable_but_removable("doors:door_adamantine_a","doors:door_adamantine");
-	make_it_nondiggable_but_removable("doors:door_adamantine_b","doors:door_adamantine");	
+-- 	make_it_nondiggable_but_removable("doors:door_adamantine_a","doors:door_adamantine");
+-- 	make_it_nondiggable_but_removable("doors:door_adamantine_b","doors:door_adamantine");	
 	
-	make_it_nondiggable_but_removable("doors:door_aquarium_a","doors:door_aquarium");
-	make_it_nondiggable_but_removable("doors:door_aquarium_b","doors:door_aquarium");
+-- 	make_it_nondiggable_but_removable("doors:door_aquarium_a","doors:door_aquarium");
+-- 	make_it_nondiggable_but_removable("doors:door_aquarium_b","doors:door_aquarium");
 	
-	make_it_nondiggable_but_removable("doors:door_aquarium_a","doors:door_aquarium");
-	make_it_nondiggable_but_removable("doors:door_aquarium_b","doors:door_aquarium");
+-- 	make_it_nondiggable_but_removable("doors:door_aquarium_a","doors:door_aquarium");
+-- 	make_it_nondiggable_but_removable("doors:door_aquarium_b","doors:door_aquarium");
 
-	make_it_nondiggable_but_removable("doors:door_brass_a","doors:door_brass");
-	make_it_nondiggable_but_removable("doors:door_brass_b","doors:door_brass");	
+-- 	make_it_nondiggable_but_removable("doors:door_brass_a","doors:door_brass");
+-- 	make_it_nondiggable_but_removable("doors:door_brass_b","doors:door_brass");	
 
-	make_it_nondiggable_but_removable("doors:door_gold_a","doors:door_gold");
-	make_it_nondiggable_but_removable("doors:door_gold_b","doors:door_gold");	
+-- 	make_it_nondiggable_but_removable("doors:door_gold_a","doors:door_gold");
+-- 	make_it_nondiggable_but_removable("doors:door_gold_b","doors:door_gold");	
 
-	make_it_nondiggable_but_removable("doors:door_mese_a","doors:door_mese");
-	make_it_nondiggable_but_removable("doors:door_mese_b","doors:door_mese");
+-- 	make_it_nondiggable_but_removable("doors:door_mese_a","doors:door_mese");
+-- 	make_it_nondiggable_but_removable("doors:door_mese_b","doors:door_mese");
 	
-	make_it_nondiggable_but_removable("doors:door_diamond_a","doors:door_diamond");
-	make_it_nondiggable_but_removable("doors:door_diamond_b","doors:door_diamond");
+-- 	make_it_nondiggable_but_removable("doors:door_diamond_a","doors:door_diamond");
+-- 	make_it_nondiggable_but_removable("doors:door_diamond_b","doors:door_diamond");
 	
-	make_it_nondiggable_but_removable("doors:door_copper_a","doors:door_copper");
-	make_it_nondiggable_but_removable("doors:door_copper_b","doors:door_copper");
+-- 	make_it_nondiggable_but_removable("doors:door_copper_a","doors:door_copper");
+-- 	make_it_nondiggable_but_removable("doors:door_copper_b","doors:door_copper");
 	
-	make_it_nondiggable_but_removable("doors:door_copper_a","doors:door_copper");
-	make_it_nondiggable_but_removable("doors:door_copper_b","doors:door_copper");
-	--trapdoors
-	make_it_nondiggable_but_removable("doors:trapdoor_steel","doors:trapdoor_steel");
-	make_it_nondiggable_but_removable("doors:trapdoor_steel_open","doors:trapdoor_steel");
+-- 	make_it_nondiggable_but_removable("doors:door_copper_a","doors:door_copper");
+-- 	make_it_nondiggable_but_removable("doors:door_copper_b","doors:door_copper");
+-- 	--trapdoors
+-- 	make_it_nondiggable_but_removable("doors:trapdoor_steel","doors:trapdoor_steel");
+-- 	make_it_nondiggable_but_removable("doors:trapdoor_steel_open","doors:trapdoor_steel");
 	
-	make_it_nondiggable_but_removable("doors:trapdoor_adamantine","doors:trapdoor_adamantine");
-	make_it_nondiggable_but_removable("doors:trapdoor_adamantine_open","doors:trapdoor_adamantine");
+-- 	make_it_nondiggable_but_removable("doors:trapdoor_adamantine","doors:trapdoor_adamantine");
+-- 	make_it_nondiggable_but_removable("doors:trapdoor_adamantine_open","doors:trapdoor_adamantine");
 	
-	make_it_nondiggable_but_removable("doors:trapdoor_aquarium","doors:trapdoor_aquarium");
-	make_it_nondiggable_but_removable("doors:trapdoor_aquarium_open","doors:trapdoor_aquarium");
+-- 	make_it_nondiggable_but_removable("doors:trapdoor_aquarium","doors:trapdoor_aquarium");
+-- 	make_it_nondiggable_but_removable("doors:trapdoor_aquarium_open","doors:trapdoor_aquarium");
 	
-	make_it_nondiggable_but_removable("doors:trapdoor_brass","doors:trapdoor_brass");
-	make_it_nondiggable_but_removable("doors:trapdoor_brass_open","doors:trapdoor_brass");
+-- 	make_it_nondiggable_but_removable("doors:trapdoor_brass","doors:trapdoor_brass");
+-- 	make_it_nondiggable_but_removable("doors:trapdoor_brass_open","doors:trapdoor_brass");
 	
-	make_it_nondiggable_but_removable("doors:trapdoor_bronze","doors:trapdoor_bronze");
-	make_it_nondiggable_but_removable("doors:trapdoor_bronze_open","doors:trapdoor_bronze");
+-- 	make_it_nondiggable_but_removable("doors:trapdoor_bronze","doors:trapdoor_bronze");
+-- 	make_it_nondiggable_but_removable("doors:trapdoor_bronze_open","doors:trapdoor_bronze");
 	
-	make_it_nondiggable_but_removable("doors:trapdoor_bronze","doors:trapdoor_bronze");
-	make_it_nondiggable_but_removable("doors:trapdoor_bronze_open","doors:trapdoor_bronze");
+-- 	make_it_nondiggable_but_removable("doors:trapdoor_bronze","doors:trapdoor_bronze");
+-- 	make_it_nondiggable_but_removable("doors:trapdoor_bronze_open","doors:trapdoor_bronze");
 	
-	make_it_nondiggable_but_removable("doors:trapdoor_gold","doors:trapdoor_gold");
-	make_it_nondiggable_but_removable("doors:trapdoor_gold_open","doors:trapdoor_gold");	
+-- 	make_it_nondiggable_but_removable("doors:trapdoor_gold","doors:trapdoor_gold");
+-- 	make_it_nondiggable_but_removable("doors:trapdoor_gold_open","doors:trapdoor_gold");	
 
-	make_it_nondiggable_but_removable("doors:trapdoor_mese","doors:trapdoor_mese");
-	make_it_nondiggable_but_removable("doors:trapdoor_mese_open","doors:trapdoor_mese");
+-- 	make_it_nondiggable_but_removable("doors:trapdoor_mese","doors:trapdoor_mese");
+-- 	make_it_nondiggable_but_removable("doors:trapdoor_mese_open","doors:trapdoor_mese");
 
-	make_it_nondiggable_but_removable("doors:trapdoor_diamond","doors:trapdoor_diamond");
-	make_it_nondiggable_but_removable("doors:trapdoor_diamond_open","doors:trapdoor_diamond");	
+-- 	make_it_nondiggable_but_removable("doors:trapdoor_diamond","doors:trapdoor_diamond");
+-- 	make_it_nondiggable_but_removable("doors:trapdoor_diamond_open","doors:trapdoor_diamond");	
 
-	make_it_nondiggable_but_removable("doors:trapdoor_copper","doors:trapdoor_copper");
-	make_it_nondiggable_but_removable("doors:trapdoor_copper_open","doors:trapdoor_copper");	
-end);
+-- 	make_it_nondiggable_but_removable("doors:trapdoor_copper","doors:trapdoor_copper");
+-- 	make_it_nondiggable_but_removable("doors:trapdoor_copper_open","doors:trapdoor_copper");	
+-- end);
 
 
 

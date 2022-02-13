@@ -947,7 +947,7 @@ minetest.register_craft({
 })
 --Diamond trap
 doors.register_trapdoor("doors:trapdoor_diamond", {
-	description = "Mese Trapdoor",
+	description = "Diamond Trapdoor",
 	inventory_image = "doors_trapdoor_diamond.png",
 	wield_image = "doors_trapdoor_diamond.png",
 	tile_front = "doors_trapdoor_diamond.png",
