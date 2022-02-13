@@ -34,7 +34,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - `packed_things` nodes need to be updated with node groups that represent the original node being packed.
 
 ## DONE
-~~- transparency support needs to be added to `mymillwork` for the caverealms glow crystal cuts~~
+~~- transparency support needs to be added to `mymillwork` for the caverealms glow crystal cuts~~<br>
 ~~- some of the doors such as the diamond door in the `doors` mod open up inverse, this needs to be fixed.~~
 
 ## Notes
