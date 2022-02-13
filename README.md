@@ -32,6 +32,9 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 
 ## TODO
 - `packed_things` nodes need to be updated with node groups that represent the original node being packed.
+- locked to locked travelnet currently not possible
+- prevent mychisel from returning non-chiseled nodes on dig
+- make moreores hoes craftable?
 
 ## DONE
 ~~- transparency support needs to be added to `mymillwork` for the caverealms glow crystal cuts~~<br>
