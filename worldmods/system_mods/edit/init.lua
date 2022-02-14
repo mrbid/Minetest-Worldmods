@@ -18,7 +18,9 @@ minetest.register_node("edit:fill",{
 	inventory_image = "edit_fill.png",
 	groups = {snappy = 2, oddly_breakable_by_hand = 3, not_in_creative_inventory=1},
 	on_place = function(itemstack, placer, pointed_thing)
-		if pointed_thing ~= nil and itemstack ~= nil and placer ~= nil and minetest.is_player(placer) and placer:get_player_name() ~= nil and editmod_clipboard[placer:get_player_name()] ~= nil and editmod_clipboard[placer:get_player_name()].fillBlock1Pos and not minetest.is_protected(pointed_thing.above, placer:get_player_name()) then
+		if pointed_thing == nil or itemstack == nil or placer == nil or not minetest.is_player(placer) or placer:get_player_name() == nil or minetest.is_protected(pointed_thing.above, placer:get_player_name()) then return end
+
+		if editmod_clipboard[placer:get_player_name()] ~= nil and editmod_clipboard[placer:get_player_name()].fillBlock1Pos then
 			minetest.set_node(pointed_thing.above, {name = "edit:fill"})
 			editmod_clipboard[placer:get_player_name()].fillBlock2Pos = pointed_thing.above
 
