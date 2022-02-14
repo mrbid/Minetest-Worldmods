@@ -1,5 +1,5 @@
 --[[
-	Edit Mod v0.4 (Safer)
+	Edit Mod v0.5 (Safer)
 ]]
 local max_edit_range = 24
 
@@ -12,74 +12,13 @@ local function sign(x) -- different from math.sign never returns 0.
 	return 1
 end
 
--- Delete Block
-minetest.register_node("edit:delete",{
-	description = "Delete",
-	inventory_image = "edit_delete.png",
-	groups = {snappy = 2, oddly_breakable_by_hand = 3, not_in_creative_inventory=1},
-	tiles = {"edit_delete.png"},
-	on_place = function(itemstack, placer, pointed_thing)
-		if pointed_thing ~= nil and itemstack ~= nil and placer ~= nil and minetest.is_player(placer) and placer:get_player_name() ~= nil and editmod_clipboard[placer:get_player_name()] ~= nil and editmod_clipboard[placer:get_player_name()].deleteBlock1Pos then
-			local p1 = editmod_clipboard[placer:get_player_name()].deleteBlock1Pos
-			local p2 = pointed_thing.above
-
-			if vector.distance(p1, p2) > max_edit_range then
-				minetest.remove_node(p1);
-				editmod_clipboard[placer:get_player_name()].deleteBlock1Pos = nil;
-				minetest.chat_send_player(placer:get_player_name(), "Too many blocks please select " .. max_edit_range .. " or less.");
-				return nil;
-			end
-			
-			minetest.remove_node(p1);
-			
-			p1.x = p1.x + math.sign(p2.x - p1.x)
-			p1.y = p1.y + math.sign(p2.y - p1.y)
-			p1.z = p1.z + math.sign(p2.z - p1.z)
-			p2.x = p2.x + math.sign(p1.x - p2.x)
-			p2.y = p2.y + math.sign(p1.y - p2.y)
-			p2.z = p2.z + math.sign(p1.z - p2.z)
-			
-			for x = p1.x, p2.x, sign(p2.x - p1.x) do
-				for y = p1.y, p2.y, sign(p2.y - p1.y) do
-					for z = p1.z, p2.z, sign(p2.z - p1.z) do
-						if not minetest.is_protected({x=x, y=y, z=z}, placer:get_player_name()) then
-							minetest.remove_node({x=x, y=y, z=z});
-						end
-					end
-				end
-			end
-			editmod_clipboard[placer:get_player_name()].deleteBlock1Pos = nil
-		else
-			minetest.set_node(pointed_thing.above, {name = "edit:delete"})
-			editmod_clipboard[placer:get_player_name()].deleteBlock1Pos = pointed_thing.above
-		end
-	end,
-	on_dig = function(pos, node, digger)
-		if digger ~= nil and minetest.is_player(digger) then
-			for name, value in pairs(editmod_clipboard) do
-				minetest.remove_node(pos);
-				if
-					editmod_clipboard[name].deleteBlock1Pos
-					and editmod_clipboard[name].deleteBlock1Pos.x == pos.x
-					and editmod_clipboard[name].deleteBlock1Pos.y == pos.y
-					and editmod_clipboard[name].deleteBlock1Pos.z == pos.z
-				then
-					editmod_clipboard[name].deleteBlock1Pos = nil
-					break
-				end
-			end
-		end
-	end
-})
-
--- Fill Block
 minetest.register_node("edit:fill",{
 	description = "Fill",
 	tiles = {"edit_fill.png"},
 	inventory_image = "edit_fill.png",
 	groups = {snappy = 2, oddly_breakable_by_hand = 3, not_in_creative_inventory=1},
 	on_place = function(itemstack, placer, pointed_thing)
-		if pointed_thing ~= nil and itemstack ~= nil and placer ~= nil and minetest.is_player(placer) and placer:get_player_name() ~= nil and editmod_clipboard[placer:get_player_name()] ~= nil and editmod_clipboard[placer:get_player_name()].fillBlock1Pos then
+		if pointed_thing ~= nil and itemstack ~= nil and placer ~= nil and minetest.is_player(placer) and placer:get_player_name() ~= nil and editmod_clipboard[placer:get_player_name()] ~= nil and editmod_clipboard[placer:get_player_name()].fillBlock1Pos and not minetest.is_protected(pointed_thing.above, placer:get_player_name()) then
 			minetest.set_node(pointed_thing.above, {name = "edit:fill"})
 			editmod_clipboard[placer:get_player_name()].fillBlock2Pos = pointed_thing.above
 
@@ -197,8 +136,6 @@ minetest.register_on_joinplayer(function(player)
 	editmod_clipboard[player:get_player_name()] = {
 		["fillBlock1Pos"] = nil,
 		["fillBlock2Pos"] = nil,
-		["copyBlock1Pos"] = nil,
-		["deleteBlock1Pos"] = nil,
 		["copyData"] = {},
 	};
 end);
