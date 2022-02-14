@@ -1,37 +1,12 @@
 local isui = minetest.get_modpath("unified_inventory")
 local ispl = minetest.get_modpath("personal_log")
 
---[[
-local jailpos = {x=-704.5, y=19.5, z=-812};
-local jailradius = 10;
---]]
-
 local freepos = {x=-900, y=24, z=-1189};
+if minetest.setting_get_pos("static_spawnpoint") then
+	freepos = minetest.setting_get_pos("static_spawnpoint")
+end
 local jailpos = {x=28435, y=-30909, z=1866};
 local jailradius = 200;
-
-spawn_command = {}
-spawn_command.pos = {-900,24,-1189}
--- local freepos = {x=spawn_command.pos[0], y=spawn_command.pos[1], z=spawn_command.pos[2]};
-
-
--- https://forum.minetest.net/viewtopic.php?t=18808
--- local LAVA_PLACE_DEPTH = -50
--- minetest.register_privilege("lava", "Allows placing lava")
--- function allow_place_lava( pos, player )
---         if pos.y > LAVA_PLACE_DEPTH and not minetest.check_player_privs( player, "lava" ) then
---                 minetest.chat_send_player( player:get_player_name( ), "You are not allowed to place lava above " .. LAVA_PLACE_DEPTH .. "!" )
---                 minetest.log( "action", player:get_player_name( ) .. " tried to place default:lava_source above " .. LAVA_PLACE_DEPTH )
---                 return false
---         end
---         return true
--- end
--- minetest.override_item( "bucket:bucket_lava", {
---         allow_place = allow_place_lava
--- } )
--- minetest.override_item( "default:lava_source", {
---         allow_place = allow_place_lava
--- } )
 
 -- https://forum.minetest.net/viewtopic.php?t=16862
 minetest.register_chatcommand("whatisthis", {
@@ -47,21 +22,21 @@ minetest.register_on_mods_loaded(function()
 	minetest.unregister_chatcommand("ban")
 end)
 
--- bls rollback check
-minetest.register_privilege("rollback_check", "Allows use of /rollback_check")
-minetest.override_chatcommand("rollback_check", {
-    privs = {rollback_check=true}
-})
--- allow regular players access to limited rollback checking
-minetest.register_chatcommand("grief_check", {
-    description = "Check who last touched a node or a node near it",
-    func = function(name)
-        return minetest.registered_chatcommands["rollback_check"].func(
-            name,
-            "1 1209600 10"
-        )
-    end
-})
+-- -- bls rollback check
+-- minetest.register_privilege("rollback_check", "Allows use of /rollback_check")
+-- minetest.override_chatcommand("rollback_check", {
+--     privs = {rollback_check=true}
+-- })
+-- -- allow regular players access to limited rollback checking
+-- minetest.register_chatcommand("grief_check", {
+--     description = "Check who last touched a node or a node near it",
+--     func = function(name)
+--         return minetest.registered_chatcommands["rollback_check"].func(
+--             name,
+--             "1 1209600 10"
+--         )
+--     end
+-- })
 
 function writeLog(text)
 	if string.len(text) > 256 then
@@ -476,26 +451,6 @@ minetest.register_chatcommand("free",
 	end
 })
 
-minetest.register_chatcommand("respawn",
-{
-	privs = {jail = true},
-	params = "<player name>",
-	description = "Trigger respawn on player [test func]",
-	func = function (name, param)
-		local player = minetest.get_player_by_name(param);
-		if player ~= nil then
-			local p1 = player:get_pos()
-			local dist = vector.distance(p1, jailpos);
-
-			if dist < jailradius then
-				return player:set_pos(jailpos);
-			end
-
-			return player:set_pos(freepos);
-		end
-	end
-})
-
 minetest.register_on_respawnplayer(function(player)
 
 	local p1 = player:get_pos()
@@ -510,47 +465,25 @@ minetest.register_on_respawnplayer(function(player)
 
 end)
 
-
-if minetest.setting_get_pos("static_spawnpoint") then
-    spawn_command.pos = minetest.setting_get_pos("static_spawnpoint")
-end
-
-function teleport_to_spawn(name)
-    local player = minetest.get_player_by_name(name)
-    if player == nil then
-        -- just a check to prevent the server crashing
-        return false
-    end
-    local pos = player:get_pos()
-
-	local dist = vector.distance(pos, jailpos);
-
-	if dist < jailradius then
-		player:set_pos(jailpos);
-		return true
-	end
-
-    if _G['cursed_world'] ~= nil and    --check global table for cursed_world mod
-        cursed_world.location_y and cursed_world.dimension_y and
-        pos.y < (cursed_world.location_y + cursed_world.dimension_y) and    --if player is in cursed world, stay in cursed world
-        pos.y > (cursed_world.location_y - cursed_world.dimension_y)
-    then   --check global table for cursed_world mod
-        --minetest.chat_send_player(name, "T"..(cursed_world.location_y + cursed_world.dimension_y).." "..(cursed_world.location_y - cursed_world.dimension_y))
-        local spawn_pos = vector.round(spawn_command.pos);
-        spawn_pos.y = spawn_pos.y + cursed_world.location_y;
-        player:set_pos(spawn_pos)
-        minetest.chat_send_player(name, "Teleported to spawn!")
-    else
-        player:set_pos(spawn_command.pos)
-        minetest.chat_send_player(name, "Teleported to spawn!")
-    end
-end
-
 minetest.register_chatcommand("spawn", {
     description = "Teleport you to spawn point.",
-    func = teleport_to_spawn,
-})
+    func = function(name)
 
+		local player = minetest.get_player_by_name(name)
+		if player == nil then return false end
+
+		local pos = player:get_pos()
+		local dist = vector.distance(pos, jailpos);
+		if dist < jailradius then
+			player:set_pos(jailpos);
+			return true
+		end
+	
+		player:set_pos(freepos)
+		minetest.chat_send_player(name, "Teleported to spawn!")
+
+	end,
+})
 
 -- chat logger
 minetest.register_on_chat_message(function(name, message)

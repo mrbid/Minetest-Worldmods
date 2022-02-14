@@ -120,11 +120,7 @@ local function tnt_explode(pos, radius, ignore_protection, ignore_on_blast, owne
 	local c_tnt_burning = minetest.get_content_id("tnt:tnt_burning")
 	local c_tnt_boom = minetest.get_content_id("tnt:boom")
 	local c_air = minetest.get_content_id("air")
-	if enable_tnt then
-		c_tnt = minetest.get_content_id("tnt:tnt")
-	else
-		c_tnt = c_tnt_burning -- tnt is not registered if disabled
-	end
+	c_tnt = c_tnt_burning -- tnt is not registered if disabled
 	-- make sure we still have explosion even when centre node isnt tnt related
 	if explode_center then
 		count = 1
