@@ -30,7 +30,7 @@ local hb_img = table.concat(img)
 local function set_hotbar_size(player, s)
 	local hotbar_size = validate_size(s)
 	player:hud_set_hotbar_itemcount(hotbar_size)
-	--player:hud_set_hotbar_selected_image(themename.."gui_hotbar_selected.png")
+	player:hud_set_hotbar_selected_image(themename.."gui_hotbar_selected.png")
 	player:hud_set_hotbar_image("[combine:"..(hotbar_size*64).."x64"..string.sub(hb_img, 1, hotbar_size*imgref_len))
 	return hotbar_size
 end
