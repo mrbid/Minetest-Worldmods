@@ -81,7 +81,7 @@ minetest.register_tool("armplus:pumpkinhelmet1", {
 minetest.register_craft({
 	output = "armplus:pumpkinhelmet1",
 	recipe = {
-		{"group:tree","dye:purple","group:tree"},
+		{"group:tree","dye:magenta","group:tree"},
 		{"group:tree","3d_armor:helmet_wood","group:tree"},
 	},
 })
