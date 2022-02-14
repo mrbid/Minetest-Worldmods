@@ -62,9 +62,19 @@ function car_f1:on_rightclick(clicker)
 	if self.driver and clicker == self.driver then
 		self.driver = nil
 		clicker:set_detach()
+		clicker:set_properties({
+			visual_size = {x = 1, y = 1},
+			makes_footstep_sound = true,
+			collisionbox = {-0.3, 0.0, -0.3, 0.3, 1.7, 0.3}
+		})
 	elseif not self.driver then
 		self.driver = clicker
 		clicker:set_attach(self.object, "", {x=0,y=1,z=0}, {x=0,y=90,z=0})
+		clicker:set_properties({
+			visual_size = {x = 0, y = 0},
+			makes_footstep_sound = false,
+			collisionbox = {0}
+		})
 		self.object:setyaw(clicker:get_look_yaw())
 	end
 end
