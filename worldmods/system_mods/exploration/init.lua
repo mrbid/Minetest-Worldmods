@@ -485,6 +485,26 @@ minetest.register_chatcommand("spawn", {
 	end,
 })
 
+minetest.register_chatcommand("spawn1", {
+    description = "Teleport you to the old spawn point.",
+    func = function(name)
+
+		local player = minetest.get_player_by_name(name)
+		if player == nil then return false end
+
+		local pos = player:get_pos()
+		local dist = vector.distance(pos, jailpos);
+		if dist < jailradius then
+			player:set_pos(jailpos);
+			return true
+		end
+		
+		player:set_pos({x=-640,y=36,z=-775})
+		minetest.chat_send_player(name, "Teleported to old spawn!")
+
+	end,
+})
+
 -- chat logger
 minetest.register_on_chat_message(function(name, message)
 	file = io.open(minetest.get_worldpath().."/chat_record.txt", "a")
