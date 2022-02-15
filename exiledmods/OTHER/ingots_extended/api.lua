@@ -17,18 +17,32 @@
 	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 ]]--
 
-function split(s)
-	local n = string.gsub(s, "_ingot", "");
+function toblock(s)
 
-	if n == "ingot" then
+	if s == "lavastuff:ingot_ingot" then
+		return "lavastuff:block"
+	end
+
+	if s == "rainbow_ore:rainbow_ore_ingot" then
+		return "nyancat:nyancat_rainbow"
+	end
+
+	return string.gsub(s, "_ingot", "") .. "_block"
+
+end
+
+function split(s)
+
+	if s == "ingot_ingot" then
 		return "Lava"
 	end
 
-	if n == "rainbow_ore" then
+	if s == "rainbow_ore_ingot" then
 		return "Rainbow"
 	end
 
-	return n
+	return string.gsub(s, "_ingot", "")
+
 end
 
 function firstToUpper(str)
@@ -119,11 +133,19 @@ function ingots.register_ingots(ingot_item, texture, is_big)
 		local incre = 1
 		if i == 64 then
 			incre = 0
-
+			
+			-- not perfect as it excludes rainbow_ore (nyancat:nyancat_rainbow) and lavastuff:block
+			local bn = toblock(ingot_item);
+			print("---- FFS <><><><<><><<><<>")
+			print(ingot_name)
+			print(ingot_item)
+			print(bn)
 			minetest.register_craft({
-				output = "ingots:" .. ingot_name .. "_64",
+				output = mod_prefix .. ingot_name .. "_64",
 				recipe = {
-					{mod_prefix .. ingot_name .. " 64"},
+					{bn,bn,bn},
+					{bn,bn,bn},
+					{bn,ingot_item,''},
 				}
 			})
 		end
