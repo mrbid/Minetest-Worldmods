@@ -63,7 +63,7 @@ function ingots.register_ingots(ingot_item, texture, is_big)
 	--this way there is no need for a separate on_punch function for a stack of 1 ingot
 	minetest.register_alias(mod_prefix .. ingot_name .."_0", "air")
 
-	--gives the ingot_item the ability to be placed and increas already placed stacks of ingots
+	--gives the ingot_item the ability to be placed and increase already placed stacks of ingots
 	minetest.override_item(ingot_item, {
 		on_place = function (itemstack, placer, pointed_thing)
             local pos = minetest.get_pointed_thing_position(pointed_thing, true)
@@ -117,7 +117,16 @@ function ingots.register_ingots(ingot_item, texture, is_big)
 					},
 				}
 		local incre = 1
-		if i == 64 then incre = 0 end
+		if i == 64 then
+			incre = 0
+
+			minetest.register_craft({
+				output = "ingots:" .. ingot_name .. "_64",
+				recipe = {
+					{mod_prefix .. ingot_name .. " 64"},
+				}
+			})
+		end
 		minetest.register_node(mod_prefix .. ingot_name .. "_" .. i,{
 			description = firstToUpper(split(ingot_name)) .. " Ingots",
 			drawtype = "mesh",
