@@ -47,7 +47,7 @@ minetest.register_craft({
 	output = "automobiles2:suv3_spawner",
 	recipe = {
 		{"default:obsidian_glass", "default:obsidian_glass", "default:obsidian_glass"},
-		{"default:steelblock", "supercharger:supercharger", "default:steelblock"},
+		{"default:steelblock", "space_travel:dark_matter_crystal_block", "default:steelblock"},
 		{"bbq:superpropane", "biofuel:superfuel_can", "bbq:superpropane"}
 	},
 })
