@@ -107,7 +107,7 @@ function ingots.register_ingots(ingot_item, texture, is_big)
 			collision_box = box,
 			paramtype = 'light',
 			paramtype2 = "facedir",
-			groups = {cracky = 3, level = 2, not_in_creative_inventory = 0},
+			groups = {cracky = 3, level = 2, not_in_creative_inventory = 0, not_in_craft_guide = 1},
 			drop = ingot_item .. " " .. i,
 			on_punch = function (pos, node, puncher, pointed_thing)
 				if puncher then
