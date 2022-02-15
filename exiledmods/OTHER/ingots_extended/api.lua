@@ -19,6 +19,26 @@
 
 function toblock(s)
 
+	if s == "default:steel_ingot" then
+		return "default:steelblock"
+	end
+
+	if s == "default:tin_ingot" then
+		return "default:tinblock"
+	end
+
+	if s == "default:gold_ingot" then
+		return "default:goldblock"
+	end
+
+	if s == "default:copper_ingot" then
+		return "default:copperblock"
+	end
+
+	if s == "default:bronze_ingot" then
+		return "default:bronzeblock"
+	end
+
 	if s == "lavastuff:ingot" then
 		return "lavastuff:block"
 	end

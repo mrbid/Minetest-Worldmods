@@ -61,7 +61,7 @@ if minetest.get_modpath("xtraores") then
 	ingots.register_ingots("xtraores:platinum_ingot", "ingot_platinum.png", conf.is_big)
 	ingots.register_ingots("xtraores:rarium_ingot", "ingot_rarium.png", conf.is_big)
 	--ingots.register_ingots("xtraores:titanium_ingot", "ingot_titanium2.png", conf.is_big)
-	ingots.register_ingots("xtraores:unobtanium_ingot", "ingot_unobtainum.png", conf.is_big)
+	ingots.register_ingots("xtraores:unobtainium_ingot", "ingot_unobtainium.png", conf.is_big)
 end
 
 if minetest.get_modpath("moreores") then
