@@ -339,8 +339,8 @@ minetest.register_node("steelfurnace:furnace_active", {
 minetest.register_craft({
 	output = "steelfurnace:furnace",
 	recipe = {
-		{"default:steel_ingot","default:steel_ingot","default:steel_ingot"},
+		{"default:steel_ingot","","default:steel_ingot"},
 		{"default:steel_ingot","default:furnace","default:steel_ingot"},
-		{"default:steel_ingot","default:steel_ingot","default:steel_ingot"}
+		{"default:steel_ingot","","default:steel_ingot"}
 	},
 })
