@@ -17,6 +17,19 @@
 	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 ]]--
 
+function split(s)
+	local n = string.gsub(s, "_ingot", "");
+	if n == "Ingot" then
+		return "Lava"
+	else
+		return n
+	end
+end
+
+function firstToUpper(str)
+	return (str:gsub("^%l", string.upper))
+end
+
 -- takes an item name and a texture name and a boolean whether the ingots are big
 function ingots.register_ingots(ingot_item, texture, is_big)
 
@@ -98,8 +111,10 @@ function ingots.register_ingots(ingot_item, texture, is_big)
 						ingots.get_box(is_big, i),
 					},
 				}
+		local incre = 1
+		if i == 64 then incre = 0 end
 		minetest.register_node(mod_prefix .. ingot_name .. "_" .. i,{
-			description = "Ingots",
+			description = firstToUpper(split(ingot_name)) .. " Ingots",
 			drawtype = "mesh",
 			tiles = {texture},
 			mesh = texture_prefix .. i .. ".obj",
@@ -107,7 +122,7 @@ function ingots.register_ingots(ingot_item, texture, is_big)
 			collision_box = box,
 			paramtype = 'light',
 			paramtype2 = "facedir",
-			groups = {cracky = 3, level = 2, not_in_creative_inventory = 1--[[, not_in_craft_guide = 1--]]},
+			groups = {cracky = 3, level = 2, not_in_creative_inventory = incre--[[, not_in_craft_guide = 1--]]},
 			drop = ingot_item .. " " .. i,
 			on_punch = function (pos, node, puncher, pointed_thing)
 				if puncher then
