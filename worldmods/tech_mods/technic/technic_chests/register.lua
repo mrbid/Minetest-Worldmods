@@ -411,7 +411,7 @@ function technic.chests.register_chest(name, data)
 					local drops, radius = tnt_explode(pos, 9, false, false, player:get_player_name(), true)
 					eject_drops(drops, pos, radius)
 				else
-					minetest.chat_send_player(player:get_player_name(), "Cannot explode, protected area.");
+					minetest.chat_send_player(player:get_player_name(), "Cannot explode, protected area.")
 				end
 			end
 		end,
@@ -419,7 +419,7 @@ function technic.chests.register_chest(name, data)
 
 			if name == "Amethyst" then
 				local meta = minetest.get_meta(pos)
-				local inv = meta:get_inventory();
+				local inv = meta:get_inventory()
 
 				local dc = 0;
 				for _, object in pairs(minetest.get_objects_inside_radius(pos, 40)) do
@@ -427,11 +427,11 @@ function technic.chests.register_chest(name, data)
 					if not object:is_player() and lua_entity and lua_entity.name == "__builtin:item" then
 						if lua_entity.itemstring ~= "" then
 							if not string.find(lua_entity.itemstring, "cobble") and not string.find(lua_entity.itemstring, "sand") and not string.find(lua_entity.itemstring, "gravel") and not string.find(lua_entity.itemstring, "granite") and not string.find(lua_entity.itemstring, "dirt") and not string.find(lua_entity.itemstring, "marble") and not string.find(lua_entity.itemstring, "bakedclay") and not string.find(lua_entity.itemstring, "default:coal_lump") and not string.find(lua_entity.itemstring, "dry") and not string.find(lua_entity.itemstring, "shrub") and not string.find(lua_entity.itemstring, "grass") and not string.find(lua_entity.itemstring, "bone") then
-								inv:add_item("main", lua_entity.itemstring);
-								minetest.chat_send_player(clicker:get_player_name(), "Collected " .. lua_entity.itemstring);
+								inv:add_item("main", lua_entity.itemstring)
+								minetest.chat_send_player(clicker:get_player_name(), "Collected " .. lua_entity.itemstring)
 								dc = 1;
 							else
-								minetest.chat_send_player(clicker:get_player_name(), "Destroied " .. lua_entity.itemstring);
+								minetest.chat_send_player(clicker:get_player_name(), "Destroied " .. lua_entity.itemstring)
 							end
 							lua_entity.itemstring = ""
 						end
@@ -439,13 +439,13 @@ function technic.chests.register_chest(name, data)
 					end
 				end
 				if dc ~= 0 then
-					minetest.chat_send_player(clicker:get_player_name(), meta:get_string("infotext") .. " collection finished.");
+					minetest.chat_send_player(clicker:get_player_name(), meta:get_string("infotext") .. " collection finished.")
 				end
 			end
 			
 			if name == "Titanium" then
 				local meta = minetest.get_meta(pos)
-				local inv = meta:get_inventory();
+				local inv = meta:get_inventory()
 
 				local dc = 0;
 				for _, object in pairs(minetest.get_objects_inside_radius(pos, 40)) do
@@ -453,11 +453,11 @@ function technic.chests.register_chest(name, data)
 					if not object:is_player() and lua_entity and lua_entity.name == "__builtin:item" then
 						if lua_entity.itemstring ~= "" then
 							if not string.find(lua_entity.itemstring, "default:cobble") and not string.find(lua_entity.itemstring, "default:silver_sand") and not string.find(lua_entity.itemstring, "default:gravel") then
-								inv:add_item("main", lua_entity.itemstring);
-								minetest.chat_send_player(clicker:get_player_name(), "Collected " .. lua_entity.itemstring);
+								inv:add_item("main", lua_entity.itemstring)
+								minetest.chat_send_player(clicker:get_player_name(), "Collected " .. lua_entity.itemstring)
 								dc = 1;
 							else
-								minetest.chat_send_player(clicker:get_player_name(), "Destroied " .. lua_entity.itemstring);
+								minetest.chat_send_player(clicker:get_player_name(), "Destroied " .. lua_entity.itemstring)
 							end
 							lua_entity.itemstring = ""
 						end
@@ -465,7 +465,7 @@ function technic.chests.register_chest(name, data)
 					end
 				end
 				if dc ~= 0 then
-					minetest.chat_send_player(clicker:get_player_name(), meta:get_string("infotext") .. " collection finished.");
+					minetest.chat_send_player(clicker:get_player_name(), meta:get_string("infotext") .. " collection finished.")
 				end
 			end
 
@@ -479,10 +479,10 @@ function technic.chests.register_chest(name, data)
 			end
 			technic.chests.update_formspec(pos, data)
 			if name == "Titanium" then
-				inv:add_item("main", "default:book_written 1 0 \"\\u0001page\\u00021\\u0003owner\\u0002Admin\\u0003text\\u0002The Titanium Chest has a few special properies:\n1. Indestructible (most of the time).\n2. Vacuums all surrounding items within 40 node radius.\n3. 24x8 storage capacity.\n4. Is a falling node.\n5. Destroys cobble, silver sand and gravel.\n\nIt\'s best to move your chest using the Wrench rather than relying on its falling_node property every time. Falling nodes can glitch out of the mineverse.\\u0003page_max\\u00021\\u0003title\\u0002Instructions\\u0003description\\u0002\\u001b(T@default)\\u001bFInstructions\\u001bE\\u001bE\\u001bE\\u0003\"");
+				inv:add_item("main", "default:book_written 1 0 \"\\u0001page\\u00021\\u0003owner\\u0002Admin\\u0003text\\u0002The Titanium Chest has a few special properies:\n1. Indestructible (most of the time).\n2. Vacuums all surrounding items within 40 node radius.\n3. 24x8 storage capacity.\n4. Is a falling node.\n5. Destroys cobble, silver sand and gravel.\n\nIt\'s best to move your chest using the Wrench rather than relying on its falling_node property every time. Falling nodes can glitch out of the mineverse.\\u0003page_max\\u00021\\u0003title\\u0002Instructions\\u0003description\\u0002\\u001b(T@default)\\u001bFInstructions\\u001bE\\u001bE\\u001bE\\u0003\"")
 			elseif name == "Amethyst" then
-				inv:add_item("main", "default:book_written 1 0 \"\\u0001page\\u00021\\u0003owner\\u0002Admin\\u0003text\\u0002I will explode when you punch me in an unprotected area. I will destroy anything that is common. Pick me up by right clicking me with the wrench provided.\\u0003page_max\\u00021\\u0003title\\u0002Instructions\\u0003description\\u0002\\u001b(T@default)\\u001bFInstructions\\u001bE\\u001bE\\u001bE\\u0003\"");
-				inv:add_item("main", "wrench:wrench");
+				inv:add_item("main", "default:book_written 1 0 \"\\u0001page\\u00021\\u0003owner\\u0002Admin\\u0003text\\u0002I will explode when you punch me in an unprotected area. I will destroy anything that is common. Pick me up by right clicking me with the wrench provided.\\u0003page_max\\u00021\\u0003title\\u0002Instructions\\u0003description\\u0002\\u001b(T@default)\\u001bFInstructions\\u001bE\\u001bE\\u001bE\\u0003\"")
+				inv:add_item("main", "wrench:wrench")
 			end
 		end,
 		can_dig = function(pos, player)
@@ -551,8 +551,8 @@ function technic.chests.register_chest(name, data)
 			if name == "Diamond" then
 				if stack:get_count() == 1 then
 					local meta = minetest.get_meta(pos)
-					local inv = meta:get_inventory();
-					inv:add_item("main", stack);
+					local inv = meta:get_inventory()
+					inv:add_item("main", stack)
 				end
 			end
 			
@@ -605,6 +605,31 @@ function technic.chests.register_chest(name, data)
 				action = technic.chests.digiline_effector
 			},
 		}
+	end
+	if name == "Titanium" then
+		def.mesecons = {effector = {
+			action_on = function(pos,node)
+
+				local meta = minetest.get_meta(pos)
+				local inv = meta:get_inventory()
+
+				local dc = 0;
+				for _, object in pairs(minetest.get_objects_inside_radius(pos, 40)) do
+					local lua_entity = object:get_luaentity()
+					if not object:is_player() and lua_entity and lua_entity.name == "__builtin:item" then
+						if lua_entity.itemstring ~= "" then
+							if not string.find(lua_entity.itemstring, "default:cobble") and not string.find(lua_entity.itemstring, "default:silver_sand") and not string.find(lua_entity.itemstring, "default:gravel") then
+								inv:add_item("main", lua_entity.itemstring)
+							end
+							lua_entity.itemstring = ""
+						end
+						object:remove()
+					end
+				end
+
+			end
+			}
+		};
 	end
 	minetest.register_node(":"..data.node_name, def)
 	if data.color then
