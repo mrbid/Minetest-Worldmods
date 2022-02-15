@@ -19,7 +19,7 @@
 
 function toblock(s)
 
-	if s == "lavastuff:ingot_ingot" then
+	if s == "lavastuff:ingot" then
 		return "lavastuff:block"
 	end
 
@@ -33,7 +33,7 @@ end
 
 function split(s)
 
-	if s == "ingot_ingot" then
+	if s == "ingot" then
 		return "Lava"
 	end
 
@@ -136,10 +136,6 @@ function ingots.register_ingots(ingot_item, texture, is_big)
 			
 			-- not perfect as it excludes rainbow_ore (nyancat:nyancat_rainbow) and lavastuff:block
 			local bn = toblock(ingot_item);
-			print("---- FFS <><><><<><><<><<>")
-			print(ingot_name)
-			print(ingot_item)
-			print(bn)
 			minetest.register_craft({
 				output = mod_prefix .. ingot_name .. "_64",
 				recipe = {
