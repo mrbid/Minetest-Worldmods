@@ -19,11 +19,16 @@
 
 function split(s)
 	local n = string.gsub(s, "_ingot", "");
-	if n == "Ingot" then
+
+	if n == "ingot" then
 		return "Lava"
-	else
-		return n
 	end
+
+	if n == "rainbow_ore" then
+		return "Rainbow"
+	end
+
+	return n
 end
 
 function firstToUpper(str)
