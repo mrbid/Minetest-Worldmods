@@ -99,7 +99,7 @@ function ingots.register_ingots(ingot_item, texture, is_big)
 					},
 				}
 		minetest.register_node(mod_prefix .. ingot_name .. "_" .. i,{
-			description = "ingots",
+			description = "Ingots",
 			drawtype = "mesh",
 			tiles = {texture},
 			mesh = texture_prefix .. i .. ".obj",
@@ -107,7 +107,7 @@ function ingots.register_ingots(ingot_item, texture, is_big)
 			collision_box = box,
 			paramtype = 'light',
 			paramtype2 = "facedir",
-			groups = {cracky = 3, level = 2, not_in_creative_inventory = 0, not_in_craft_guide = 1},
+			groups = {cracky = 3, level = 2, not_in_creative_inventory = 1--[[, not_in_craft_guide = 1--]]},
 			drop = ingot_item .. " " .. i,
 			on_punch = function (pos, node, puncher, pointed_thing)
 				if puncher then
