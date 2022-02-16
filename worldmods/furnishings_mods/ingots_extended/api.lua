@@ -61,6 +61,22 @@ function split(s)
 		return "Rainbow"
 	end
 
+	if s == "carbon_steel_ingot" then
+		return "Carbon Steel"
+	end
+
+	if s == "stainless_steel_ingot" then
+		return "Stainless Steel"
+	end
+
+	if s == "cast_iron_ingot" then
+		return "Cast Iron"
+	end
+
+	if s == "mixed_metal_ingot" then
+		return "Mixed Metal"
+	end
+
 	return string.gsub(s, "_ingot", "")
 
 end
