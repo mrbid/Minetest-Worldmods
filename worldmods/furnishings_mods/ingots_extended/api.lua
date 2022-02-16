@@ -105,8 +105,9 @@ function ingots.register_ingots(ingot_item, texture, is_big)
 			    return
 		    end
 			if pointed_thing["type"] == "node" then
+
 				local name = minetest.get_node(pointed_thing.under).name
-				-- call on_rightclick function of pointed node if aplicable and not sneak
+				-- call on_rightclick function of pointed node if applicable and not sneak
 				-- might or might not break if item is placed by mod devices
 				if minetest.registered_nodes[name].on_rightclick and
 					not placer:get_player_control().sneak
@@ -122,11 +123,15 @@ function ingots.register_ingots(ingot_item, texture, is_big)
 						if not (creative and creative.is_enabled_for and creative.is_enabled_for(placer:get_player_name())) then
 							itemstack:take_item()
 						end
+						local meta = minetest.get_meta(pointed_thing.under)
+						meta:set_string("infotext", count + 1 .. " " .. firstToUpper(split(ingot_name)) .. " Ingots")
 					elseif minetest.get_node(pointed_thing.above).name == "air" then
 						minetest.set_node(pointed_thing.above, {name = mod_prefix .. ingot_name .."_1"})
 						if not (creative and creative.is_enabled_for and creative.is_enabled_for(placer:get_player_name())) then
 							itemstack:take_item()
 						end
+						local meta = minetest.get_meta(pointed_thing.above)
+						meta:set_string("infotext", "1 " .. firstToUpper(split(ingot_name))  .. " Ingots")
 					end
 
 				elseif minetest.get_node(pointed_thing.above).name == "air" then
@@ -134,6 +139,8 @@ function ingots.register_ingots(ingot_item, texture, is_big)
 					if not (creative and creative.is_enabled_for and creative.is_enabled_for(placer:get_player_name())) then
 						itemstack:take_item()
 					end
+					local meta = minetest.get_meta(pointed_thing.above)
+					meta:set_string("infotext", "1 " .. firstToUpper(split(ingot_name))  .. " Ingots")
 				end
 
 				return itemstack
@@ -153,8 +160,6 @@ function ingots.register_ingots(ingot_item, texture, is_big)
 		local incre = 1
 		if i == 64 then
 			incre = 0
-			
-			-- not perfect as it excludes rainbow_ore (nyancat:nyancat_rainbow) and lavastuff:block
 			local bn = toblock(ingot_item);
 			minetest.register_craft({
 				output = mod_prefix .. ingot_name .. "_64",
@@ -176,12 +181,12 @@ function ingots.register_ingots(ingot_item, texture, is_big)
 			paramtype2 = "facedir",
 			groups = {cracky = 3, level = 2, not_in_creative_inventory = incre--[[, not_in_craft_guide = 1--]]},
 			drop = ingot_item .. " " .. i,
-			on_punch = function (pos, node, puncher, pointed_thing)
+			on_punch = function(pos, node, puncher, pointed_thing)
 				if puncher then
 					local wield = puncher:get_wielded_item()
 					--checks, so that a stack can be taken appart only by hand or relevant ingot_item
-					if wield:get_name() == ingot_item or
-						wield:get_count() == 0 then
+								if wield:get_name() == ingot_item or
+			wield:get_count() == 0 then
                         if minetest.is_protected(pos, puncher:get_player_name()) and not minetest.check_player_privs(puncher, "protection_bypass") then
 			                return
 		                end
@@ -190,8 +195,15 @@ function ingots.register_ingots(ingot_item, texture, is_big)
 							local stack = ItemStack(ingot_item)
 							puncher:get_inventory():add_item("main", stack)
 						end
+
+						local meta = minetest.get_meta(pos)
+						meta:set_string("infotext", i - 1 .. " " .. firstToUpper(split(ingot_name))  .. " Ingots")
 					end
 				end
+			end,
+			after_place_node = function(pos, placer)
+				local meta = minetest.get_meta(pos)
+				meta:set_string("infotext",  "64 " .. firstToUpper(split(ingot_name)) .. " Ingots")
 			end,
 			_ingot_name = ingot_name,
 			_ingot_count = i,
