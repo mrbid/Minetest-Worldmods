@@ -39,6 +39,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - make moreores hoes craftable?
 - `ingots_extended` needs metal groups for dig sounds, also needs terumet support, possibly even the other xtraores mod support, which could be confusing because they both share the same name.
 - `worldmods/furnishings_mods/homedecor_modpack/homedecor_seating/sofas.lua` and `armchairs.lua` could do with some proper sit code to change the player animation.
+- gold trapdoor in `doors` has no craft
 
 ## DONE
 ~~- transparency support needs to be added to `mymillwork` for the caverealms glow crystal cuts~~<br>
