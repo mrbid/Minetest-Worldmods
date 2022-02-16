@@ -182,6 +182,11 @@ function ingots.register_ingots(ingot_item, texture, is_big)
 			groups = {cracky = 3, level = 2, not_in_creative_inventory = incre--[[, not_in_craft_guide = 1--]]},
 			drop = ingot_item .. " " .. i,
 			on_punch = function(pos, node, puncher, pointed_thing)
+
+				local count = string.gsub(node.name, "%D*", "")
+				local meta = minetest.get_meta(pos)
+				meta:set_string("infotext",  count .. " " .. firstToUpper(split(ingot_name)) .. " Ingots")
+
 				if puncher then
 					local wield = puncher:get_wielded_item()
 					--checks, so that a stack can be taken appart only by hand or relevant ingot_item
