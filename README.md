@@ -40,6 +40,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - `worldmods/furnishings_mods/homedecor_modpack/homedecor_seating/sofas.lua` and `armchairs.lua` could do with some proper sit code to change the player animation.
 - technic crafting types `freezing`, `alloying`, `extracting`, `compressing`, `transmuting`, could do with icons for the i3 inventory.
 - personal log could be registered as a tab in the i3 inventory, but the personal log formspec wont work by default - needs to be looked at.
+- could add an icon to invoke the `/helpform` ui in i3 inventory.
 
 ## DONE
 ~~- transparency support needs to be added to `mymillwork` for the caverealms glow crystal cuts~~<br>
