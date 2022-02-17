@@ -760,7 +760,7 @@ end
 --------------------------------------------------------------------------------------------------------
 -- Chat command
 
-local chat_command = minetest.settings:get_bool("personal_log_chat_command", false)
+local chat_command = minetest.settings:get_bool("personal_log_chat_command", true)
 local chat_command_priv = minetest.settings:get_bool("personal_log_chat_command_priviledge", false)
 
 if chat_command then
@@ -796,6 +796,11 @@ local add_entry_for_player = function(player_name, category, content, topic_cont
 	state.entry_selected[category] = entry_index
 	save_entry(player_name, category, entry_index, content, topic_content)
 	save_state(player_name, state)
+end
+
+personal_log.show_formspec = function(player_name)
+	local user = minetest.get_player_by_name(player_name)
+	minetest.show_formspec(player_name,"personal_log:root", make_personal_log_formspec(user))
 end
 
 personal_log.add_location_entry = function(player_name, content, pos)
