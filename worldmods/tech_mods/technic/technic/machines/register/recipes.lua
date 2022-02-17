@@ -24,6 +24,7 @@ function technic.register_recipe_type(typename, origdata)
 		if have_i3 then
 			i3.register_craft_type(typename, {
 				description = data.description,
+				icon = "i3_unknown.png",
 			})
 		end
 	end
