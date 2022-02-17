@@ -197,6 +197,7 @@ function ingots.register_ingots(ingot_item, texture, is_big)
 			paramtype2 = "facedir",
 			groups = {cracky = 3, level = 2, not_in_creative_inventory = incre--[[, not_in_craft_guide = 1--]]},
 			drop = ingot_item .. " " .. i,
+			sounds = default.node_sound_metal_defaults(),
 			on_punch = function(pos, node, puncher, pointed_thing)
 
 				local count = string.gsub(node.name, "%D*", "")

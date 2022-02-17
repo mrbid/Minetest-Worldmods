@@ -4,49 +4,49 @@ minetest.register_node("packed_things:packed_sand", {
 	description = "Packed Sand",
 	tiles = {"sand32.png^packed1.png"},
 	groups = {cracky=3},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_sand_defaults(),
 })
 minetest.register_node("packed_things:packed_sand_2x", {
 	description = "2x Packed Sand",
 	tiles = {"sand32.png^packed2.png"},
 	groups = {cracky=3},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_sand_defaults(),
 })
 minetest.register_node("packed_things:packed_sand_3x", {
 	description = "3x Packed Sand",
 	tiles = {"sand32.png^packed3.png"},
 	groups = {cracky=2},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_sand_defaults(),
 })
 minetest.register_node("packed_things:packed_sand_4x", {
 	description = "4x Packed Sand",
 	tiles = {"sand32.png^packed4.png"},
 	groups = {cracky=2},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_sand_defaults(),
 })
 minetest.register_node("packed_things:packed_sand_5x", {
 	description = "5x Packed Sand",
 	tiles = {"sand32.png^packed5.png"},
 	groups = {cracky=2},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_sand_defaults(),
 })
 minetest.register_node("packed_things:packed_sand_6x", {
 	description = "6x Packed Sand",
 	tiles = {"sand32.png^packed6.png"},
 	groups = {cracky=1},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_sand_defaults(),
 })
 minetest.register_node("packed_things:packed_sand_7x", {
 	description = "7x Packed Sand",
 	tiles = {"sand32.png^packed7.png"},
 	groups = {cracky=1},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_sand_defaults(),
 })
 minetest.register_node("packed_things:packed_sand_8x", {
 	description = "Ultra Packed Sand",
 	tiles = {"sand32.png^packed8.png"},
 	groups = {cracky=1},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_sand_defaults(),
 })
 
 -- pack the sand series

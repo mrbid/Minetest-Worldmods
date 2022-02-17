@@ -4,49 +4,49 @@ minetest.register_node("packed_things:packed_dirt", {
 	description = "Packed Dirt",
 	tiles = {"dirt1.png"},
 	groups = {cracky=3},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_dirt_defaults(),
 })
 minetest.register_node("packed_things:packed_dirt_2x", {
 	description = "2x Packed Dirt",
 	tiles = {"dirt2.png"},
 	groups = {cracky=3},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_dirt_defaults(),
 })
 minetest.register_node("packed_things:packed_dirt_3x", {
 	description = "3x Packed Dirt",
 	tiles = {"dirt3.png"},
 	groups = {cracky=2},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_dirt_defaults(),
 })
 minetest.register_node("packed_things:packed_dirt_4x", {
 	description = "4x Packed Dirt",
 	tiles = {"dirt4.png"},
 	groups = {cracky=2},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_dirt_defaults(),
 })
 minetest.register_node("packed_things:packed_dirt_5x", {
 	description = "5x Packed Dirt",
 	tiles = {"dirt5.png"},
 	groups = {cracky=2},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_dirt_defaults(),
 })
 minetest.register_node("packed_things:packed_dirt_6x", {
 	description = "6x Packed Dirt",
 	tiles = {"dirt6.png"},
 	groups = {cracky=1},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_dirt_defaults(),
 })
 minetest.register_node("packed_things:packed_dirt_7x", {
 	description = "7x Packed Dirt",
 	tiles = {"dirt7.png"},
 	groups = {cracky=1},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_dirt_defaults(),
 })
 minetest.register_node("packed_things:packed_dirt_8x", {
 	description = "Ultra Packed Dirt",
 	tiles = {"dirt8.png"},
 	groups = {cracky=1},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_dirt_defaults(),
 })
 
 -- pack the dirt series

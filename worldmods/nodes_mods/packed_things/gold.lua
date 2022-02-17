@@ -4,49 +4,49 @@ minetest.register_node("packed_things:packed_gold", {
 	description = "Packed Gold",
 	tiles = {"default_gold_block.png^packed1.png"},
 	groups = {cracky=3},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_metal_defaults(),
 })
 minetest.register_node("packed_things:packed_gold_2x", {
 	description = "2x Packed Gold",
 	tiles = {"default_gold_block.png^packed2.png"},
 	groups = {cracky=3},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_metal_defaults(),
 })
 minetest.register_node("packed_things:packed_gold_3x", {
 	description = "3x Packed gold",
 	tiles = {"default_gold_block.png^packed3.png"},
 	groups = {cracky=2},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_metal_defaults(),
 })
 minetest.register_node("packed_things:packed_gold_4x", {
 	description = "4x Packed gold",
 	tiles = {"default_gold_block.png^packed4.png"},
 	groups = {cracky=2},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_metal_defaults(),
 })
 minetest.register_node("packed_things:packed_gold_5x", {
 	description = "5x Packed gold",
 	tiles = {"default_gold_block.png^packed5.png"},
 	groups = {cracky=2},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_metal_defaults(),
 })
 minetest.register_node("packed_things:packed_gold_6x", {
 	description = "6x Packed gold",
 	tiles = {"default_gold_block.png^packed6.png"},
 	groups = {cracky=1},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_metal_defaults(),
 })
 minetest.register_node("packed_things:packed_gold_7x", {
 	description = "7x Packed gold",
 	tiles = {"default_gold_block.png^packed7.png"},
 	groups = {cracky=1},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_metal_defaults(),
 })
 minetest.register_node("packed_things:packed_gold_8x", {
 	description = "Ultra Packed gold",
 	tiles = {"default_gold_block.png^packed8.png"},
 	groups = {cracky=1},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_metal_defaults(),
 })
 
 -- pack the gold series

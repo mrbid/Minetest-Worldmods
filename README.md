@@ -34,15 +34,15 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - added moreores support to [hidden doors](https://forum.minetest.net/viewtopic.php?t=18294).
 
 ## TODO
-- `packed_things` nodes need to be updated with node groups that represent the original node being packed.
 - locked to locked travelnet currently not possible
-- `ingots_extended` needs metal groups for dig sounds, also needs terumet support, possibly even the other xtraores mod support, which could be confusing because they both share the same name.
 - `worldmods/furnishings_mods/homedecor_modpack/homedecor_seating/sofas.lua` and `armchairs.lua` could do with some proper sit code to change the player animation.
 
 ## DONE
 ~~- transparency support needs to be added to `mymillwork` for the caverealms glow crystal cuts~~<br>
 ~~- some of the doors such as the diamond door in the `doors` mod open up inverse, this needs to be fixed.~~<br>
-~~- Gold trapdoor in `doors` has no craft and: Adamantine door, Aquarium door, Brass door.~~
+~~- Gold trapdoor in `doors` has no craft and: Adamantine door, Aquarium door, Brass door.~~<br>
+~~- `packed_things` nodes need to be updated with node groups that represent the original node being packed.~~<br>
+~~- `ingots_extended` needs metal groups for dig sounds, also needs terumet support, possibly even the other xtraores mod support, which could be confusing because they both share the same name.~~
 
 ## Notes
 To load all these mods at the same time you will need to modify your minetest server:<br>

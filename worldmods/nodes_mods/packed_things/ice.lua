@@ -6,49 +6,49 @@ minetest.register_node("packed_things:packed_ice", {
 	description = "Packed Ice",
 	tiles = {"ice32.png^(packed1.png"..colorIce..")"},
 	groups = {cracky=3},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_ice_defaults(),
 })
 minetest.register_node("packed_things:packed_ice_2x", {
 	description = "2x Packed Ice",
 	tiles = {"ice32.png^(packed2.png"..colorIce..")"},
 	groups = {cracky=3},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_ice_defaults(),
 })
 minetest.register_node("packed_things:packed_ice_3x", {
 	description = "3x Packed Ice",
 	tiles = {"ice32.png^(packed3.png"..colorIce..")"},
 	groups = {cracky=2,stone=2},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_ice_defaults(),
 })
 minetest.register_node("packed_things:packed_ice_4x", {
 	description = "4x Packed Ice",
 	tiles = {"ice32.png^(packed4.png"..colorIce..")"},
 	groups = {cracky=2,stone=2},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_ice_defaults(),
 })
 minetest.register_node("packed_things:packed_ice_5x", {
 	description = "5x Packed Ice",
 	tiles = {"ice32.png^(packed5.png"..colorIce..")"},
 	groups = {cracky=2},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_ice_defaults(),
 })
 minetest.register_node("packed_things:packed_ice_6x", {
 	description = "6x Packed Ice",
 	tiles = {"ice32.png^(packed6.png"..colorIce..")"},
 	groups = {cracky=1},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_ice_defaults(),
 })
 minetest.register_node("packed_things:packed_ice_7x", {
 	description = "7x Packed Ice",
 	tiles = {"ice32.png^(packed7.png"..colorIce..")"},
 	groups = {cracky=1},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_ice_defaults(),
 })
 minetest.register_node("packed_things:packed_ice_8x", {
 	description = "Ultra Packed Ice",
 	tiles = {"ice32.png^(packed8.png"..colorIce..")"},
 	groups = {cracky=1},
---	sounds = default.node_sound_stone_defaults()
+	sounds = default.node_sound_ice_defaults(),
 })
 
 --[[ tried to make em translucent, didn't work:
