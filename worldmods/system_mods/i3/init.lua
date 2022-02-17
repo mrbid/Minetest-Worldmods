@@ -36,7 +36,7 @@ i3 = {
 
 		damage_enabled   = core.settings:get_bool"enable_damage",
 		progressive_mode = core.settings:get_bool"i3_progressive_mode",
-		legacy_inventory = core.settings:get_bool"i3_legacy_inventory",
+		legacy_inventory = core.settings:get_bool("i3_legacy_inventory", true),
 		item_compression = core.settings:get_bool("i3_item_compression", true),
 	},
 
