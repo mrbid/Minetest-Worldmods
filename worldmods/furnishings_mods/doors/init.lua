@@ -482,7 +482,7 @@ doors.register("door_adamantine", {
 		sound_open = "doors_steel_door_open",
 		sound_close = "doors_steel_door_close",
 		recipe = {
-			{"doors_door_steel", "doors_door_copper"},
+			{"doors:door_steel", "doors:door_copper"},
 		}
 })
 -- Aquarium
@@ -496,7 +496,7 @@ doors.register("door_aquarium", {
 		sound_open = "doors_steel_door_open",
 		sound_close = "doors_steel_door_close",
 		recipe = {
-			{"doors_door_copper", "doors_door_steel"},
+			{"doors:door_copper", "doors:door_steel"},
 		}
 })
 -- Brass
@@ -510,9 +510,9 @@ doors.register("door_brass", {
 		sound_open = "doors_steel_door_open",
 		sound_close = "doors_steel_door_close",
 		recipe = {
-			{"default:brass_ingot", "default:brass_ingot"},
-			{"default:brass_ingot", "default:brass_ingot"},
-			{"default:brass_ingot", "default:brass_ingot"},
+			{"basic_materials:brass_ingot", "basic_materials:brass_ingot"},
+			{"basic_materials:brass_ingot", "basic_materials:brass_ingot"},
+			{"basic_materials:brass_ingot", "basic_materials:brass_ingot"},
 		}
 })
 -- Gold
@@ -924,6 +924,13 @@ doors.register_trapdoor("doors:trapdoor_gold", {
 	sound_open = "doors_steel_door_open",
 	sound_close = "doors_steel_door_close",
 	groups = {cracky = 1, level = 2, door = 1},
+})
+minetest.register_craft({
+	output = 'doors:trapdoor_gold',
+	recipe = {
+		{'default:gold_ingot', 'default:gold_ingot'},
+		{'default:gold_ingot', 'default:gold_ingot'},
+	}
 })
 --Mese trap
 doors.register_trapdoor("doors:trapdoor_mese", {

@@ -208,6 +208,14 @@ hidden_doors.RegisterHiddenDoors("default", "gold_block", s_RecipeItem1,
 	"stairs:slab_goldblock", "stairs:slab_goldblock", S("Gold Block"),
 	t_MetalDefault, s_MetalOpen, s_MetalClose)
 
+hidden_doors.RegisterHiddenDoors("moreores", "silver_block", s_RecipeItem1,
+	"moreores:silver_ingot", "moreores:silver_ingot", S("Silver Block"),
+	t_MetalDefault, s_MetalOpen, s_MetalClose)
+
+hidden_doors.RegisterHiddenDoors("moreores", "mithril_block", s_RecipeItem1,
+	"moreores:mithril_ingot", "moreores:mithril_ingot", S("Mithril Block"),
+	t_MetalDefault, s_MetalOpen, s_MetalClose)
+
 hidden_doors.RegisterHiddenDoors("default", "steel_block", s_RecipeItem1,
 	"stairs:slab_steelblock", "stairs:slab_steelblock",
 	S("Steel Block"), t_MetalDefault, s_MetalOpen, s_MetalClose)

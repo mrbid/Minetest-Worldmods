@@ -31,19 +31,18 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - replaced the model on cars:car and then adapted it to a jets:jet for the VF-MESHNODE server as a novel method of increasing player speed.
 - titanium chests now harvest nearby items on mesecon signal.
 - a much improved and extended version of stacked ingots mod has been added, added support for more ingots, some improved textures, crafts for full stacks and better stack descriptions.
+- added moreores support to `hidden doors`
 
 ## TODO
 - `packed_things` nodes need to be updated with node groups that represent the original node being packed.
 - locked to locked travelnet currently not possible
-- prevent mychisel from returning non-chiseled nodes on dig
-- make moreores hoes craftable?
 - `ingots_extended` needs metal groups for dig sounds, also needs terumet support, possibly even the other xtraores mod support, which could be confusing because they both share the same name.
 - `worldmods/furnishings_mods/homedecor_modpack/homedecor_seating/sofas.lua` and `armchairs.lua` could do with some proper sit code to change the player animation.
-- Gold trapdoor in `doors` has no craft and: Adamantine door, Aquarium door, Brass door. Would be nice to have a silver and mithril hidden door.
 
 ## DONE
 ~~- transparency support needs to be added to `mymillwork` for the caverealms glow crystal cuts~~<br>
 ~~- some of the doors such as the diamond door in the `doors` mod open up inverse, this needs to be fixed.~~
+~~- Gold trapdoor in `doors` has no craft and: Adamantine door, Aquarium door, Brass door.~~
 
 ## Notes
 To load all these mods at the same time you will need to modify your minetest server:<br>
