@@ -509,14 +509,6 @@ local function get_container(fs, data, player, yoffset, ctn_len, award_list, awa
 		fs(fmt("dropdown[0,%f;4,0.6;skins;%s;%u;true]", yextra + 1.1, sks, id))
 
 	elseif data.subcat == 4 then
-		if not i3.modules.awards then
-			return not_installed "awards"
-		end
-
-		yextra = yextra + 0.7
-		get_award_list(data, fs, ctn_len, yextra, award_list, awards_unlocked, award_list_nb)
-
-	elseif data.subcat == 5 then
 		get_waypoint_fs(fs, data, player, yextra, ctn_len)
 	end
 end
