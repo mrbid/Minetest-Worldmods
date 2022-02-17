@@ -47,9 +47,9 @@ if minetest.get_modpath( "darkage") then
 end
 
 
-if minetest.get_modpath( "nether") then
-	facade.register_facade_nodes("nether", "rack", "nether:rack", "Netherrack")
-end
+-- if minetest.get_modpath( "nether") then
+-- 	facade.register_facade_nodes("nether", "rack", "nether:rack", "Netherrack")
+-- end
 
 
 --[[if minetest.get_modpath( "lapis") then
