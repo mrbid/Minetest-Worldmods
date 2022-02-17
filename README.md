@@ -41,7 +41,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 
 ## DONE
 ~~- transparency support needs to be added to `mymillwork` for the caverealms glow crystal cuts~~<br>
-~~- some of the doors such as the diamond door in the `doors` mod open up inverse, this needs to be fixed.~~
+~~- some of the doors such as the diamond door in the `doors` mod open up inverse, this needs to be fixed.~~<br>
 ~~- Gold trapdoor in `doors` has no craft and: Adamantine door, Aquarium door, Brass door.~~
 
 ## Notes
@@ -50,8 +50,8 @@ To load all these mods at the same time you will need to modify your minetest se
 
 Server is compiled with -Ofast rather than -O3. This is adjusted in the makefile.
 
-~~We are now running Buckaroo's mapserver: https://forum.minetest.net/viewtopic.php?f=14&t=21999<br>~~
-~~Zeno's IRC mod: https://github.com/Zeno-/minetest-irc<br>~~
+~~We are now running Buckaroo's mapserver: https://forum.minetest.net/viewtopic.php?f=14&t=21999~~<br>
+~~Zeno's IRC mod: https://github.com/Zeno-/minetest-irc~~<br>
 ~~Vehicles, Planes, and Aquatics from: https://github.com/APercy~~
 
 ## Warning
