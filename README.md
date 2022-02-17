@@ -31,7 +31,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - replaced the model on cars:car and then adapted it to a jets:jet for the VF-MESHNODE server as a novel method of increasing player speed.
 - titanium chests now harvest nearby items on mesecon signal.
 - a much improved and extended version of stacked ingots mod has been added, added support for more ingots, some improved textures, crafts for full stacks and better stack descriptions.
-- added moreores support to [hidden doors](https://forum.minetest.net/viewtopic.php?t=18294)
+- added moreores support to [hidden doors](https://forum.minetest.net/viewtopic.php?t=18294).
 
 ## TODO
 - `packed_things` nodes need to be updated with node groups that represent the original node being packed.
