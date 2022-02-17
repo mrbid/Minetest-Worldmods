@@ -219,3 +219,11 @@ minetest.register_craftitem("car_f1:car_f1", {
 		return itemstack
 	end,
 })
+
+minetest.register_on_leaveplayer(function(player)
+	player:set_properties({
+		visual_size = {x = 1, y = 1},
+		makes_footstep_sound = true,
+		collisionbox = {-0.3, 0.0, -0.3, 0.3, 1.7, 0.3}
+	})
+end)

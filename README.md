@@ -118,3 +118,4 @@ To trigger this you would add a wooden table next to an acacia table for example
 
 Issue filed: https://github.com/Gerold55/ma_pops_furniture/issues/11
 
+
