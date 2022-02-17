@@ -41,6 +41,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - technic crafting types `freezing`, `alloying`, `extracting`, `compressing`, `grinding`, `transmuting`, could do with icons for the i3 inventory.
 - personal log could be registered as a tab in the i3 inventory, but the personal log formspec wont work by default - needs to be looked at.
 - could add an icon to invoke the `/helpform` ui in i3 inventory.
+- extend hotbar slot icon images from 23 to 32
 
 ## DONE
 ~~- transparency support needs to be added to `mymillwork` for the caverealms glow crystal cuts~~<br>
