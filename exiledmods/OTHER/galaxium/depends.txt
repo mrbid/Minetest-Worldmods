@@ -1,0 +1,9 @@
+3d_armor
+basic_materials
+caverealms
+cr_plus
+default
+ethereal
+technic
+xtraores
+space_travel
