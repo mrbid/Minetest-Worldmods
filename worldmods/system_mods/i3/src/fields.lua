@@ -404,12 +404,12 @@ end
 core.register_on_player_receive_fields(function(player, formname, fields)
 	local name = player:get_player_name()
 
-	if formname == "i3_outdated" then
-		return false, core.kick_player(name,
-			S"Come back when your Minetest client is up-to-date (www.minetest.net).")
-	elseif formname ~= "" then
-		return false
-	end
+	-- if formname == "i3_outdated" then
+	-- 	return false, core.kick_player(name,
+	-- 		S"Come back when your Minetest client is up-to-date (www.minetest.net).")
+	-- elseif formname ~= "" then
+	-- 	return false
+	-- end
 
 	-- No-op buttons
 	if fields.player_name or fields.awards or fields.home_pos or fields.pagenum or

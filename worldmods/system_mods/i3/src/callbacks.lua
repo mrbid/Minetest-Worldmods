@@ -179,9 +179,9 @@ core.register_on_joinplayer(function(player)
 	local name = player:get_player_name()
 	local info = core.get_player_information and core.get_player_information(name)
 
-	if not info or get_formspec_version(info) < i3.settings.min_fs_version then
-		return outdated(name)
-	end
+	-- if not info or get_formspec_version(info) < i3.settings.min_fs_version then
+	-- 	return outdated(name)
+	-- end
 
 	init_data(player, info)
 	init_bags(player)
