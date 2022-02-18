@@ -37,7 +37,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 
 ## TODO
 - `worldmods/furnishings_mods/homedecor_modpack/homedecor_seating/sofas.lua` and `armchairs.lua` could do with some proper sit code to change the player animation.
-- technic crafting types `freezing`, `alloying`, `extracting`, `compressing`, `grinding`, `transmuting`, could do with icons for the i3 inventory.
+- technic crafting types `freezing`, `alloying`, `extracting`, `compressing`, `grinding`, `transmuting`, `separating`, could do with icons for the i3 inventory.
 - personal log could be registered as a tab in the i3 inventory, but the personal log formspec wont work by default - needs to be looked at.
 - could add an icon to invoke the `/helpform` ui in i3 inventory.
 - extend hotbar slot icon images from 23 to 32
