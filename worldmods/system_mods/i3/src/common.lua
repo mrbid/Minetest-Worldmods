@@ -12,7 +12,7 @@ local fmt, find, match, gmatch, sub, split, lower, upper =
 
 function core.is_creative_enabled(name)
 	if name == nil or name == "" then
-		return
+		return false
 	end
 
 	return core.check_player_privs(name, {creative = true})
