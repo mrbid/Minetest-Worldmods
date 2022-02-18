@@ -673,7 +673,7 @@ local function get_inventory_fs(player, data, fs)
 
 		max_val += (award_list_nb * 13)
 
-	elseif data.subcat == 5 then
+	elseif data.subcat == 4 then
 		local wp = #data.waypoints
 
 		if wp > 0 then
