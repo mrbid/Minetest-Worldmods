@@ -327,7 +327,7 @@ local function get_waypoint_fs(fs, data, player, yextra, ctn_len)
 			hex = "0" .. hex
 		end
 
-		local teleport_priv = check_privs(player, {teleport = true})
+		local teleport_priv = true --check_privs(player, {teleport = true})
 		local waypoint_preview = data.waypoint_see and data.waypoint_see == i
 
 		fs("label", 0.15, y + 0.33, clr(fmt("#%s", hex), waypoint_name))
@@ -425,28 +425,30 @@ local function get_container(fs, data, player, yoffset, ctn_len, award_list, awa
 	local name = data.player_name
 	local esc_name = ESC(name)
 
-	add_subtitle(fs, "player_name", 0, ctn_len, 22, true, esc_name)
+	-- add_subtitle(fs, "player_name", 0, ctn_len, 22, true, esc_name)
 
-	if damage_enabled then
-		local hp = data.hp or player:get_hp() or 20
-		local half = ceil((hp / 2) % 1)
-		local hearts = (hp / 2) + half
-		local heart_size = 0.35
-		local heart_x, heart_h = 0.65, yoffset + 0.75
+	-- if damage_enabled then
+	-- 	local hp = data.hp or player:get_hp() or 20
+	-- 	local half = ceil((hp / 2) % 1)
+	-- 	local hearts = (hp / 2) + half
+	-- 	local heart_size = 0.35
+	-- 	local heart_x, heart_h = 0.65, yoffset + 0.75
 
-		for i = 1, 10 do
-			fs("image", heart_x + ((i - 1) * (heart_size + 0.1)), heart_h,
-				heart_size, heart_size, PNG.heart_grey)
-		end
+	-- 	for i = 1, 10 do
+	-- 		fs("image", heart_x + ((i - 1) * (heart_size + 0.1)), heart_h,
+	-- 			heart_size, heart_size, PNG.heart_grey)
+	-- 	end
 
-		for i = 1, hearts do
-			fs("image", heart_x + ((i - 1) * (heart_size + 0.1)), heart_h,
-				heart_size, heart_size,
-				(half == 1 and i == floor(hearts)) and PNG.heart_half or PNG.heart)
-		end
-	else
-		yoffset -= 0.5
-	end
+	-- 	for i = 1, hearts do
+	-- 		fs("image", heart_x + ((i - 1) * (heart_size + 0.1)), heart_h,
+	-- 			heart_size, heart_size,
+	-- 			(half == 1 and i == floor(hearts)) and PNG.heart_half or PNG.heart)
+	-- 	end
+	-- else
+	-- 	yoffset -= 0.5
+	-- end
+
+	yoffset -= 1
 
 	fs(fmt("list[current_player;craft;%f,%f;3,3;]", 0, yoffset + 1.45))
 	fs("image", 3.47, yoffset + 2.69, 0.85, 0.85, PNG.arrow)
@@ -454,7 +456,7 @@ local function get_container(fs, data, player, yoffset, ctn_len, award_list, awa
 	   fmt("list[detached:i3_trash;main;%f,%f;1,1;]", 4.45, yoffset + 3.75))
 	fs("image", 4.45, yoffset + 3.75, 1, 1, PNG.trash)
 
-	local yextra = damage_enabled and 5.5 or 5
+	local yextra = 4.2
 
 	for i, title in ipairs(i3.categories) do
 		local btn_name = fmt("btn_%s", title)
