@@ -22,9 +22,17 @@ function technic.register_recipe_type(typename, origdata)
 			})
 		end
 		if have_i3 then
+			local sicon = "i3_unknown.png"
+			if typename == "alloy" then sicon = "technic_mv_alloy_furnace_front_active.png" end
+			if typename == "extracting" then sicon = "technic_mv_extractor_front.png" end
+			if typename == "grinding" then sicon = "technic_hv_grinder_front.png" end
+			if typename == "transmuting" then sicon = "technic_hv_transmuter_front.png" end
+			if typename == "compressing" then sicon = "technic_mv_compressor_front.png" end
+			if typename == "freezing" then sicon = "technic_mv_freezer_front.png" end
+			if typename == "separating" then sicon = "techtweak_centrifuge_front.png" end
 			i3.register_craft_type(typename, {
 				description = data.description,
-				icon = "i3_unknown.png",
+				icon = sicon,
 			})
 		end
 	end
