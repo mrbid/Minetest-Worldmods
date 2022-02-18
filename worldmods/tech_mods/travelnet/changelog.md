@@ -1,7 +1,6 @@
 
 # Changelog
 
-09.12.21 - Added ability to rename stations
 10.03.19 - Added the extra config buttons for locked_travelnet mod.
 09.03.19 - Several PRs merged (sound added, locale changed etc.)
 					 Version bumped to 2.3
@@ -63,4 +62,3 @@
 				 - with the travelnet_attach priv, you can now attach your box to the nets of other players
 				 - in newer versions of Minetest, the players yaw is set so that he/she looks out of the receiving box
 				 - target list is now centered if there are less than 9 targets
-
