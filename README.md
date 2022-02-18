@@ -123,5 +123,5 @@ To trigger this you would add a wooden table next to an acacia table for example
 Issue filed: https://github.com/Gerold55/ma_pops_furniture/issues/11
 
 ## Very odd bug.
-Adding personal_log to the optional_depends in i3 causes formspecs of other mods to break, and the chests get stuck in the open state, assumably because the formspec no longer indicates when it has closed.
+Adding personal_log to the optional_depends in i3 causes formspecs of other mods to break, and default chests get stuck in the open state, assumably because the formspec no longer indicates when it has closed.
 
