@@ -78,11 +78,6 @@ minetest.register_craftitem("protector:tool", {
 			return
 		end
 
-		-- do not place protector out of map bounds
-		if minetest.find_node_near(pos, 1, {"ignore"}) then
-			return
-		end
-
 		-- do we have protectors to use ?
 		local nod
 		local inv = user:get_inventory()
@@ -164,6 +159,6 @@ minetest.register_craft({
 	recipe = {
 		{df, df, df},
 		{df, "protector:protect", df},
-		{df, df, df}
+		{df, df, df},
 	}
 })

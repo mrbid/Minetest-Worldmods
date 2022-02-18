@@ -7,11 +7,7 @@ local S = protector.intllib
 local F = minetest.formspec_escape
 
 -- MineClone2 support
-local mcl = minetest.get_modpath("mcl_core")
-local mcf = minetest.get_modpath("mcl_formspec")
-
--- Are crafts enabled?
-local protector_crafts = minetest.settings:get_bool("protector_crafts") ~= false
+local mcl = not minetest.registered_items["default:steel_ingot"]
 
 -- Registers a door
 function register_door(name, def)
@@ -301,6 +297,7 @@ function register_door(name, def)
 		sunlight_propagates = def.sunlight,
 		on_blast = function() end,
 	})
+
 end
 
 -- Protected Wooden Door
@@ -311,40 +308,38 @@ register_door(name, {
 	description = S("Protected Wooden Door"),
 	inventory_image = "doors_wood.png^protector_logo.png",
 	groups = {
-		snappy = 1, choppy = 2, dig_immediate = 2,
+		snappy = 1, choppy = 2, oddly_breakable_by_hand = 2,
 		unbreakable = 1, --door = 1
 	},
 	tiles_bottom = {"doors_wood_b.png^protector_logo.png", "doors_brown.png"},
 	tiles_top = {"doors_wood_a.png", "doors_brown.png"},
 	sounds = default.node_sound_wood_defaults(),
-	sunlight = false
+	sunlight = false,
 })
 
-if protector_crafts then
-	if mcl then
-	minetest.register_craft({
-		output = name,
-		recipe = {
-			{"mcl_doors:wooden_door", "mcl_core:gold_ingot"}
-		}
-	})
-	else
-	minetest.register_craft({
-		output = name,
-		recipe = {
-			{"group:wood", "group:wood"},
-			{"group:wood", "default:copper_ingot"},
-			{"group:wood", "group:wood"}
-		}
-	})
+if mcl then
+minetest.register_craft({
+	output = name,
+	recipe = {
+		{"mcl_doors:wooden_door", "mcl_core:gold_ingot"}
+	}
+})
+else
+minetest.register_craft({
+	output = name,
+	recipe = {
+		{"group:wood", "group:wood"},
+		{"group:wood", "default:copper_ingot"},
+		{"group:wood", "group:wood"}
+	}
+})
 
-	minetest.register_craft({
-		output = name,
-		recipe = {
-			{"doors:door_wood", "default:copper_ingot"}
-		}
-	})
-	end
+minetest.register_craft({
+	output = name,
+	recipe = {
+		{"doors:door_wood", "default:copper_ingot"}
+	}
+})
 end
 
 -- Protected Steel Door
@@ -364,33 +359,29 @@ register_door(name, {
 	sunlight = false,
 })
 
-if protector_crafts then
+if mcl then
+minetest.register_craft({
+	output = name,
+	recipe = {
+		{"mcl_doors:iron_door", "mcl_core:gold_ingot"}
+	}
+})
+else
+minetest.register_craft({
+	output = name,
+	recipe = {
+		{"default:steel_ingot", "default:steel_ingot"},
+		{"default:steel_ingot", "default:copper_ingot"},
+		{"default:steel_ingot", "default:steel_ingot"}
+	}
+})
 
-	if mcl then
-
-		minetest.register_craft({
-			output = name,
-			recipe = {
-				{"mcl_doors:iron_door", "mcl_core:gold_ingot"}
-			}
-		})
-	else
-		minetest.register_craft({
-			output = name,
-			recipe = {
-				{"default:steel_ingot", "default:steel_ingot"},
-				{"default:steel_ingot", "default:copper_ingot"},
-				{"default:steel_ingot", "default:steel_ingot"}
-			}
-		})
-
-		minetest.register_craft({
-			output = name,
-			recipe = {
-				{"doors:door_steel", "default:copper_ingot"}
-			}
-		})
-	end
+minetest.register_craft({
+	output = name,
+	recipe = {
+		{"doors:door_steel", "default:copper_ingot"}
+	}
+})
 end
 
 ----trapdoor----
@@ -463,36 +454,34 @@ register_trapdoor("protector:trapdoor", {
 	tile_front = "doors_trapdoor.png^protector_logo.png",
 	tile_side = "doors_trapdoor_side.png",
 	groups = {
-		snappy = 1, choppy = 2, dig_immediate = 2,
+		snappy = 1, choppy = 2, oddly_breakable_by_hand = 2,
 		unbreakable = 1, --door = 1
 	},
 	sounds = default.node_sound_wood_defaults(),
 })
 
-if protector_crafts then
-	if mcl then
-	minetest.register_craft({
-		output = "protector:trapdoor",
-		recipe = {
-			{"mcl_doors:trapdoor", "mcl_core:gold_ingot"}
-		}
-	})
-	else
-	minetest.register_craft({
-		output = "protector:trapdoor 2",
-		recipe = {
-			{"group:wood", "default:copper_ingot", "group:wood"},
-			{"group:wood", "group:wood", "group:wood"}
-		}
-	})
+if mcl then
+minetest.register_craft({
+	output = "protector:trapdoor",
+	recipe = {
+		{"mcl_doors:trapdoor", "mcl_core:gold_ingot"}
+	}
+})
+else
+minetest.register_craft({
+	output = "protector:trapdoor 2",
+	recipe = {
+		{"group:wood", "default:copper_ingot", "group:wood"},
+		{"group:wood", "group:wood", "group:wood"},
+	}
+})
 
-	minetest.register_craft({
-		output = "protector:trapdoor",
-		recipe = {
-			{"doors:trapdoor", "default:copper_ingot"}
-		}
-	})
-	end
+minetest.register_craft({
+	output = "protector:trapdoor",
+	recipe = {
+		{"doors:trapdoor", "default:copper_ingot"}
+	}
+})
 end
 
 -- Protected Steel Trapdoor
@@ -510,30 +499,28 @@ register_trapdoor("protector:trapdoor_steel", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-if protector_crafts then
-	if mcl then
-	minetest.register_craft({
-		output = "protector:trapdoor_steel",
-		recipe = {
-			{"mcl_doors:iron_trapdoor", "mcl_core:gold_ingot"}
-		}
-	})
-	else
-	minetest.register_craft({
-		output = "protector:trapdoor_steel",
-		recipe = {
-			{"default:copper_ingot", "default:steel_ingot"},
-			{"default:steel_ingot", "default:steel_ingot"}
-		}
-	})
+if mcl then
+minetest.register_craft({
+	output = "protector:trapdoor_steel",
+	recipe = {
+		{"mcl_doors:iron_trapdoor", "mcl_core:gold_ingot"}
+	}
+})
+else
+minetest.register_craft({
+	output = "protector:trapdoor_steel",
+	recipe = {
+		{"default:copper_ingot", "default:steel_ingot"},
+		{"default:steel_ingot", "default:steel_ingot"},
+	}
+})
 
-	minetest.register_craft({
-		output = "protector:trapdoor_steel",
-		recipe = {
-			{"doors:trapdoor_steel", "default:copper_ingot"}
-		}
-	})
-	end
+minetest.register_craft({
+	output = "protector:trapdoor_steel",
+	recipe = {
+		{"doors:trapdoor_steel", "default:copper_ingot"}
+	}
+})
 end
 
 -- Protected Chest
@@ -546,7 +533,7 @@ minetest.register_node("protector:chest", {
 		"default_chest_side.png", "default_chest_front.png^protector_logo.png"
 	},
 	paramtype2 = "facedir",
-	groups = {dig_immediate = 2, unbreakable = 1},
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, unbreakable = 1},
 	legacy_facedir_simple = true,
 	is_ground_content = false,
 	sounds = default.node_sound_wood_defaults(),
@@ -637,49 +624,24 @@ minetest.register_node("protector:chest", {
 		end
 
 		local spos = pos.x .. "," .. pos.y .. "," ..pos.z
-		local formspec
-
-		-- mineclone support
-		if mcl and mcf then
-
-			formspec = "size[9,8.75]"
-			.. "label[0,0;" .. minetest.formspec_escape(
-					minetest.colorize("#313131", "Protected Chest")) .. "]"
-			.. "list[nodemeta:" .. spos .. ";main;0,0.5;9,3;]"
-			.. mcl_formspec.get_itemslot_bg(0,0.5,9,3)
-			.. "image_button[3.0,3.5;1.05,0.8;protector_up_icon.png;protect_up;]"
-			.. "image_button[4.0,3.5;1.05,0.8;protector_down_icon.png;protect_down;]"
-			.. "label[0,4.0;" .. minetest.formspec_escape(
-					minetest.colorize("#313131", "Inventory")) .. "]"
-			.. "list[current_player;main;0,4.5;9,3;9]"
-			.. mcl_formspec.get_itemslot_bg(0,4.5,9,3)
-			.. "list[current_player;main;0,7.74;9,1;]"
-			.. mcl_formspec.get_itemslot_bg(0,7.74,9,1)
-			.. "listring[nodemeta:" .. spos .. ";main]"
-			.. "listring[current_player;main]"
-
-		else -- default formspec
-
-			formspec = "size[8,9]"
+		local formspec = "size[8,9]"
+--			.. default.gui_bg
+--			.. default.gui_bg_img
+--			.. default.gui_slots
 			.. "list[nodemeta:".. spos .. ";main;0,0.3;8,4;]"
-
-			.. "image_button[-0.01,4.26;1.05,0.8;protector_up_icon.png;protect_up;]"
-			.. "image_button[0.98,4.26;1.05,0.8;protector_down_icon.png;protect_down;]"
-			.. "tooltip[protect_up;" .. S("To Chest") .. "]"
-			.. "tooltip[protect_down;" .. S("To Inventory") .. "]"
-
-			.. "field[2.3,4.8;4,0.25;protect_name;;"
+			.. "button[0,4.5;2,0.25;toup;" .. F(S("To Chest")) .. "]"
+			.. "field[2.3,4.8;4,0.25;chestname;;"
 			.. meta:get_string("name") .. "]"
-			.. "button[5.99,4.5;2.05,0.25;protect_rename;" .. S("Rename") .. "]"
-
+			.. "button[6,4.5;2,0.25;todn;" .. F(S("To Inventory")) .. "]"
 			.. "list[current_player;main;0,5;8,1;]"
 			.. "list[current_player;main;0,6.08;8,3;8]"
 			.. "listring[nodemeta:" .. spos .. ";main]"
 			.. "listring[current_player;main]"
-		end
 
-		minetest.show_formspec(clicker:get_player_name(),
-				"protector:chest_" .. minetest.pos_to_string(pos), formspec)
+			minetest.show_formspec(
+				clicker:get_player_name(),
+				"protector:chest_" .. minetest.pos_to_string(pos),
+				formspec)
 	end,
 
 	on_blast = function() end,
@@ -729,22 +691,22 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 	local player_inv = player:get_inventory()
 
 	-- copy contents of player inventory to chest
-	if fields.protect_up then
+	if fields.toup then
 
 		to_from(player_inv, chest_inv)
 
 	-- copy contents of chest to player inventory
-	elseif fields.protect_down then
+	elseif fields.todn then
 
 		to_from(chest_inv, player_inv)
 
-	elseif fields.protect_name or fields.protect_rename then
+	elseif fields.chestname then
 
 		-- change chest infotext to display name
-		if fields.protect_name ~= "" then
+		if fields.chestname ~= "" then
 
-			meta:set_string("name", fields.protect_name)
-			meta:set_string("infotext", fields.protect_name)
+			meta:set_string("name", fields.chestname)
+			meta:set_string("infotext", fields.chestname)
 		else
 			meta:set_string("name", S("Protected Chest"))
 			meta:set_string("infotext", S("Protected Chest"))
@@ -755,31 +717,27 @@ end)
 
 -- Protected Chest recipes
 
-if protector_crafts then
+if mcl then
+minetest.register_craft({
+	output = "protector:chest",
+	recipe = {
+		{"mcl_chests:chest", "mcl_core:gold_ingot"},
+	}
+})
+else
+minetest.register_craft({
+	output = "protector:chest",
+	recipe = {
+		{"group:wood", "group:wood", "group:wood"},
+		{"group:wood", "default:copper_ingot", "group:wood"},
+		{"group:wood", "group:wood", "group:wood"},
+	}
+})
 
-	if mcl then
-
-		minetest.register_craft({
-			output = "protector:chest",
-			recipe = {
-				{"mcl_chests:chest", "mcl_core:gold_ingot"}
-			}
-		})
-	else
-		minetest.register_craft({
-			output = "protector:chest",
-			recipe = {
-				{"group:wood", "group:wood", "group:wood"},
-				{"group:wood", "default:copper_ingot", "group:wood"},
-				{"group:wood", "group:wood", "group:wood"}
-			}
-		})
-
-		minetest.register_craft({
-			output = "protector:chest",
-			recipe = {
-				{"default:chest", "default:copper_ingot"}
-			}
-		})
-	end
+minetest.register_craft({
+	output = "protector:chest",
+	recipe = {
+		{"default:chest", "default:copper_ingot"},
+	}
+})
 end
