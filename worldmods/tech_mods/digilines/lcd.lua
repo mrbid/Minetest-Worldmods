@@ -338,7 +338,7 @@ minetest.register_entity(":digilines_lcd:text", {
 minetest.register_craft({
 	output = "digilines:lcd 2",
 	recipe = {
-		{"default:tin_ingot", "digilines:wire_std_00000000", "default:tin_ingot"},
+		{"default:steel_ingot", "digilines:wire_std_00000000", "default:steel_ingot"},
 		{"mesecons_lightstone:lightstone_green_off",
 		"mesecons_lightstone:lightstone_green_off",
 		"mesecons_lightstone:lightstone_green_off"},

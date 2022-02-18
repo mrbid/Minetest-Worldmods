@@ -164,7 +164,9 @@ end
 
 function mesecon.get_bit(binary,bit)
 	bit = bit or 1
-	local c = binary:len()-(bit-1)
+	local len = binary:len()
+	if bit > len then return false end
+	local c = len-(bit-1)
 	return binary:sub(c,c) == "1"
 end
 
@@ -284,7 +286,7 @@ end
 -- File writing / reading utilities
 local wpath = minetest.get_worldpath()
 function mesecon.file2table(filename)
-	local f = io.open(wpath..DIR_DELIM..filename, "r")
+	local f = io.open(wpath.."/"..filename, "r")
 	if f == nil then return {} end
 	local t = f:read("*all")
 	f:close()
@@ -293,7 +295,7 @@ function mesecon.file2table(filename)
 end
 
 function mesecon.table2file(filename, table)
-	local f = io.open(wpath..DIR_DELIM..filename, "w")
+	local f = io.open(wpath.."/"..filename, "w")
 	f:write(minetest.serialize(table))
 	f:close()
 end
@@ -324,6 +326,9 @@ end
 -- Nil if no VM-based transaction is in progress.
 local vm_cache = nil
 
+-- Whether the current transaction will need a light update afterward.
+local vm_update_light = false
+
 -- Starts a VoxelManipulator-based transaction.
 --
 -- During a VM transaction, calls to vm_get_node and vm_swap_node operate on a
@@ -332,6 +337,7 @@ local vm_cache = nil
 -- vm_abort.
 function mesecon.vm_begin()
 	vm_cache = {}
+	vm_update_light = false
 end
 
 -- Finishes a VoxelManipulator-based transaction, freeing the VMs and map data
@@ -341,7 +347,7 @@ function mesecon.vm_commit()
 		if tbl.dirty then
 			local vm = tbl.vm
 			vm:set_data(tbl.data)
-			vm:write_to_map()
+			vm:write_to_map(vm_update_light)
 			vm:update_map()
 		end
 	end
@@ -374,7 +380,7 @@ function mesecon.vm_get_node(pos)
 	local tbl = vm_get_or_create_entry(pos)
 	local index = tbl.va:indexp(pos)
 	local node_value = tbl.data[index]
-	if node_value == core.CONTENT_IGNORE then
+	if node_value == minetest.CONTENT_IGNORE then
 		return nil
 	else
 		local node_param1 = tbl.param1[index]
@@ -386,7 +392,13 @@ end
 -- Sets a node’s name during a VoxelManipulator-based transaction.
 --
 -- Existing param1, param2, and metadata are left alone.
-function mesecon.vm_swap_node(pos, name)
+--
+-- The swap will necessitate a light update unless update_light equals false.
+function mesecon.vm_swap_node(pos, name, update_light)
+	-- If one node needs a light update, all VMs should use light updates to
+	-- prevent newly calculated light from being overwritten by other VMs.
+	vm_update_light = vm_update_light or update_light ~= false
+
 	local tbl = vm_get_or_create_entry(pos)
 	local index = tbl.va:indexp(pos)
 	tbl.data[index] = minetest.get_content_id(name)
@@ -425,9 +437,11 @@ end
 --
 -- This function can only be used to change the node’s name, not its parameters
 -- or metadata.
-function mesecon.swap_node_force(pos, name)
+--
+-- The swap will necessitate a light update unless update_light equals false.
+function mesecon.swap_node_force(pos, name, update_light)
 	if vm_cache then
-		return mesecon.vm_swap_node(pos, name)
+		return mesecon.vm_swap_node(pos, name, update_light)
 	else
 		-- This serves to both ensure the mapblock is loaded and also hand us
 		-- the old node table so we can preserve param2.
