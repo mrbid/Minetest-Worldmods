@@ -61,7 +61,7 @@ for i, f in ipairs(minetest.registered_on_player_receive_fields) do
 	end
 end
 
-default.register_chest("mesechest", {
+default.register_chest("mesechest:mesechest", {
 	description = "Mese Chest",
 	tiles = {
 		"default_chest_top.png^[colorize:#d8e002:70",
@@ -82,7 +82,7 @@ default.register_chest("mesechest", {
 	}
 })
 
-default.register_chest("mesechest_locked", {
+default.register_chest("mesechest:mesechest_locked", {
 	description = "Locked Mese Chest",
 	tiles = {
 		"default_chest_top.png^[colorize:#d8e002:70",
@@ -108,11 +108,11 @@ minetest.register_node = old_minetest_register_node
 minetest.register_lbm = old_minetest_register_lbm
 
 minetest.register_craft({
-	output = "mesechest",
+	output = "mesechest:mesechest",
 	recipe = {{"default:chest", "default:mese_crystal_fragment"}}
 })
 
 minetest.register_craft({
-	output = "mesechest_locked",
-	recipe = {{"mesechest", "default:mese_crystal"}}
+	output = "mesechest:mesechest_locked",
+	recipe = {{"mesechest:mesechest", "default:mese_crystal"}}
 })

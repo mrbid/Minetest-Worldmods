@@ -11,6 +11,7 @@ IMPORT("valid_item", "get_stack", "craft_stack", "clean_name", "compressible", "
 
 local function inv_fields(player, data, fields)
 	local name = data.player_name
+	if name == nil or name == "" then return end
 	local inv = player:get_inventory()
 	local sb_inv = fields.scrbar_inv
 

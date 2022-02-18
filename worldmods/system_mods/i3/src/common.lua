@@ -9,14 +9,13 @@ local fmt, find, match, gmatch, sub, split, lower, upper =
 	string.format, string.find, string.match, string.gmatch,
 	string.sub, string.split, string.lower, string.upper
 
-local old_is_creative_enabled = core.is_creative_enabled
 
 function core.is_creative_enabled(name)
-	if name == "" then
-		return old_is_creative_enabled(name)
+	if name == nil or name == "" then
+		return
 	end
 
-	return core.check_player_privs(name, {creative = true}) or old_is_creative_enabled(name)
+	return core.check_player_privs(name, {creative = true})
 end
 
 local S = core.get_translator"i3"
