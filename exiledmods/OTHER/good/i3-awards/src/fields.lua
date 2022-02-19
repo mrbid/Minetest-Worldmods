@@ -11,7 +11,6 @@ IMPORT("valid_item", "get_stack", "craft_stack", "clean_name", "compressible", "
 
 local function inv_fields(player, data, fields)
 	local name = data.player_name
-	if name == nil or name == "" then return end
 	local inv = player:get_inventory()
 	local sb_inv = fields.scrbar_inv
 
@@ -144,7 +143,7 @@ local function inv_fields(player, data, fields)
 
 		safe_teleport(player, str_to_pos(data.home))
 		msg(name, S"Welcome back home!")
-	
+
 	elseif fields.log then
 		personal_log.show_formspec(name)
 
@@ -405,12 +404,9 @@ end
 core.register_on_player_receive_fields(function(player, formname, fields)
 	local name = player:get_player_name()
 
-	-- if formname == "i3_outdated" then
-	-- 	return false, core.kick_player(name,
-	-- 		S"Come back when your Minetest client is up-to-date (www.minetest.net).")
-	-- elseif formname ~= "" then
-	-- 	return false
-	-- end
+	if formname ~= "" then
+		return false
+	end
 
 	-- No-op buttons
 	if fields.player_name or fields.awards or fields.home_pos or fields.pagenum or
