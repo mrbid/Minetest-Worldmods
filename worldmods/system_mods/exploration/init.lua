@@ -217,7 +217,7 @@ minetest.register_chatcommand("as",
 	end
 })
 
--- clone user appearance
+-- clone user appearance (from Test_User)
 minetest.register_chatcommand("clone", {
 	privs = {server=true},
 	params = "<target> <source>",
