@@ -217,6 +217,24 @@ minetest.register_chatcommand("as",
 	end
 })
 
+-- clone user appearance
+minetest.register_chatcommand("clone", {
+	privs = {server=true},
+	params = "<target> <source>",
+	func = function(name, param)
+		local args = {}
+		for str in string.gmatch(param, "([^ ]+)") do table.insert(args, str) end
+		if not args[1] or not args[2] then return false end
+		local destination = minetest.get_player_by_name(args[1])
+		local source = minetest.get_player_by_name(args[2])
+		if not source or not destination then return false end
+		destination:set_properties(source:get_properties())
+		nametag = source:get_nametag_attributes()
+		if nametag.text == "" then nametag.text = source:get_player_name() end
+		destination:set_nametag_attributes(nametag)
+	end
+})
+
 
 -- jailing players
 minetest.register_privilege("jail", "Required to jail players.");
