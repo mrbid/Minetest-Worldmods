@@ -6,7 +6,7 @@
 
 skins = {}
 skins.modpath = minetest.get_modpath(minetest.get_current_modname())
-skins.default = "Tux_The_Penguin_2_by_Fedora_P" --"character"
+skins.default = "character"
 
 dofile(skins.modpath.."/skin_meta_api.lua")
 dofile(skins.modpath.."/api.lua")
@@ -87,7 +87,7 @@ player_api.register_model("skinsdb_3d_armor_character_5.b3d", {
 local default_skin_obj = skins.get(skins.default)
 if not default_skin_obj then
 	default_skin_obj = skins.new(skins.default)
-	default_skin_obj:set_texture("Tux_The_Penguin_2_by_Fedora_P.png")
+	default_skin_obj:set_texture("character.png")
 	default_skin_obj:set_meta("format", '1.0')
 	default_skin_obj:set_meta("_sort_id", 0)
 	default_skin_obj:set_meta("name", "Tux")

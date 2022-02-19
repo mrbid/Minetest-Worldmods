@@ -175,7 +175,7 @@ local function save_data(player_name)
 	storage:set_string("data", slz(_data))
 end
 
-core.register_on_joinplayer(function(player)
+table.insert(core.registered_on_joinplayers, 1, function(player)
 	local name = player:get_player_name()
 	local info = core.get_player_information and core.get_player_information(name)
 

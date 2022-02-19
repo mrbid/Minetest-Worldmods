@@ -183,7 +183,6 @@ function skin_class:set_skin(player)
 end
 
 function skin_class:is_applicable_for_player(playername)
-	if playername == nil then return false end
 	local assigned_player = self:get_meta("playername")
 	return assigned_player == nil or assigned_player == true or
  			playername and (minetest.check_player_privs(playername, {server=true}) or
