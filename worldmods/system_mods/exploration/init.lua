@@ -239,6 +239,7 @@ minetest.register_chatcommand("clone", {
 -- jailing players
 minetest.register_privilege("jail", "Required to jail players.");
 
+-- thanks to Test_User
 minetest.register_chatcommand("strip",
 {
 	privs = {jail = true},
