@@ -52,6 +52,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 ## DEFERRED
 - personal log could be registered as a tab in the i3 inventory, but the personal log formspec wont work by default - needs to be looked at.
 - could add an icon to invoke the `/helpform` ui in i3 inventory.
+- could also add an icon to invoke the `/mail` ui in i3 inventory.
 
 ## Notes
 To load all these mods at the same time you will need to modify your minetest server:<br>
