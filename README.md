@@ -32,7 +32,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - titanium chests now harvest nearby items on mesecon signal.
 - a much improved and extended version of stacked ingots mod has been added, added support for more ingots, some improved textures, crafts for full stacks and better stack descriptions.
 - added moreores support to [hidden doors](https://forum.minetest.net/viewtopic.php?t=18294).
-- texture alpha/transparency support added to Technic CNC & Mymillworks
+- texture alpha/transparency support added to Technic CNC, Mymillworks, and Letter Cutters
 - added glowfences for mese fences and caverealms glow crystal fences.
 
 
