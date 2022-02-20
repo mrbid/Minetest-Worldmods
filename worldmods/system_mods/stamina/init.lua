@@ -24,7 +24,7 @@ end
 stamina.settings = {
 	-- see settingtypes.txt for descriptions
 	eat_particles = minetest.settings:get_bool("stamina.eat_particles", true),
-	sprint = minetest.settings:get_bool("stamina.sprint", true),
+	sprint = minetest.settings:get_bool("stamina.sprint", false),
 	sprint_particles = minetest.settings:get_bool("stamina.sprint_particles", true),
 	sprint_lvl = get_setting("sprint_lvl", 6),
 	sprint_speed = get_setting("sprint_speed", 0.8),
