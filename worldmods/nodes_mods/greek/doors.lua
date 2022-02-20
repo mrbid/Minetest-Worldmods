@@ -35,7 +35,7 @@ minetest.register_node("greek:door_blank", {
     buildable_to = false,
     floodable = false,
     drop = "",
-    groups = {not_in_creative_inventory = 1},
+    groups = {not_in_creative_inventory = 0},
     collision_box = {
         type = "fixed",
         fixed = {-0.5, -0.5, -0.5, 0.5, 0.5, -6 / 16},
@@ -213,7 +213,7 @@ for i = 1, door_count do
         defcopy.tiles[1].name = (("[combine:38x32:0,0=%s:16,0=%s:32,0=%s:36,0=%s"):format(front, back, sides, tops):gsub("%%s", def.tiles[1].name))
         defcopy.overlay_tiles = {(("[combine:38x32:0,0=([combine\\:16x32\\:0,0=%s\\^[transformFX):16,0=([combine\\:16x32\\:-16,0=%s\\^[transformFX)"):gsub("%%s", def.overlay_tiles[1]))}
 
-        defcopy.groups.not_in_creative_inventory = 1
+        defcopy.groups.not_in_creative_inventory = 0
 
         defcopy.drop = "greek:door_" .. i .. "_a"
         defcopy.preserve_metadata = function(_, node, oldmeta, drops)
@@ -308,7 +308,7 @@ for i = 1, shutter_count do
 
     def = table.copy(def)
     def.tiles = {"blank.png", def.tiles[1]}
-    def.groups.not_in_creative_inventory = 1
+    def.groups.not_in_creative_inventory = 0
     def.drop = "greek:shutters_" .. i
     def.on_rightclick = function(pos, node)
         minetest.swap_node(pos, {name = "greek:shutters_" .. i, param2 = node.param2})

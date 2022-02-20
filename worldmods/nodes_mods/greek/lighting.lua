@@ -67,7 +67,7 @@ minetest.register_node("greek:fire_bowl_hanging", {
     paramtype2 = "facedir",
     selection_box = {type = "fixed", fixed = {-0.5, -1.5, -0.5, 0.5, 0.5, 0.5}},
     collision_box = {type = "fixed", fixed = {-0.5, -1.5, -0.5, 0.5, 0.5, 0.5}},
-    groups = {cracky = 3, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
+    groups = {cracky = 3, oddly_breakable_by_hand = 2, not_in_creative_inventory = 0},
     sounds = greek.default_sounds("node_sound_glass_defaults"),
     drop = "greek:fire_bowl",
     on_punch = function(pos, _, puncher)
@@ -90,7 +90,7 @@ minetest.register_node("greek:fire_bowl_hanging_lit", {
     selection_box = {type = "fixed", fixed = {-0.5, -1.5, -0.5, 0.5, 0.5, 0.5}},
     collision_box = {type = "fixed", fixed = {-0.5, -1.5, -0.5, 0.5, 0.5, 0.5}},
     light_source = 12,
-    groups = {cracky = 3, oddly_breakable_by_hand = 2, not_in_creative_inventory = 1},
+    groups = {cracky = 3, oddly_breakable_by_hand = 2, not_in_creative_inventory = 0},
     sounds = greek.default_sounds("node_sound_glass_defaults"),
     drop = greek.settings_get("fire_bowl_dig_snuff") and "greek:fire_bowl" or "greek:fire_bowl_lit",
     on_punch = function(pos, _, puncher)
