@@ -10,7 +10,7 @@ local function show_selection_formspec(player)
 end
 
 
-minetest.register_chatcommand("skinsdb", {
+minetest.register_chatcommand("skin", {
 	params = "[set] <skin key> | show [<skin key>] | list | list private | list public | [ui]",
 	description = S("Show, list or set player's skin"),
 	func = function(name, param)

@@ -28,7 +28,7 @@ function skins.get_skin_info_formspec(skin, perplayer_formspec)
 	if type(perplayer_formspec) == "table" then -- we're using Unified Inventory
 		lxoffs = 1.5
 		cxoffs = 3.75
-		rxoffs = 7.5
+		rxoffs = 5.5
 	end
 
 	local formspec = "image["..lxoffs..",.6;1,2;"..minetest.formspec_escape(skin:get_preview()).."]"
@@ -52,14 +52,14 @@ function skins.get_skin_selection_formspec(player, context, perplayer_formspec)
 	context.skins_list = skins.get_skinlist_for_player(player:get_player_name())
 	context.total_pages = 1
 	local xoffs = 0
-	local yoffs = 4
+	local yoffs = 3
 	local xspc = 1
 	local yspc = 2
 	local skinwidth = 1
 	local skinheight = 2
 	local xscale = 1
-	local btn_y = 8.15
-	local drop_y = 8
+	local btn_y = 7.15
+	local drop_y = 7
 	local btn_width = 1
 	local droppos = 1
 	local droplen = 6.25
