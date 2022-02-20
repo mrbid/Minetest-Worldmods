@@ -427,6 +427,9 @@ local function get_container(fs, data, player, yoffset, ctn_len, award_list, awa
 
 	yextra = -0.4
 	get_bag_fs(fs, data, name, esc_name, bag_size, yextra)
+
+	fs(fmt("list[detached:i3_trash;main;%f,%f;1,1;]", 0, yoffset + 5.25))
+	fs("image", 0, yoffset + 5.25, 1, 1, PNG.trash)
 end
 
 local function show_popup(fs, data)
