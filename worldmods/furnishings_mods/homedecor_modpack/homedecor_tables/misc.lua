@@ -278,7 +278,7 @@ minetest.register_craft({
 	output = "homedecor:table",
 	recipe = {
 		{ "group:wood","group:wood", "group:wood" },
-		{ "group:stick", "", "group:stick" },
+		{ "group:stick", "group:stick", "group:stick" },
 	},
 })
 
