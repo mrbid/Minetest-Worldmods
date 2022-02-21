@@ -40,7 +40,10 @@ local PNG = {
 	nonvisible = "i3_non_visible.png",
 	exit = "i3_exit.png",
 	home = "i3_home.png",
-	log  = "i3_fav.png",
+	log  = "i3_log.png",
+	mail  = "i3_mail.png",
+	help  = "i3_help.png",
+	skin  = "i3_skin2.png",
 	flag = "i3_flag.png",
 	edit = "i3_edit.png",
 
@@ -65,7 +68,10 @@ local PNG = {
 	refresh_hover = "i3_refresh.png^\\[brighten",
 	exit_hover = "i3_exit.png^\\[brighten",
 	home_hover = "i3_home.png^\\[brighten",
-	log_hover = "i3_fav.png^\\[brighten",
+	log_hover = "i3_log.png^\\[brighten",
+	mail_hover = "i3_mail.png^\\[brighten",
+	help_hover = "i3_help.png^\\[brighten",
+	skin_hover = "i3_skin2.png^\\[brighten",
 	edit_hover = "i3_edit.png^\\[brighten",
 }
 
