@@ -23,6 +23,10 @@ local categories = {
 	S("Location"),
 	S("Event"),
 	S("General"),
+	S("Caves"),
+	S("Biomes"),
+	S("Space"),
+	S("Personal"),
 }
 
 local LOCATION_CATEGORY = 1
