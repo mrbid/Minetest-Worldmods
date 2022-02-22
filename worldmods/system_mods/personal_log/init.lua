@@ -698,6 +698,7 @@ if unified_inventory_modpath then
 		image = "personal_log_open_book.png",
 		tooltip = S("Personal log, keeps a list of home/teleport locations."),
 		action = function(player)
+			if player == nil then return end
 			local name = player:get_player_name()
 			minetest.show_formspec(name,"personal_log:root", make_personal_log_formspec(player))
 		end,

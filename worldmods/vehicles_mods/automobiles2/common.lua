@@ -255,7 +255,7 @@ function automobile2_on_punch(entity, puncher)
 		entity.object:remove()
 
 	else
-		is_admin = minetest.check_player_privs(puncher, {protection_bypass=true})
+		local is_admin = minetest.check_player_privs(puncher, {protection_bypass=true})
 		if not is_admin then
 			-- random players can't kill cars
 			entity.object:set_hp(entity.hp_max)

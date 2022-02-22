@@ -29,7 +29,7 @@ minetest.register_entity("automobiles2:suv5", {
 })
 
 minetest.register_craftitem("automobiles2:suv5_spawner", {
-	description = "Flying PsySUV2",
+	description = "Flying PsySUV Slider",
 	inventory_image = "automobiles2_suv5_inv.png",
 	on_place = function(item, placer, pointed_thing)
 		local playerpos = placer:getpos();
