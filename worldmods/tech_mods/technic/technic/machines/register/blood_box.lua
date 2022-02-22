@@ -17,10 +17,6 @@ local dirtab = {
 
 local tube = {
 	insert_object = function(pos, node, stack, direction)
-		if direction.y == 1
-			or (direction.y == 0 and dirtab[direction.x+2+(direction.z+2)*2] == node.param2) then
-			return stack
-		end
 		local meta = minetest.get_meta(pos)
 		local inv = meta:get_inventory()
 		if direction.y == 0 then
@@ -28,10 +24,6 @@ local tube = {
 		end
 	end,
 	can_insert = function(pos, node, stack, direction)
-		if direction.y == 1
-			or (direction.y == 0 and dirtab[direction.x+2+(direction.z+2)*2] == node.param2) then
-			return false
-		end
 		local meta = minetest.get_meta(pos)
 		local inv = meta:get_inventory()
 		if direction.y == 0 then
