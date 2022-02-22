@@ -19,16 +19,12 @@ local tube = {
 	insert_object = function(pos, node, stack, direction)
 		local meta = minetest.get_meta(pos)
 		local inv = meta:get_inventory()
-		if direction.y == 0 then
-			return inv:add_item("src", stack)
-		end
+		return inv:add_item("src", stack)
 	end,
 	can_insert = function(pos, node, stack, direction)
 		local meta = minetest.get_meta(pos)
 		local inv = meta:get_inventory()
-		if direction.y == 0 then
-			return inv:room_for_item("src", stack)
-		end
+		return inv:room_for_item("src", stack)
 	end,
 	connect_sides = {left=1, right=1, back=1, top=1},
 }
