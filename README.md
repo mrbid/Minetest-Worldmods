@@ -34,7 +34,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - added moreores support to [hidden doors](https://forum.minetest.net/viewtopic.php?t=18294).
 - texture alpha/transparency support added to Technic CNC & Mymillworks.
 - added glowfences for mese fences and caverealms glow crystal fences.
-- Test__User has refactored the code of [unified_inventory](https://github.com/minetest-mods/unified_inventory) in api.lua to vastly improve load times of the server when rebooting.
+- Test_User has refactored the code of [unified_inventory](https://github.com/minetest-mods/unified_inventory) in api.lua to vastly improve load times of the server when rebooting.
 
 
 ## TODO
