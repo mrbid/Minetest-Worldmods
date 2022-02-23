@@ -46,7 +46,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 ~~- transparency support needs to be added to `mymillwork` for the caverealms glow crystal cuts~~<br>
 ~~- some of the doors such as the diamond door in the `doors` mod open up inverse, this needs to be fixed.~~<br>
 ~~- Gold trapdoor in `doors` has no craft and: Adamantine door, Aquarium door, Brass door.~~<br>
-~~- `packed_things` nodes need to be updated with node groups that represent the original node being packed.~~<br>
+~~- `packed_things` nodes need to be updated with node group sounds that represent the original node being packed.~~<br>
 ~~- `ingots_extended` needs metal groups for dig sounds, also needs terumet support, possibly even the other xtraores mod support, which could be confusing because they both share the same name.~~<br>
 ~~- technic crafting types `freezing`, `alloying`, `extracting`, `compressing`, `grinding`, `transmuting`, `separating`, could do with icons for the i3 inventory.~~
 
