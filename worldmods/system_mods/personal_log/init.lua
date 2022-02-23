@@ -502,7 +502,7 @@ local function make_personal_log_formspec(player)
 	if entry_selected > 0 then
 		entry = entries[entry_selected]
 	end
-	if entry == nil then return end
+	if entry == nil then entry = "" end
 
 	local topics = {}
 	for i = 1, state.entry_counts[category_index] do
