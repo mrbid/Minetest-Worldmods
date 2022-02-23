@@ -51,7 +51,7 @@ function toblock(s)
 
 end
 
-function split(s)
+function splitname(s)
 
 	if s == "ingot" then
 		return "Lava"
@@ -140,14 +140,14 @@ function ingots.register_ingots(ingot_item, texture, is_big)
 							itemstack:take_item()
 						end
 						local meta = minetest.get_meta(pointed_thing.under)
-						meta:set_string("infotext", count + 1 .. " " .. firstToUpper(split(ingot_name)) .. " Ingots")
+						meta:set_string("infotext", count + 1 .. " " .. firstToUpper(splitname(ingot_name)) .. " Ingots")
 					elseif minetest.get_node(pointed_thing.above).name == "air" then
 						minetest.set_node(pointed_thing.above, {name = mod_prefix .. ingot_name .."_1"})
 						if not (creative and creative.is_enabled_for and creative.is_enabled_for(placer:get_player_name())) then
 							itemstack:take_item()
 						end
 						local meta = minetest.get_meta(pointed_thing.above)
-						meta:set_string("infotext", "1 " .. firstToUpper(split(ingot_name))  .. " Ingots")
+						meta:set_string("infotext", "1 " .. firstToUpper(splitname(ingot_name))  .. " Ingots")
 					end
 
 				elseif minetest.get_node(pointed_thing.above).name == "air" then
@@ -156,7 +156,7 @@ function ingots.register_ingots(ingot_item, texture, is_big)
 						itemstack:take_item()
 					end
 					local meta = minetest.get_meta(pointed_thing.above)
-					meta:set_string("infotext", "1 " .. firstToUpper(split(ingot_name))  .. " Ingots")
+					meta:set_string("infotext", "1 " .. firstToUpper(splitname(ingot_name))  .. " Ingots")
 				end
 
 				return itemstack
@@ -187,7 +187,7 @@ function ingots.register_ingots(ingot_item, texture, is_big)
 			})
 		end
 		minetest.register_node(mod_prefix .. ingot_name .. "_" .. i,{
-			description = firstToUpper(split(ingot_name)) .. " Ingots",
+			description = firstToUpper(splitname(ingot_name)) .. " Ingots",
 			drawtype = "mesh",
 			tiles = {texture},
 			mesh = texture_prefix .. i .. ".obj",
@@ -202,7 +202,7 @@ function ingots.register_ingots(ingot_item, texture, is_big)
 
 				local count = string.gsub(node.name, "%D*", "")
 				local meta = minetest.get_meta(pos)
-				meta:set_string("infotext",  count .. " " .. firstToUpper(split(ingot_name)) .. " Ingots")
+				meta:set_string("infotext",  count .. " " .. firstToUpper(splitname(ingot_name)) .. " Ingots")
 
 				if puncher then
 					local wield = puncher:get_wielded_item()
@@ -219,13 +219,13 @@ function ingots.register_ingots(ingot_item, texture, is_big)
 						end
 
 						local meta = minetest.get_meta(pos)
-						meta:set_string("infotext", i - 1 .. " " .. firstToUpper(split(ingot_name))  .. " Ingots")
+						meta:set_string("infotext", i - 1 .. " " .. firstToUpper(splitname(ingot_name))  .. " Ingots")
 					end
 				end
 			end,
 			after_place_node = function(pos, placer)
 				local meta = minetest.get_meta(pos)
-				meta:set_string("infotext",  "64 " .. firstToUpper(split(ingot_name)) .. " Ingots")
+				meta:set_string("infotext",  "64 " .. firstToUpper(splitname(ingot_name)) .. " Ingots")
 			end,
 			_ingot_name = ingot_name,
 			_ingot_count = i,
