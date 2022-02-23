@@ -43,7 +43,7 @@ minetest.after(0.01, function()
 	end
 	table.sort(ui.items_list)
 	ui.items_list_size = #ui.items_list
-	print("Unified Inventory. inventory size: "..ui.items_list_size)
+	print("Unified Inventory. Inventory size: "..ui.items_list_size)
 	for _, name in ipairs(ui.items_list) do
 		local def = minetest.registered_items[name]
 		-- Simple drops
@@ -133,16 +133,59 @@ minetest.after(0.01, function()
 			end
 		end
 	end
+
+	-- new code
+
+	local spec_matcher = {}
+	for _, name in ipairs(ui.items_list) do
+		for group, value in pairs(minetest.registered_items[name].groups) do -- we only need to care about groups, exact items are handled separately
+			if value and value ~= 0 then
+				if not spec_matcher[group] then spec_matcher[group] = {} end
+				spec_matcher[group][name] = true
+			end
+		end
+	end
+
+	-- old code
+
 	for _, recipes in pairs(ui.crafts_for.recipe) do
 		for _, recipe in ipairs(recipes) do
 			local ingredient_items = {}
 			for _, spec in pairs(recipe.items) do
-				local matches_spec = ui.canonical_item_spec_matcher(spec)
-				for _, name in ipairs(ui.items_list) do
-					if matches_spec(name) then
+
+				-- new code
+
+				local specname = ItemStack(spec):get_name()
+				if specname:sub(1,6) == "group:" then
+					local accepted = {}
+					local firstgroup = true -- needed for initial group setup
+					for _, group in ipairs(specname:sub(7):split(",")) do
+						if firstgroup then -- needed to setup initial value
+							if spec_matcher[group] then
+								for name, _ in pairs(spec_matcher[group]) do
+									accepted[name] = true
+								end
+							end
+							firstgroup = false
+						else
+							if spec_matcher[group] then
+								for name, _ in pairs(accepted) do
+									accepted[name] = spec_matcher[group][name]
+								end
+							else
+								accepted = {}
+							end
+						end
+					end
+					for name, _ in pairs(accepted) do
 						ingredient_items[name] = true
 					end
+				else
+					ingredient_items[specname] = true
 				end
+
+				-- old code
+
 			end
 			for name, _ in pairs(ingredient_items) do
 				if ui.crafts_for.usage[name] == nil then
