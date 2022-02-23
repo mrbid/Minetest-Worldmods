@@ -57,9 +57,9 @@ ui.style_full = {
 	formw = 17.75,
 	formh = 12.25,
 	pagecols = 8,
-	pagerows = 9,
+	pagerows = 11,
 	page_x = 10.75,
-	page_y = 2.30,
+	page_y = 0.60,
 	craft_x = 2.8,
 	craft_y = 1.15,
 	craftresult_x = 7.8,
@@ -154,8 +154,8 @@ if sfinv then
 end
 
 dofile(modpath.."/group.lua")
-dofile(modpath.."/category.lua")
-dofile(modpath.."/default-categories.lua")
+--dofile(modpath.."/category.lua")
+--dofile(modpath.."/default-categories.lua")
 dofile(modpath.."/internal.lua")
 dofile(modpath.."/callbacks.lua")
 dofile(modpath.."/match_craft.lua")
