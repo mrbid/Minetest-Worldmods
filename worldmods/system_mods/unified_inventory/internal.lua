@@ -292,7 +292,7 @@ function ui.get_formspec(player, page)
 		return table.concat(fs, "")
 	end
 
-	formspec_add_categories(player, fs, ui_peruser)
+	--formspec_add_categories(player, fs, ui_peruser)
 	formspec_add_search_box(player, fs, ui_peruser)
 	formspec_add_item_browser(player, fs, ui_peruser)
 

@@ -1,4 +1,4 @@
--- Unified Inventory
+-- Unified Inventory for Minetest >= 0.4.16
 
 local modpath = minetest.get_modpath(minetest.get_current_modname())
 local worldpath = minetest.get_worldpath()
@@ -24,8 +24,6 @@ unified_inventory = {
 	filtered_items_list = {},
 	pages = {},
 	buttons = {},
-	initialized_callbacks = {},
-	craft_registered_callbacks = {},
 
 	-- Homepos stuff
 	home_pos = {},
@@ -45,8 +43,7 @@ unified_inventory = {
 	imgscale = 1.25,
 	list_img_offset = 0.13,
 	standard_background = "background9[0,0;1,1;ui_formbg_9_sliced.png;true;16]",
-
-	version = 3
+	version = 2
 }
 
 local ui = unified_inventory
@@ -164,9 +161,14 @@ dofile(modpath.."/callbacks.lua")
 dofile(modpath.."/match_craft.lua")
 dofile(modpath.."/register.lua")
 
--- if minetest.settings:get_bool("unified_inventory_bags") ~= false then
--- 	dofile(modpath.."/bags.lua")
--- end
+--[[
+if minetest.settings:get_bool("unified_inventory_bags") ~= false then
+	dofile(modpath.."/bags.lua")
+end
+--]]
 
 dofile(modpath.."/item_names.lua")
---dofile(modpath.."/waypoints.lua")
+
+if minetest.get_modpath("datastorage") then
+	dofile(modpath.."/waypoints.lua")
+end
