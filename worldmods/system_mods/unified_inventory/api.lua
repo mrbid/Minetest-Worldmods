@@ -134,7 +134,7 @@ minetest.after(0.01, function()
 		end
 	end
 
-	-- new code
+	-- Test_User refactoring to increase server boot speed, on server with 57k+ nodes was 9 mins load time, now only ~1 seconds.
 
 	local spec_matcher = {}
 	for _, name in ipairs(ui.items_list) do
@@ -146,14 +146,10 @@ minetest.after(0.01, function()
 		end
 	end
 
-	-- old code
-
 	for _, recipes in pairs(ui.crafts_for.recipe) do
 		for _, recipe in ipairs(recipes) do
 			local ingredient_items = {}
 			for _, spec in pairs(recipe.items) do
-
-				-- new code
 
 				local specname = ItemStack(spec):get_name()
 				if specname:sub(1,6) == "group:" then
@@ -184,8 +180,6 @@ minetest.after(0.01, function()
 					ingredient_items[specname] = true
 				end
 
-				-- old code
-
 			end
 			for name, _ in pairs(ingredient_items) do
 				if ui.crafts_for.usage[name] == nil then
@@ -194,6 +188,30 @@ minetest.after(0.01, function()
 				table.insert(ui.crafts_for.usage[name], recipe)
 			end
 		end
+	end
+
+	-- for _, recipes in pairs(ui.crafts_for.recipe) do
+	-- 	for _, recipe in ipairs(recipes) do
+	-- 		local ingredient_items = {}
+	-- 		for _, spec in pairs(recipe.items) do
+	-- 			local matches_spec = ui.canonical_item_spec_matcher(spec)
+	-- 			for _, name in ipairs(ui.items_list) do
+	-- 				if matches_spec(name) then
+	-- 					ingredient_items[name] = true
+	-- 				end
+	-- 			end
+	-- 		end
+	-- 		for name, _ in pairs(ingredient_items) do
+	-- 			if ui.crafts_for.usage[name] == nil then
+	-- 				ui.crafts_for.usage[name] = {}
+	-- 			end
+	-- 			table.insert(ui.crafts_for.usage[name], recipe)
+	-- 		end
+	-- 	end
+	-- end
+
+	for _, callback in ipairs(ui.initialized_callbacks) do
+		callback()
 	end
 end)
 
@@ -220,8 +238,14 @@ load_home()
 function ui.set_home(player, pos)
 	local player_name = player:get_player_name()
 	ui.home_pos[player_name] = vector.round(pos)
+
 	-- save the home data from the table to the file
 	local output = io.open(ui.home_filename, "w")
+	if not output then
+		minetest.log("warning", "[unified_inventory] Failed to save file: "
+			.. ui.home_filename)
+		return
+	end
 	for k, v in pairs(ui.home_pos) do
 		output:write(v.x.." "..v.y.." "..v.z.." "..k.."\n")
 	end
@@ -249,10 +273,15 @@ function ui.register_craft(options)
 	if options.type == "normal" and options.width == 0 then
 		options = { type = "shapeless", items = options.items, output = options.output, width = 0 }
 	end
-	if not ui.crafts_for.recipe[itemstack:get_name()] then
-		ui.crafts_for.recipe[itemstack:get_name()] = {}
+	local item_name = itemstack:get_name()
+	if not ui.crafts_for.recipe[item_name] then
+		ui.crafts_for.recipe[item_name] = {}
 	end
-	table.insert(ui.crafts_for.recipe[itemstack:get_name()],options)
+	table.insert(ui.crafts_for.recipe[item_name],options)
+
+	for _, callback in ipairs(ui.craft_registered_callbacks) do
+		callback(item_name, options)
+	end
 end
 
 
@@ -344,6 +373,32 @@ function ui.register_button(name, def)
 	end
 	def.name = name
 	table.insert(ui.buttons, def)
+end
+
+function ui.register_on_initialized(callback)
+	if type(callback) ~= "function" then
+		error(("Initialized callback must be a function, %s given."):format(type(callback)))
+	end
+	table.insert(ui.initialized_callbacks, callback)
+end
+
+function ui.register_on_craft_registered(callback)
+	if type(callback) ~= "function" then
+		error(("Craft registered callback must be a function, %s given."):format(type(callback)))
+	end
+	table.insert(ui.craft_registered_callbacks, callback)
+end
+
+function ui.get_recipe_list(output)
+	return ui.crafts_for.recipe[output]
+end
+
+function ui.get_registered_outputs()
+	local outputs = {}
+	for item_name, _ in pairs(ui.crafts_for.recipe) do
+		table.insert(outputs, item_name)
+	end
+	return outputs
 end
 
 function ui.is_creative(playername)

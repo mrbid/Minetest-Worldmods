@@ -52,7 +52,7 @@ for bag_i = 1, 4 do
 			local stack = get_player_bag_stack(player, bag_i)
 			local image = stack:get_definition().inventory_image
 			local slots = stack:get_definition().groups.bagslots
-		
+
 			local formspec = {
 				ui.style_full.standard_inv_bg,
 				ui.make_inv_img_grid(0.3, 1.5, 8, slots/8),
@@ -61,11 +61,11 @@ for bag_i = 1, 4 do
 				"listcolors[#00000000;#00000000]",
 				"listring[current_player;main]",
 				string.format("list[current_player;bag%icontents;%f,%f;8,3;]",
-					bag_i, 0.3 + ui.list_img_offset, 1.5 + ui.list_img_offset),
+				    bag_i, 0.3 + ui.list_img_offset, 1.5 + ui.list_img_offset),
 				"listring[current_name;bag" .. bag_i .. "contents]",
 			}
 			local n = #formspec + 1
-		
+
 			local player_name = player:get_player_name() -- For if statement.
 			if ui.trash_enabled
 				or ui.is_creative(player_name)
