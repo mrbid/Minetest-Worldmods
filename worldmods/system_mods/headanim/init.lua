@@ -1,7 +1,7 @@
 local get_connected_players = minetest.get_connected_players
 local abs = math.abs
 local deg = math.deg
-local basepos = vector.new(0, 6.5, 0)
+local basepos = vector.new(0, 6.8, 0)
 local lastdir = {}
 
 minetest.register_globalstep(function(dtime)
