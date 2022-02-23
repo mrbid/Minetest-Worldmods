@@ -207,8 +207,7 @@ function ingots.register_ingots(ingot_item, texture, is_big)
 				if puncher then
 					local wield = puncher:get_wielded_item()
 					--checks, so that a stack can be taken appart only by hand or relevant ingot_item
-								if wield:get_name() == ingot_item or
-			wield:get_count() == 0 then
+					if wield:get_name() == ingot_item or wield:get_count() == 0 then
                         if minetest.is_protected(pos, puncher:get_player_name()) and not minetest.check_player_privs(puncher, "protection_bypass") then
 			                return
 		                end
