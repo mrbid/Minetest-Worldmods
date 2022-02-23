@@ -50,7 +50,13 @@ function helicopter.attach(self, player)
     player:set_eye_offset({x = 0, y = -4, z = 1}, {x = 0, y = 8, z = -30})
     player_api.player_attached[name] = true
     -- make the driver sit
-    player_api.set_animation(clicker, "sit")
+    minetest.after(0.2, function()
+        local player = minetest.get_player_by_name(name)
+        if player then
+	        player_api.set_animation(player, "sit")
+            update_heli_hud(player)
+        end
+    end)
     -- disable gravity
     self.object:set_acceleration(vector.new())
 end
