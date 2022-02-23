@@ -90,53 +90,53 @@ ui.register_button("home_gui_go", {
 	end,
 })
 
-ui.register_button("misc_set_day", {
-	type = "image",
-	image = "ui_sun_icon.png",
-	tooltip = S("Set time to day"),
-	hide_lite=true,
-	action = function(player)
-		local player_name = player:get_player_name()
-		if minetest.check_player_privs(player_name, {settime=true}) then
-			minetest.sound_play("birds",
-					{to_player=player_name, gain = 1.0})
-			minetest.set_timeofday((6000 % 24000) / 24000)
-			minetest.chat_send_player(player_name,
-				S("Time of day set to 6am"))
-		else
-			minetest.chat_send_player(player_name,
-				S("You don't have the settime privilege!"))
-			ui.set_inventory_formspec(player, ui.current_page[player_name])
-		end
-	end,
-	condition = function(player)
-		return minetest.check_player_privs(player:get_player_name(), {settime=true})
-	end,
-})
+-- ui.register_button("misc_set_day", {
+-- 	type = "image",
+-- 	image = "ui_sun_icon.png",
+-- 	tooltip = S("Set time to day"),
+-- 	hide_lite=true,
+-- 	action = function(player)
+-- 		local player_name = player:get_player_name()
+-- 		if minetest.check_player_privs(player_name, {settime=true}) then
+-- 			minetest.sound_play("birds",
+-- 					{to_player=player_name, gain = 1.0})
+-- 			minetest.set_timeofday((6000 % 24000) / 24000)
+-- 			minetest.chat_send_player(player_name,
+-- 				S("Time of day set to 6am"))
+-- 		else
+-- 			minetest.chat_send_player(player_name,
+-- 				S("You don't have the settime privilege!"))
+-- 			ui.set_inventory_formspec(player, ui.current_page[player_name])
+-- 		end
+-- 	end,
+-- 	condition = function(player)
+-- 		return minetest.check_player_privs(player:get_player_name(), {settime=true})
+-- 	end,
+-- })
 
-ui.register_button("misc_set_night", {
-	type = "image",
-	image = "ui_moon_icon.png",
-	tooltip = S("Set time to night"),
-	hide_lite=true,
-	action = function(player)
-		local player_name = player:get_player_name()
-		if minetest.check_player_privs(player_name, {settime=true}) then
-			minetest.sound_play("owl",
-					{to_player=player_name, gain = 1.0})
-			minetest.set_timeofday((21000 % 24000) / 24000)
-			minetest.chat_send_player(player_name,
-					S("Time of day set to 9pm"))
-		else
-			minetest.chat_send_player(player_name,
-					S("You don't have the settime privilege!"))
-			ui.set_inventory_formspec(player, ui.current_page[player_name])
-		end
-	end,
-	condition = function(player)
-		return minetest.check_player_privs(player:get_player_name(), {settime=true})
-	end,
-})
+-- ui.register_button("misc_set_night", {
+-- 	type = "image",
+-- 	image = "ui_moon_icon.png",
+-- 	tooltip = S("Set time to night"),
+-- 	hide_lite=true,
+-- 	action = function(player)
+-- 		local player_name = player:get_player_name()
+-- 		if minetest.check_player_privs(player_name, {settime=true}) then
+-- 			minetest.sound_play("owl",
+-- 					{to_player=player_name, gain = 1.0})
+-- 			minetest.set_timeofday((21000 % 24000) / 24000)
+-- 			minetest.chat_send_player(player_name,
+-- 					S("Time of day set to 9pm"))
+-- 		else
+-- 			minetest.chat_send_player(player_name,
+-- 					S("You don't have the settime privilege!"))
+-- 			ui.set_inventory_formspec(player, ui.current_page[player_name])
+-- 		end
+-- 	end,
+-- 	condition = function(player)
+-- 		return minetest.check_player_privs(player:get_player_name(), {settime=true})
+-- 	end,
+-- })
 
 ui.register_button("clear_inv", {
 	type = "image",

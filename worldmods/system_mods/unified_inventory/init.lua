@@ -164,9 +164,9 @@ dofile(modpath.."/callbacks.lua")
 dofile(modpath.."/match_craft.lua")
 dofile(modpath.."/register.lua")
 
-if minetest.settings:get_bool("unified_inventory_bags") ~= false then
-	dofile(modpath.."/bags.lua")
-end
+-- if minetest.settings:get_bool("unified_inventory_bags") ~= false then
+-- 	dofile(modpath.."/bags.lua")
+-- end
 
 dofile(modpath.."/item_names.lua")
 dofile(modpath.."/waypoints.lua")
