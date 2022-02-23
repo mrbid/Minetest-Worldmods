@@ -27,7 +27,6 @@ minetest.register_node("my_garage_door:garage_door", {
 	on_place = function(itemstack, placer, pointed_thing)
 	local p = pointed_thing.above
 	local p2 = minetest.dir_to_facedir(placer:get_look_dir())
-print(p2)
 		minetest.set_node(p, {name = "my_garage_door:garage_door",param2 = p2})
 		minetest.set_node({x=p.x,y=p.y+1,z=p.z}, {name = "my_garage_door:garage_door_top",param2 = p2})
 	end,
