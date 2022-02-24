@@ -34,4 +34,4 @@ end
 dofile(path .. "/lucky_block.lua")
 
 
-print (S("[MOD] Mobs Redo NPCs loaded"))
+minetest.log(S("[MOD] Mobs Redo NPCs loaded"))

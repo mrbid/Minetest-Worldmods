@@ -8,4 +8,4 @@ dofile(minetest.get_modpath("more_chests").."/models/wifi.lua")
 
 dofile(minetest.get_modpath("more_chests").."/utils/aliases.lua")
 
-print ("[MOD] more_chests loaded")
+minetest.log("[MOD] more_chests loaded")
