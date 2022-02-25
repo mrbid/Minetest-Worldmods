@@ -41,6 +41,11 @@ if minetest.get_modpath("lavastuff") then
 	ingots.register_ingots("lavastuff:ingot", "ingot_lava.png", conf.is_big)
 end
 
+if minetest.get_modpath("galaxium") then
+	ingots.register_ingots("galaxium:galaxium_ingot", "ingot_galaxium.png", conf.is_big)
+	ingots.register_ingots("galaxium:unobtarium_ingot", "ingot_unobtarium.png", conf.is_big)
+end
+
 if minetest.get_modpath("ethereal") then
 	ingots.register_ingots("ethereal:crystal_ingot", "ingot_crystal.png", conf.is_big)
 end
