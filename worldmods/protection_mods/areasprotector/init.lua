@@ -32,9 +32,9 @@ local height_small = minetest.settings:get("areasprotector_height_small")
 					
 height_small = tonumber(height_small) or 7
 					
-local max_protectors = minetest.settings:get("areasprotector_max_protectors") or 16
+local max_protectors = minetest.settings:get("areasprotector_max_protectors") or 64
 
-max_protectors = tonumber(max_protectors) or 16
+max_protectors = tonumber(max_protectors) or 64
 
 local function remove_display(pos)
 	local objs = minetest.get_objects_inside_radius(pos, 0.5)
