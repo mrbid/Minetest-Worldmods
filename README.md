@@ -41,6 +41,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - `worldmods/furnishings_mods/homedecor_modpack/homedecor_seating/sofas.lua` and `armchairs.lua` could do with some proper sit code to change the player animation.
 - extend hotbar slot icon images from 23 to 32
 - `snowcone` mod has been removed because the machine cannot be 'dug' when full of juice - but also tends to never fully empty at times.
+- `automobiles` and `automobiles2` mods need their first-person view eye offsets corrected but when I do this the rotation pivots around the origin of the car model for some reason?
 
 ## DONE
 ~~- transparency support needs to be added to `mymillwork` for the caverealms glow crystal cuts~~<br>
