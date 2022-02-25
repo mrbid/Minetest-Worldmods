@@ -32,9 +32,9 @@ local height_small = minetest.settings:get("areasprotector_height_small")
 					
 height_small = tonumber(height_small) or 7
 					
-local max_protectors = minetest.settings:get("areasprotector_max_protectors") or 16
+local max_protectors = minetest.settings:get("areasprotector_max_protectors") or 64
 
-max_protectors = tonumber(max_protectors) or 16
+max_protectors = tonumber(max_protectors) or 64
 
 local function remove_display(pos)
 	local objs = minetest.get_objects_inside_radius(pos, 0.5)
@@ -176,10 +176,10 @@ minetest.register_node("areasprotector:protector_large", {
 		return on_place(itemstack, player, pointed_thing, radius_large, height_large, "large")
 	end,
 	after_dig_node = function(pos, oldnode, oldmetadata, digger)
-		after_dig(pos, oldnode, oldmetadata, digger, "large")
+		return after_dig(pos, oldnode, oldmetadata, digger, "large")
 	end,
 	on_punch = function(pos, node, puncher)
-		on_punch(pos, node, puncher, "large")
+		return on_punch(pos, node, puncher, "large")
 	end
 })
 
@@ -198,10 +198,10 @@ minetest.register_node("areasprotector:protector_small", {
 		return on_place(itemstack, player, pointed_thing, radius_small, height_small, "small")
 	end,
 	after_dig_node = function(pos, oldnode, oldmetadata, digger)
-		after_dig(pos, oldnode, oldmetadata, digger, "small")
+		return after_dig(pos, oldnode, oldmetadata, digger, "small")
 	end,
 	on_punch = function(pos, node, puncher)
-		on_punch(pos, node, puncher, "small")
+		return on_punch(pos, node, puncher, "small")
 	end
 })
 
@@ -286,5 +286,5 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_alias("areasprotector:protector",    "areasprotector:protector_large")
-minetest.register_alias("areasprotector:display_node", "areasprotector:display_node_large")
+minetest.register_alias("areasprotector:protector",    "areasprotector:protector_small")
+minetest.register_alias("areasprotector:display_node", "areasprotector:display_node_small")

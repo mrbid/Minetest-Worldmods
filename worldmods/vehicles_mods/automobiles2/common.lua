@@ -266,6 +266,18 @@ function automobile2_on_punch(entity, puncher)
 	end
 end
 
+-- function automobile2_object_attach(entity, player, pos)
+-- 	player:set_attach(entity.object, "", pos, {x=0, y=0, z=0})
+-- 	player:set_eye_offset(
+-- 		{x = pos.x, y = entity.rider_eye_offset.y, z = pos.z},
+-- 		{x = entity.rider_eye_offset.x, y = entity.rider_eye_offset.y+1, z = -40}
+-- 	)
+-- 	default.player_attached[player:get_player_name()] = true
+-- 	minetest.after(0.2, function() -- we must do this because of bug
+-- 		default.player_set_animation(player, "sit" , 1)
+-- 	end)
+-- end
+
 function automobile2_object_attach(entity, player, pos)
 	player:set_attach(entity.object, "", pos, {x=0, y=0, z=0})
 	player:set_eye_offset(
