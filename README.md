@@ -51,11 +51,6 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 ~~- `ingots_extended` needs metal groups for dig sounds, also needs terumet support, possibly even the other xtraores mod support, which could be confusing because they both share the same name.~~<br>
 ~~- technic crafting types `freezing`, `alloying`, `extracting`, `compressing`, `grinding`, `transmuting`, `separating`, could do with icons for the i3 inventory.~~
 
-## DEFERRED
-- personal log could be registered as a tab in the i3 inventory, but the personal log formspec wont work by default - needs to be looked at.
-- could add an icon to invoke the `/helpform` ui in i3 inventory.
-- could also add an icon to invoke the `/mail` ui in i3 inventory.
-
 ## Notes
 To load all these mods at the same time you will need to modify your minetest server:<br>
 `<Test_User> src/mapnode.h:45, change "#define MAX_REGISTERED_CONTENT *" to "#define MAX_REGISTERED_CONTENT 0xf800U"`
