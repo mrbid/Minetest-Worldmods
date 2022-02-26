@@ -274,7 +274,7 @@ minetest.register_craft({
 minetest.register_tool("armplus:parka", {
 	description = "Parka",
 	inventory_image = "armplus_parka_inv.png",
-	groups = {armor_torso=6, armor_heal=0, armor_use=1000},
+	groups = {armor_torso=6, armor_heal=0, armor_use=9900},
 	wear = 0,
 })
 
