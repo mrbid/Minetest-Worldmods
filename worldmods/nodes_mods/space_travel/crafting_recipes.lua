@@ -427,7 +427,7 @@ minetest.register_craft({
 --Sandstone recipes
 
 minetest.register_craft({
-	output = "space_travel:mars_sandstone 4",
+	output = "space_travel:mars_sandstone 1",
 	recipe = {
 		{"space_travel:mars_sand", "space_travel:mars_sand"},
 		{"space_travel:mars_sand", "space_travel:mars_sand"},
@@ -460,7 +460,7 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "space_travel:minthe_sandstone 4",
+	output = "space_travel:minthe_sandstone 1",
 	recipe = {
 		{"space_travel:minthe_sand", "space_travel:minthe_sand"},
 		{"space_travel:minthe_sand", "space_travel:minthe_sand"},
