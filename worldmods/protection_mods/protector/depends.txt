@@ -3,5 +3,3 @@ intllib?
 lucky_block?
 mesecons_mvps?
 playerfactions?
-mcl_core?
-mcl_formspec?
