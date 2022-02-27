@@ -53,7 +53,7 @@ end
 minetest.register_on_joinplayer(function(player)
 	local player_name = player:get_player_name()
 	local pp = player:getpos()
-	writeLog("[LOGIN] " .. player_name .. " at " .. string.format("%.2f", pp.x) .. ", " .. string.format("%.2f", pp.y) .. ", " .. string.format("%.2f", pp.z));
+	writeLog("[LOGIN] " .. player_name .. " [" .. minetest.get_player_ip(player_name) .. "] at " .. string.format("%.2f", pp.x) .. ", " .. string.format("%.2f", pp.y) .. ", " .. string.format("%.2f", pp.z));
 end)
 minetest.register_on_leaveplayer(function(player)
 	local player_name = player:get_player_name()
