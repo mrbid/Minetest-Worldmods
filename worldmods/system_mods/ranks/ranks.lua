@@ -32,11 +32,11 @@ ranks.register("master-builder",{
 		tp_tpc = true,
 		creative = true,
 		settime = true,
-		areas_high_limit = true
-		worldedit = true
-		kick = true
-		teleport = true
-		jail = true
+		areas_high_limit = true,
+		worldedit = true,
+		kick = true,
+		teleport = true,
+		jail = true,
 		invhack = true,
 	},
 })
