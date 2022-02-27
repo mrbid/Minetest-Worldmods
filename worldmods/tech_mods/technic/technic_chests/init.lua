@@ -26,6 +26,7 @@ technic.chests.colors = {
 }
 
 function technic.chests.change_allowed(pos, player, owned, protected)
+	if player == nil then return false end
 	if owned then
 		if minetest.is_player(player) and not default.can_interact_with_node(player, pos) then
 			return false
