@@ -36,7 +36,6 @@ ranks.register("master-builder",{
 		worldedit = true
 		kick = true
 		teleport = true
-		bring = true
 		jail = true
 		invhack = true,
 	},
