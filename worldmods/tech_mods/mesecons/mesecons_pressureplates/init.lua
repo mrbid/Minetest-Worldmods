@@ -8,7 +8,7 @@ local pp_box_on = {
 	fixed = { -7/16, -8/16, -7/16, 7/16, -7.5/16, 7/16 },
 }
 
-local function pp_on_timer(pos)
+local function pp_on_timer(pos, elapsed)
 	local node = minetest.get_node(pos)
 	local basename = minetest.registered_nodes[node.name].pressureplate_basename
 
@@ -17,6 +17,7 @@ local function pp_on_timer(pos)
 	if not basename then return end
 
 	local objs   = minetest.get_objects_inside_radius(pos, 1)
+	local two_below = vector.add(pos, vector.new(0, -2, 0))
 
 	if objs[1] == nil and node.name == basename .. "_on" then
 		minetest.set_node(pos, {name = basename .. "_off"})
@@ -45,6 +46,7 @@ end
 -- sounds:	sound table
 
 function mesecon.register_pressure_plate(basename, description, textures_off, textures_on, image_w, image_i, recipe, groups, sounds)
+	local groups_off, groups_on
 	if not groups then
 		groups = {}
 	end
