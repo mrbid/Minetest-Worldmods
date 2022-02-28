@@ -1,46 +1,16 @@
 
-local c_air = minetest.get_content_id("air")
-
-function jumpdrive.clear_area(pos1, pos2)
-	local manip = minetest.get_voxel_manip()
-	local e1, e2 = manip:read_from_map(pos1, pos2)
-	local source_area = VoxelArea:new({MinEdge=e1, MaxEdge=e2})
-	local source_data = manip:get_data()
-
-
-	for z=pos1.z, pos2.z do
-	for y=pos1.y, pos2.y do
-	for x=pos1.x, pos2.x do
-
-		local source_index = source_area:index(x, y, z)
-		source_data[source_index] = c_air
-	end
-	end
-	end
-
-	manip:set_data(source_data)
-	manip:write_to_map()
-
-	-- remove metadata
-	local target_meta_pos_list = minetest.find_nodes_with_meta(pos1, pos2)
-	for _,target_pos in pairs(target_meta_pos_list) do
-		local target_meta = minetest.get_meta(target_pos)
-		target_meta:from_table(nil)
-	end
-end
-
-function jumpdrive.sanitize_coord(coord)
+jumpdrive.sanitize_coord = function(coord)
 	return math.max( math.min( coord, 31000 ), -31000 )
 end
 
 -- get pos object from pos
-function jumpdrive.get_meta_pos(pos)
+jumpdrive.get_meta_pos = function(pos)
 	local meta = minetest.get_meta(pos);
 	return {x=meta:get_int("x"), y=meta:get_int("y"), z=meta:get_int("z")}
 end
 
 -- set pos object from pos
-function jumpdrive.set_meta_pos(pos, target)
+jumpdrive.set_meta_pos = function(pos, target)
 	local meta = minetest.get_meta(pos);
 	meta:set_int("x", target.x)
 	meta:set_int("y", target.y)
@@ -48,23 +18,23 @@ function jumpdrive.set_meta_pos(pos, target)
 end
 
 -- get offset from meta
-function jumpdrive.get_radius(pos)
+jumpdrive.get_radius = function(pos)
 	local meta = minetest.get_meta(pos);
 	return math.max(math.min(meta:get_int("radius"), jumpdrive.config.max_radius), 1)
 end
 
 -- calculates the power requirements for a jump
-function jumpdrive.calculate_power(radius, distance, sourcePos, targetPos)
+jumpdrive.calculate_power = function(radius, distance, sourcePos, targetPos)
 	return 10 * distance * radius
 end
 
 
 -- preflight check, for overriding
-function jumpdrive.preflight_check(source, destination, radius, playername)
+jumpdrive.preflight_check = function(source, destination, radius, playername)
 	return { success=true }
 end
 
-function jumpdrive.reset_coordinates(pos)
+jumpdrive.reset_coordinates = function(pos)
 	local meta = minetest.get_meta(pos)
 
 	meta:set_int("x", pos.x)

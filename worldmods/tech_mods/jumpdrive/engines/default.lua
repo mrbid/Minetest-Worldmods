@@ -71,6 +71,9 @@ minetest.register_node("jumpdrive:engine", {
 	end,
 
 	can_dig = function(pos,player)
+		if player == nil then
+			return false
+		end
 		local meta = minetest.get_meta(pos);
 		local inv = meta:get_inventory()
 		local name = player:get_player_name()
@@ -204,29 +207,20 @@ minetest.register_node("jumpdrive:engine", {
 	end,
 
 	-- inventory protection
-	allow_metadata_inventory_move = function(pos, _, _, _, _, count, player)
-		if (not player)
-			or (not player:is_player())
-			or minetest.is_protected(pos, player:get_player_name())
-		then return 0 end
-
-		return count
-	end,
-
 	allow_metadata_inventory_take = function(pos, listname, index, stack, player)
-		if (not player)
-			or (not player:is_player())
-			or minetest.is_protected(pos, player:get_player_name())
-		then return 0 end
+		if player and player:is_player() and minetest.is_protected(pos, player:get_player_name()) then
+			-- protected
+			return 0
+		end
 
 		return stack:get_count()
 	end,
 
 	allow_metadata_inventory_put = function(pos, listname, index, stack, player)
-		if (not player)
-			or (not player:is_player())
-			or minetest.is_protected(pos, player:get_player_name())
-		then return 0 end
+		if player and player:is_player() and minetest.is_protected(pos, player:get_player_name()) then
+			-- protected
+			return 0
+		end
 
 		return stack:get_count()
 	end,
@@ -240,12 +234,6 @@ minetest.register_node("jumpdrive:engine", {
 
 	on_metadata_inventory_take = function(pos, listname)
 		if listname == "upgrade" then
-			jumpdrive.upgrade.calculate(pos)
-		end
-	end,
-
-	on_metadata_inventory_move = function(pos, from_list, _, to_list)
-		if from_list == "upgrade" or to_list == "upgrade" then
 			jumpdrive.upgrade.calculate(pos)
 		end
 	end,
