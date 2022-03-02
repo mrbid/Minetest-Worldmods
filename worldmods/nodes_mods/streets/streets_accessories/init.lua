@@ -99,7 +99,7 @@ minetest.register_node("streets:fence_chainlink_door_open", {
 	drawtype = "nodebox",
 	tiles = { "streets_fence_chainlink_door.png" },
 	sunlight_propagates = true,
-	groups = { snappy = 1, wall = 1, not_in_creative_inventory = 1 },
+	groups = { snappy = 1, wall = 1, not_in_creative_inventory = 0 },
 	node_box = {
 		type = "fixed",
 		fixed = {

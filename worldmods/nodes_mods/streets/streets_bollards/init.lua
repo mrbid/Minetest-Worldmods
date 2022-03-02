@@ -87,7 +87,7 @@ minetest.register_node("streets:bollard_steel_automatic_up", {
 
 minetest.register_node("streets:bollard_steel_automatic_down", {
 	tiles = { "streets_bollard_driver_top.png", "streets_bollard_driver_top.png", "streets_bollard_automatic_side.png" },
-	groups = { cracky = 1, not_in_creative_inventory = 1 },
+	groups = { cracky = 1, not_in_creative_inventory = 0 },
 	drop = "streets:bollard_steel_automatic_up",
 	paramtype = "light",
 	drawtype = "nodebox",
@@ -140,7 +140,7 @@ minetest.register_node("streets:bollard_steel_manual_down", {
 	tiles = {
 		"streets_bollard_manual_side_down.png", "streets_bollard_manual_side_down.png^[transformR180", "streets_bollard_manual_side_down.png^[transformR270", "streets_bollard_manual_side_down.png^[transformR90", "streets_bollard_manual_top.png",
 	},
-	groups = { cracky = 1, not_in_creative_inventory = 1 },
+	groups = { cracky = 1, not_in_creative_inventory = 0 },
 	drop = "streets:bollard_steel_manual_up",
 	paramtype = "light",
 	paramtype2 = "facedir",

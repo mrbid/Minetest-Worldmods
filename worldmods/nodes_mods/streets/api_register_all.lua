@@ -35,7 +35,7 @@ local register_sign_node = function(friendlyname, name, tiles, type, inventory_i
 	def.paramtype2 = "facedir"
 	def.tiles = tiles
 	def.light_source = light_source
-	def.groups = { cracky = 3, not_in_creative_inventory = 1, sign = 1 }
+	def.groups = { cracky = 3, not_in_creative_inventory = 0, sign = 1 }
 	def.drop = "streets:" .. name
 	if type == "minetest" then
 		def.drawtype = "nodebox"
@@ -193,7 +193,7 @@ local register_marking_nodes = function(surface_friendlyname, surface_name, surf
 
 		minetest.register_tool(":streets:tool_" .. name:gsub("{color}", colorname:lower()) .. r, {
 			description = "Marking Tool: " .. friendlyname .. rotation_friendly .. " " .. colorname,
-			groups = { not_in_creative_inventory = 1 },
+			groups = { not_in_creative_inventory = 0 },
 			inventory_image = tex,
 			wield_image = tex,
 			on_place = function(itemstack, placer, pointed_thing)
@@ -250,7 +250,7 @@ local register_marking_nodes = function(surface_friendlyname, surface_name, surf
 			drawtype = "nodebox",
 			paramtype = "light",
 			paramtype2 = "facedir",
-			groups = { snappy = 3, attached_node = 1, oddly_breakable_by_hand = 1, not_in_creative_inventory = 1 },
+			groups = { snappy = 3, attached_node = 1, oddly_breakable_by_hand = 1, not_in_creative_inventory = 0 },
 			sunlight_propagates = true,
 			walkable = false,
 			inventory_image = tex,
@@ -277,7 +277,7 @@ local register_marking_nodes = function(surface_friendlyname, surface_name, surf
 		tiles[5] = tiles[5] .. "^(" .. tex .. ")^[transformR180"
 		tiles[6] = tiles[6] .. "^(" .. tex .. ")"
 		local groups = streets.copytable(surface_groups)
-		groups.not_in_creative_inventory = 1
+		groups.not_in_creative_inventory = 0
 		minetest.register_node(":streets:mark_" .. name:gsub("{color}", colorname:lower()) .. r .. "_on_" .. surface_name, {
 			description = surface_friendlyname .. " with Marking: " .. friendlyname .. rotation_friendly .. " " .. colorname,
 			groups = groups,

@@ -316,7 +316,7 @@ minetest.register_node("streets:roadwork_blinking_light_on", {
 	drawtype = "nodebox",
 	tiles = { "streets_roadwork_blinking_light_top.png", "streets_roadwork_blinking_light_top.png", "streets_roadwork_blinking_light_on.png" },
 	sunlight_propagates = true,
-	groups = { cracky = 1, not_in_creative_inventory = 1 },
+	groups = { cracky = 1, not_in_creative_inventory = 0 },
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -370,7 +370,7 @@ minetest.register_node("streets:roadwork_delineator_top", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = { cracky = 1, not_in_creative_inventory = 1 },
+	groups = { cracky = 1, not_in_creative_inventory = 0 },
 	light_source = 5,
 	node_box = {
 		type = "fixed",
@@ -458,7 +458,7 @@ minetest.register_node("streets:roadwork_delineator_light_off_top", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = { cracky = 1, not_in_creative_inventory = 1 },
+	groups = { cracky = 1, not_in_creative_inventory = 0 },
 	light_source = 5,
 	on_timer = function(pos, elapsed)
 		minetest.set_node(pos, { name = "streets:roadwork_delineator_light_on_top", param2 = minetest.get_node(pos).param2 })
@@ -491,7 +491,7 @@ minetest.register_node("streets:roadwork_delineator_light_on_top", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = { cracky = 1, not_in_creative_inventory = 1 },
+	groups = { cracky = 1, not_in_creative_inventory = 0 },
 	light_source = 12,
 	on_timer = function(pos, elapsed)
 		minetest.set_node(pos, { name = "streets:roadwork_delineator_light_off_top", param2 = minetest.get_node(pos).param2 })

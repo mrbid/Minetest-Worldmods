@@ -92,7 +92,7 @@ minetest.register_node("streets:rrxing_top", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = { cracky = 3, not_in_creative_inventory = 1 },
+	groups = { cracky = 3, not_in_creative_inventory = 0 },
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -121,7 +121,7 @@ minetest.register_node("streets:rrxing_middle_right_on", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = { not_in_creative_inventory = 1 },
+	groups = { not_in_creative_inventory = 0 },
 	light_source = 12,
 	node_box = {
 		type = "fixed",
@@ -150,7 +150,7 @@ minetest.register_node("streets:rrxing_middle_right_off", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = { not_in_creative_inventory = 1 },
+	groups = { not_in_creative_inventory = 0 },
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -179,7 +179,7 @@ minetest.register_node("streets:rrxing_middle_left_on", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	light_source = 12,
-	groups = { not_in_creative_inventory = 1 },
+	groups = { not_in_creative_inventory = 0 },
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -207,7 +207,7 @@ minetest.register_node("streets:rrxing_middle_left_off", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = { not_in_creative_inventory = 1 },
+	groups = { not_in_creative_inventory = 0 },
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -236,7 +236,7 @@ minetest.register_node("streets:rrxing_middle_center_on", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	light_source = 12,
-	groups = { not_in_creative_inventory = 1 },
+	groups = { not_in_creative_inventory = 0 },
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -270,7 +270,7 @@ minetest.register_node("streets:rrxing_middle_center_off", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = { not_in_creative_inventory = 1 },
+	groups = { not_in_creative_inventory = 0 },
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -303,7 +303,7 @@ minetest.register_node("streets:rrxing_middle", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = { cracky = 3, not_in_creative_inventory = 1 },
+	groups = { cracky = 3, not_in_creative_inventory = 0 },
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -693,7 +693,7 @@ minetest.register_node("streets:rrgate_mech_up", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = { cracky = 1, not_in_creative_inventory = 1 },
+	groups = { cracky = 1, not_in_creative_inventory = 0 },
 	drop = "streets:rrgate_mech_down",
 	node_box = {
 		type = "fixed",
@@ -766,7 +766,7 @@ minetest.register_node("streets:rrgate_mech_bottom", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = { cracky = 1, not_in_creative_inventory = 1 },
+	groups = { cracky = 1, not_in_creative_inventory = 0 },
 	drop = "streets:rrgate_mech_down",
 	node_box = {
 		type = "fixed",
@@ -862,7 +862,7 @@ minetest.register_node("streets:rrgate_darkfirst", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = { cracky = 1, not_in_creative_inventory = 1 },
+	groups = { cracky = 1, not_in_creative_inventory = 0 },
 	drop = "streets:rrgate_lightfirst",
 	node_box = {
 		type = "fixed",
@@ -894,7 +894,7 @@ minetest.register_node("streets:rrgate_end", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = { cracky = 1, not_in_creative_inventory = 1 },
+	groups = { cracky = 1, not_in_creative_inventory = 0 },
 	drop = "streets:rrgate_lightfirst",
 	node_box = {
 		type = "fixed",
@@ -926,7 +926,7 @@ minetest.register_node("streets:rrgate_up", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = { cracky = 1, not_in_creative_inventory = 1 },
+	groups = { cracky = 1, not_in_creative_inventory = 0 },
 	drop = "streets:rrgate_lightfirst",
 	node_box = {
 		type = "fixed",

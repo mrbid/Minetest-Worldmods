@@ -91,7 +91,7 @@ for _, v in pairs({ "green", "yellow", "red" }) do
 			local meta = minetest.get_meta(pos)
 			meta:set_string("formspec", "field[channel;Channel;${channel}]")
 		end,
-		groups = { cracky = 3, not_in_creative_inventory = 1 },
+		groups = { cracky = 3, not_in_creative_inventory = 0 },
 		light_source = 11,
 		node_box = {
 			type = "fixed",
