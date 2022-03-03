@@ -58,7 +58,7 @@ minetest.register_craftitem("hawk:chocolate_coin", {
 })
 
 minetest.register_craft({
-	output = "hawk:chocolate_coin",
+	output = "hawk:chocolate_coin 128",
 	recipe = {
 		{"bbq:foil", "farming:chocolate_dark", "technic:gold_dust"},
 	}
