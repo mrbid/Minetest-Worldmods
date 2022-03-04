@@ -1,0 +1,11 @@
+-------------------------------------
+------------Configuration------------
+-------------------------------------
+
+--Sets the amount of variations (shades) for each color. (not for white, grey, and black)
+--Can only be set to 9, 16, 25, 64, 81, 144, 256, or 289. Will be automatically set to '64' if set to the wrong number.
+--Remember more variations takes much longer to load.
+bakedclayaddition.color_variations = 64
+
+--If set to true, adds stairs and slabs.
+bakedclayaddition.stairs_and_slabs = true
