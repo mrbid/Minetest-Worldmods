@@ -410,11 +410,6 @@ programs = {
 		}
 	},
 
-	{ suffix  = "mymeshnodes_peak",
-		model = "mymeshnodes_peak.obj",
-		desc  = S("Peak")
-	},
-
 
 -- technic cnc
 	{ suffix  = "technic_cnc_stick",
