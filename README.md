@@ -127,64 +127,64 @@ To trigger this you would add a wooden table next to an acacia table for example
 Issue filed: https://github.com/Gerold55/ma_pops_furniture/issues/11
 
 ## Links which can help you learn about the various mods on this server.
-Technic
+Technic<br>
 https://github.com/minetest-mods/technic/blob/master/manual.md
 
-Digilines
+Digilines<br>
 https://github.com/mt-mods/technic/blob/master/technic/doc/digilines.md
 
-LUA Controller
+LUA Controller<br>
 https://mesecons.net/luacontroller/
 
-Mesecons
+Mesecons<br>
 https://mesecons.net/items.html
 https://mesecons.net/uberi/projects/MeseconsBasics/index.html
 https://mesecons.net/digilines.html
 https://wiki.minetest.net/Mods/Mesecons
 
-More Mesecons
+More Mesecons<br>
 https://github.com/minetest-mods/MoreMesecons
 https://www.reddit.com/r/Minetest/comments/4gr9ua/video_mod_moremesecons/
 
-Stealth Nodes:
+Stealth Nodes<br>
 https://github.com/acmgit/mesecons_stealthnode
 
-Digistuff
+Digistuff<br>
 https://content.minetest.net/packages/cheapie/digistuff/
 
-Digiterms
+Digiterms<br>
 https://forum.minetest.net/viewtopic.php?t=21518
 
-Digtron:
+Digtron<br>
 https://wiki.minetest.net/Mods/digtron
 https://content.minetest.net/packages/FaceDeer/digtron/
 
-RC Digilines
+RC Digilines<br>
 https://forum.minetest.net/viewtopic.php?f=9&t=16982&p=394810
 
-Digiline Stuff
+Digiline Stuff<br>
 https://forum.minetest.net/viewtopic.php?t=13092
 
-Digiterms
+Digiterms<br>
 https://forum.minetest.net/viewtopic.php?t=21518
 
-Digicontrol
+Digicontrol<br>
 https://github.com/OgelGames/digicontrol
 https://content.minetest.net/packages/OgelGames/digicontrol/
 
-Compresor
+Compresor<br>
 https://github.com/mflink3012/minetest-compressor
 
-Jumpdrive
+Jumpdrive<br>
 https://forum.minetest.net/viewtopic.php?t=20073
 
-Digipherals (REMOVED)
+Digipherals (REMOVED)<br>
 https://forum.minetest.net/viewtopic.php?f=9&t=24246&p=394809
 
-Meshnodes (REMOVED, go to VF-MESHNODE)
+Meshnodes (REMOVED, go to VF-MESHNODE)<br>
 https://forum.minetest.net/viewtopic.php?t=8059
 
-Minetest Developer Resources
+Minetest Developer Resources<br>
 https://github.com/minetest/minetest/blob/master/doc/lua_api.txt
 https://minetest.org/modbook/lua_api.html
 https://rubenwardy.com/minetest_modding_book/en
