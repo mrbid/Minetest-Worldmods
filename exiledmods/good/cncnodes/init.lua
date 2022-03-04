@@ -10,6 +10,413 @@ end
 -- Define slope boxes for the various nodes
 -------------------------------------------
 programs = {
+-- mymillwork
+	{ suffix = "crownmould",
+	model  = "mymillwork_mach1.obj",
+	desc  = "Crown Mould",
+	sbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, -0.5, 0.5, -0.375, 0.5},
+						{-0.5, -0.375, 0.125, 0.5, -0.125, 0.375},
+						{-0.5, -0.375, 0.375, 0.5, 0.5, 0.5},
+			}
+	},
+	cbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, -0.5, 0.5, -0.375, 0.5},
+						{-0.5, -0.375, 0.125, 0.5, -0.125, 0.375},
+						{-0.5, -0.375, 0.375, 0.5, 0.5, 0.5},
+			}
+	},
+	},
+
+	{ suffix = "crownmould_ic",
+	model  = "mymillwork_mach2.obj",
+	desc  = "Crown Mould IC",
+	sbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, -0.5, 0.5, -0.375, 0.5},
+						{-0.5, -0.375, 0.125, 0.375, -0.125, 0.375},
+						{0.125, -0.375, -0.5, 0.375, -0.125, 0.125},
+						{-0.5, -0.375, 0.375, 0.5, 0.5, 0.5},
+						{0.375, -0.375, -0.5, 0.5, 0.5, 0.375},
+			}
+	},
+	cbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, -0.5, 0.5, -0.375, 0.5},
+						{-0.5, -0.375, 0.125, 0.375, -0.125, 0.375},
+						{0.125, -0.375, -0.5, 0.375, -0.125, 0.125},
+						{-0.5, -0.375, 0.375, 0.5, 0.5, 0.5},
+						{0.375, -0.375, -0.5, 0.5, 0.5, 0.375},
+			}
+	},
+	},
+
+	{ suffix = "crownmould_oc",
+	model  = "mymillwork_mach3.obj",
+	desc  = "Crown Mould OC",
+	sbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, -0.5, 0.5, -0.375, 0.5},
+						{-0.5, -0.375, 0.125, -0.125, -0.125, 0.5},
+						{-0.5, -0.125, 0.375, -0.375, 0.5, 0.5},
+			}
+	},
+	cbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, -0.5, 0.5, -0.375, 0.5},
+						{-0.5, -0.375, 0.125, -0.125, -0.125, 0.5},
+						{-0.5, -0.125, 0.375, -0.375, 0.5, 0.5},
+			}
+	},
+	},
+
+	{ suffix = "crownmould_beam",
+	model  = "mymillwork_mach4.obj",
+	desc  = "Crown Mould with Beam",
+	sbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, -0.5, 0.5, -0.375, 0.5},
+						{-0.5, -0.375, 0.125, 0.5, -0.125, 0.375},
+						{-0.25, -0.375, -0.5, 0.25, -0.1875, 0.125},
+						{-0.5, -0.375, 0.375, 0.5, 0.5, 0.5},
+			}
+	},
+	cbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, -0.5, 0.5, -0.375, 0.5},
+						{-0.5, -0.375, 0.125, 0.5, -0.125, 0.375},
+						{-0.25, -0.375, -0.5, 0.25, -0.1875, 0.125},
+						{-0.5, -0.375, 0.375, 0.5, 0.5, 0.5},
+			}
+	},
+	},
+
+	{ suffix = "column",
+	model  = "mymillwork_mach5.obj",
+	desc  = "Column",
+	sbox   = { type = "fixed",
+			fixed = {{-0.5,-0.5,-0.5,0.5,0.5,0.5},
+			}
+	},
+	cbox   = { type = "fixed",
+			fixed = {{-0.5,-0.5,-0.5,0.5,0.5,0.5},
+			}
+	},
+	},
+
+	{ suffix = "column_base",
+	model  = "mymillwork_mach6.obj",
+	desc  = "Column Base",
+	sbox   = { type = "fixed",
+			fixed = {{-0.5,-0.5,-0.5,0.5,0.5,0.5},
+			}
+	},
+	cbox   = { type = "fixed",
+			fixed = {{-0.5,-0.5,-0.5,0.5,0.5,0.5},
+			}
+	},
+	},
+
+	{ suffix = "column_half",
+	model  = "mymillwork_mach7.obj",
+	desc  = "Half Column",
+	sbox   = { type = "fixed",
+			fixed = {{-0.5,-0.5,0.0,0.5,0.5,0.5},
+			}
+	},
+	cbox   = { type = "fixed",
+			fixed = {{-0.5,-0.5,0.0,0.5,0.5,0.5},
+			}
+	},
+	},
+
+	{ suffix = "column_half_base",
+	model  = "mymillwork_mach8.obj",
+	desc  = "Half Column Base",
+	sbox   = { type = "fixed",
+			fixed = {{-0.5,-0.5,0.0,0.5,0.5,0.5},
+			}
+	},
+	cbox   = { type = "fixed",
+			fixed = {{-0.5,-0.5,0.0,0.5,0.5,0.5},
+			}
+	},
+	},
+
+	{ suffix = "column_half_wbeam",
+	model  = "mymillwork_mach9.obj",
+	desc  = "Half Column Base With Beam",
+	sbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, -0.5, 0.5, -0.375, 0.5},
+						{-0.5, -0.375, 0.0, 0.5, 0.5, 0.5},
+						{-0.25, -0.375, -0.5, 0.25, -0.1875, 0.0},
+			}
+	},
+	cbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, -0.5, 0.5, -0.375, 0.5},
+						{-0.5, -0.375, 0.0, 0.5, 0.5, 0.5},
+						{-0.25, -0.375, -0.5, 0.25, -0.1875, 0.0},
+			}
+	},
+	},
+
+	{ suffix = "column_quarter",
+	model  = "mymillwork_mach10.obj",
+	desc  = "Quarter Column",
+	sbox   = { type = "fixed",
+			fixed = {{-0.5,-0.5,0,0,0.5,0.5},
+			}
+	},
+	cbox   = { type = "fixed",
+			fixed = {{-0.5,-0.5,0,0,0.5,0.5},
+			}
+	},
+	},
+
+	{ suffix = "column_quarter_base",
+	model  = "mymillwork_mach11.obj",
+	desc  = "Quarter Column Base",
+	sbox   = { type = "fixed",
+			fixed = {{-0.5,-0.5,0,0,0.5,0.5},
+			}
+	},
+	cbox   = { type = "fixed",
+			fixed = {{-0.5,-0.5,0,0,0.5,0.5},
+			}
+	},
+	},
+
+	{ suffix = "column_quarter_wbase",
+	model  = "mymillwork_mach12.obj",
+	desc  = "Quarter Column Base Baseboard",
+	sbox   = { type = "fixed",
+			fixed = {{-0.5,-0.5,0,0,0.5,0.5},
+						{0.0, -0.5, 0.4375, 0.5, -0.1875, 0.5},
+						{-0.5, -0.5, -0.5, -0.4375, -0.1875, 0.0},
+			}
+	},
+	cbox   = { type = "fixed",
+			fixed = {{-0.5,-0.5,0,0,0.5,0.5},
+						{0.0, -0.5, 0.4375, 0.5, -0.1875, 0.5},
+						{-0.5, -0.5, -0.5, -0.4375, -0.1875, 0.0},
+			}
+	},
+	},
+
+	{ suffix = "column_quarter_fancybase",
+	model  = "mymillwork_mach13.obj",
+	desc  = "Quarter Column Base Fancy Baseboard",
+	sbox   = { type = "fixed",
+			fixed = {{-0.5,-0.5,0,0,0.5,0.5},
+						{0.0, -0.5, 0.3125, 0.5, 0.1875, 0.5},
+						{-0.5, -0.5, -0.5, -0.3125, 0.1875, 0.0},
+			}
+	},
+	cbox   = { type = "fixed",
+			fixed = {{-0.5,-0.5,0,0,0.5,0.5},
+						{0.0, -0.5, 0.3125, 0.5, 0.1875, 0.5},
+						{-0.5, -0.5, -0.5, -0.3125, 0.1875, 0.0},
+			}
+	},
+	},
+
+	{ suffix = "ceiling",
+	model  = "mymillwork_mach14.obj",
+	desc  = "Ceiling",
+	sbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, -0.5, 0.5, -0.4375, 0.5},
+			}
+	},
+	cbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, -0.5, 0.5, -0.4375, 0.5},
+			}
+	},
+	},
+
+	{ suffix = "ceiling_post",
+	model  = "mymillwork_mach15.obj",
+	desc  = "Ceiling with Post",
+	sbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, -0.5, 0.5, -0.4375, 0.5},
+						{-0.125, -0.4375, -0.125, 0.125, 0.5, 0.125},
+			}
+	},
+	cbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, -0.5, 0.5, -0.4375, 0.5},
+						{-0.125, -0.4375, -0.125, 0.125, 0.5, 0.125},
+			}
+	},
+	},
+
+	{ suffix = "beam",
+	model  = "mymillwork_mach16.obj",
+	desc  = "Beam",
+	sbox   = { type = "fixed",
+			fixed = {{-0.25, -0.5, -0.5, 0.25, -0.1875, 0.5},
+			}
+	},
+	cbox   = { type = "fixed",
+			fixed = {{-0.25, -0.5, -0.5, 0.25, -0.1875, 0.5},
+			}
+	},
+	},
+
+	{ suffix = "beam_t",
+	model  = "mymillwork_mach17.obj",
+	desc  = "Beam T",
+	sbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, -0.25, -0.25, -0.1875, 0.25},
+						{-0.25, -0.5, -0.5, 0.25, -0.1875, 0.5},
+						{0.25, -0.5, -0.25, 0.5, -0.1875, 0.25},
+			}
+	},
+	cbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, -0.25, -0.25, -0.1875, 0.25},
+						{-0.25, -0.5, -0.5, 0.25, -0.1875, 0.5},
+						{0.25, -0.5, -0.25, 0.5, -0.1875, 0.25},
+			}
+	},
+	},
+
+	{ suffix = "beam_ceiling_t",
+	model  = "mymillwork_mach18.obj",
+	desc  = "Ceiling with Beam T",
+	sbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, -0.5, 0.5, -0.4375, 0.5},
+						{-0.5, -0.4375, -0.25, -0.25, -0.1875, 0.25},
+						{-0.25, -0.4375, -0.5, 0.25, -0.1875, 0.5},
+						{0.25, -0.4375, -0.25, 0.5, -0.1875, 0.25},
+			}
+	},
+	cbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, -0.5, 0.5, -0.4375, 0.5},
+						{-0.5, -0.4375, -0.25, -0.25, -0.1875, 0.25},
+						{-0.25, -0.4375, -0.5, 0.25, -0.1875, 0.5},
+						{0.25, -0.4375, -0.25, 0.5, -0.1875, 0.25},
+			}
+	},
+	},
+
+	{ suffix = "base",
+	model  = "mymillwork_mach19.obj",
+	desc  = "Baseboard",
+	sbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, 0.4375, 0.5, -0.1875, 0.5},
+			}
+	},
+	cbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, 0.4375, 0.5, -0.1875, 0.5},
+			}
+	},
+	},
+
+	{ suffix = "base_ic",
+	model  = "mymillwork_mach20.obj",
+	desc  = "Baseboard IC",
+	sbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, 0.4375, 0.5, -0.1875, 0.5},
+						{-0.5, -0.5, -0.5, -0.4375, -0.1875, 0.4375},
+			}
+	},
+	cbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, 0.4375, 0.5, -0.1875, 0.5},
+			}
+	},
+	},
+
+	{ suffix = "base_oc",
+	model  = "mymillwork_mach21.obj",
+	desc  = "Baseboard OC",
+	sbox   = { type = "fixed",
+			fixed = {{0.4375, -0.5, 0.4375, 0.5, -0.1875, 0.5},
+			}
+	},
+	cbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, 0.4375, 0.5, -0.1875, 0.5},
+			}
+	},
+	},
+
+	{ suffix = "base_fancy",
+	model  = "mymillwork_mach22.obj",
+	desc  = "Fancy Baseboard",
+	sbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, 0.3125, 0.5, 0.1875, 0.5},
+			}
+	},
+	cbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, 0.3125, 0.5, 0.1875, 0.5},
+			}
+	},
+	},
+
+	{ suffix = "base_fancy_ic",
+	model  = "mymillwork_mach23.obj",
+	desc  = "Fancy Baseboard IC",
+	sbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, 0.3125, 0.5, 0.1875, 0.5},
+						{-0.5, -0.5, -0.5, -0.3125, 0.1875, 0.3125},
+			}
+	},
+	cbox   = { type = "fixed",
+			fixed = {{-0.5, -0.5, 0.3125, 0.5, 0.1875, 0.5},
+						{-0.5, -0.5, -0.5, -0.3125, 0.1875, 0.3125},
+			}
+	},
+	},
+
+	{ suffix = "base_fancy_oc",
+	model  = "mymillwork_mach24.obj",
+	desc  = "Fancy Baseboard OC",
+	sbox   = { type = "fixed",
+			fixed = {{0.3125, -0.5, 0.3125, 0.5, 0.1875, 0.5},
+			}
+	},
+	cbox   = { type = "fixed",
+			fixed = {{0.3125, -0.5, 0.3125, 0.5, 0.1875, 0.5},
+			}
+	},
+	},
+
+-- mymeshnodes
+	{ suffix  = "mymeshnodes_circle",
+		model = "mymeshnodes_circle.obj",
+		desc  = S("Circle"),
+		cbox  = {
+			type = "fixed",
+			fixed = {
+				{ -1/2,  -1/2, -1/2, 1/2,  -2/5, 1/2 },
+			}
+		}
+	},
+
+	{ suffix  = "mymeshnodes_cone",
+		model = "mymeshnodes_cone.obj",
+		desc  = S("Cone")
+	},
+
+	{ suffix  = "mymeshnodes_oct",
+		model = "mymeshnodes_oct.obj",
+		desc  = S("Octagon")
+	},
+
+	{ suffix  = "mymeshnodes_peak",
+		model = "mymeshnodes_peak.obj",
+		desc  = S("Peak")
+	},
+
+	{ suffix  = "mymeshnodes_pole",
+		model = "mymeshnodes_pole.obj",
+		desc  = S("Pole"),
+		cbox  = {
+			type = "fixed",
+			fixed = {
+				{-0.15, -0.5, -0.15, 0.15, 0.5, 0.15},
+			}
+		}
+	},
+
+	{ suffix  = "mymeshnodes_peak",
+		model = "mymeshnodes_peak.obj",
+		desc  = S("Peak")
+	},
+
+
+-- technic cnc
 	{ suffix  = "technic_cnc_stick",
 		model = {-0.15, -0.5, -0.15, 0.15, 0.5, 0.15},
 		desc  = S("Stick")
@@ -121,11 +528,6 @@ programs = {
 				{ -0.5,  -0.5, -0.5, 0.5,  0, 0 },
 			}
 		}
-	},
-
-	{ suffix  = "technic_cnc_cylinder_horizontal",
-		model = "technic_cylinder_horizontal.obj",
-		desc  = S("Horizontal Cylinder")
 	},
 
 	{ suffix  = "technic_cnc_cylinder",
@@ -445,20 +847,6 @@ programs = {
 		}
 	},
 
-	{ suffix  = "technic_cnc_slope_lying",
-		model = "technic_slope_horizontal.obj",
-		desc  = S("Slope Lying"),
-		cbox  = {
-			type = "fixed",
-			fixed = {
-				{  4/16, -8/16,  4/16,  8/16, 8/16, 8/16 },
-				{     0, -8/16,     0,  4/16, 8/16, 8/16 },				
-				{ -4/16, -8/16, -4/16,     0, 8/16, 8/16 },
-				{ -8/16, -8/16, -8/16, -4/16, 8/16, 8/16 }
-			}
-		}
-	},
-
 	{ suffix  = "technic_cnc_slope",
 		model = "technic_slope.obj",
 		desc  = S("Slope"),
@@ -473,27 +861,6 @@ programs = {
 		}
 	},
 	
-}
-
--- Allow disabling certain programs for some node. Default is allowing all types for all nodes
-programs_disable = {
-	-- ["default:brick"] = {"technic_cnc_stick"}, -- Example: Disallow the stick for brick
-	-- ...
-	["default:dirt"] = {"technic_cnc_oblate_spheroid", "technic_cnc_slope_upsdown", "technic_cnc_edge",
-	                    "technic_cnc_inner_edge", "technic_cnc_slope_edge_upsdown",
-	                    "technic_cnc_slope_inner_edge_upsdown", "technic_cnc_stick",
-	                    "technic_cnc_cylinder_horizontal"},
-
-}
-
--- Allow enabling only few select programs
-programs_enable = {
-	
-	["default:glass"] = {"technic_cnc_d45_slope_216", "technic_cnc_arch216"},
-	["default:obsidian_glass"] = {"technic_cnc_d45_slope_216", "technic_cnc_arch216"},
-	["moreblocks:clean_glass"] = {"technic_cnc_d45_slope_216", "technic_cnc_arch216"},
-	["moreblocks:coal_glass"] = {"technic_cnc_d45_slope_216", "technic_cnc_arch216"},
-	["moreblocks:iron_glass"] = {"technic_cnc_d45_slope_216", "technic_cnc_arch216"}
 }
 
 -- Generic function for registering all the different node types
@@ -538,83 +905,72 @@ function register_program(recipeitem, suffix, model, groups, images, description
 	})
 end
 
+-- mymillwork
+-- for i = 1, 24 do
+-- 	table.insert(programs, { suffix  = "mymillwork_mach" .. i,
+-- 		model = "mymillwork_mach" .. i .. ".obj",
+-- 		desc  = S("Mach" .. i)
+-- 	})
+-- end
+
 -- function to iterate over all the programs the CNC machine knows
 function register_all(recipeitem, groups, images, description)
 	for _, data in ipairs(programs) do
-		-- Disable node creation for disabled node types for some material
-		local do_register = true
-		if programs_disable[recipeitem] ~= nil then
-			for __, disable in ipairs(programs_disable[recipeitem]) do
-				if disable == data.suffix then
-					do_register = false
-				end
-			end
-		end
-		
-		if programs_enable[recipeitem] ~= nil then
-			do_register = false
-			for __, enable in ipairs(programs_enable[recipeitem]) do
-				if enable == data.suffix then
-					do_register = true
-				end
-			end
-		end
-		
-		-- Create the node if it passes the test
-		if do_register then
-			register_program(recipeitem, data.suffix, data.model,
-			    groups, images, description.." "..data.desc, data.cbox, data.sbox)
-		end
+		register_program(recipeitem, data.suffix, data.model,
+			groups, images, description.." "..data.desc, data.cbox, data.sbox)
 	end
 end
 
 -- CAVEREALMS
 -------
-register_all("caverealms:glow_emerald",
-                {cracky=3, light_source=13, utalpha=1},
-                {"caverealms_glow_emerald.png"},
-                S("Glow Emerald"))
+if minetest.get_modpath("caverealms") then
 
-register_all("caverealms:glow_ruby",
-                {cracky=3, light_source=13, utalpha=1},
-                {"caverealms_glow_ruby.png"},
-                S("Glow Ruby"))
+	register_all("caverealms:glow_emerald",
+					{cracky=3, light_source=13, utalpha=1},
+					{"caverealms_glow_emerald.png"},
+					S("Glow Emerald"))
 
-register_all("caverealms:glow_crystal",
-                {cracky=3, light_source=13, utalpha=1},
-                {"caverealms_glow_crystal.png"},
-                S("Glow Sapphire"))
+	register_all("caverealms:glow_ruby",
+					{cracky=3, light_source=13, utalpha=1},
+					{"caverealms_glow_ruby.png"},
+					S("Glow Ruby"))
 
-register_all("caverealms:glow_mese",
-                {cracky=3, light_source=13, utalpha=1},
-                {"caverealms_glow_mese.png"},
-                S("Glow Mese"))
+	register_all("caverealms:glow_crystal",
+					{cracky=3, light_source=13, utalpha=1},
+					{"caverealms_glow_crystal.png"},
+					S("Glow Sapphire"))
 
-register_all("caverealms:glow_amethyst",
-                {cracky=3, light_source=13, utalpha=1},
-                {"caverealms_glow_amethyst.png"},
-                S("Glow Amethyst"))
+	register_all("caverealms:glow_mese",
+					{cracky=3, light_source=13, utalpha=1},
+					{"caverealms_glow_mese.png"},
+					S("Glow Mese"))
 
-register_all("caverealms:glow_obsidian",
-                {cracky=1, light_source=7, level=2},
-                {"caverealms_glow_obsidian.png"},
-                S("Glowing Obsidian"))
+	register_all("caverealms:glow_amethyst",
+					{cracky=3, light_source=13, utalpha=1},
+					{"caverealms_glow_amethyst.png"},
+					S("Glow Amethyst"))
 
-register_all("caverealms:glow_obsidian_2",
-                {cracky=1, light_source=9, hot=1, level=2},
-                {"caverealms_glow_obsidian2.png"},
-                S("Hot Glowing Obsidian"))
+	register_all("caverealms:glow_obsidian",
+					{cracky=1, light_source=7, level=2},
+					{"caverealms_glow_obsidian.png"},
+					S("Glowing Obsidian"))
 
-register_all("caverealms:glow_obsidian_brick",
-                {cracky=1, light_source=7, level=2},
-                {"caverealms_glow_obsidian_brick.png"},
-                S("Glow Obsidian Brick"))
+	register_all("caverealms:glow_obsidian_2",
+					{cracky=1, light_source=9, hot=1, level=2},
+					{"caverealms_glow_obsidian2.png"},
+					S("Hot Glowing Obsidian"))
 
-register_all("caverealms:glow_obsidian_brick_2",
-                {cracky=1, light_source=9, hot=1, level=2},
-                {"caverealms_glow_obsidian_brick_2.png"},
-                S("Glow Obsidian Brick"))
+	register_all("caverealms:glow_obsidian_brick",
+					{cracky=1, light_source=7, level=2},
+					{"caverealms_glow_obsidian_brick.png"},
+					S("Glow Obsidian Brick"))
 
+	register_all("caverealms:glow_obsidian_brick_2",
+					{cracky=1, light_source=9, hot=1, level=2},
+					{"caverealms_glow_obsidian_brick_2.png"},
+					S("Glow Obsidian Brick"))
+
+end
 
 -- DIRT
 -------
