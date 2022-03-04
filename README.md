@@ -37,6 +37,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - Test_User has refactored the code of [unified_inventory](https://github.com/minetest-mods/unified_inventory) in api.lua to vastly improve load times of the server when rebooting.
 - Created a new framed & coloured glass mod called `cglass`.
 - Improved cncnodes to merge the best nodes from `technic_cnc_improved`, `mymillwork`, and `mymeshnodes` mods.
+- Created a lightweight `roadnodes` mod using textures taken from the not-so-lightweight `streets` mods.
 
 
 ## TODO
