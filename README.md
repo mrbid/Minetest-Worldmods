@@ -126,7 +126,7 @@ To trigger this you would add a wooden table next to an acacia table for example
 
 Issue filed: https://github.com/Gerold55/ma_pops_furniture/issues/11
 
-## Links which can help you learn about the various mods on this server.
+## Links that can help you learn about the various mods on this server.
 Technic<br>
 https://github.com/minetest-mods/technic/blob/master/manual.md
 
