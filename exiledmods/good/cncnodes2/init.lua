@@ -373,7 +373,7 @@ programs = {
 	-- },
 
 -- mymeshnodes
-	{ suffix  = "mymeshnodes_circle",
+	{ suffix  = "mmn_circle",
 		model = "mymeshnodes_circle.obj",
 		desc  = S("Circle"),
 		cbox  = {
@@ -384,17 +384,17 @@ programs = {
 		}
 	},
 
-	{ suffix  = "mymeshnodes_cone",
+	{ suffix  = "mmn_cone",
 		model = "mymeshnodes_cone.obj",
 		desc  = S("Cone")
 	},
 
-	{ suffix  = "mymeshnodes_oct",
+	{ suffix  = "mmn_octagon",
 		model = "mymeshnodes_oct.obj",
 		desc  = S("Octagon")
 	},
 
-	{ suffix  = "mymeshnodes_pole",
+	{ suffix  = "mmn_pole",
 		model = "mymeshnodes_pole.obj",
 		desc  = S("Pole"),
 		cbox  = {
@@ -407,22 +407,22 @@ programs = {
 
 
 -- technic cnc
-	{ suffix  = "technic_cnc_stick",
+	{ suffix  = "cnc_stick",
 		model = {-0.15, -0.5, -0.15, 0.15, 0.5, 0.15},
 		desc  = S("Stick")
 	},
 
-	{ suffix  = "technic_cnc_element_end",
+	{ suffix  = "cnc_element_end",
 		model = {-0.3, -0.5, -0.3, 0.3, 0, 0.5},
 		desc  = S("Element End")
 	},
 	
-	{ suffix  = "technic_cnc_element_end_double",
+	{ suffix  = "cnc_element_end_double",
 		model = {-0.3, -0.5, -0.3, 0.3, 0.5, 0.5},
 		desc  = S("Element End Double")
 	},
 
-	{ suffix  = "technic_cnc_element_cross",
+	{ suffix  = "cnc_element_cross",
 		model = {
 			{0.3, -0.5, -0.3, 0.5, 0, 0.3},
 			{-0.3, -0.5, -0.5, 0.3, 0, 0.5},
@@ -430,7 +430,7 @@ programs = {
 		desc  = S("Element Cross")
 	},
 	
-	{ suffix  = "technic_cnc_element_cross_double",
+	{ suffix  = "cnc_element_cross_double",
 		model = {
 			{0.3, -0.5, -0.3, 0.5, 0.5, 0.3},
 			{-0.3, -0.5, -0.5, 0.3, 0.5, 0.5},
@@ -438,7 +438,7 @@ programs = {
 		desc  = S("Element Cross Double")
 	},
 
-	{ suffix  = "technic_cnc_element_t",
+	{ suffix  = "cnc_element_t",
 		model = {
 			{-0.3, -0.5, -0.5, 0.3, 0, 0.3},
 			{-0.5, -0.5, -0.3, -0.3, 0, 0.3},
@@ -446,7 +446,7 @@ programs = {
 		desc  = S("Element T")
 	},
 	
-	{ suffix  = "technic_cnc_element_t_double",
+	{ suffix  = "cnc_element_t_double",
 		model = {
 			{-0.3, -0.5, -0.5, 0.3, 0.5, 0.3},
 			{-0.5, -0.5, -0.3, -0.3, 0.5, 0.3},
@@ -454,32 +454,32 @@ programs = {
 		desc  = S("Element T Double")
 	},
 
-	{ suffix  = "technic_cnc_element_edge",
+	{ suffix  = "cnc_element_edge",
 		model = {
 			{-0.3, -0.5, -0.5, 0.3, 0, 0.3},
 			{-0.5, -0.5, -0.3, -0.3, 0, 0.3}},
 		desc  = S("Element Edge")
 	},
 	
-	{ suffix  = "technic_cnc_element_edge_double",
+	{ suffix  = "cnc_element_edge_double",
 		model = {
 			{-0.3, -0.5, -0.5, 0.3, 0.5, 0.3},
 			{-0.5, -0.5, -0.3, -0.3, 0.5, 0.3}},
 		desc  = S("Element Edge Double")
 	},
 
-	{ suffix  = "technic_cnc_element_straight",
+	{ suffix  = "cnc_element_straight",
 		model = {-0.3, -0.5, -0.5, 0.3, 0, 0.5},
 		desc  = S("Element Straight")
 	},
 	
-	{ suffix  = "technic_cnc_element_straight_double",
+	{ suffix  = "cnc_element_straight_double",
 		model = {-0.3, -0.5, -0.5, 0.3, 0.5, 0.5},
 		desc  = S("Element Straight Double")
 	},
 
 
-	{ suffix  = "technic_cnc_oblate_spheroid",
+	{ suffix  = "cnc_oblate_spheroid",
 		model = "technic_oblate_spheroid.obj",
 		desc  = S("Oblate spheroid"),
 		cbox  = {
@@ -492,13 +492,13 @@ programs = {
 		}
 	},
 
-	{ suffix  = "technic_cnc_sphere",
+	{ suffix  = "cnc_sphere",
 		model = "technic_sphere.obj",
 		desc  = S("Sphere")
 	},
 	
 	
-	{ suffix  = "technic_cnc_sphere_half",
+	{ suffix  = "cnc_sphere_half",
 		model = "technic_sphere_half.obj",
 		desc  = S("Half Sphere"),
 		cbox  = {
@@ -509,7 +509,7 @@ programs = {
 		}
 	},
 	
-	{ suffix  = "technic_cnc_sphere_quarter",
+	{ suffix  = "cnc_sphere_quarter",
 		model = "technic_sphere_quarter.obj",
 		desc  = S("Quarter Sphere"),
 		cbox  = {
@@ -520,12 +520,12 @@ programs = {
 		}
 	},
 
-	{ suffix  = "technic_cnc_cylinder",
+	{ suffix  = "cnc_cylinder",
 		model = "technic_cylinder.obj",
 		desc  = S("Cylinder")
 	},
 	
-	{ suffix  = "technic_cnc_cylinder_half",
+	{ suffix  = "cnc_cylinder_half",
 		model = "technic_cylinder_half.obj",
 		desc  = S("Half Cylinder"),
 		cbox  = {
@@ -536,7 +536,7 @@ programs = {
 		}
 	},
 	
-	{ suffix  = "technic_cnc_cylinder_half_corner",
+	{ suffix  = "cnc_cylinder_half_corner",
 		model = "technic_cylinder_half_corner.obj",
 		desc  = S("Half Cylinder Corner"),
 		cbox  = {
@@ -547,51 +547,51 @@ programs = {
 		}
 	},
 
-	{ suffix  = "technic_cnc_cylinder_fluted",
+	{ suffix  = "cnc_cylinder_fluted",
 		model = "technic_cylinder_fluted.obj",
 		desc  = S("Fluted Cylinder Column")
 	},
 	
-	{ suffix  = "technic_cnc_block_fluted",
+	{ suffix  = "cnc_block_fluted",
 		model = "technic_block_fluted.obj",
 		desc  = S("Fluted Square Column")
 	},
 	
-	{ suffix  = "technic_cnc_twocurvededge",
+	{ suffix  = "cnc_twocurvededge",
 		model = "technic_two_curved_edge.obj",
 		desc  = S("Two Curved Edge/Corner Block")
 	},
 
-	{ suffix  = "technic_cnc_onecurvededge",
+	{ suffix  = "cnc_onecurvededge",
 		model = "technic_one_curved_edge.obj",
 		desc  = S("One Curved Edge Block")
 	},
 	
-	{ suffix  = "technic_cnc_innercurvededge",
+	{ suffix  = "cnc_innercurvededge",
 		model = "technic_inner_curved_edge.obj",
 		desc  = S("Inner Curved Edge Block")
 	},
 	
-	{ suffix  = "technic_cnc_opposedcurvededge",
+	{ suffix  = "cnc_opposedcurvededge",
 		model = "technic_opposed_curved_edge.obj",
 		desc  = S("Opposed Curved Edges Block")
 	},
 	
 	-- large radius
 
-	{ suffix  = "technic_cnc_onecurvededge_lr",
+	{ suffix  = "cnc_onecurvededge_lr",
 		model = "technic_one_curved_edge_lr.obj",
 		desc  = S("One Curved Edge LR Block")
 	},
 	
-	{ suffix  = "technic_cnc_twocurvededge_lr",
+	{ suffix  = "cnc_twocurvededge_lr",
 		model = "technic_two_curved_edge_lr.obj",
 		desc  = S("Two Curved Edges LR Block")
 	},
 	
 	-- 4/16 Diagonal truss
 	
-	{ suffix  = "technic_cnc_diagonal_truss",
+	{ suffix  = "cnc_diagonal_truss",
 		model = "technic_diagonal_truss.obj",
 		desc  = S("Diagonal Truss"),
 		cbox  = {
@@ -602,7 +602,7 @@ programs = {
 		}
 	},
 		
-	{ suffix  = "technic_cnc_diagonal_truss_cross",
+	{ suffix  = "cnc_diagonal_truss_cross",
 		model = "technic_diagonal_truss_cross.obj",
 		desc  = S("Diagonal Truss Cross"),
 		cbox  = {
@@ -615,7 +615,7 @@ programs = {
 	
 	-- 2/16 Beams
 	
-	{ suffix  = "technic_cnc_beam216",
+	{ suffix  = "cnc_beam216",
 		model = "technic_beam_216.obj",
 		desc  = S("2/16 Beam"),
 		cbox  = {
@@ -626,7 +626,7 @@ programs = {
 		}
 	},
 	
-	{ suffix  = "technic_cnc_beam216_cross",
+	{ suffix  = "cnc_beam216_cross",
 		model = "technic_beam_216_cross.obj",
 		desc  = S("2/16 Beam Cross"),
 		cbox  = {
@@ -637,7 +637,7 @@ programs = {
 		}
 	},
 	
-	{ suffix  = "technic_cnc_beam216_tee",
+	{ suffix  = "cnc_beam216_tee",
 		model = "technic_beam_216_tee.obj",
 		desc  = S("2/16 Beam T"),
 		cbox  = {
@@ -648,7 +648,7 @@ programs = {
 		}
 	},
 	
-	{ suffix  = "technic_cnc_beam216_cross_column",
+	{ suffix  = "cnc_beam216_cross_column",
 		model = "technic_beam_216_cross_column.obj",
 		desc  = S("2/16 Beam Cross with Column"),
 		cbox  = {
@@ -662,7 +662,7 @@ programs = {
 	-- 2/16 slope panel
 
 
-	{ suffix  = "technic_cnc_d45_slope_216",
+	{ suffix  = "cnc_d45_slope_216",
 		model = "technic_45_slope_216.obj",
 		desc  = S("2/16 45° Slope"),
 		cbox  = {
@@ -677,14 +677,14 @@ programs = {
 	},
 	
 	
--- 	{ suffix  = "technic_cnc_d45_beam_216",
+-- 	{ suffix  = "cnc_d45_beam_216",
 -- 		model = "technic_45_beam_216.obj",
 -- 		desc  = S("2/16 45° Beam")
 -- 	},
 	
 	-- 2/16 Arch
 	
-	{ suffix  = "technic_cnc_arch216",
+	{ suffix  = "cnc_arch216",
 		model = "technic_arch_216.obj",
 		desc  = S("2/16 Arch"),
 		cbox  = {
@@ -701,7 +701,7 @@ programs = {
 		}
 	},
 	
-	{ suffix  = "technic_cnc_arch216_flange",
+	{ suffix  = "cnc_arch216_flange",
 		model = "technic_arch_216_flange.obj",
 		desc  = S("2/16 Arch Flange"),
 		cbox  = {
@@ -714,7 +714,7 @@ programs = {
 		}
 	},
 	
-	{ suffix  = "technic_cnc_tile_beveled",
+	{ suffix  = "cnc_tile_beveled",
 		model = "technic_tile_beveled.obj",
 		desc  = S("Beveled Tile"),
 		cbox  = {
@@ -725,7 +725,7 @@ programs = {
 		}
 	},
 	
-	{ suffix  = "technic_cnc_spike",
+	{ suffix  = "cnc_spike",
 		model = "technic_pyramid_spike.obj",
 		desc  = S("Spike"),
 		cbox    = {
@@ -739,7 +739,7 @@ programs = {
 		}
 	},
 
-	{ suffix  = "technic_cnc_pyramid",
+	{ suffix  = "cnc_pyramid",
 		model = "technic_pyramid.obj",
 		desc  = S("Pyramid"),
 		cbox  = {
@@ -753,7 +753,7 @@ programs = {
 		}
 	},
 
-	{ suffix  = "technic_cnc_slope_inner_edge_upsdown",
+	{ suffix  = "cnc_slope_inner_edge_upsdown",
 		model = "technic_innercorner_upsdown.obj",
 		desc  = S("Slope Upside Down Inner Edge/Corner"),
 		sbox  = {
@@ -774,7 +774,7 @@ programs = {
 		}
 	},
 
-	{ suffix  = "technic_cnc_slope_edge_upsdown",
+	{ suffix  = "cnc_slope_edge_upsdown",
 		model = "technic_outercorner_upsdown.obj",
 		desc  = S("Slope Upside Down Outer Edge/Corner"),
 		cbox  = {
@@ -788,7 +788,7 @@ programs = {
 		}
 	},
 
-	{ suffix  = "technic_cnc_slope_inner_edge",
+	{ suffix  = "cnc_slope_inner_edge",
 		model = "technic_innercorner.obj",
 		desc  = S("Slope Inner Edge/Corner"),
 		sbox  = {
@@ -809,7 +809,7 @@ programs = {
 		}
 	},
 
-	{ suffix  = "technic_cnc_slope_edge",
+	{ suffix  = "cnc_slope_edge",
 		model = "technic_outercorner.obj",
 		desc  = S("Slope Outer Edge/Corner"),
 		cbox  = {
@@ -823,7 +823,7 @@ programs = {
 		}
 	},
 
-	{ suffix  = "technic_cnc_slope_upsdown",
+	{ suffix  = "cnc_slope_upsdown",
 		model = "technic_slope_upsdown.obj",
 		desc  = S("Slope Upside Down"),
 		cbox  = {
@@ -837,7 +837,7 @@ programs = {
 		}
 	},
 
-	{ suffix  = "technic_cnc_slope",
+	{ suffix  = "cnc_slope",
 		model = "technic_slope.obj",
 		desc  = S("Slope"),
 		cbox  = {
