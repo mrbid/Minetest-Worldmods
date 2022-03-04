@@ -126,4 +126,67 @@ To trigger this you would add a wooden table next to an acacia table for example
 
 Issue filed: https://github.com/Gerold55/ma_pops_furniture/issues/11
 
+## Links which can help you learn about the various mods on this server.
+Technic
+https://github.com/minetest-mods/technic/blob/master/manual.md
 
+Digilines
+https://github.com/mt-mods/technic/blob/master/technic/doc/digilines.md
+
+LUA Controller
+https://mesecons.net/luacontroller/
+
+Mesecons
+https://mesecons.net/items.html
+https://mesecons.net/uberi/projects/MeseconsBasics/index.html
+https://mesecons.net/digilines.html
+https://wiki.minetest.net/Mods/Mesecons
+
+More Mesecons
+https://github.com/minetest-mods/MoreMesecons
+https://www.reddit.com/r/Minetest/comments/4gr9ua/video_mod_moremesecons/
+
+Stealth Nodes:
+https://github.com/acmgit/mesecons_stealthnode
+
+Digistuff
+https://content.minetest.net/packages/cheapie/digistuff/
+
+Digiterms
+https://forum.minetest.net/viewtopic.php?t=21518
+
+Digtron:
+https://wiki.minetest.net/Mods/digtron
+https://content.minetest.net/packages/FaceDeer/digtron/
+
+RC Digilines
+https://forum.minetest.net/viewtopic.php?f=9&t=16982&p=394810
+
+Digiline Stuff
+https://forum.minetest.net/viewtopic.php?t=13092
+
+Digiterms
+https://forum.minetest.net/viewtopic.php?t=21518
+
+Digicontrol
+https://github.com/OgelGames/digicontrol
+https://content.minetest.net/packages/OgelGames/digicontrol/
+
+Compresor
+https://github.com/mflink3012/minetest-compressor
+
+Jumpdrive
+https://forum.minetest.net/viewtopic.php?t=20073
+
+Digipherals (REMOVED)
+https://forum.minetest.net/viewtopic.php?f=9&t=24246&p=394809
+
+Meshnodes (REMOVED, go to VF-MESHNODE)
+https://forum.minetest.net/viewtopic.php?t=8059
+
+Minetest Developer Resources
+https://github.com/minetest/minetest/blob/master/doc/lua_api.txt
+https://minetest.org/modbook/lua_api.html
+https://rubenwardy.com/minetest_modding_book/en
+https://dev.minetest.net/Main_Page
+https://wiki.minetest.net/Main_Page
