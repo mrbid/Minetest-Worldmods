@@ -318,18 +318,18 @@ programs = {
 	},
 	},
 
-	{ suffix = "base_oc",
-	model  = "mymillwork_mach21.obj",
-	desc  = "Baseboard OC",
-	sbox   = { type = "fixed",
-			fixed = {{0.4375, -0.5, 0.4375, 0.5, -0.1875, 0.5},
-			}
-	},
-	cbox   = { type = "fixed",
-			fixed = {{-0.5, -0.5, 0.4375, 0.5, -0.1875, 0.5},
-			}
-	},
-	},
+	-- { suffix = "base_oc",
+	-- model  = "mymillwork_mach21.obj",
+	-- desc  = "Baseboard OC",
+	-- sbox   = { type = "fixed",
+	-- 		fixed = {{0.4375, -0.5, 0.4375, 0.5, -0.1875, 0.5},
+	-- 		}
+	-- },
+	-- cbox   = { type = "fixed",
+	-- 		fixed = {{-0.5, -0.5, 0.4375, 0.5, -0.1875, 0.5},
+	-- 		}
+	-- },
+	-- },
 
 	{ suffix = "base_fancy",
 	model  = "mymillwork_mach22.obj",
@@ -359,18 +359,18 @@ programs = {
 	},
 	},
 
-	{ suffix = "base_fancy_oc",
-	model  = "mymillwork_mach24.obj",
-	desc  = "Fancy Baseboard OC",
-	sbox   = { type = "fixed",
-			fixed = {{0.3125, -0.5, 0.3125, 0.5, 0.1875, 0.5},
-			}
-	},
-	cbox   = { type = "fixed",
-			fixed = {{0.3125, -0.5, 0.3125, 0.5, 0.1875, 0.5},
-			}
-	},
-	},
+	-- { suffix = "base_fancy_oc",
+	-- model  = "mymillwork_mach24.obj",
+	-- desc  = "Fancy Baseboard OC",
+	-- sbox   = { type = "fixed",
+	-- 		fixed = {{0.3125, -0.5, 0.3125, 0.5, 0.1875, 0.5},
+	-- 		}
+	-- },
+	-- cbox   = { type = "fixed",
+	-- 		fixed = {{0.3125, -0.5, 0.3125, 0.5, 0.1875, 0.5},
+	-- 		}
+	-- },
+	-- },
 
 -- mymeshnodes
 	{ suffix  = "mymeshnodes_circle",
@@ -392,11 +392,6 @@ programs = {
 	{ suffix  = "mymeshnodes_oct",
 		model = "mymeshnodes_oct.obj",
 		desc  = S("Octagon")
-	},
-
-	{ suffix  = "mymeshnodes_peak",
-		model = "mymeshnodes_peak.obj",
-		desc  = S("Peak")
 	},
 
 	{ suffix  = "mymeshnodes_pole",
@@ -1047,20 +1042,24 @@ register_all("default:desert_stone_block",
 -- CONCRETE AND CEMENT
 ----------------------
 
-register_all("basic_materials:concrete_block",
-				{cracky=2, level=2},
-				{"basic_materials_concrete_block.png"},
-				S("Concrete"))
+if minetest.get_modpath("basic_materials") then
 
-register_all("basic_materials:cement_block",
-				{cracky=2, level=2},
-				{"basic_materials_cement_block.png"},
-				S("Cement"))
+	register_all("basic_materials:concrete_block",
+					{cracky=2, level=2},
+					{"basic_materials_concrete_block.png"},
+					S("Concrete"))
 
-register_all("basic_materials:brass_block",
-				{cracky=1, level=2},
-				{"basic_materials_brass_block.png"},
-				S("Brass block"))
+	register_all("basic_materials:cement_block",
+					{cracky=2, level=2},
+					{"basic_materials_cement_block.png"},
+					S("Cement"))
+
+	register_all("basic_materials:brass_block",
+					{cracky=1, level=2},
+					{"basic_materials_brass_block.png"},
+					S("Brass block"))
+
+end
 
 -- COBBLE
 ---------
@@ -1176,6 +1175,15 @@ register_all("default:obsidian_block",
                 {"default_obsidian_block.png"},
                 S("Obsidian"))
 
+-- Bronze
+--------
+register_all("default:bronzeblock",
+                {cracky=1, level=2},
+                {"default_bronze_block.png"},
+                S("Bronze"))
+
+
+if minetest.get_modpath("technic") then
 
 -- WROUGHT IRON
 ---------------
@@ -1183,13 +1191,6 @@ register_all("default:steelblock",
                 {cracky=1, level=2},
                 {"technic_wrought_iron_block.png"},
                 S("Wrought Iron"))
-
--- Bronze
---------
-register_all("default:bronzeblock",
-                {cracky=1, level=2},
-                {"default_bronze_block.png"},
-                S("Bronze"))
 
 -- Zinc
 --------
@@ -1261,6 +1262,8 @@ register_all("technic:granite",
                 {cracky=1},
                 {"technic_granite.png"},
                 S("Granite"))
+
+end
 
 
 if minetest.get_modpath("ethereal") then
