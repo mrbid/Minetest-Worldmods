@@ -39,7 +39,6 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - Improved cncnodes to merge the best nodes from `technic_cnc_improved`, `mymillwork`, and `mymeshnodes` mods.
 - Created a lightweight `roadnodes` mod using textures taken from the not-so-lightweight `streets` mod.
 
-
 ## TODO
 - `worldmods/furnishings_mods/homedecor_modpack/homedecor_seating/sofas.lua` and `armchairs.lua` could do with some proper sit code to change the player animation.
 - extend hotbar slot icon images from 23 to 32
