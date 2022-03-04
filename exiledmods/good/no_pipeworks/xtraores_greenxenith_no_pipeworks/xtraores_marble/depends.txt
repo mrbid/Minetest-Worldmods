@@ -1,5 +1,0 @@
-default
-stairs
-xtraores
-moreblocks?
-technic_cnc?

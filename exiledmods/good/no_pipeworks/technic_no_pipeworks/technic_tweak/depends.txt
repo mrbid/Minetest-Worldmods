@@ -1,3 +1,0 @@
-default
-technic
-mesecons_mvps?
