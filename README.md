@@ -42,6 +42,11 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - adding a Chest of Everything to display just the CNC nodes `chest_of_cnc:chest`, and removing the CNC nodes from the creative inventory.
 
 ## TODO
+- `abriglass` new oneway corner and edge glass need crafts
+- `cglass` and `roadnodes` need crafts
+- `armor_addon` rhodochrosite and shadow armor could do with crafts
+- `bakedclayx` could do with crafts for the extended colours
+- `btw` monument light has no craft
 - `worldmods/furnishings_mods/homedecor_modpack/homedecor_seating/sofas.lua` and `armchairs.lua` could do with some proper sit code to change the player animation.
 - extend hotbar slot icon images from 23 to 32
 - `snowcone` mod has been removed because the machine cannot be 'dug' when full of juice - but also tends to never fully empty at times.
