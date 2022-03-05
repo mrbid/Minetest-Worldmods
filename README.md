@@ -48,7 +48,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - `armor_addon` rhodochrosite and shadow armor could do with crafts
 - `bakedclayx` could do with crafts for the extended colours (using unifieddyes)
 - `btw` monument light has no craft
-- `worldmods/furnishings_mods/homedecor_modpack/homedecor_seating/sofas.lua` and `armchairs.lua` could do with some proper sit code to change the player animation. You could also say the same for the xdecor chairs. At the moment only ts_furniture has proper sit animations but it's notable this is buggy too as it resets player physics.. breaking any armor set physics... so all in all, furniture is one big mess.
+- `worldmods/furnishings_mods/homedecor_modpack/homedecor_seating/sofas.lua` and `armchairs.lua` could do with some proper sit code to change the player animation. You could also say the same for the `xdecor` chairs. At the moment only ts_furniture has proper sit animations but it's notable this is buggy too as it resets player physics.. breaking any armor set physics... so all in all, furniture is one big mess.
 - extend hotbar slot icon images from 23 to 32
 - `snowcone` mod has been removed because the machine cannot be 'dug' when full of juice - but also tends to never fully empty at times.
 - `automobiles` and `automobiles2` mods need their first-person view eye offsets corrected but this requires adding bones to the seat positions of the SUV model _(or entities like APercy does, but we prefer the bone method to reduce lag)_.
