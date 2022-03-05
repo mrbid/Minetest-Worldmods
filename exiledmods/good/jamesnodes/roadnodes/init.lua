@@ -22,6 +22,8 @@ function register_asphalt(color)
         tiles = {"streets_asphalt_" .. color .. ".png"},
         groups = {cracky=3, oddly_breakable_by_hand=2},
         sounds = default.node_sound_stone_defaults(),
+        paramtype2 = 'facedir',
+        on_place = minetest.rotate_node,
     })
 
 end
@@ -34,6 +36,8 @@ function register_asphalt_marking(color, marking)
         tiles = {"streets_asphalt_" .. color .. ".png^streets_" .. marking .. ".png"},
         groups = {cracky=3, oddly_breakable_by_hand=2},
         sounds = default.node_sound_stone_defaults(),
+        paramtype2 = 'facedir',
+        on_place = minetest.rotate_node,
     })
 
 end
