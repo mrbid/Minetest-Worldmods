@@ -88,18 +88,18 @@ programs = {
 	},
 	},
 
-	{ suffix = "column",
-	model  = "mymillwork_mach5.obj",
-	desc  = "Column",
-	sbox   = { type = "fixed",
-			fixed = {{-0.5,-0.5,-0.5,0.5,0.5,0.5},
-			}
-	},
-	cbox   = { type = "fixed",
-			fixed = {{-0.5,-0.5,-0.5,0.5,0.5,0.5},
-			}
-	},
-	},
+	-- { suffix = "column",
+	-- model  = "mymillwork_mach5.obj",
+	-- desc  = "Column",
+	-- sbox   = { type = "fixed",
+	-- 		fixed = {{-0.5,-0.5,-0.5,0.5,0.5,0.5},
+	-- 		}
+	-- },
+	-- cbox   = { type = "fixed",
+	-- 		fixed = {{-0.5,-0.5,-0.5,0.5,0.5,0.5},
+	-- 		}
+	-- },
+	-- },
 
 	{ suffix = "column_base",
 	model  = "mymillwork_mach6.obj",
