@@ -36,8 +36,10 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - added glowfences for mese fences and caverealms glow crystal fences.
 - Test_User has refactored the code of [unified_inventory](https://github.com/minetest-mods/unified_inventory) in api.lua to vastly improve load times of the server when rebooting.
 - Created a new framed & coloured glass mod called `cglass`.
-- Improved cncnodes to merge the best nodes from `technic_cnc_improved`, `mymillwork`, and `mymeshnodes` mods.
 - Created a lightweight `roadnodes` mod using textures taken from the not-so-lightweight `streets` mod.
+- Improved cncnodes to merge the best nodes from `technic_cnc_improved`, `mymillwork`, and `mymeshnodes` mods. The merged mod is called `cncnodes`.
+- added a `chest_of_forbidden:chest` that displays every `not_in_creative_inventory=1` node, it's a fork of the devtest Chest of Everything.
+- adding a Chest of Everything to display just the CNC nodes `chest_of_cnc:chest`, and removing the CNC nodes from the creative inventory.
 
 ## TODO
 - `worldmods/furnishings_mods/homedecor_modpack/homedecor_seating/sofas.lua` and `armchairs.lua` could do with some proper sit code to change the player animation.
