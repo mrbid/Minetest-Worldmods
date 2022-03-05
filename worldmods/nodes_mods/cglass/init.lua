@@ -51,7 +51,6 @@ function fancy_string(name)
 end
 
 for k, v in pairs(glass_colors) do
-    print(k,v)
     minetest.register_node("cglass:glass_" .. k, {
         description = fancy_string(k) .. " Glass",
         drawtype = "glasslike_framed",
