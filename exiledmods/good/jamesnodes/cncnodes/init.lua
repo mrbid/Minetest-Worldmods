@@ -1951,6 +1951,20 @@ function register_all(recipeitem, groups, images, description)
 	end
 end
 
+function register_all_simple(name)
+	register_all("cnc:"..name,
+		{cracky=3},
+		{name..".png"},
+		fancy_string(name))
+end
+
+function register_all_lamp(name)
+	register_all("cnc:"..name,
+		{cracky=3, light_source=13, utalpha=1},
+		{name..".png"},
+		fancy_string(name))
+end
+
 
 -- COLOURED GLASS
 -------
@@ -1986,6 +2000,132 @@ for k, v in pairs(glass_colors) do
 				{"cglass.png^[multiply:" .. v, "cglass_detail.png^[multiply:" .. v},
 				fancy_string(k) .. " Glass")
 end
+
+
+-- MISC
+-------
+
+register_all("cnc:ghost_crystal",
+{cracky=3, light_source=13, utalpha=1},
+{"crystals_ghost_crystal.png"},
+S("Ghost Crystal"))
+
+register_all("cnc:red_crystal",
+{cracky=3, light_source=13, utalpha=1},
+{"crystals_red_crystal.png"},
+S("Red Crystal"))
+
+register_all("cnc:rose_quartz",
+{cracky=3, light_source=13, utalpha=1},
+{"crystals_rose_quartz.png"},
+S("Rose Quartz"))
+
+register_all("cnc:blue_marble",
+{cracky=3, light_source=13, utalpha=1},
+{"ethereal_blue_marble.png"},
+S("Blue Marble"))
+
+register_all("cnc:blue_marble_tile",
+{cracky=3, light_source=13, utalpha=1},
+{"ethereal_blue_marble_tile.png"},
+S("Blue Marble Tile"))
+
+register_all("cnc:etherium_glass",
+{cracky=3, light_source=13, utalpha=1},
+{"etherium_glass.png"},
+S("Etherium Glass"))
+
+register_all("cnc:etherium_crystal_glass",
+{cracky=3, light_source=13, utalpha=1},
+{"etherium_crystal_glass.png"},
+S("Etherium Crystal Glass"))
+
+register_all("cnc:amethyst_block",
+{cracky=3},
+{"gems_amethyst_block.png"},
+S("Amethyst Block"))
+
+register_all("cnc:emerald_block",
+{cracky=3},
+{"gems_emerald_block.png"},
+S("Emerald Block"))
+
+register_all("cnc:ruby_block",
+{cracky=3},
+{"gems_ruby_block.png"},
+S("Ruby Block"))
+
+register_all("cnc:sapphire_block",
+{cracky=3},
+{"gems_sapphire_block.png"},
+S("Sapphire Block"))
+	
+register_all("cnc:uranium",
+{cracky=3, light_source=13},
+{"technic_uranium_block.png"},
+S("Uranium Block"))
+
+register_all("cnc:sulfur",
+{cracky=3},
+{"technic_sulfur_block.png"},
+S("Sulfur Block"))
+
+register_all("cnc:marble_bricks",
+{cracky=3},
+{"technic_marble_bricks.png"},
+S("Marble Bricks"))
+
+register_all("cnc:lead_block",
+{cracky=3},
+{"technic_lead_block.png"},
+S("Lead Block"))
+
+register_all_simple("nether_brick_deep")
+
+register_all_simple("terumet_block_thermese")
+register_all_simple("terumet_block_raw")
+
+register_all_simple("tron_glass")
+register_all_simple("tron_glass_blue")
+register_all_simple("tron_glass_green")
+register_all_simple("tron_glass_orange")
+
+register_all_simple("rarium_brick")
+register_all_simple("minthe_sand")
+register_all_simple("bacchus_sand")
+register_all_simple("lichen")
+register_all_simple("cryon")
+register_all_simple("mithril_block")
+register_all_simple("silver_block")
+register_all_simple("tin_block")
+register_all_simple("terumet_block_tgol")
+register_all_simple("redmarble")
+register_all_simple("bacchus_wood")
+register_all_simple("etherium_sandstone_block")
+register_all_simple("etherium_sand")
+register_all_simple("lavastuff_block")
+register_all_simple("date_wood")
+register_all_simple("willow_wood")
+register_all_simple("cobalt_brick")
+register_all_simple("minthe_cobble")
+register_all_simple("titan_sand")
+register_all_simple("adamantite_brick")
+register_all_simple("default_sand")
+
+register_all_lamp("crystal_lamp")
+register_all_lamp("emerald_lamp")
+register_all_lamp("mese_lamp")
+register_all_lamp("crystal_lamp")
+register_all_lamp("ruby_lamp")
+
+register_all_lamp("thin_ice")
+register_all_lamp("salt_crystal")
+register_all_lamp("salty2")
+
+register_all_simple("moss")
+register_all_simple("algae")
+register_all_simple("terumet_solar")
+register_all_simple("coal_dust")
 
 
 -- CAVEREALMS
