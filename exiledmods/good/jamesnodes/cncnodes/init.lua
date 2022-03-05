@@ -1,17 +1,19 @@
 -- originally technic cnc improved, with meshes added from mymeshnodes and mymillworks
 -- https://github.com/mrbid/Minetest-Worldmods
 
--- REGISTER MATERIALS AND PROPERTIES FOR NONCUBIC ELEMENTS:
------------------------------------------------------------
-
-local ethereal = ethereal or {}
-
 function S(strin)
     return strin
 end
 
 function firstToUpper(str)
 	return (str:gsub("^%l", string.upper))
+end
+
+function fancy_string(name)
+	name = name:gsub(".*:", "")
+	name = name:gsub('%W', ' ')
+	name = name:gsub("(%l)(%w*)", function(a,b) return string.upper(a)..b end)
+	return name
 end
 
 minetest.register_chatcommand("nodes", {
@@ -1977,13 +1979,6 @@ glass_colors = {
 	vibrant_purple='#bd00ff',
 	vibrant_blue='#0078ff',
 }
-
-function fancy_string(name)
-	name = name:gsub(".*:", "")
-	name = name:gsub('%W', ' ')
-	name = name:gsub("(%l)(%w*)", function(a,b) return string.upper(a)..b end)
-	return name
-end
 
 for k, v in pairs(glass_colors) do
 	register_all("cglass:glass_" .. k,
