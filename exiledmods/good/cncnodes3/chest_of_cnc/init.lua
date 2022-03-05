@@ -1,7 +1,22 @@
 local F = minetest.formspec_escape
 
+local chest_name = "cnc"
+local icols = 14
+local irows = 11
+
+function firstToUpper(str)
+	return (str:gsub("^%l", string.upper))
+end
+
+function fancy_string(name)
+    name = name:gsub(".*:", "")
+    name = name:gsub('%W', ' ')
+    name = name:gsub("(%l)(%w*)", function(a,b) return string.upper(a)..b end)
+    return name
+end
+
 -- Create a detached inventory
-local inv_everything = minetest.create_detached_inventory("cnc_inv", {
+local inv_everything = minetest.create_detached_inventory(chest_name.."_inv", {
 	allow_move = function(inv, from_list, from_index, to_list, to_index, count, player)
 		return 0
 	end,
@@ -25,35 +40,36 @@ local inv_trash = minetest.create_detached_inventory("trash", {
 })
 inv_trash:set_size("main", 1)
 
+local items_per_page = (icols*irows)
 local max_page = 1
 
 local function get_chest_formspec(page)
-	local start = 0 + (page-1)*32
-	return "size[8,9]"..
-	"list[detached:cnc_inv;main;0,0;8,4;"..start.."]"..
-	"list[current_player;main;0,5;8,4;]" ..
-	"label[6,4;Trash:]" ..
-	"list[detached:trash;main;7,4;1,1]" ..
-	"button[0,4;1,1;chest_of_cnc_prev;"..F("<").."]"..
-	"button[1,4;1,1;chest_of_cnc_next;"..F(">").."]"..
-	"label[2,4;"..F("Page: "..page).."]"..
-	"listring[detached:cnc_inv;main]"..
+	local start = 0 + (page-1)*items_per_page
+	return "size["..icols..","..(irows+5).."]"..
+	"list[detached:"..chest_name.."_inv;main;0,0;"..icols..","..irows..";"..start.."]"..
+	"list[current_player;main;0,"..(irows+1)..";8,4;]"..
+	"label[6,"..irows..";Trash:]"..
+	"list[detached:trash;main;7,"..irows..";1,1]"..
+	"button[0,"..irows..";1,1;chest_of_"..chest_name.."_prev;"..F("<").."]"..
+	"button[1,"..irows..";1,1;chest_of_"..chest_name.."_next;"..F(">").."]"..
+	"label[2,"..irows..";"..F("Page: "..page).."]"..
+	"listring[detached:"..chest_name.."_inv;main]"..
 	"listring[current_player;main]"..
 	"listring[detached:trash;main]"
 end
 
-minetest.register_node("chest_of_cnc:chest", {
-	description = "Chest of CNC" .. "\n" ..
+minetest.register_node("chest_of_"..chest_name..":chest", {
+	description = "Chest of " .. firstToUpper(chest_name) .. "\n" ..
 		"Grants access to all items",
-	tiles ={"chest_of_cnc_chest.png^[sheet:2x2:0,0", "chest_of_cnc_chest.png^[sheet:2x2:0,0",
-		"chest_of_cnc_chest.png^[sheet:2x2:1,0", "chest_of_cnc_chest.png^[sheet:2x2:1,0",
-		"chest_of_cnc_chest.png^[sheet:2x2:1,0", "chest_of_cnc_chest.png^[sheet:2x2:0,1"},
+	tiles ={"chest_of_"..chest_name.."_chest.png^[sheet:2x2:0,0", "chest_of_"..chest_name.."_chest.png^[sheet:2x2:0,0",
+		"chest_of_"..chest_name.."_chest.png^[sheet:2x2:1,0", "chest_of_"..chest_name.."_chest.png^[sheet:2x2:1,0",
+		"chest_of_"..chest_name.."_chest.png^[sheet:2x2:1,0", "chest_of_"..chest_name.."_chest.png^[sheet:2x2:0,1"},
 	paramtype2 = "facedir",
 	groups = {dig_immediate=2,choppy=3},
 	is_ground_content = false,
 	on_construct = function(pos)
 		local meta = minetest.get_meta(pos)
-		meta:set_string("infotext", "Chest of CNC")
+		meta:set_string("infotext", "Chest of "..firstToUpper(chest_name))
 		meta:set_int("page", 1)
 		meta:set_string("formspec", get_chest_formspec(1))
 	end,
@@ -61,9 +77,9 @@ minetest.register_node("chest_of_cnc:chest", {
 		if formname == "" then
 			local meta = minetest.get_meta(pos)
 			local page = meta:get_int("page")
-			if fields.chest_of_cnc_prev then
+			if fields["chest_of_"..chest_name.."_prev"] then
 				page = page - 1
-			elseif fields.chest_of_cnc_next then
+			elseif fields["chest_of_"..chest_name.."_next"] then
 				page = page + 1
 			end
 			if page < 1 then
@@ -103,9 +119,9 @@ minetest.register_on_mods_loaded(function()
 		local dummy2 = minetest.get_item_group(item2, "dummy") == 1
 		local craftitem1 = def1.type == "craft"
 		local craftitem2 = def2.type == "craft"
-		if item1 == "chest_of_cnc:chest" then
+		if item1 == "chest_of_"..chest_name..":chest" then
 			return true
-		elseif item2 == "chest_of_cnc:chest" then
+		elseif item2 == "chest_of_"..chest_name..":chest" then
 			return false
 		elseif dummy1 and not dummy2 then
 			return false
@@ -129,7 +145,7 @@ minetest.register_on_mods_loaded(function()
 	end
 	table.sort(items, compare)
 	inv_everything:set_size("main", #items)
-	max_page = math.ceil(#items / 32)
+	max_page = math.ceil(#items / items_per_page)
 	for i=1, #items do
 		inv_everything:add_item("main", items[i])
 	end
