@@ -40,6 +40,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - Improved cncnodes to merge the best nodes from `technic_cnc_improved`, `mymillwork`, and `mymeshnodes` mods. The merged mod is called `cncnodes`.
 - added a `chest_of_forbidden:chest` that displays every `not_in_creative_inventory=1` node, it's a fork of the devtest Chest of Everything.
 - added a Chest of Everything to display just the CNC nodes `chest_of_cnc:chest`, and removing the CNC nodes from the creative inventory.
+- added an improved Chest of Everything for creative users.
 
 ## TODO
 - `abriglass` new oneway corner and edge glass need crafts
