@@ -81,7 +81,7 @@ minetest.register_node("chest_of_forbidden:chest", {
 minetest.register_on_mods_loaded(function()
 	local items = {}
 	for itemstring,_ in pairs(minetest.registered_items) do
-		if itemstring ~= "" and itemstring ~= "unknown" and itemstring ~= "ignore" and minetest.get_item_group(itemstring, "not_in_creative_inventory") == 1 and minetest.get_item_group(itemstring, "cnc_node") == 0 then
+		if itemstring ~= "" and itemstring ~= "unknown" and itemstring ~= "ignore" and itemstring ~= "chest_of_forbidden:chest" and minetest.get_item_group(itemstring, "not_in_creative_inventory") == 1 and minetest.get_item_group(itemstring, "cnc_node") == 0 then
 			table.insert(items, itemstring)
 		end
 	end
