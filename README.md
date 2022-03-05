@@ -43,6 +43,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - added an improved Chest of Everything for creative users.
 
 ## TODO
+- chests of everything should be owner restricted
 - `abriglass` new oneway corner and edge glass need crafts
 - `cglass` and `roadnodes` need crafts
 - `armor_addon` rhodochrosite and shadow armor could do with crafts
