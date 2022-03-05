@@ -1,0 +1,6 @@
+https://github.com/mrbid/Minetest-Worldmods
+
+the most epic attempt to make the most diverse creative node set for minetest
+
+March 2022
+James William Fletcher
