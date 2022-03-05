@@ -43,7 +43,6 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - added an improved Chest of Everything for creative users.
 
 ## TODO
-- chests of everything should be owner restricted
 - `abriglass` new oneway corner and edge glass need crafts
 - `cglass` and `roadnodes` need crafts
 - `armor_addon` rhodochrosite and shadow armor could do with crafts
@@ -55,6 +54,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - `automobiles` and `automobiles2` mods need their first-person view eye offsets corrected but this requires adding bones to the seat positions of the SUV model _(or entities like APercy does, but we prefer the bone method to reduce lag)_.
 
 ## DONE
+~~- chests of everything should be owner restricted~~<br>
 ~~- transparency support needs to be added to `mymillwork` for the caverealms glow crystal cuts~~<br>
 ~~- some of the doors such as the diamond door in the `doors` mod open up inverse, this needs to be fixed.~~<br>
 ~~- Gold trapdoor in `doors` has no craft and: Adamantine door, Aquarium door, Brass door.~~<br>

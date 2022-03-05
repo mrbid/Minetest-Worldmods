@@ -74,7 +74,22 @@ minetest.register_node("chest_of_"..chest_name..":chest", {
 		local meta = minetest.get_meta(pos)
 		meta:set_string("infotext", "Chest of "..firstToUpper(chest_name))
 		meta:set_int("page", 1)
-		meta:set_string("formspec", get_chest_formspec(1))
+		--meta:set_string("formspec", get_chest_formspec(1))
+		meta:set_string("owner", "")
+	end,
+	after_place_node = function(pos, placer)
+		local meta = minetest.get_meta(pos)
+		meta:set_string("owner", placer:get_player_name() or "")
+		meta:set_string("infotext", "Chest of "..firstToUpper(chest_name) .. " (owned by " .. meta:get_string("owner") .. ")")
+	end,
+	on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
+		local meta = minetest.get_meta(pos)
+		if meta == nil or clicker == nil then return end
+		local owner = meta:get_string("owner")
+		local pn = clicker:get_player_name()
+		if owner == pn then
+			minetest.show_formspec(clicker:get_player_name(), "formspec", get_chest_formspec(1))
+		end
 	end,
 	on_receive_fields = function(pos, formname, fields, sender)
 		if formname == "" then
