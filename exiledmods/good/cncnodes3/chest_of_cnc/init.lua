@@ -1,3 +1,5 @@
+-- originally chest of everything
+-- https://github.com/mrbid/Minetest-Worldmods
 local F = minetest.formspec_escape
 
 local chest_name = "cnc"

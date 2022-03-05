@@ -1,3 +1,6 @@
+-- originally technic cnc improved, with meshes added from mymeshnodes and mymillworks
+-- https://github.com/mrbid/Minetest-Worldmods
+
 -- REGISTER MATERIALS AND PROPERTIES FOR NONCUBIC ELEMENTS:
 -----------------------------------------------------------
 
