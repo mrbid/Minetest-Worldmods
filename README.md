@@ -197,8 +197,8 @@ Meshnodes (REMOVED, go to VF-MESHNODE)<br>
 https://forum.minetest.net/viewtopic.php?t=8059
 
 Minetest Developer Resources<br>
-https://github.com/minetest/minetest/blob/master/doc/lua_api.txt
-https://minetest.org/modbook/lua_api.html
-https://rubenwardy.com/minetest_modding_book/en
-https://dev.minetest.net/Main_Page
-https://wiki.minetest.net/Main_Page
+https://github.com/minetest/minetest/blob/master/doc/lua_api.txt<br>
+https://minetest.org/modbook/lua_api.html<br>
+https://rubenwardy.com/minetest_modding_book/en<br>
+https://dev.minetest.net/Main_Page<br>
+https://wiki.minetest.net/Main_Page<br>
