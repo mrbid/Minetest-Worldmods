@@ -31,7 +31,7 @@ function stairsplus:prepare_groups(groups)
 		end
 	end
 	if not moreblocks.config.stairsplus_in_creative_inventory then
-		result.not_in_creative_inventory = 0
+		result.not_in_creative_inventory = 1
 	end
 	return result
 end
