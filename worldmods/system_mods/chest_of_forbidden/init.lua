@@ -63,7 +63,7 @@ end
 
 minetest.register_node("chest_of_"..chest_name..":chest", {
 	description = "Chest of " .. firstToUpper(chest_name) .. "\n" ..
-		"Grants access to all items",
+	chest_description,
 	tiles ={"chest_of_"..chest_name.."_chest.png^[sheet:2x2:0,0", "chest_of_"..chest_name.."_chest.png^[sheet:2x2:0,0",
 		"chest_of_"..chest_name.."_chest.png^[sheet:2x2:1,0", "chest_of_"..chest_name.."_chest.png^[sheet:2x2:1,0",
 		"chest_of_"..chest_name.."_chest.png^[sheet:2x2:1,0", "chest_of_"..chest_name.."_chest.png^[sheet:2x2:0,1"},
