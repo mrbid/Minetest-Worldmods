@@ -756,41 +756,6 @@ programs = {
 		}
 	},
 
-	{ suffix  = "cnc_slope_inner_edge_upsdown",
-		model = "technic_innercorner_upsdown.obj",
-		desc  = S("Slope Upside Down Inner Edge/Corner"),
-		sbox  = {
-			type = "fixed",
-			fixed = { -0.5, -0.5, -0.5, 0.5, 0.5, 0.5 }
-		},
-		cbox  = {
-			type = "fixed",
-			fixed = {
-				{  0.25, -0.25, -0.5,  0.5, -0.5,   0.5  },
-				{ -0.5,  -0.25,  0.25, 0.5, -0.5,   0.5  },
-				{  0,     0,    -0.5,  0.5, -0.25,  0.5  },
-				{ -0.5,   0,     0,    0.5, -0.25,  0.5  },
-				{ -0.25,  0.25, -0.5,  0.5,  0,    -0.25 },
-				{ -0.5,   0.25, -0.25, 0.5,  0,     0.5  },
-				{ -0.5,   0.5,  -0.5,  0.5,  0.25,  0.5  }
-			}
-		}
-	},
-
-	{ suffix  = "cnc_slope_edge_upsdown",
-		model = "technic_outercorner_upsdown.obj",
-		desc  = S("Slope Upside Down Outer Edge/Corner"),
-		cbox  = {
-			type = "fixed",
-			fixed = {
-				{ -8/16,  8/16, -8/16, 8/16,  4/16, 8/16 },
-				{ -4/16,  4/16, -4/16, 8/16,     0, 8/16 },
-				{     0,     0,     0, 8/16, -4/16, 8/16 },
-				{  4/16, -4/16,  4/16, 8/16, -8/16, 8/16 }
-			}
-		}
-	},
-
 	{ suffix  = "cnc_slope_inner_edge",
 		model = "technic_innercorner.obj",
 		desc  = S("Slope Inner Edge/Corner"),
@@ -822,20 +787,6 @@ programs = {
 				{     0,     0,     0, 8/16,  4/16, 8/16 },
 				{ -4/16, -4/16, -4/16, 8/16,     0, 8/16 },
 				{ -8/16, -8/16, -8/16, 8/16, -4/16, 8/16 }
-			}
-		}
-	},
-
-	{ suffix  = "cnc_slope_upsdown",
-		model = "technic_slope_upsdown.obj",
-		desc  = S("Slope Upside Down"),
-		cbox  = {
-			type = "fixed",
-			fixed = {
-				{ -8/16,  8/16, -8/16, 8/16,  4/16, 8/16 },
-				{ -8/16,  4/16, -4/16, 8/16,     0, 8/16 },
-				{ -8/16,     0,     0, 8/16, -4/16, 8/16 },
-				{ -8/16, -4/16,  4/16, 8/16, -8/16, 8/16 }
 			}
 		}
 	},
