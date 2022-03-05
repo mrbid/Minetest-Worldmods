@@ -10,6 +10,10 @@ function S(strin)
     return strin
 end
 
+function firstToUpper(str)
+	return (str:gsub("^%l", string.upper))
+end
+
 minetest.register_chatcommand("nodes", {
 	description = "Sums the total amount of nodes registered.",
 	func=function(name)
@@ -25,6 +29,39 @@ minetest.register_chatcommand("nodes", {
 		minetest.chat_send_player(name, "Items: "..tostring(icount).." / Nodes: "..tostring(ncount))
 	end,
 })
+
+workbench_defs = {
+	-- Name YieldX  YZ  WH  L
+	{"nanoslab",	16, { 0, 0,  0, 8,  1, 8  }},
+	{"micropanel",	16, { 0, 0,  0, 16, 1, 8  }},
+	-- {"microslab",	8,  { 0, 0,  0, 16, 1, 16 }},
+	{"thinstair",	8,  { 0, 7,  0, 16, 1, 8  },
+			 { 0, 15, 8, 16, 1, 8  }},
+	{"cube", 	4,  { 0, 0,  0, 8,  8, 8  }},
+	{"panel",	4,  { 0, 0,  0, 16, 8, 8  }},
+	{"doublepanel", 2,  { 0, 0,  0, 16, 8, 8  },
+			 { 0, 8,  8, 16, 8, 8  }},
+	{"halfstair",	2,  { 0, 0,  0, 8,  8, 16 },
+			 { 0, 8,  8, 8,  8, 8  }},
+}
+
+function xdecor_pixelbox(size, boxes)
+	local fixed = {}
+	for _, box in ipairs(boxes) do
+		-- `unpack` has been changed to `table.unpack` in newest Lua versions.
+		local x, y, z, w, h, l = unpack(box)
+		fixed[#fixed + 1] = {
+			(x / size) - 0.5,
+			(y / size) - 0.5,
+			(z / size) - 0.5,
+			((x + w) / size) - 0.5,
+			((y + h) / size) - 0.5,
+			((z + l) / size) - 0.5
+		}
+	end
+
+	return {type = "fixed", fixed = fixed}
+end
 
 -- facade node_boxes
 local box_collison = {
@@ -1280,8 +1317,8 @@ function register_program(recipeitem, suffix, model, groups, images, description
 		uta = true
 	end
 
-	groups['cnc_node'] = 1
-	groups['not_in_creative_inventory'] = 1
+	-- groups['cnc_node'] = 1
+	-- groups['not_in_creative_inventory'] = 1
 
 	minetest.register_node(":"..recipeitem.."_"..suffix, {
 		description   = description,
@@ -1318,7 +1355,7 @@ function register_all(recipeitem, groups, images, description)
 	end
 
 	groups['cnc_node'] = 1
-	groups['not_in_creative_inventory'] = 1
+	groups['not_in_creative_inventory'] = 0
 
 	minetest.register_node(":"..recipeitem.."_vertical_1", {
 		description = description.." Vertical1",
@@ -1842,6 +1879,25 @@ function register_all(recipeitem, groups, images, description)
 
 	---
 
+	for _, d in ipairs(workbench_defs) do
+		local nbox = xdecor_pixelbox(16, {unpack(d, 3)})
+		minetest.register_node(":"..recipeitem.."_"..d[1], {
+			description = description.." "..firstToUpper(d[1]),
+			drawtype = "nodebox",
+			tiles = images,
+			paramtype = "light",
+			paramtype2 = "facedir",
+			groups = groups,
+			node_box = nbox,
+			selection_box = nbox,
+			on_place = minetest.rotate_node,
+			light_source  = groups.light_source,
+			use_texture_alpha = uta
+		})
+	end
+
+	---
+
 	if groups.cg == 1 then
 		minetest.register_node(":"..recipeitem.."_node",
 		{
@@ -1872,6 +1928,20 @@ function register_all(recipeitem, groups, images, description)
 			use_texture_alpha = uta
 		})
 	end
+
+	---
+
+	local mod, name = recipeitem:match("(.*):(.*)")
+	stairs.register_stair_and_slab(
+		name,
+		recipeitem,
+		groups,
+		images,
+		("%s Stair"):format(description),
+		("%s Slab"):format(description)
+	)
+
+	---
 
 	for _, data in ipairs(programs) do
 		register_program(recipeitem, data.suffix, data.model,
