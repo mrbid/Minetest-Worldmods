@@ -2122,10 +2122,21 @@ register_all_lamp("thin_ice")
 register_all_lamp("salt_crystal")
 register_all_lamp("salty2")
 
+register_all_lamp("default_meselamp")
+
 register_all_simple("moss")
 register_all_simple("algae")
 register_all_simple("terumet_solar")
 register_all_simple("coal_dust")
+
+register_all_simple("default_coral_orange")
+register_all_simple("default_diamond_block")
+
+register_all_simple("circle_stone_bricks")
+register_all_simple("mushroom_cap")
+register_all_simple("bacchus_cobble")
+
+
 
 
 -- CAVEREALMS
