@@ -2,10 +2,6 @@
 -- https://github.com/mrbid/Minetest-Worldmods
 local F = minetest.formspec_escape
 
-local chest_name = "cnc"
-local icols = 14
-local irows = 11
-
 function firstToUpper(str)
 	return (str:gsub("^%l", string.upper))
 end
@@ -16,6 +12,11 @@ function fancy_string(name)
     name = name:gsub("(%l)(%w*)", function(a,b) return string.upper(a)..b end)
     return name
 end
+
+local chest_name = "cnc"
+local chest_description = "Grants access to "..firstToUpper(chest_name).." nodes."
+local icols = 14
+local irows = 11
 
 -- Create a detached inventory
 local inv_everything = minetest.create_detached_inventory(chest_name.."_inv", {
@@ -62,7 +63,7 @@ end
 
 minetest.register_node("chest_of_"..chest_name..":chest", {
 	description = "Chest of " .. firstToUpper(chest_name) .. "\n" ..
-		"Grants access to all items",
+		chest_description,
 	tiles ={"chest_of_"..chest_name.."_chest.png^[sheet:2x2:0,0", "chest_of_"..chest_name.."_chest.png^[sheet:2x2:0,0",
 		"chest_of_"..chest_name.."_chest.png^[sheet:2x2:1,0", "chest_of_"..chest_name.."_chest.png^[sheet:2x2:1,0",
 		"chest_of_"..chest_name.."_chest.png^[sheet:2x2:1,0", "chest_of_"..chest_name.."_chest.png^[sheet:2x2:0,1"},
