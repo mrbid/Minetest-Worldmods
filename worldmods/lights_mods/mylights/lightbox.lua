@@ -26,7 +26,7 @@ minetest.register_node("mylights:lightbox30_"..colour, {
 	drawtype = "nodebox",
 	paramtype = "light",
 	light_source = 5,
-	groups = {cracky = 2, not_in_creative_inventory=1},
+	groups = {cracky = 2, not_in_creative_inventory=0},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -64,7 +64,7 @@ minetest.register_node("mylights:lightbox60_"..colour, {
 	drawtype = "nodebox",
 	paramtype = "light",
 	light_source = 8,
-	groups = {cracky = 2, not_in_creative_inventory=1},
+	groups = {cracky = 2, not_in_creative_inventory=0},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -102,7 +102,7 @@ minetest.register_node("mylights:lightbox90_"..colour, {
 	drawtype = "nodebox",
 	paramtype = "light",
 	light_source = 11,
-	groups = {cracky = 2, not_in_creative_inventory=1},
+	groups = {cracky = 2, not_in_creative_inventory=0},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -142,7 +142,7 @@ minetest.register_node("mylights:lightbox120_"..colour, {
 	drawtype = "nodebox",
 	paramtype = "light",
 	light_source = 14,
-	groups = {cracky = 2, not_in_creative_inventory=1},
+	groups = {cracky = 2, not_in_creative_inventory=0},
 	node_box = {
 		type = "fixed",
 		fixed = {
