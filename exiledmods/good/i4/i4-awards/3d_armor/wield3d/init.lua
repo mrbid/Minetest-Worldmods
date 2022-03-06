@@ -74,12 +74,14 @@ end
 
 local wield_entity = {
 	physical = false,
-	collisionbox = {-0.125,-0.125,-0.125, 0.125,0.125,0.125},
+	--collisionbox = {-0.125,-0.125,-0.125, 0.125,0.125,0.125},
+	collisionbox = {0,0,0, 0,0,0},
 	visual = "wielditem",
 	textures = {"wield3d:hand"},
 	wielder = nil,
 	timer = 0,
 	static_save = false,
+	pointable = false,
 }
 
 function wield_entity:on_activate(staticdata)
