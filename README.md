@@ -129,6 +129,11 @@ normal:
 //lua local icount, ncount = 0, 0; for _, _ in pairs(minetest.registered_items) do icount = icount + 1 end; for _, _ in pairs(minetest.registered_nodes) do ncount = ncount + 1 end; minetest.chat_send_all(tostring(icount).." "..tostring(ncount))
 ```
 
+## Solution to every pipeworks bug (not a joke)
+```
+if not player/user/clicker.get_meta then return end
+```
+
 ## Bug in ma_pops_furniture
 A bug discovered when calling the check_table() function causes a crash when certain tables of a non-expected naming convention are used, specifically that I am aware of, the wood and cobble tables. The solution I have opted for to comment out all calls to this function as I deem the optimization of legs when placing tables next to one another superfluous .. however this may change in the future as user "Test_User" put in some considerable time to find the exact problem as listed above and provide a solution to said problem as listed below:
 ```
