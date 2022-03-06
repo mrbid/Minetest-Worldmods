@@ -559,6 +559,7 @@ minetest.register_tool("xtraores:titanium_handgun", {
 	range = 0,
 	on_use = function(itemstack, user, pointed_thing)
 	if user == nil or minetest.is_player(user) == false then return end
+	if not user.get_meta then return end
 	meta = user:get_meta()
  	xo_wpn_c_down = meta:get_int("xo_weapon_cooldown") or 0
 	if xo_wpn_c_down > 12 then
