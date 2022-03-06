@@ -48,7 +48,9 @@ if minetest.registered_items[fire_node] and lavastuff.enable_tool_fire == true t
 			local node_under = node.name
 			local def = minetest.registered_nodes[node_under]
 
-			if def.on_rightclick then
+			if def == nil then return end
+
+			if def ~= nil and def.on_rightclick then
 				return def.on_rightclick(pointed.under, node, user, itemstack, pointed)
 			end
 
