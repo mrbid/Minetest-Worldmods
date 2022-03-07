@@ -1958,21 +1958,21 @@ function register_all_simple(name)
 		fancy_string(name))
 end
 
-function register_all_simple2(name)
+function register_all_simple_alpha(name)
 	register_all("cnc:"..name,
 		{cracky=3, utalpha=1},
 		{name..".png"},
 		fancy_string(name))
 end
 
-function register_all_lamp(name)
+function register_all_lamp_max(name)
 	register_all("cnc:"..name,
 		{cracky=3, light_source=13, utalpha=1},
 		{name..".png"},
 		fancy_string(name))
 end
 
-function register_all_lamp2(name, bright)
+function register_all_lamp(name, bright)
 	register_all("cnc:"..name,
 		{cracky=3, light_source=bright, utalpha=1},
 		{name..".png"},
@@ -2240,74 +2240,225 @@ register_all_simple("inward_lime")
 register_all_simple("inward_green")
 register_all_simple("inward_light_gray")
 register_all_simple("inward_dark_gray")
--- register_all_simple("")
--- register_all_simple("")
--- register_all_simple("")
--- register_all_simple("")
--- register_all_simple("")
--- register_all_simple("")
--- register_all_simple("")
--- register_all_simple("")
--- register_all_simple("")
--- register_all_simple("")
--- register_all_simple("")
--- register_all_simple("")
--- register_all_simple("")
--- register_all_simple("")
--- register_all_simple("")
--- register_all_simple("")
--- register_all_simple("")
--- register_all_simple("")
 
-register_all_lamp("crystal_lamp")
-register_all_lamp("emerald_lamp")
-register_all_lamp("mese_lamp")
-register_all_lamp("crystal_lamp")
-register_all_lamp("ruby_lamp")
-register_all_lamp("default_meselamp")
+register_all_simple("unobtainium_block")
+register_all_simple("unobtainium_block_compressed")
+register_all_simple("rarium_block")
+register_all_simple("rarium_block_compressed")
+register_all_simple("platinum_block_compressed")
+register_all_simple("platinum_block_chiseled")
+register_all_simple("iron_checker")
+register_all_simple("plankstone")
+register_all_simple("nether_brick")
+register_all_simple("spruce_wood")
+register_all_simple("frame_cgls")
+register_all_simple("palm_trunk_top")
+register_all_simple("spruce_trunk_top")
+register_all_simple("block_ttin")
+register_all_simple("poplar_trunk")
+register_all_simple("willow_trunk_top")
+register_all_simple("vacoven_top")
+register_all_simple("osmium_block")
+register_all_simple("platinum_block")
+register_all_simple("minerva_pine_wood")
+register_all_simple("poplar_wood")
+register_all_simple("tholins")
+register_all_simple("dust_bio")
+register_all_simple("titanium_block")
+register_all_simple("pwood_sides")
+register_all_simple("pwood")
+register_all_simple("cobalt_block")
+register_all_simple("xtraores_titanium_block")
+register_all_simple("rubber_tree_full")
+register_all_simple("rubber_tree_empty")
+register_all_simple("mineral_sulfur")
+register_all_simple("mineral_uranium")
 
-register_all_lamp2("glow_glass_stairsplus", 8)
-register_all_lamp2("nether_glowstone_deep", 8)
-register_all_lamp2("nether_glowstone", 8)
+register_all_simple("tdis_front")
+register_all_simple("titan_icestone_with_pebbles")
+register_all_simple("tree_cube")
+register_all_simple("minthe_stone")
+register_all_simple("minthe_sandstone_brick")
+register_all_simple("minthe_sandstone_block")
+register_all_simple("minthe_sandstone")
+register_all_simple("minerva_stone_brick")
+register_all_simple("minerva_stone")
+register_all_simple("reddust")
 
-register_all_lamp2("thin_ice", 3)
-register_all_lamp2("salt_crystal", 3)
-register_all_lamp2("salty2", 3)
-register_all_lamp2("crystal_glass_detail", 3)
-register_all_lamp2("glow_amethyst_ore", 3)
-register_all_lamp2("glow_ruby_ore", 3)
-register_all_lamp2("glow_emerald_ore", 3)
-register_all_lamp2("glow_ore", 3)
-register_all_lamp2("trap_box_glass", 3)
-register_all_lamp2("block_thermese_hot", 3)
-register_all_lamp2("glow_block_blue", 3)
-register_all_lamp2("glow_block_green", 3)
-register_all_lamp2("glow_block_orange", 3)
-register_all_lamp2("glow_block_purple", 3)
-register_all_lamp2("glow_block_red", 3)
-register_all_lamp2("glow_block_white", 3)
-register_all_lamp2("glow_block_yellow", 3)
+register_all_simple("palm_trunk")
+register_all_simple("osmium_block_compressed")
+register_all_simple("space_cobble")
+register_all_simple("palm_wood")
+register_all_simple("sedna_cobble")
+register_all_simple("beech_wood")
+register_all_simple("apple_tree_trunk")
+register_all_simple("titan_icestone")
+register_all_simple("space_dust")
+register_all_simple("minerva_pine_tree_top")
+register_all_simple("sequoia_wood")
+register_all_simple("sequoia_trunk")
+register_all_simple("spruce_trunk")
+register_all_simple("poplar_trunk_top")
+register_all_simple("minerva_dirt")
+register_all_simple("io_stone_brick")
+register_all_simple("io_cobble")
+register_all_simple("oak_wood")
+register_all_simple("fir_trunk")
+register_all_simple("beech_trunk")
+register_all_simple("dirt_compressed")
+register_all_simple("tar")
+register_all_simple("adamantite_block")
+register_all_simple("adamantite_block_compressed")
+register_all_simple("base_block")
+register_all_simple("block_tcop")
+register_all_simple("frame_raw")
+register_all_simple("mach_top")
+register_all_simple("titanium_block_compressed")
+register_all_simple("rayref_front")
+register_all_simple("raw_heater_sides")
+register_all_simple("frame_tste")
+register_all_simple("fir_wood")
+register_all_simple("birch_wood")
+register_all_simple("apple_tree_wood")
+register_all_simple("birch_trunk")
+register_all_simple("date_palm_trunk")
+register_all_simple("oak_trunk")
+register_all_simple("willow_trunk")
+register_all_simple("iron_stone")
+register_all_simple("block_tcha")
+register_all_simple("colorcubes_4_lime")
+register_all_simple("colorcubes_4_orange")
+register_all_simple("colorcubes_4_pink")
+register_all_simple("colorcubes_4_red")
+register_all_simple("colorcubes_4_black")
+register_all_simple("colorcubes_4_skyblue")
+register_all_simple("colorcubes_4_white")
+register_all_simple("colorcubes_4_brown")
+register_all_simple("colorcubes_4_dark_gray")
+register_all_simple("colorcubes_4_dark_green")
+register_all_simple("colorcubes_4_light_gray")
+register_all_simple("colorcubes_4_redviolet")
+register_all_simple("colorcubes_1_aqua")
+register_all_simple("colorcubes_1_black")
+register_all_simple("colorcubes_1_blue")
+register_all_simple("colorcubes_1_brown")
+register_all_simple("colorcubes_1_cyan")
+register_all_simple("colorcubes_1_dark_gray")
+register_all_simple("colorcubes_1_green")
+register_all_simple("colorcubes_1_light_gray")
+register_all_simple("colorcubes_1_lime")
+register_all_simple("colorcubes_1_magenta")
+register_all_simple("colorcubes_1_orange")
+register_all_simple("colorcubes_1_pink")
+register_all_simple("colorcubes_1_red")
+register_all_simple("colorcubes_1_redviolet")
+register_all_simple("colorcubes_1_skyblue")
+register_all_simple("colorcubes_1_violet")
+register_all_simple("colorcubes_1_white")
+register_all_simple("colorcubes_1_yellow")
+register_all_simple("io_gravel")
+register_all_simple("io_stone")
+register_all_simple("io_stone_block")
+register_all_simple("io_sulfur_dust")
+register_all_simple("rubber_tree_leaves")
+register_all_simple("apple_tree_leaves")
 
-register_all_simple2("window_redviolet")
-register_all_simple2("window_blue")
-register_all_simple2("window_brown")
-register_all_simple2("window_cyan")
-register_all_simple2("window_dark_green")
-register_all_simple2("window_yellow")
-register_all_simple2("window_pink")
-register_all_simple2("window_white")
-register_all_simple2("window_skyblue")
-register_all_simple2("window_violet")
-register_all_simple2("window_red")
-register_all_simple2("window_orange")
-register_all_simple2("window_magenta")
-register_all_simple2("window_lime")
-register_all_simple2("window_light_gray")
-register_all_simple2("window_green")
-register_all_simple2("window_dark_gray")
-register_all_simple2("window_black")
-register_all_simple2("window_aqua")
+register_all_lamp_max("crystal_lamp")
+register_all_lamp_max("emerald_lamp")
+register_all_lamp_max("mese_lamp")
+register_all_lamp_max("crystal_lamp")
+register_all_lamp_max("ruby_lamp")
+register_all_lamp_max("default_meselamp")
+register_all_lamp_max("sandstone_light_block")
 
+register_all_lamp("glow_glass_stairsplus", 8)
+register_all_lamp("nether_glowstone_deep", 8)
+register_all_lamp("nether_glowstone", 8)
+
+register_all_lamp("thin_ice", 3)
+register_all_lamp("salt_crystal", 3)
+register_all_lamp("salty2", 3)
+register_all_lamp("crystal_glass_detail", 3)
+register_all_lamp("glow_amethyst_ore", 3)
+register_all_lamp("glow_ruby_ore", 3)
+register_all_lamp("glow_emerald_ore", 3)
+register_all_lamp("glow_ore", 3)
+register_all_lamp("trap_box_glass", 3)
+register_all_lamp("block_thermese_hot", 3)
+register_all_lamp("glow_block_blue", 3)
+register_all_lamp("glow_block_green", 3)
+register_all_lamp("glow_block_orange", 3)
+register_all_lamp("glow_block_purple", 3)
+register_all_lamp("glow_block_red", 3)
+register_all_lamp("glow_block_white", 3)
+register_all_lamp("glow_block_yellow", 3)
+register_all_lamp("mushroom_light", 3)
+
+register_all_lamp("colorcubes_light_aqua", 3)
+register_all_lamp("colorcubes_light_blue", 3)
+register_all_lamp("colorcubes_light_cyan", 3)
+register_all_lamp("colorcubes_light_green", 3)
+register_all_lamp("colorcubes_light_lime", 3)
+register_all_lamp("colorcubes_light_magenta", 3)
+register_all_lamp("colorcubes_light_orange", 3)
+register_all_lamp("colorcubes_light_red", 3)
+register_all_lamp("colorcubes_light_redviolet", 3)
+register_all_lamp("colorcubes_light_skyblue", 3)
+register_all_lamp("colorcubes_light_violet", 3)
+register_all_lamp("colorcubes_light_white", 3)
+register_all_lamp("colorcubes_light_yellow", 3)
+
+register_all_simple_alpha("window_redviolet")
+register_all_simple_alpha("window_blue")
+register_all_simple_alpha("window_brown")
+register_all_simple_alpha("window_cyan")
+register_all_simple_alpha("window_dark_green")
+register_all_simple_alpha("window_yellow")
+register_all_simple_alpha("window_pink")
+register_all_simple_alpha("window_white")
+register_all_simple_alpha("window_skyblue")
+register_all_simple_alpha("window_violet")
+register_all_simple_alpha("window_red")
+register_all_simple_alpha("window_orange")
+register_all_simple_alpha("window_magenta")
+register_all_simple_alpha("window_lime")
+register_all_simple_alpha("window_light_gray")
+register_all_simple_alpha("window_green")
+register_all_simple_alpha("window_dark_gray")
+register_all_simple_alpha("window_black")
+register_all_simple_alpha("window_aqua")
+
+register_all_simple_alpha("crystal_water")
+register_all_simple_alpha("cryolava")
+register_all_simple_alpha("bacchus_water")
+register_all_simple_alpha("liquid_hydrocarbon")
+register_all_simple_alpha("minerva_water")
+register_all_simple_alpha("sulfuric_acid")
+register_all_simple_alpha("titan_alien_crystal")
+-- register_all_simple_alpha("")
+-- register_all_simple_alpha("")
+-- register_all_simple_alpha("")
+
+
+--[[
+
+	EVERYTHING BELOW IS ALL THE ORIGINAL TECHNIC_CNC_IMPROVED REGISTRATIONS
+
+	JUST LEAVE THEM ALONE AND TRY TO STICK TO MY;
+	register_all_simple('texture_name_for_solid_nodes')
+	register_all_simple_alpha('texture_name_for_nodes_with_transparency_in_the_texture')
+	register_all_lamp_max('texture_name')
+	register_all_lamp('texture_name', brightness)
+
+	FUNCTIONS, UNLESS YOU REALLY NEED TO SET SOME CUSTOM NODE GROUPS.
+
+	thh everything below should be re-factored and put into standardised functions
+	like the ones used above.
+
+	I did consider for each standard function making long pre-defined arrays and then
+	looping for the register function but, no, it makes little difference to me.
+
+]]--
 
 
 -- CAVEREALMS
@@ -2687,15 +2838,6 @@ register_all("ethereal:banana_trunk",
 			{"ethereal_banana_trunk.png"},
 			S("Banana Trunk"))
 
-register_all("ethereal:birch_wood",
-			{snappy=2, choppy=2, oddly_breakable_by_hand=2},
-			{"moretrees_birch_wood.png"},
-			S("Birch Wood"))
-register_all("ethereal:birch_trunk",
-			{snappy=2, choppy=2, oddly_breakable_by_hand=2},
-			{"moretrees_birch_trunk.png"},
-			S("Birch Trunk"))
-
 register_all("ethereal:frost_wood",
 			{snappy=2, choppy=2, oddly_breakable_by_hand=2},
 			{"ethereal_frost_wood.png"},
@@ -2704,15 +2846,6 @@ register_all("ethereal:frost_tree",
 			{snappy=2, choppy=2, oddly_breakable_by_hand=2},
 			{"ethereal_frost_tree.png"},
 			S("Frost Tree"))
-
-register_all("ethereal:palm_wood",
-			{snappy=2, choppy=2, oddly_breakable_by_hand=2},
-			{"moretrees_palm_wood.png"},
-			S("Palm Wood"))
-register_all("ethereal:palm_trunk",
-			{snappy=2, choppy=2, oddly_breakable_by_hand=2},
-			{"moretrees_palm_trunk.png"},
-			S("Palm Trunk"))
 
 register_all("ethereal:willow_wood",
 			{snappy=2, choppy=2, oddly_breakable_by_hand=2},
@@ -2757,8 +2890,6 @@ register_all("ethereal:bamboo_floor",
 			{snappy=2, choppy=2, oddly_breakable_by_hand=2},
 			{"ethereal_bamboo_floor.png"},
 			S("Bamboo"))
-	
-
 
 
 -- Tiles
