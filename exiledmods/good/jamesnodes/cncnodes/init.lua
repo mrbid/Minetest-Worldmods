@@ -2370,8 +2370,9 @@ register_all_lamp_max("crystal_lamp")
 register_all_lamp_max("ruby_lamp")
 register_all_lamp_max("default_meselamp")
 register_all_lamp_max("sandstone_light_block")
+register_all_lamp_max("super_glow_glass")
 
-register_all_lamp("glow_glass_stairsplus", 8)
+register_all_lamp("glow_glass", 8)
 register_all_lamp("nether_glowstone_deep", 8)
 register_all_lamp("nether_glowstone", 8)
 
