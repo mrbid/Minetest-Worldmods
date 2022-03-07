@@ -204,12 +204,12 @@ local adjust_hotbar = function(name, slots, selected_image, bg_image_getter)
   if slots == 0 then
     player:hud_set_hotbar_itemcount(1)
     player:hud_set_hotbar_selected_image(selected_image)
-    player:hud_set_hotbar_image(bg_image_getter(1))
+    player:hud_set_hotbar_image('')
     player:hud_set_flags({hotbar = false, wielditem = false})
   else
     player:hud_set_hotbar_itemcount(slots)
     player:hud_set_hotbar_selected_image(selected_image)
-    player:hud_set_hotbar_image(bg_image_getter(slots))
+    player:hud_set_hotbar_image('')
     player:hud_set_flags({hotbar = true, wielditem = true})
   end
 end
