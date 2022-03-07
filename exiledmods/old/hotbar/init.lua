@@ -224,6 +224,11 @@ hb.image = { selected = "hotbar_selected_slot.png", bg = {} }
 
 hb.mode.current = get_mode(MOD_STORAGE, hb.mode.key, DEFAULT.mode)
 hb.slots.current = get_and_set_initial_slots(MOD_STORAGE, hb.mode.current, hb.slots.key, DEFAULT.slots[hb.mode.current])
+hb.image.bg.array = new_masked_array("hotbar_slots_bg_%02i.png", hb.slots.max)
+
+hb.image.bg.get = function(slots)
+  return hb.image.bg.array[tonumber(slots)]
+end
 
 hb.slots.set = function(name, slots)
   local mask = {err = "[%s] Wrong slots number specified: the %s accepted value is %i.",
@@ -241,7 +246,7 @@ hb.slots.set = function(name, slots)
 	return
   end
   slots = math.floor(slots) -- to avoid fractions
-  hb.adjust(name, slots, hb.image.selected, '')
+  hb.adjust(name, slots, hb.image.selected, hb.image.bg.get)
 
   if hb.mode.current == MODES.legacy then
     core.settings:set(hb.slots.key, slots)
@@ -403,27 +408,12 @@ hb.mode.command = function(name, mode)
 end
 
 hb.on_joinplayer = function(player)
-  hb.adjust(player:get_player_name(), hb.slots.current, hb.image.selected, '')
+  hb.adjust(player:get_player_name(), hb.slots.current, hb.image.selected, hb.image.bg.get)
 end
 
 minetest.register_on_joinplayer(hb.on_joinplayer)
 
 minetest.register_chatcommand("hotbar", {
-  params = "[slots|mode]",
-  description = "Invoked with no argument, it displays" ..
-                " the current mode and slots number." ..
-                " To set" ..
-                " the slots number any integer in the range" ..
-                " [0, 32] is valid. If set to 0, the hotbar" ..
-                " gets hidden, any other number will unhide" ..
-                " it." ..
-                " Supported modes are " ..
-                stringified_table_keys(MODES, ", ") .. ".",
-  func = hb.slots.command,
-  privs = {interact = true},
-})
-
-minetest.register_chatcommand("h", {
   params = "[slots|mode]",
   description = "Invoked with no argument, it displays" ..
                 " the current mode and slots number." ..
