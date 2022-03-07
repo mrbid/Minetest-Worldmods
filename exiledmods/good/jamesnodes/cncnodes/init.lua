@@ -1916,7 +1916,6 @@ function register_all(recipeitem, groups, images, description)
 			sounds = default.node_sound_glass_defaults()
 		})
 	else
-		groups.rn = 1 -- regular node
 		minetest.register_node(":"..recipeitem.."_node",
 		{
 			description = description .. " Node",
