@@ -33,7 +33,7 @@ minetest.register_craft({
 
 --longsword
 minetest.register_tool("tools_obsidian:longsword_obsidian", {
-	description = "Obsidian Longword",
+	description = "Obsidian Longsword",
 	inventory_image = "tools_obsidian_sword_long.png",
 	wield_image = "tools_obsidian_sword_long.png",
 	wield_scale = {x=2,y=1.3,z=.4},
