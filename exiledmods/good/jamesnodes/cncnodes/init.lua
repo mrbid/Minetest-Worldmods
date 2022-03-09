@@ -2454,7 +2454,7 @@ register_all_simple_alpha("titan_alien_crystal")
 
 	FUNCTIONS, UNLESS YOU REALLY NEED TO SET SOME CUSTOM NODE GROUPS.
 
-	thh everything below should be re-factored and put into standardised functions
+	tbh everything below should be re-factored and put into standardised functions
 	like the ones used above.
 
 	I did consider for each standard function making long pre-defined arrays and then
