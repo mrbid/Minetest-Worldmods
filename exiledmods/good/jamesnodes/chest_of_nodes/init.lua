@@ -14,7 +14,7 @@ function fancy_string(name)
 end
 
 local chest_name = "nodes"
-local chest_description = "Grants access to "..firstToUpper(chest_name).." nodes."
+local chest_description = "Lists only regular nodes."
 local icols = 14
 local irows = 11
 
