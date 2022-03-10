@@ -43,6 +43,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - added an improved Chest of Everything for creative users.
 
 ## TODO
+- `automobiles2` although cars are unlocked to most players they still have an owner and only the owner _(or an admin)_ can break the vehicle to an item for inventory pickup so it's probably worth adding an infotext to the vehicles so that the owner can be identified.
 - `abriglass` new oneway corner and edge glass need crafts
 - `cglass` and `roadnodes` need crafts
 - `armor_addon` rhodochrosite and shadow armor could do with crafts
