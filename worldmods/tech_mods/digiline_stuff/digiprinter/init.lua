@@ -34,6 +34,8 @@ local function facedir_to_dir(facedir)
 end
 
 local print_paper = function(pos, node, msg)
+	if msg == nil or type(msg) ~= 'string' then return end
+
 	local inv = minetest.get_meta(pos):get_inventory()
 	
 	local vel = facedir_to_dir(node.param2)
