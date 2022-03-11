@@ -1,9 +1,9 @@
 
 local S = protector.intllib
-local radius = (tonumber(minetest.settings:get("protector_radius")) or 5)
+local tenplus_radius = (tonumber(minetest.settings:get("protector_radius")) or 5)
 
 -- radius limiter (minetest cannot handle node volume of more than 4096000)
-if radius > 22 then radius = 22 end
+if tenplus_radius > 22 then tenplus_radius = 22 end
 
 local hud = {}
 local hud_timer = 0
@@ -26,8 +26,8 @@ minetest.register_globalstep(function(dtime)
 		local hud_text = ""
 
 		local protectors = minetest.find_nodes_in_area(
-			{x = pos.x - radius , y = pos.y - radius , z = pos.z - radius},
-			{x = pos.x + radius , y = pos.y + radius , z = pos.z + radius},
+			{x = pos.x - tenplus_radius , y = pos.y - tenplus_radius , z = pos.z - tenplus_radius},
+			{x = pos.x + tenplus_radius , y = pos.y + tenplus_radius , z = pos.z + tenplus_radius},
 			{"protector:protect","protector:protect2", "protector:protect_hidden"})
 
 		if #protectors > 0 then
