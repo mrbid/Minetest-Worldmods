@@ -463,6 +463,7 @@ end
 
 minetest.register_on_joinplayer(function(player)
 	local level = stamina.get_saturation(player) or settings.visual_max
+
 	-- local id = player:hud_add({
 	-- 	name = "stamina",
 	-- 	hud_elem_type = "statbar",
@@ -498,7 +499,8 @@ minetest.register_on_joinplayer(function(player)
 		}
 	)
 
-	hb.init_hudbar(player, "stamina", stamina.get_saturation(player))
+	stamina.set_saturation(player, level)
+	hb.init_hudbar(player, "stamina", level)
 
 	-- remove legacy hud_id from player metadata
 	set_player_attribute(player, "stamina:hud_id", nil)
