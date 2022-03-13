@@ -46,7 +46,7 @@ stamina.settings = {
 	heal_lvl = get_setting("heal_lvl", 5),
 	starve = get_setting("starve", 1),
 	starve_lvl = get_setting("starve_lvl", 3),
-	visual_max = get_setting("visual_max", 33),
+	visual_max = get_setting("visual_max", 20),
 }
 local settings = stamina.settings
 
