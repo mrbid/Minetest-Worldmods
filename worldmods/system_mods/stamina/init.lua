@@ -456,8 +456,6 @@ function minetest.do_item_eat(hp_change, replace_with_item, itemstack, player, p
 		end
 	end
 
-	stamina_timer = 0 -- so that stamina does not = 19 after eating
-
 	return itemstack
 end
 
