@@ -492,11 +492,11 @@ minetest.register_on_joinplayer(function(player)
 		settings.visual_max,
 		settings.visual_max,
 		false,
-		nil,
-		{
-			format_value = "%.1f",
-			format_max_value = "%d"
-		}
+		-- nil,
+		-- {
+		-- 	format_value = "%.1f",
+		-- 	format_max_value = "%d"
+		-- }
 	)
 
 	stamina.set_saturation(player, level)
