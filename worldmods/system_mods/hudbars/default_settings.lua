@@ -9,9 +9,9 @@ hb.settings.pos_right = {}
 hb.settings.start_offset_left = {}
 hb.settings.start_offset_right= {}
 hb.settings.pos_left.x = hb.load_setting("hudbars_pos_left_x", "number", 0.5)
-hb.settings.pos_left.y = hb.load_setting("hudbars_pos_left_y", "number", 0.93)
+hb.settings.pos_left.y = hb.load_setting("hudbars_pos_left_y", "number", 0.97)
 hb.settings.pos_right.x = hb.load_setting("hudbars_pos_right_x", "number", 0.5)
-hb.settings.pos_right.y = hb.load_setting("hudbars_pos_right_y", "number", 0.93)
+hb.settings.pos_right.y = hb.load_setting("hudbars_pos_right_y", "number", 0.97)
 hb.settings.bar_type = hb.load_setting("hudbars_bar_type", "string", "progress_bar", {"progress_bar", "statbar_classic", "statbar_modern"})
 if hb.settings.bar_type == "progress_bar" then
 	hb.settings.start_offset_left.x = hb.load_setting("hudbars_start_offset_left_x", "number", -175)
