@@ -44,7 +44,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 
 ## TODO
 - `cnc` aka the technic cnc improved has some duplicate shapes that can be obtained via rotations using the screwdriver and thus could be replaced with unique ones from `jamesnodes` which is a congregation of all significant unique nodes from `mymillworks` and `mymeshnodes`.
-- `automobiles2` although cars are unlocked to most players they still have an owner and only the owner _(or an admin)_ can break the vehicle to an item for inventory pickup so it's probably worth adding an infotext to the vehicles so that the owner can be identified.
+- `automobiles` and `automobiles2` although cars are unlocked to most players they still have an owner and only the owner _(or an admin)_ can break the vehicle to an item for inventory pickup so it's probably worth adding an infotext to the vehicles so that the owner can be identified.
 - `abriglass` new oneway corner and edge glass need crafts
 - `cglass` and `roadnodes` need crafts
 - `armor_addon` rhodochrosite and shadow armor could do with crafts
