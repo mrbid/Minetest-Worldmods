@@ -34,7 +34,6 @@ stamina.settings = {
 	tick_min = get_setting("tick_min", 4),
 	health_tick = get_setting("health_tick", 4),
 	move_tick = get_setting("move_tick", 0.5),
-	poison_tick = get_setting("poison_tick", 2.0),
 	exhaust_dig = get_setting("exhaust_dig", 3),
 	exhaust_place = get_setting("exhaust_place", 1),
 	exhaust_move = get_setting("exhaust_move", 1.5),
@@ -47,13 +46,12 @@ stamina.settings = {
 	heal_lvl = get_setting("heal_lvl", 5),
 	starve = get_setting("starve", 1),
 	starve_lvl = get_setting("starve_lvl", 3),
-	visual_max = get_setting("visual_max", 20),
+	visual_max = get_setting("visual_max", 33),
 }
 local settings = stamina.settings
 
 local attribute = {
 	saturation = "stamina:level",
-	poisoned = "stamina:poisoned",
 	exhaustion = "stamina:exhaustion",
 }
 
@@ -103,14 +101,16 @@ end
 
 function stamina.set_saturation(player, level)
 	if level == nil or player == nil or settings == nil or attribute == nil or attribute.saturation == nil then return end
-	local hudid = get_hud_id(player);
-	if hudid == nil then return end
+	-- local hudid = get_hud_id(player);
+	-- if hudid == nil then return end
 	set_player_attribute(player, attribute.saturation, level)
-	player:hud_change(
-		hudid,
-		"number",
-		math.min(settings.visual_max, level)
-	)
+	-- player:hud_change(
+	-- 	hudid,
+	-- 	"number",
+	-- 	math.min(settings.visual_max, level)
+	-- )
+
+	hb.change_hudbar(player, "stamina", level)
 end
 
 stamina.registered_on_update_saturations = {}
@@ -153,57 +153,7 @@ end
 
 stamina.change = stamina.change_saturation -- for backwards compatablity
 --- END SATURATION API ---
---- POISON API ---
-function stamina.is_poisoned(player)
-	return get_player_attribute(player, attribute.poisoned) == "yes"
-end
 
-function stamina.set_poisoned(player, poisoned)
-	local hud_id = get_hud_id(player)
-	if poisoned then
-		player:hud_change(hud_id, "text", "stamina_hud_poison.png")
-		set_player_attribute(player, attribute.poisoned, "yes")
-	else
-		player:hud_change(hud_id, "text", "stamina_hud_fg.png")
-		set_player_attribute(player, attribute.poisoned, "no")
-	end
-end
-
-local function poison_tick(player_name, ticks, interval, elapsed)
-	local player = minetest.get_player_by_name(player_name)
-	if not player or not stamina.is_poisoned(player) then
-		return
-	elseif elapsed > ticks then
-		stamina.set_poisoned(player, false)
-	else
-		local hp = player:get_hp() - 1
-		if hp > 0 then
-			player:set_hp(hp)
-		end
-		minetest.after(interval, poison_tick, player_name, ticks, interval, elapsed + 1)
-	end
-end
-
-stamina.registered_on_poisons = {}
-function stamina.register_on_poison(fun)
-	table.insert(stamina.registered_on_poisons, fun)
-end
-
-function stamina.poison(player, ticks, interval)
-	for _, fun in ipairs(stamina.registered_on_poisons) do
-		local rv = fun(player, ticks, interval)
-		if rv == true then
-			return
-		end
-	end
-	if not is_player(player) then
-		return
-	end
-	stamina.set_poisoned(player, true)
-	local player_name = player:get_player_name()
-	poison_tick(player_name, ticks, interval, 0)
-end
---- END POISON API ---
 --- EXHAUSTION API ---
 stamina.exhaustion_reasons = {
 	craft = "craft",
@@ -383,13 +333,12 @@ local function health_tick()
 		local saturation = stamina.get_saturation(player)
 		if player == nil or settings == nil or air == nil or hp == nil or saturation == nil or settings.heal_lvl == nil then return end
 
-		-- don't heal if dead, drowning, or poisoned
+		-- don't heal if dead or drowning
 		local should_heal = (
 			saturation >= settings.heal_lvl and
 			saturation >= hp and
 			hp > 0 and
 			air > 0
-			and not stamina.is_poisoned(player)
 		)
 		-- or damage player by 1 hp if saturation is < 2 (of 30)
 		local is_starving = (
@@ -464,9 +413,6 @@ function minetest.do_item_eat(hp_change, replace_with_item, itemstack, player, p
 	if hp_change > 0 then
 		stamina.change_saturation(player, hp_change)
 		stamina.set_exhaustion(player, 0)
-	else
-		-- assume hp_change < 0.
-		stamina.poison(player, -hp_change, settings.poison_tick)
 	end
 
 	if settings.eat_particles then
@@ -510,28 +456,50 @@ function minetest.do_item_eat(hp_change, replace_with_item, itemstack, player, p
 		end
 	end
 
+	stamina_timer = 0 -- so that stamina does not = 19 after eating
+
 	return itemstack
 end
 
 minetest.register_on_joinplayer(function(player)
 	local level = stamina.get_saturation(player) or settings.visual_max
-	local id = player:hud_add({
-		name = "stamina",
-		hud_elem_type = "statbar",
-		position = {x = 0.5, y = 1},
-		size = {x = 24, y = 24},
-		text = "stamina_hud_fg.png",
-		number = level,
-		text2 = "stamina_hud_bg.png",
-		item = settings.visual_max,
-		alignment = {x = -1, y = -1},
-		offset = {x = -266, y = -110},
-		max = 0,
-	})
-	set_hud_id(player, id)
-	stamina.set_saturation(player, level)
-	-- reset poisoned
-	stamina.set_poisoned(player, false)
+	-- local id = player:hud_add({
+	-- 	name = "stamina",
+	-- 	hud_elem_type = "statbar",
+	-- 	position = {x = 0.5, y = 0.97},
+	-- 	size = {x = 24, y = 24},
+	-- 	text = "stamina_hud_fg.png",
+	-- 	number = level,
+	-- 	text2 = "stamina_hud_bg.png",
+	-- 	item = settings.visual_max,
+	-- 	alignment = {x = -1, y = -1},
+	-- 	offset = {x = -180, y = -110},
+	-- 	max = 0,
+	-- })
+	-- set_hud_id(player, id)
+	-- stamina.set_saturation(player, level)
+
+	hb.register_hudbar(
+		"stamina",
+		0xFFFFFF,
+		"Stamina",
+		{
+			icon = "hbhunger_icon.png",
+			bgicon = "hbhunger_bgicon.png",
+			bar = "hbhunger_bar.png"
+		},
+		settings.visual_max,
+		settings.visual_max,
+		false,
+		nil,
+		{
+			format_value = "%.1f",
+			format_max_value = "%d"
+		}
+	)
+
+	hb.init_hudbar(player, "stamina", stamina.get_saturation(player))
+
 	-- remove legacy hud_id from player metadata
 	set_player_attribute(player, "stamina:hud_id", nil)
 end)
