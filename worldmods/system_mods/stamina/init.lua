@@ -491,7 +491,7 @@ minetest.register_on_joinplayer(function(player)
 		},
 		settings.visual_max,
 		settings.visual_max,
-		false,
+		false--,
 		-- nil,
 		-- {
 		-- 	format_value = "%.1f",
