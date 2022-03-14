@@ -221,6 +221,7 @@ minetest.register_chatcommand("as",
 minetest.register_chatcommand("clone", {
 	privs = {server=true},
 	params = "<target> <source>",
+	description = "Clones user appearance",
 	func = function(name, param)
 		local args = {}
 		for str in string.gmatch(param, "([^ ]+)") do table.insert(args, str) end
@@ -232,6 +233,17 @@ minetest.register_chatcommand("clone", {
 		nametag = source:get_nametag_attributes()
 		if nametag.text == "" then nametag.text = source:get_player_name() end
 		destination:set_nametag_attributes(nametag)
+	end
+})
+
+-- clear objects in protected areas owned by a player
+minetest.register_chatcommand("clear", {
+	description = "Clears all objects in your protected area",
+	func = function(name, param)
+		local player = minetest.get_player_by_name(name)
+		if player == nil then return false end
+		local p = player:get_pos()
+		worldedit.clear_objects({x=p.x-30,y=p.y-30,z=p.z-30}, {x=p.x+30,y=p.y+30,z=p.z+30})
 	end
 })
 
