@@ -459,6 +459,26 @@ function minetest.do_item_eat(hp_change, replace_with_item, itemstack, player, p
 	return itemstack
 end
 
+-- only register once, not on_joinplayer
+hb.register_hudbar(
+	"stamina",
+	0xFFFFFF,
+	"Stamina",
+	{
+		icon = "hbhunger_icon.png",
+		bgicon = "hbhunger_bgicon.png",
+		bar = "hbhunger_bar.png"
+	},
+	settings.visual_max,
+	settings.visual_max,
+	false--,
+	-- nil,
+	-- {
+	-- 	format_value = "%.1f",
+	-- 	format_max_value = "%d"
+	-- }
+)
+
 minetest.register_on_joinplayer(function(player)
 	local level = stamina.get_saturation(player) or settings.visual_max
 
@@ -476,26 +496,6 @@ minetest.register_on_joinplayer(function(player)
 	-- 	max = 0,
 	-- })
 	-- set_hud_id(player, id)
-	-- stamina.set_saturation(player, level)
-
-	hb.register_hudbar(
-		"stamina",
-		0xFFFFFF,
-		"Stamina",
-		{
-			icon = "hbhunger_icon.png",
-			bgicon = "hbhunger_bgicon.png",
-			bar = "hbhunger_bar.png"
-		},
-		settings.visual_max,
-		settings.visual_max,
-		false--,
-		-- nil,
-		-- {
-		-- 	format_value = "%.1f",
-		-- 	format_max_value = "%d"
-		-- }
-	)
 
 	stamina.set_saturation(player, level)
 	hb.init_hudbar(player, "stamina", level)
