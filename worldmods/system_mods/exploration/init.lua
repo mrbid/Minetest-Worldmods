@@ -243,7 +243,10 @@ minetest.register_chatcommand("clear", {
 		local player = minetest.get_player_by_name(name)
 		if player == nil then return false end
 		local p = player:get_pos()
-		worldedit.clear_objects({x=p.x-30,y=p.y-30,z=p.z-30}, {x=p.x+30,y=p.y+30,z=p.z+30})
+		-- make sure player can only execute this in a protected area they can access
+		if minetest.is_protected(p, "nr78vth4gwlkmc94tn") and minetest.is_protected(p, placer:get_player_name() == false) then
+			worldedit.clear_objects({x=p.x-30,y=p.y-30,z=p.z-30}, {x=p.x+30,y=p.y+30,z=p.z+30})
+		end
 	end
 })
 
