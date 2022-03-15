@@ -1,6 +1,6 @@
 minetest.register_node("sandwiches:nutella_block", {
 		description = "Nutella block",
-		groups = {snappy = 1 , oddly_breakable_by_hand = 3, not_in_creative_inventory=1},
+		groups = {snappy = 1 , oddly_breakable_by_hand = 3, not_in_creative_inventory=0},
 		paramtype2 = "facedir",
 		tiles = {"nutella_block_top.png",
 			"nutella_block_bottom.png",
