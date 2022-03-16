@@ -2344,7 +2344,6 @@ register_all_simple("colorcubes_1_dark_gray")
 register_all_simple("colorcubes_4_light_gray")
 register_all_simple("colorcubes_1_light_gray")
 register_all_simple("colorcubes_4_dark_green")
-register_all_simple("colorcubes_1_dark_green")
 
 register_all_simple("colorcubes_1_aqua")
 register_all_simple("colorcubes_1_blue")
