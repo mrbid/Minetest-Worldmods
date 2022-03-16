@@ -204,7 +204,7 @@ https://forum.minetest.net/viewtopic.php?t=20073
 Digipherals (REMOVED)<br>
 https://forum.minetest.net/viewtopic.php?f=9&t=24246&p=394809
 
-Meshnodes (REMOVED, go to VF-MESHNODE, (now VF-DREAMBUILDER)<br>
+Meshnodes (REMOVED, go to VF-MESHNODE, _(now VF-DREAMBUILDER)_)<br>
 https://forum.minetest.net/viewtopic.php?t=8059
 
 Minetest Developer Resources<br>
