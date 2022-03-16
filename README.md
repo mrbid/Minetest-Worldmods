@@ -150,7 +150,7 @@ Technic<br>
 https://github.com/minetest-mods/technic/blob/master/manual.md
 
 Terumet<br>
-https://github.com/Terumoc/terumet/wiki
+https://github.com/Terumoc/terumet/wiki<br>
 https://forum.minetest.net/viewtopic.php?t=19194
 
 Digilines<br>
@@ -160,13 +160,13 @@ LUA Controller<br>
 https://mesecons.net/luacontroller/
 
 Mesecons<br>
-https://mesecons.net/items.html
-https://mesecons.net/uberi/projects/MeseconsBasics/index.html
-https://mesecons.net/digilines.html
+https://mesecons.net/items.html<br>
+https://mesecons.net/uberi/projects/MeseconsBasics/index.html<br>
+https://mesecons.net/digilines.html<br>
 https://wiki.minetest.net/Mods/Mesecons
 
 More Mesecons<br>
-https://github.com/minetest-mods/MoreMesecons
+https://github.com/minetest-mods/MoreMesecons<br>
 https://www.reddit.com/r/Minetest/comments/4gr9ua/video_mod_moremesecons/
 
 Stealth Nodes<br>
@@ -179,7 +179,7 @@ Digiterms<br>
 https://forum.minetest.net/viewtopic.php?t=21518
 
 Digtron<br>
-https://wiki.minetest.net/Mods/digtron
+https://wiki.minetest.net/Mods/digtron<br>
 https://content.minetest.net/packages/FaceDeer/digtron/
 
 RC Digilines<br>
@@ -192,7 +192,7 @@ Digiterms<br>
 https://forum.minetest.net/viewtopic.php?t=21518
 
 Digicontrol<br>
-https://github.com/OgelGames/digicontrol
+https://github.com/OgelGames/digicontrol<br>
 https://content.minetest.net/packages/OgelGames/digicontrol/
 
 Compresor<br>
