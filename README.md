@@ -149,6 +149,10 @@ Issue filed: https://github.com/Gerold55/ma_pops_furniture/issues/11
 Technic<br>
 https://github.com/minetest-mods/technic/blob/master/manual.md
 
+Terumet<br>
+https://github.com/Terumoc/terumet/wiki
+https://forum.minetest.net/viewtopic.php?t=19194
+
 Digilines<br>
 https://github.com/mt-mods/technic/blob/master/technic/doc/digilines.md
 
