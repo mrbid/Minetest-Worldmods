@@ -2,7 +2,7 @@
 A collection of worldmods used on the VF-TECHNIC minetest server.
 
 ## Highlights
-- insane amount of bug fixes to pretty much every mod
+- insane amount of unlisted bug fixes to pretty much every mod
 - fixing all bugs and offsets in `/vehicles` _(D00Med Vehicles)_
 - addition of biofuel chainsaws _(based on technic chainsaw)_
 - addition of powerbank mk4 _(zero-point energy)_
@@ -36,7 +36,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - added glowfences for mese fences and caverealms glow crystal fences.
 - Test_User has refactored the code of [unified_inventory](https://github.com/minetest-mods/unified_inventory) in api.lua to vastly improve load times of the server when rebooting.
 - Created a new framed & coloured glass mod called `cglass`.
-- Created a lightweight `roadnodes` mod using textures taken from the not-so-lightweight `streets` mod.
+- Created a lightweight `roadnodes` mod using textures taken from the not-so-lightweight [streets](https://forum.minetest.net/viewtopic.php?t=2984) mod.
 - Improved cncnodes to merge the best nodes from `technic_cnc_improved`, `mymillwork`, and `mymeshnodes` mods. The merged mod is called `cncnodes`.
 - added a `chest_of_forbidden:chest` that displays every `not_in_creative_inventory=1` node, it's a fork of the devtest Chest of Everything.
 - added a Chest of Everything to display just the CNC nodes `chest_of_cnc:chest`, and removing the CNC nodes from the creative inventory.
