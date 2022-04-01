@@ -13,19 +13,16 @@ local S = minetest.get_translator("ts_furniture")
 if ts_furniture.enable_sitting then
 	ts_furniture.sit = function(pos, _, player)
 		local name = player:get_player_name()
-		if not player_api.player_attached[name] then
+		if not default.player_attached[name] then
 			if vector.length(player:get_player_velocity()) > 0 then
 				minetest.chat_send_player(player:get_player_name(), 'You can only sit down when you are not moving.')
 				return
 			end
 			player:move_to(pos)
 			player:set_eye_offset({x = 0, y = -7, z = 2}, {x = 0, y = 0, z = 0})
-			player:set_physics_override(0, 0, 0)
-			player_api.player_attached[name] = true
-			minetest.after(0.1, function()
-				if player then
-					player_api.set_animation(player, "sit" , 30)
-				end
+			default.player_attached[name] = true
+			minetest.after(0.2, function() -- we must do this because of bug
+				default.player_set_animation(player, "sit" , 1)
 			end)
 		else
 			ts_furniture.stand(player, name)
@@ -34,16 +31,15 @@ if ts_furniture.enable_sitting then
 
 	ts_furniture.up = function(_, _, player)
 		local name = player:get_player_name()
-		if player_api.player_attached[name] then
+		if default.player_attached[name] then
 			ts_furniture.stand(player, name)
 		end
 	end
 
 	ts_furniture.stand = function(player, name)
 		player:set_eye_offset({x = 0, y = 0, z = 0}, {x = 0, y = 0, z = 0})
-		player:set_physics_override(1, 1, 1)
-		player_api.player_attached[name] = false
-		player_api.set_animation(player, "stand", 30)
+		default.player_attached[name] = false
+	  	default.player_set_animation(player, "stand" , 30)
 	end
 
 	-- The player will stand at the beginning of the movement
