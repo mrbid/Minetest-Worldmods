@@ -41,6 +41,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - added a `chest_of_forbidden:chest` that displays every `not_in_creative_inventory=1` node, it's a fork of the devtest Chest of Everything.
 - added a Chest of Everything to display just the CNC nodes `chest_of_cnc:chest`, and removing the CNC nodes from the creative inventory.
 - added an improved Chest of Everything for creative users.
+- fixed sit animation breaking physics effects in `ts_furniture`.
 
 ## TODO
 - `cnc` aka the technic cnc improved has some duplicate shapes that can be obtained via rotations using the screwdriver and thus could be replaced with unique ones from `jamesnodes` which is a congregation of all significant unique nodes from `mymillworks` and `mymeshnodes`.
