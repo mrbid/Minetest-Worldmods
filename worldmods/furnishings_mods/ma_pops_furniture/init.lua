@@ -49,7 +49,7 @@ else
 end
 
 dofile(minetest.get_modpath('ma_pops_furniture')..'/toaster.lua')
-dofile(minetest.get_modpath('ma_pops_furniture')..'/abm.lua')
+--dofile(minetest.get_modpath('ma_pops_furniture')..'/abm.lua')
 dofile(minetest.get_modpath('ma_pops_furniture')..'/bathroom.lua')
 dofile(minetest.get_modpath('ma_pops_furniture')..'/bedroom.lua')
 dofile(minetest.get_modpath('ma_pops_furniture')..'/kitchen.lua')
