@@ -83,7 +83,7 @@ minetest.register_craft({
 	output = 'laptop:case',
 	recipe = {
 		{rc.steel, rc.steel, rc.steel},
-		{rc.steel, '', rc.steel},
+		{rc.steel, 'basic_materials:plastic_sheet', rc.steel},
 		{rc.steel, rc.steel, rc.steel},
 	}
 })
@@ -194,9 +194,9 @@ minetest.register_craftitem("laptop:fan", {
 minetest.register_craft({
 	output = 'laptop:fan',
 	recipe = {
-		{'', rc.steel, ''},
+		{'basic_materials:plastic_sheet', rc.steel, 'basic_materials:plastic_sheet'},
 		{rc.steel, rc.steel, rc.steel},
-		{'', rc.steel, ''},
+		{'basic_materials:plastic_sheet', rc.steel, 'basic_materials:plastic_sheet'},
 	}
 })
 
