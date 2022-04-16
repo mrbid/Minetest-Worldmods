@@ -199,9 +199,9 @@ minetest.override_item("default:sand_with_kelp", {
 		return itemstack
 	end,
 
-	after_destruct  = function(pos, oldnode)
-		minetest.set_node(pos, {name = "default:sand"})
-	end
+	-- after_destruct  = function(pos, oldnode)
+	-- 	minetest.set_node(pos, {name = "default:sand"})
+	-- end
 })
 minetest.register_craft({
 	type = "cooking",
@@ -277,9 +277,9 @@ minetest.register_node("xocean:seagrass", {
 		return itemstack
 	end,
 
-	after_destruct  = function(pos, oldnode)
-		minetest.set_node(pos, {name = "default:sand"})
-	end,
+	-- after_destruct  = function(pos, oldnode)
+	-- 	minetest.set_node(pos, {name = "default:sand"})
+	-- end,
 })
 minetest.register_craftitem("xocean:fish_edible", {
 	description = "Tropical Fish",
@@ -339,9 +339,9 @@ minetest.register_node("xocean:pickle", {
 		return itemstack
 	end,
 
-	after_destruct  = function(pos, oldnode)
-		minetest.set_node(pos, {name = "default:sand"})
-	end,
+	-- after_destruct  = function(pos, oldnode)
+	-- 	minetest.set_node(pos, {name = "default:sand"})
+	-- end,
 })
 ---Corals
 minetest.register_node("xocean:brain_block", {
@@ -403,9 +403,9 @@ minetest.override_item("default:coral_pink", {
 		return itemstack
 	end,
 
-	after_destruct  = function(pos, oldnode)
-		minetest.set_node(pos, {name = "xocean:brain_block"})
-	end,
+	-- after_destruct  = function(pos, oldnode)
+	-- 	minetest.set_node(pos, {name = "xocean:brain_block"})
+	-- end,
 })
 minetest.register_node("xocean:brain_skeleton", {
 	description = "Brain Coral Skeleton Block",
@@ -465,9 +465,9 @@ minetest.register_node("xocean:skeleton_brain", {
 		return itemstack
 	end,
 
-	after_destruct  = function(pos, oldnode)
-		minetest.set_node(pos, {name = "xocean:brain_skeleton"})
-	end,
+	-- after_destruct  = function(pos, oldnode)
+	-- 	minetest.set_node(pos, {name = "xocean:brain_skeleton"})
+	-- end,
 })
 minetest.register_node("xocean:tube_block", {
 	description = "Tube Coral Block",
@@ -529,9 +529,9 @@ minetest.override_item("default:coral_cyan", {
 		return itemstack
 	end,
 
-	after_destruct  = function(pos, oldnode)
-		minetest.set_node(pos, {name = "xocean:tube_block"})
-	end,
+	-- after_destruct  = function(pos, oldnode)
+	-- 	minetest.set_node(pos, {name = "xocean:tube_block"})
+	-- end,
 })
 minetest.register_node("xocean:tube_skeleton", {
 	description = "Tube Coral Skeleton Block",
@@ -591,9 +591,9 @@ minetest.register_node("xocean:skeleton_tube", {
 		return itemstack
 	end,
 
-	after_destruct  = function(pos, oldnode)
-		minetest.set_node(pos, {name = "xocean:tube_skeleton"})
-	end,
+	-- after_destruct  = function(pos, oldnode)
+	-- 	minetest.set_node(pos, {name = "xocean:tube_skeleton"})
+	-- end,
 })
 minetest.register_node("xocean:bubble_block", {
 	description = "Bubble Coral Block",
@@ -655,9 +655,9 @@ minetest.register_node("xocean:bubble", {
 		return itemstack
 	end,
 
-	after_destruct  = function(pos, oldnode)
-		minetest.set_node(pos, {name = "xocean:bubble_block"})
-	end,
+	-- after_destruct  = function(pos, oldnode)
+	-- 	minetest.set_node(pos, {name = "xocean:bubble_block"})
+	-- end,
 })
 minetest.register_node("xocean:bubble_skeleton", {
 	description = "Bubble Coral Skeleton Block",
@@ -718,9 +718,9 @@ minetest.register_node("xocean:skeleton_bubble", {
 		return itemstack
 	end,
 
-	after_destruct  = function(pos, oldnode)
-		minetest.set_node(pos, {name = "xocean:bubble_skeleton"})
-	end,
+	-- after_destruct  = function(pos, oldnode)
+	-- 	minetest.set_node(pos, {name = "xocean:bubble_skeleton"})
+	-- end,
 })
 minetest.override_item("default:coral_brown", {
  	description = "Horn Coral Block",
@@ -782,11 +782,11 @@ minetest.register_node("xocean:horn", {
 		return itemstack
 	end,
 
-	after_destruct  = function(pos, oldnode)
-		-- minetest.set_node(pos, {name = "xocean:horn_block"})
-		minetest.set_node(pos, {name = "xocean:horn"})
-		minetest.set_node(pos, {name = "default:coral_brown"})
-	end,
+	-- after_destruct  = function(pos, oldnode)
+	-- 	-- minetest.set_node(pos, {name = "xocean:horn_block"})
+	-- 	minetest.set_node(pos, {name = "xocean:horn"})
+	-- 	minetest.set_node(pos, {name = "default:coral_brown"})
+	-- end,
 })
 minetest.override_item("default:coral_skeleton", {
  	description = "Horn Coral Skeleton Block",
@@ -848,10 +848,10 @@ minetest.register_node("xocean:skeleton_horn", {
 		return itemstack
 	end,
 
-	after_destruct  = function(pos, oldnode)
-		-- minetest.set_node(pos, {name = "xocean:horn_skeleton"})
-		minetest.set_node(pos, {name = "default:coral_skeleton"})
-	end,
+	-- after_destruct  = function(pos, oldnode)
+	-- 	-- minetest.set_node(pos, {name = "xocean:horn_skeleton"})
+	-- 	minetest.set_node(pos, {name = "default:coral_skeleton"})
+	-- end,
 })
 minetest.override_item("default:coral_orange", {
  	description = "Fire Coral Block",
@@ -913,9 +913,9 @@ minetest.register_node("xocean:fire", {
 		return itemstack
 	end,
 
-	after_destruct  = function(pos, oldnode)
-		minetest.set_node(pos, {name = "default:coral_orange"})
-	end,
+	-- after_destruct  = function(pos, oldnode)
+	-- 	minetest.set_node(pos, {name = "default:coral_orange"})
+	-- end,
 })
 minetest.register_node("xocean:fire_skeleton", {
  	description = "Fire Coral Skeleton Block",
@@ -975,9 +975,9 @@ minetest.register_node("xocean:skeleton_fire", {
 		return itemstack
 	end,
 
-	after_destruct  = function(pos, oldnode)
-		minetest.set_node(pos, {name = "xocean:fire_skeleton"})
-	end,
+	-- after_destruct  = function(pos, oldnode)
+	-- 	minetest.set_node(pos, {name = "xocean:fire_skeleton"})
+	-- end,
 })
 ---Mapgen
 minetest.register_decoration({
