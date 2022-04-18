@@ -21,6 +21,16 @@ minetest.register_on_mods_loaded(function()
 	minetest.unregister_chatcommand("ban")
 end)
 
+-- prevent garbage collection oom (thanks to DeepSpaceExplorer)
+-- https://forum.minetest.net/viewtopic.php?t=13972
+minetest.register_globalstep(function(dtime)
+	--print(collectgarbage("count"))
+	if collectgarbage("count") > 307200 then
+		core.log("action", "[MOD] [stop_lj_oom]: Collecting Garbage")
+		collectgarbage()
+	end
+end)
+
 -- -- bls rollback check
 -- minetest.register_privilege("rollback_check", "Allows use of /rollback_check")
 -- minetest.override_chatcommand("rollback_check", {
