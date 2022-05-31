@@ -12,7 +12,7 @@ A collection of worldmods used on the VF-TECHNIC minetest server.
 - merging of [space_travel](https://forum.minetest.net/viewtopic.php?t=23455) nodes with [other_worlds](https://forum.minetest.net/viewtopic.php?t=16015) to create a more diverse set of asteroid layers, the vanilla space_travel mod produced too much lag to run online as-is.
 - modification of all technic_armor skins to remove specular highlights
 - some new admin commands in `/exploration` such as a jailing system for disruptive players.
-- removal of technic polyfuse and machine protection _(allowing machines to be shared, upgrades are protected however)_
+- removal of technic polyfuse
 - replaced technic cnc with [Improved Technic CNC](https://content.minetest.net/packages/Emojiminetest/technic_cnc_improve/) and made some improvements upon its supported nodelist.
 - significant rework on commodity markets listed items string formatting to ensure a concise, pretty, and still informative item string.
 - modifications to [edit mod](https://github.com/mrbid/Minetest-Worldmods/tree/main/worldmods/edit) to make it safer for use by builders.
